@@ -1,4 +1,4 @@
-# e-Authentication 
+# e-Authentication
 
 This work is in early Alpha stage - under active development - and is being led by the National Institute of Standards and Technology (NIST) with support from the GSA Office of Government-wide Policy, Federal Identity Credentialing and Access Management (FICAM) program office.  
 
