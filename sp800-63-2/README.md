@@ -4,7 +4,7 @@ This is a conversion of [NIST Special Publication 800-63-2](http://csrc.nist.gov
 
 [Front matter](front.md)
 
-[Chapters 1 and 2](chap_1_2_introduction.md): Purpose and Introduction
+[Chapters 1 and 2](chap1_2_introduction.md): Purpose and Introduction
 
 [Chapter 3](chap3_definitions.md): Definitions and Abbreviations
 
