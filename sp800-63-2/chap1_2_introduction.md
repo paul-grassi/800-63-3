@@ -41,7 +41,7 @@ their e-authentication assurance requirements:
 
 1.  *Conduct a risk assessment of the government system* – No specific
     risk assessment methodology is prescribed for this purpose;
-    however, the e-RA tool[^1] at &lt;<http://www.idmanagement.gov/>&gt;
+    however, the e-RA tool<sup>[1](#note1)</sup> at &lt;<http://www.idmanagement.gov/>&gt;
     is an example of a suitable tool and methodology, while NIST Special
     Publication (SP) 800-30 \[[SP 800-30](#SP800_30)\] offers a general
     process for Risk Assessment and Risk Mitigation.
@@ -132,7 +132,7 @@ token. Thereafter, the individuals are remotely authenticated to systems
 and applications over a network, using the token in an authentication
 protocol. The authentication protocol allows an individual to
 demonstrate to a Verifier that he or she has possession and control of
-the token[^2], in a manner that protects the token secret from
+the token<sup>[2](#note2)</sup>, in a manner that protects the token secret from
 compromise by different kinds of attacks. Higher authentication
 assurance levels require use of stronger tokens, better protection of
 the token and related secrets from attacks, and stronger registration
@@ -145,7 +145,7 @@ contexts. Certain authentication technologies, particularly biometrics
 and knowledge based authentication, use information that is private
 rather than secret. While they are discussed to a limited degree, they
 are largely avoided because their security is often weak or difficult to
-quantify[^3], especially in the remote situations that are the primary
+quantify<sup>[3](#note3)</sup>, especially in the remote situations that are the primary
 scope of this document.
 
 Knowledge based authentication achieves authentication by testing the
@@ -269,4 +269,13 @@ identity proofing process, and to reduce the need to use postal mail to
 an address of record to issue credentials for level 3 remote
 registration. Other changes to section 5 are minor explanations and
 clarifications.
+
+---
+**Footnotes**
+
+<a name="note1">1</a>: At the time of publication, the specific URL for this tool is at <http://www.idmanagement.gov/drilldown.cfm?action=era>.  Alternatively, the tool can be found by searching for “Electronic Risk and Requirements Assessment (e-RA)” at <http://www.idmanagement.gov/>.
+
+<a name="note2">2</a>: See Section 3 for the definition of “token” as used in this document, which is consistent with the original version of SP 800-63, but there are a variety of definitions used in the area of authentication.
+
+<a name="note3">3</a>: For example, see article by V. Griffith and M. Jakobsson, entitled “Messin’ with Texas – Deriving Mother’s Maiden Names Using Public Records,” in RSA CryptoBytes, Winter 2007. 
 

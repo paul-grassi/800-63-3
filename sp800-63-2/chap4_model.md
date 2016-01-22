@@ -1,5 +1,5 @@
 ## 4. E-Authentication Model
-### 4.1 Overview
+### 4.1. Overview
 In accordance with \[[OMB M-04-04](#OMB_0404)\], e-authentication is the
 process of establishing confidence in user identities electronically
 presented to an information system. Systems can use the authenticated
@@ -46,9 +46,9 @@ and assertions shall specify whether the name is a verified name or a
 pseudonym. This information assists *Relying Parties (RPs)* in making
 access control or authorization decisions. In most cases, only verified
 names may be specified in credentials and assertions at Levels 3 and
-4.[^4] (The required use of a verified name at higher levels of
+4.<sup>[4](#note4)</sup> \(The required use of a verified name at higher levels of
 assurance is derived from OMB M-04-04 and is specific to Federal IT
-systems, rather than a general e-authentication requirement.)
+systems, rather than a general e-authentication requirement.\)
 
 In this document, the party to be authenticated is called a *Claimant*
 and the party verifying that identity is called a *Verifier*. When a
@@ -103,7 +103,7 @@ and the CSP. The usual sequence of interactions is as follows:
 
 5.  The CSP maintains the credential, its status, and the registration
     data collected for the lifetime of the credential (at a
-    minimum).[^5] The Subscriber maintains his or her token.
+    minimum).<sup>[5](#note5)</sup> The Subscriber maintains his or her token.
 
 Other sequences are less common, but could also achieve the same
 functional requirements.
@@ -121,7 +121,7 @@ interactions are as follows:
     binds the Subscriber’s identity to his or her token.
 
 3.  If the Verifier is separate from the RP (application), the Verifier
-    provides[^6] an assertion about the Subscriber to the RP, which uses
+    provides<sup>[6](#note6)</sup> an assertion about the Subscriber to the RP, which uses
     the information in the assertion to make an access control or
     authorization decision.
 
@@ -152,12 +152,11 @@ or she may be required to repeat the registration process to obtain a
 new token and credential. The CSP may choose to accept a request during
 a grace period after expiration.
 
-![](media/figure1.png)
+![](media/arch_model.png)
 
-Figure 1 - *The NIST SP
-800-63-1 E-Authentication Architectural Model*
+Figure 1 - *The NIST SP 800-63-1 E-Authentication Architectural Model*
 
-### 4.2 Subscribers, Registration Authorities and Credential Service Providers
+### 4.2. Subscribers, Registration Authorities and Credential Service Providers
 The previous section introduced the different participants in the
 conceptual e-authentication model. This section provides additional
 details regarding the relationships and responsibilities of the
@@ -193,7 +192,7 @@ relationships with different CSPs as well.
 Section 5 specifies requirements for the registration, identity proofing
 and issuance processes.
 
-### 4.3 Tokens
+### 4.3. Tokens
 The classic paradigm for authentication systems identifies three factors
 as the cornerstone of authentication:
 
@@ -220,7 +219,7 @@ In e-authentication, the base paradigm is slightly different: the
 Claimant possesses and controls a token that has been registered with
 the CSP and is used to prove the bearer’s identity. The token contains a
 secret the Claimant can use to prove that he or she is the Subscriber
-named in a particular credential.[^7] In e-authentication, the Claimant
+named in a particular credential.<sup>[7](#note7)</sup> In e-authentication, the Claimant
 authenticates to a system or application over a network by proving that
 he or she has possession and control of a token. The token provides an
 output called a token authenticator. This output is used in the
@@ -311,7 +310,7 @@ identify those who commit registration fraud, and to unlock tokens.
 Section 6 provides guidelines on the various types of tokens that may be
 used for electronic authentication.
 
-### 4.4 Credentials
+### 4.4. Credentials
 As described in the preceding sections, e-authentication credentials
 bind a token to the Subscriber’s name as part of the issuance process.
 Credentials are issued and maintained by the CSP; Verifiers use the
@@ -370,7 +369,7 @@ electronic credentials unless explicitly noted. Section 7 provides
 guidelines for token and credential management activities that are
 applicable to electronic authentication.
 
-### 4.5 Authentication Process
+### 4.5. Authentication Process
 The authentication process begins with the Claimant demonstrating
 possession and control of a token that is bound to the asserted identity
 to the Verifier through an authentication protocol. Once possession and
@@ -402,7 +401,7 @@ Section 8 provides guidelines for the various types of protocols used by
 the Verifier to authenticate the Claimant/Subscriber within the
 e-authentication model.
 
-### 4.6 Assertions
+### 4.6. Assertions
 Upon completion of the authentication process, the Verifier generates an
 assertion containing the result of the authentication and provides it to
 the RP. If the Verifier is implemented in combination with the RP, the
@@ -432,7 +431,7 @@ Examples of assertions include:
     are available to websites within the same Internet domain as the
     server that placed them in the web browser. Cookies are used for
     many purposes and may be assertions or may contain pointers to
-    assertions.[^8]
+    assertions.<sup>[8](#note8)</sup>
 
 -   *SAML Assertions* – SAML assertions are specified using a mark-up
     language intended for describing security assertions. They can be
@@ -446,7 +445,7 @@ Examples of assertions include:
 Section 9 provides guidelines for the use of assertions in
 authentication protocols.
 
-### 4.7 Relying Parties
+### 4.7. Relying Parties
 An RP relies on results of an electronic authentication protocol to
 establish confidence in the identity or attributes of a Subscriber for
 the purpose of some transaction. RPs will use a Subscriber’s
@@ -463,7 +462,7 @@ Section 9 provides guidelines for the assertions that may be used by RPs
 to establish confidence in the identities of Claimants when the RP and
 the Verifier are not co-located.
 
-### 4.8 Calculating the Overall Authentication Assurance Level
+### 4.8. Calculating the Overall Authentication Assurance Level
 
 The overall authentication assurance level is based on the low watermark
 of the assurance levels for each of the components of the architecture.
@@ -496,3 +495,16 @@ likely focus on gaining access to the token since it is easier to attack
 a system component meeting assurance Level 2 rather than attacking those
 meeting assurance Level 3. (See Sections 5 through 9 for information on
 assurance levels for each area.)
+
+---
+**Footnotes**
+
+<a name="note4">4</a>: Note that [FIPS 201] permits authorized pseudonyms in limited cases and does not differentiate between credentials using authorized pseudonyms. Nothing in these guidelines should be interpreted as contravening the contents of the FIPS or constraining the use of these authorized pseudonymous credentials. See Appendix B for the level of PIV credentials.
+
+<a name="note5">5</a>: CSPs may be required to maintain this information beyond the lifetime of the credential to support auditing or satisfy archiving requirements.
+
+<a name="note6">6</a>: Many assertion protocols require assertions to be forwarded through the Claimant’s local system before reaching the Relying Party. For Details, see Section 10.
+
+<a name="note7">7</a>: The stipulation that every token contains a secret is specific to these E-authentication guidelines.  As noted elsewhere authentication techniques where the token does not contain a secret may be applicable to authentication problems in other environments (e.g., physical access).
+
+<a name="note8">8</a>: There are specific requirements that agencies must follow when implementing cookies. See OMB Memorandum M-10-22, OMB Guidance for Online Use of Web Measurement and Customization Technologies, available at: http://www.whitehouse.gov/sites/default/files/omb/assets/memoranda_2010/m10-22.pdf as well as OMB Memorandum M-03-22, OMB Guidance for Implementing the Privacy Provisions of the E-Government Act of 2002, available at: http://www.whitehouse.gov/omb/memoranda/m03-22.html.

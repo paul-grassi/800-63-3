@@ -10,7 +10,7 @@ W. Timothy Polk
 Sarbari Gupta  
 Emad A. Nabbus
 
-![](media/image1.jpeg)
+![](media/nist_logo.jpeg)
 
 ## NIST Special Publication 800-63-2
 
@@ -31,7 +31,7 @@ Reston, VA*
 
 August 2013
 
-![](media/image2.wmf)
+![](media/commerce_logo.png)
 
 U.S. Department of Commerce  
 *Penny Pritzker, Secretary*

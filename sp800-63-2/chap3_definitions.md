@@ -1,4 +1,4 @@
-## Definitions and Abbreviations
+## 3. Definitions and Abbreviations
 
 
 There are a variety of definitions used in the area of authentication.
