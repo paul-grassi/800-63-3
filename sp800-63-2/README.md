@@ -1,27 +1,27 @@
 # SP 800-63-2
 
-This is a conversion of [NIST Special Publication 800-63-2](http://csrc.nist.gov/publications/drafts/800-63-2/sp800_63_2_draft.pdf) *Electronic Authentication Guideline* to Markdown with no content changes. The document is broken up into chapters as follows:
+This is a conversion of [NIST Special Publication 800-63-2](http://csrc.nist.gov/publications/drafts/800-63-2/sp800_63_2_draft.pdf) *Electronic Authentication Guideline* to Markdown with no content changes. The document is broken up into sections as follows:
 
 [Front matter](front.md)
 
-[Chapters 1 and 2](chap1_2_introduction.md): Purpose and Introduction
+[1. Purpose and 2. Introduction](sec1_2_introduction.md)
 
-[Chapter 3](chap3_definitions.md): Definitions and Abbreviations
+[3. Definitions and Abbreviations ](sec3_definitions.md)
 
-[Chapter 4](chap4_model.md): E-Authentication Model
+[4. E-Authentication Model](sec4_model.md)
 
-[Chapter 5](chap5_registration.md): Registration and Issuance Processes
+[5. Registration and Issuance Processes](sec5_registration.md)
 
-[Chapter 6](chap6_tokens.md): Tokens
+[6. Tokens](sec6_tokens.md)
 
-[Chapter 7](chap7_management.md): Token and Credential Management
+[7. Token and Credential Management](sec7_management.md)
 
-[Chapter 8](chap8_process.md): Authentication Process
+[8. Authentication Process](sec8_process.md)
 
-[Chapter 9](chap9_assertions.md): Assertions
+[9. Assertions](sec9_assertions.md)
 
-[Chapter 10](chap10_references.md): References
+[10. References](sec10_references.md)
 
-[Appendix A](appA_entropy.md): Estimating Entropy and Strength
+[Appendix A: Estimating Entropy and Strength](appA_entropy.md)
 
-[Appendix B](appB_pkipiv.md): Mapping of Federal PKI Certificate Policies and PIV Credentials to E-authentication Assurance Levels
+[Appendix B: Mapping of Federal PKI Certificate Policies and PIV Credentials to E-authentication Assurance Levels](appB_pkipiv.md)
