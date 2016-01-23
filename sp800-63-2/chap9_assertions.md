@@ -1,6 +1,6 @@
 ## 9. Assertions
 
-### 9.1 Overview
+### 9.1. Overview
 
 Assertions are statements from a Verifier to an RP that contain
 information about a Subscriber. Assertions are used when the RP and the
@@ -54,7 +54,7 @@ authenticate to the RP.
     the RP. (This is usually handled automatically by the
     Subscriber’s browser.) Figure 4 illustrates this model.
 
-![](media/image6.png)
+![](media/direct_assertion.png)
 
 Figure 4 - *Direct Assertion Model*
 
@@ -69,7 +69,7 @@ Figure 4 - *Direct Assertion Model*
     assertion reference to explicitly request the assertion from
     the Verifier. Figure 5 illustrates this model.
 
-![](media/image7.png)
+![](media/indirect_assertion.png)
 
 Figure 5 - *Indirect Assertion Model*
 
@@ -138,7 +138,7 @@ There is one other basic assertion model.
     acting as an intermediary between the Claimant and the RP. Figure 6
     illustrates this model.
 
-![](media/image8.png)
+![](media/proxy_model.png)
 
 Figure 6 – *Proxy Model*
 
@@ -273,7 +273,7 @@ types of statements:
 Authorization statements are beyond the scope of this document and will
 not be discussed.
 
-#### 9.1.3 Kerberos Tickets
+#### 9.1.3. Kerberos Tickets
 
 The Kerberos Network Authentication Service \[[RFC 4120](#RFC4120)\] was
 designed to provide strong authentication for client/server applications
@@ -376,7 +376,7 @@ Subscriber from Attackers who wish to impersonate the Subscriber. In the
 case of holder-of-key assertions, this secret is generally the
 Subscriber’s long term token secret, which would already have been
 established with the CSP prior to the initiation of the assertion
-protocol.[^31]
+protocol.<sup>[31](#note31)</sup>
 
 In other cases, however, the Verifier will generate a temporary secret
 and transmit it to the authenticated Subscriber for this purpose. Since,
@@ -572,8 +572,8 @@ Table 12 – Threat Resistance per Assurance Level
 |------------|:-----------:|:-----------:|:-----------:|:-----------:|
   Assertion manufacture/modification | Yes | Yes | Yes | Yes |
   Assertion disclosure | No | Yes | Yes | Yes |
-  Assertion repudiation by Verifier | No | No | Yes[^32] | Yes^32 |
-  Assertion repudiation by Subscriber | No | No | No | Yes^32^ |
+  Assertion repudiation by Verifier | No | No | Yes<sup>[32](#note32)</sup> | Yes<sup>[32](#note32)</sup> |
+  Assertion repudiation by Subscriber | No | No | No | Yes<sup>[32](#note32)</sup> |
   Assertion redirect | No | Yes | Yes | Yes |
   Assertion reuse | Yes | Yes | Yes | Yes |
   Secondary authenticator manufacture | Yes | Yes | Yes | Yes |
@@ -601,7 +601,7 @@ shall be signed by the Verifier or integrity protected using a secret
 key shared by the Verifier and RP, and if the indirect model is used,
 the assertion reference which is used shall have a minimum of 64 bits of
 entropy. Bearer assertions shall be specific to a single
-transaction.[^33] Also, if assertion references are used, they shall be
+transaction.<sup>[33](#note33)</sup> Also, if assertion references are used, they shall be
 freshly generated whenever a new assertion is created by the Verifier.
 In other words, bearer assertions and assertion references are generated
 for one-time use.
@@ -749,4 +749,13 @@ as:
 
 All Level 1-3 requirements for the protection of assertion data remain
 in force at Level 4.
+
+---
+**Footnotes**
+
+<a name="note31">31</a>: The role of the Verifier in such protocols is not necessarily to issue new secrets. Rather, in a holder-of-key-assertion, the Verifier communicates the information in the Subscriber’s credential (as well as any supplementary information from the CSP such as revocation data) to the RP. The Verifier also vouches that the holder-of-key assertion represents current information from a trusted source (the CSP.)
+
+<a name="note32">32</a>: Except for Kerberos.
+
+<a name="note33">33</a>: For example, implementation of SSO requires a separate assertion each time a new session is started with a participating RP.
 

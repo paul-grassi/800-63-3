@@ -10,7 +10,7 @@ authentication activity. One or more of the messages of the
 authentication protocol may need to be carried on a protected session.
 This is illustrated in Figure 3.
 
-![](media/image5.png)
+![](media/auth_process.png)
 
 Figure 3 - *Authentication Process Model*
 
@@ -110,7 +110,7 @@ token. The malicious code may be introduced by many means, including the
 threats detailed below. There are many countermeasures (e.g., virus
 checkers and firewalls) that can mitigate the risk of malicious code on
 Claimant systems. General good practice to mitigate malicious code
-threats is outside the scope of this document[^26]. Hardware tokens
+threats is outside the scope of this document<sup>[26](#note26)</sup>. Hardware tokens
 prevent malicious software from extracting and copying the token secret.
 However, malicious code may still misuse the token, particularly if
 activation data is presented to the token via the computer.
@@ -131,7 +131,7 @@ processes to mitigate the attacks listed in the previous section:
     impractical by requiring use of high-entropy passwords and limiting
     the number of unsuccessful authentication attempts, or by
     controlling the rate at which attempts can be carried out. (See
-    [](#_Appendix_A:_Estimating_Entropy and ) and Table 6 in
+    Appendix A and Table 6 in
     Section 6.3.1.). Similarly, to resist untargeted password attacks, a
     Verifier may supplement these controls with network
     security controls.
@@ -166,7 +166,7 @@ processes to mitigate the attacks listed in the previous section:
     impractical to learn the Claimant’s token secret or to otherwise
     obtain information that would allow the eavesdropper to impersonate
     the Subscriber in a future authentication session.
-    Eavesdropping-resistant protocols make it impractical[^27] for an
+    Eavesdropping-resistant protocols make it impractical<sup>[27](#note27)</sup> for an
     Attacker to carry out an off-line attack where he or she records an
     authentication protocol run and then analyzes it on his or her own
     system for an extended period to determine the token secret or
@@ -357,7 +357,7 @@ information.
 In a successful phishing attack, the Attacker sends an official looking
 email to a Subscriber claiming to be a Verifier. The email usually
 contains a link to a counterfeit Verifier and will ask the Subscriber to
-click on the link and authenticate to the Verifier[^28]. The Subscriber
+click on the link and authenticate to the Verifier<sup>[28](#note28)</sup>. The Subscriber
 proceeds to authenticate to the counterfeit Verifier and the login
 information and token authenticator is captured. At this point, the
 Subscriber is unaware that he or she has been phished, and proceeds with
@@ -488,9 +488,9 @@ Table 11 – Required Authentication Protocol Threat Resistance per Assurance Le
 | Replay | Yes | Yes | Yes | Yes |
 | Session hijacking | No | Yes | Yes | Yes |
 | Eavesdropping | No | Yes | Yes | Yes |
-| Phishing/pharming(verifier impersonation) | No | No | Yes^29 | Yes |
+| Phishing/pharming(verifier impersonation) | No | No | Yes<sup>[29](#note29)</sup> | Yes |
 | Man in the middle | No | Weak | Weak | Strong |
-| Denial of service/flooding[^30] | No | No | No | No |
+| Denial of service/flooding<sup>[30](#note30)</sup> | No | No | No | No |
 
 #### 8.3.2. Requirements per Assurance Level
 
@@ -619,3 +619,16 @@ token. For example, if a software cryptographic token is used to open a
 client-authenticated TLS session, and the output of a multifactor OTP
 device is sent by the claimant in that session, then the resultant
 protocol will still provide Level 4 assurance.
+
+---
+**Footnotes**
+
+<a name="note26">26</a>: See SP 800-53, *Recommended Security Controls For Federal Information Systems*
+
+<a name="note27">27</a>: “Impractical” is used here in the cryptographic sense of nearly impossible, that is there is always a small chance of success, but even the Attacker with vast resources will nearly always fail.  For off-line attacks, impractical means that the amount of work required to “break” the protocol is at least on the order of 280 cryptographic operations. For on-line attacks impractical means that the number of possible on-line trials is very small compared to the number of possible key or password values.
+
+<a name="note28">28</a>: Some phishing attacks may request the Subscriber to provide personally sensitive information so that the Attacker may impersonate the Subscriber outside the scope of E-authentication.
+
+<a name="note29">29</a>: Long term authentication secrets shall be protected at this level. Short term secrets may or may not be protected.
+
+<a name="note30">30</a>: Although there are techniques used to resist flood attacks, no protocol has comprehensive resistance to stop flooding.

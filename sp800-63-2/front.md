@@ -10,7 +10,7 @@ W. Timothy Polk
 Sarbari Gupta  
 Emad A. Nabbus
 
-![](media/nist_logo.jpeg)
+![](media/nist_logo.png)
 
 ## NIST Special Publication 800-63-2
 

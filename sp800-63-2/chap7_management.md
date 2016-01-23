@@ -369,7 +369,7 @@ At Level 2, the following shall be required:
 
 At Level 3, the following is required:
 
--   *Credential storage*[^25] – Files of long-term shared secrets used
+-   *Credential storage*<sup>[25](#note25)</sup> – Files of long-term shared secrets used
     by CSPs or Verifiers at Level 3 shall be protected by access
     controls that limit access to administrators and only to those
     applications that require access. Such shared secret files shall be
@@ -492,3 +492,8 @@ At Level 4, the following is required:
 
 Appendix B specifies the mapping between the Federal PKI Certificate
 Policies and the requirements in Section 7.
+
+---
+**Footnotes**
+
+<a name="note25">25</a>: With regard to references to FIPS 140-2, products validated under subsequent versions of FIPS 140-2 are also acceptable.

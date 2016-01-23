@@ -17,7 +17,7 @@ is entered. Experience also shows that users are vulnerable to “social
 engineering” attacks where they are persuaded to reveal their passwords
 to unknown parties, who are basically “confidence men.”
 
-Claude Shannon coined the use of the term “entropy[^34]” in information
+Claude Shannon coined the use of the term “entropy<sup>[34](#note34)</sup>” in information
 theory. The concept has many applications to information theory and
 communications and Shannon also applied it to express the amount of
 actual information in English text. Shannon says, “The entropy is a
@@ -25,7 +25,7 @@ statistical parameter which measures in a certain sense, how much
 information is produced on the average for each letter of a text in the
 language. If the language is translated into binary digits (0 or 1) in
 the most efficient way, the entropy H is the average number of binary
-digits required per letter of the original language.”[^35]
+digits required per letter of the original language.”<sup>[35](#note35)</sup>
 
 Entropy in this sense is at most only loosely related to the use of the
 term in thermodynamics. A mathematical definition of entropy in terms of
@@ -160,10 +160,10 @@ easier still, and so on. He estimated the entropy of the first symbol at
 4.6 to 4.7 bits, declining to on the order of about 1.5 bits after 8
 characters. Very long English strings (for example the collected works
 of Shakespeare) have been estimated to have as little as .4 bits of
-entropy per character.[^36] Similarly, in a string of words, it is
+entropy per character.<sup>[36](#note36)</sup> Similarly, in a string of words, it is
 harder to predict the first letter of a word than the following letters,
 and the first letter carries about 6 times more information than the
-fifth or later letters[^37].
+fifth or later letters<sup>[37](#note37)</sup>.
 
 An Attacker attempting to find a password will try the most likely
 chosen passwords first. Very extensive dictionaries of passwords have
@@ -320,4 +320,15 @@ Table A.1 - Estimated Password Guessing Entropy in bits vs. Password Length
 ![](media/entropy_vs_length.png)
 
 Figure A.1 - *Estimated User Selected Password Entropy vs. Length*
+
+---
+**Footnotes**
+
+<a name="note34">34</a>: C. E. Shannon, “A mathematical Theory of Communication,” *Bell System Technical Journal*, v. 27, pp. 379-423, 623-656, July, October 1948, see http://cm.bell-labs.com/cm/ms/what/shannonday/paper.html
+
+<a name="note35">35</a>: C. E. Shannon, “Prediction and Entropy of Printed English”, *Bell System Technical Journal*, v.30, n. 1, 1951, pp. 50-64.
+
+<a name="note36">36</a>: Thomas Schurmann and Peter Grassberger, “Entropy estimation of symbol sequences,” http://arxiv.org/ftp/cond-mat/papers/0203/0203436.pdf
+
+<a name="note37">37</a>: *ibid*.
 

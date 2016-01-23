@@ -60,21 +60,29 @@ the use of PIV credentials for authentication at levels 1 through 4.
 Table B.1 – Certificate Policies and the E-authentication Assurance
 Levels
 
-| **Certificate Policy** | **Identity Proofing** | **Token** | **Token and Credential Management^38** | **Overall Equivalence** |
+| **Certificate Policy** | **Identity Proofing** | **Token** | **Token and Credential Management<sup>[38](#note38)</sup>** | **Overall Equivalence** |
 |------------------------|----------------------|------------|---------------------|--------|
 | Common-Auth | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
 | PIVI-Auth | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
-| SHA1-Auth^39 | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
+| SHA1-Auth<sup>[39](#note39)</sup> | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
 | Common-SW | Meets Level 4 | Meets Level 3 | Meets Level 4 | Meets Level 3 |
 | Common-HW | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
 | PIVI-HW | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
-| SHA1-HW^39 | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
+| SHA1-HW<sup>[39](#note39)</sup> | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
 | Common-High | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
-| FBCA-Basic^40 | Meets Level 3 | Meets Level 3 | Meets Level 3 | Meets Level 3 |
-| FBCA-Medium^40 | Meets Level 4 | Meets Level 3 | Meets Level 4 | Meets Level 3 |
-| FBCA-Medium-HW^40 | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
-| FBCA-High^40 | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
+| FBCA-Basic<sup>[40](#note40)</sup> | Meets Level 3 | Meets Level 3 | Meets Level 3 | Meets Level 3 |
+| FBCA-Medium<sup>[40](#note40)</sup> | Meets Level 4 | Meets Level 3 | Meets Level 4 | Meets Level 3 |
+| FBCA-Medium-HW<sup>[40](#note40)</sup> | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
+| FBCA-High<sup>[40](#note40)</sup> | Meets Level 4 | Meets Level 4 | Meets Level 4 | Meets Level 4 |
 | Common-cardAuth | Meets Level 4 | Meets Level 2 | Meets Level 4 | Meets Level 2 |
 | PIVI-cardAuth | Meets Level 4 | Meets Level 2 | Meets Level 4 | Meets Level 2 |
-| SHA1-cardAuth^39 | Meets Level 4 | Meets Level 2 | Meets Level 4 | Meets Level 2 |
+| SHA1-cardAuth<sup>[39](#note39)</sup> | Meets Level 4 | Meets Level 2 | Meets Level 4 | Meets Level 2 |
 
+---
+**Footnotes**
+
+<a name="note38">38</a>: The key component in token and credential management is the credential status mechanism.
+
+<a name="note39">39</a>: The SHA1 policies have been deprecated and will not be acceptable after December 31, 2013. 
+
+<a name="note40">40</a>: These policies are not asserted in the user certificates, but equivalence is established through policy mapping at the Federal Bridge CA.

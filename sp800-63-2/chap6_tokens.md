@@ -7,7 +7,7 @@ mitigation strategies applicable to tokens. Section 6.3 maps recognized
 classes of tokens to assurance levels and identifies any required threat
 mitigation strategies.
 
-### 6.1 Overview
+### 6.1. Overview
 
 In the e-authentication context, a token contains a secret to be used in
 authentication processes. Tokens are possessed by a Claimant and
@@ -46,11 +46,11 @@ values (a nonce or challenge):
 As noted above, in the trivial case, the authenticator may be the token
 secret itself (e.g., where the token is a password).
 
-![](media/image4.png)
+![](media/token_model.png)
 
 Figure 2 - *Token Model*
 
-#### 6.1.1 Single-factor versus Multi-factor Tokens
+#### 6.1.1. Single-factor versus Multi-factor Tokens
 Tokens are characterized by the number and types of authentication
 factors that they use. (See Section 4.3 for discussion on three types of
 authentication factors.) For example, a password is something you know,
@@ -74,7 +74,7 @@ factors and three factors, as two factors are sufficient to achieve the
 highest level recognized in this document. Other applications or
 environments may require such a differentiation.
 
-#### 6.1.2 Token Types
+#### 6.1.2. Token Types
 These guidelines recognize the following types of tokens for
 e-authentication.
 
@@ -116,7 +116,7 @@ e-authentication.
 -   *Out of Band Token* – A physical token that is uniquely addressable
     and can receive a Verifier-selected secret for one-time use. The
     device is possessed and controlled by the Claimant and supports
-    private communication[^20] over a channel that is separate from the
+    private communication<sup>[20](#note20)</sup> over a channel that is separate from the
     primary channel for e-authentication. The token authenticator is the
     received secret and is presented to the Verifier using the primary
     channel for e-authentication. For example, a Claimant attempts to
@@ -184,7 +184,7 @@ e-authentication.
     have*, and it may be activated by either *something you know* or
     *something you are*.
 
-#### 6.1.3 Token Usage
+#### 6.1.3. Token Usage
 
 An authentication process may involve a single token, or a combination
 of two or more tokens, as described below.
@@ -206,7 +206,7 @@ of two or more tokens, as described below.
     multi-factor, since the password is *something you know* and the
     cryptographic device is *something you have.*
 
-#### 6.1.4 Multi-Stage Authentication Using Tokens
+#### 6.1.4. Multi-Stage Authentication Using Tokens
 
 Multi-stage authentication processes, which use a single-factor token to
 obtain a second token, do not constitute multi-factor authentication.
@@ -222,7 +222,7 @@ Verifier for e-authentication. This type of solution is considered only
 as strong as the password provided by the Claimant to obtain the
 cryptographic token.
 
-#### 6.1.5 Assurance Level Escalation
+#### 6.1.5. Assurance Level Escalation
 
 In certain circumstances, it may be desirable to raise the assurance
 level of an e-authentication session between a Subscriber and an RP in
@@ -238,7 +238,7 @@ as a multi-token authentication scheme using the same set of tokens.
 Table 7 describes the highest level of assurance achievable through a
 combination of two token types.
 
-### 6.2 Token Threats
+### 6.2. Token Threats
 An Attacker who can gain control of a token will be able to masquerade
 as the token’s owner. Threats to tokens can be categorized based on
 attacks on the types of authentication factors that comprise the token:
@@ -298,7 +298,7 @@ Table 4 – Token Threats
 | Online guessing | The Attacker connects to the Verifier online and attempts to guess a valid token authenticator in the context of that Verifier. | Online dictionary attacks are used to guess passwords. |
 | | | Online guessing is used to guess token authenticators for a one-time password token registered to a legitimate Claimant. |
 
-#### 6.2.1 Threat Mitigation Strategies
+#### 6.2.1. Threat Mitigation Strategies
 Token related mechanisms that assist in mitigating the threats
 identified above are summarized in Table 5.
 
@@ -348,17 +348,17 @@ threats described in Table 5:
 -   *Out of band techniques* may be employed to verify proof of
     possession of registered devices (e.g., cell phones).
 
-### 6.3 Token Assurance Levels
+### 6.3. Token Assurance Levels
 
 This section discusses the requirements for tokens used at various
 levels of assurance.
 
-#### 6.3.1 Requirements per Assurance Level
+#### 6.3.1. Requirements per Assurance Level
 
 The following sections list token requirements for single and
 multi-token authentication.
 
-##### 6.3.1.1 Single Token Authentication
+##### 6.3.1.1. Single Token Authentication
 
 Table 6 lists the assurance levels that may be achieved by each of the
 token types when used in a single-token authentication scheme. The
@@ -374,41 +374,41 @@ Table 6 - Token Requirements Per Assurance Level
 
 | **Token Type** | **Level** | **Token Requirements** | **Verifier Requirements**
 |----------------|-----------|------------------------|------------|
-|  Memorized Secret Token | Level 1 | The memorized secret may be a user chosen string consisting of 6 or more characters chosen from an alphabet of 90 or more characters, a randomly generated PIN consisting of 4 or more digits, or a secret with equivalent entropy.[^21] | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
+|  Memorized Secret Token | Level 1 | The memorized secret may be a user chosen string consisting of 6 or more characters chosen from an alphabet of 90 or more characters, a randomly generated PIN consisting of 4 or more digits, or a secret with equivalent entropy.<sup>[21](#note21)</sup> | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
 | | |  |Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
-| | Level 2 | The memorized secret may be a randomly generated PIN consisting of 6 or more digits, a user generated string consisting of 8 or more characters chosen from an alphabet of 90 or more characters, or a secret with equivalent entropy.^21 | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
+| | Level 2 | The memorized secret may be a randomly generated PIN consisting of 6 or more digits, a user generated string consisting of 8 or more characters chosen from an alphabet of 90 or more characters, or a secret with equivalent entropy.<sup>[21](#note21)</sup> | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
 | | |CSP implements dictionary or composition rule to constrain user-generated secrets. | Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
-| Pre-Registered Knowledge Token | Level 1 | The secret provides at least 14 bits of entropy.^21 | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period.
+| Pre-Registered Knowledge Token | Level 1 | The secret provides at least 14 bits of entropy.<sup>[21](#note21)</sup> | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period.
 | | | | Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
 | | |The entropy in the secret cannot be directly calculated, e.g., user chosen or personal knowledge questions. If the questions are not supplied by the user, the user shall select prompts from a set of at least five questions. | For these purposes, an empty answer is prohibited. The Verifier shall verify the answers provided for at least three questions, and shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
 | | | | Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
-| | Level 2 | The secret provides at least 20 bits of entropy.^21 | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
+| | Level 2 | The secret provides at least 20 bits of entropy.<sup>[21](#note21)</sup> | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
 | | | | Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
 | | | The entropy in the secret cannot be directly calculated, e.g., user chosen or personal knowledge questions. If the questions are not supplied by the user, the user shall select prompts from a set of at least seven questions.| For these purposes, an empty answer is prohibited. The Verifier shall verify the answers provided for at least five questions, and shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period.
 | | | |Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice.
-| Look-up Secret Token | Level 2 | The token authenticator has 64 bits of entropy.^21 | N/A |
-| | | The token authenticator has at least 20 bits of entropy.^21 | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
+| Look-up Secret Token | Level 2 | The token authenticator has 64 bits of entropy.<sup>[21](#note21)</sup> | N/A |
+| | | The token authenticator has at least 20 bits of entropy.<sup>[21](#note21)</sup> | The Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
 | | | | Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
-| Out of Band Token | Level 2 | The token is uniquely addressable and supports communication over a channel that is separate from the primary channel for e-authentication. | The Verifier generated secret shall have at least 64 bits of entropy.^21 |
-| | | | The Verifier generated secret shall have at least 20 bits of entropy^21 and the Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
+| Out of Band Token | Level 2 | The token is uniquely addressable and supports communication over a channel that is separate from the primary channel for e-authentication. | The Verifier generated secret shall have at least 64 bits of entropy.<sup>[21](#note21)</sup> |
+| | | | The Verifier generated secret shall have at least 20 bits of entropy<sup>[21](#note21)</sup> and the Verifier shall implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. |
 | | | | Note: While an implementation that simply counted all failed authentication attempts in each calendar month and locked out the account when the limit was exceeded would technically meet the requirement, this is a poor choice for reasons of system availability. See Section 8.2.3 for more detailed advice. |
-| SF One-Time Password Device | Level 2 | Shall use Approved block cipher or hash function to combine a symmetric key stored on device with a nonce to generate a one-time password. The nonce may be a date and time, or a counter generated on the device. | The one-time password shall have a limited lifetime, on the order of minutes. The cryptographic module performing the verifier function shall be validated at FIPS 140-2 Level 1 or higher.[^22]
-| SF Cryptographic Device | Level 2 | The cryptographic module shall be validated at FIPS 140-2 Level 1 or higher.^22 | Verifier generated token input (e.g., a nonce or challenge) has at least 64 bits of entropy.^21
-| MF Software Cryptographic Token | Level 3 | The cryptographic module shall be validated at FIPS 140-2 Level 1 or higher.^22 Each authentication shall require entry of the password or other activation data and the unencrypted copy of the authentication key shall be erased after each authentication. | Verifier generated token input (e.g., a nonce or challenge) has at least 64 bits of entropy.^21
-| MF OTP Hardware Token | Level 4 | Cryptographic module shall be FIPS 140-2 validated Level 2 or higher; with physical security at FIPS 140-2 Level 3 or higher.^22 The one-time password shall be generated by using an Approved block cipher or hash function to combine a symmetric key stored on a personal hardware device with a nonce to generate a one-time password. The nonce may be a date and time, a counter generated on the device. Each authentication shall require entry of a password or other activation data through an integrated input mechanism.| The one-time password shall have a limited lifetime of less than 2 minutes.
-| MF Hardware Cryptographic Token | Level 4 | Cryptographic module shall be FIPS 140-2 validated, Level 2 or higher; with physical security at FIPS 140-2 Level 3 or higher.^22 Shall require the entry of a password, PIN, or biometric to activate the authentication key. Shall not allow the export of authentication keys. | Verifier generated token input (e.g., a nonce or challenge) has at least 64 bits of entropy.^21
+| SF One-Time Password Device | Level 2 | Shall use Approved block cipher or hash function to combine a symmetric key stored on device with a nonce to generate a one-time password. The nonce may be a date and time, or a counter generated on the device. | The one-time password shall have a limited lifetime, on the order of minutes. The cryptographic module performing the verifier function shall be validated at FIPS 140-2 Level 1 or higher.<sup>[22](#note22)</sup>
+| SF Cryptographic Device | Level 2 | The cryptographic module shall be validated at FIPS 140-2 Level 1 or higher.<sup>[22](#note22)</sup> | Verifier generated token input (e.g., a nonce or challenge) has at least 64 bits of entropy.<sup>[21](#note21)</sup>
+| MF Software Cryptographic Token | Level 3 | The cryptographic module shall be validated at FIPS 140-2 Level 1 or higher.<sup>[22](#note22)</sup> Each authentication shall require entry of the password or other activation data and the unencrypted copy of the authentication key shall be erased after each authentication. | Verifier generated token input (e.g., a nonce or challenge) has at least 64 bits of entropy.<sup>[21](#note21)</sup>
+| MF OTP Hardware Token | Level 4 | Cryptographic module shall be FIPS 140-2 validated Level 2 or higher; with physical security at FIPS 140-2 Level 3 or higher.<sup>[22](#note22)</sup> The one-time password shall be generated by using an Approved block cipher or hash function to combine a symmetric key stored on a personal hardware device with a nonce to generate a one-time password. The nonce may be a date and time, a counter generated on the device. Each authentication shall require entry of a password or other activation data through an integrated input mechanism.| The one-time password shall have a limited lifetime of less than 2 minutes.
+| MF Hardware Cryptographic Token | Level 4 | Cryptographic module shall be FIPS 140-2 validated, Level 2 or higher; with physical security at FIPS 140-2 Level 3 or higher<sup>[22](#note22)</sup> Shall require the entry of a password, PIN, or biometric to activate the authentication key. Shall not allow the export of authentication keys. | Verifier generated token input (e.g., a nonce or challenge) has at least 64 bits of entropy.<sup>[21](#note21)</sup>
 
-##### 6.3.1.2. Multi-Token Authentication 
+##### 6.3.1.2. Multi-Token Authentication
 
 When two of the token types are combined for a multi-token
 authentication scheme, Table 7 shows the highest possible assurance
-level that can be achieved by the combination.[^23]
+level that can be achieved by the combination.<sup>[23](#note23)</sup>
 
-Table 7 - Assurance Levels for Multi-Token E-Authentication Schemes[^24]
+Table 7 - Assurance Levels for Multi-Token E-Authentication Schemes<sup>[24](#note24)</sup>
 
 
 | | **Memorized Secret Token** | **Pre-registered Knowledge Token** | **Look-up Secret Token** |  **Out of Band Token** | **SF OTP Device** | **SF Crypto-graphic Device** | **MF Software Crypto-graphic Token** | **MF OTP Device** | **MF Crypto-graphic Device** |
-|---|----------------------------|------------------------------------|--------------------------|----------------------|-------------------|------------------------------|-------------------------------------------|-------------------|-------------------------------|
+|---|:--------------------------:|:----------------------------------:|:------------------------:|:--------------------:|:-----------------:|:----------------------------:|:-----------------------------------------:|:-----------------:|:-----------------------------:|
 | **Memorized Secret Token** | Level 2 | Level 2 | Level 3 | Level 3 | Level 3 | Level 3 |                       Level 3 | Level 4 | Level 4 |
 | **Pre-registered Knowledge Token** | X | Level 2 | Level 3 | Level 3 | Level 3 | Level 3 | Level 3 | Level 4 | Level 4 |
 | **Look-up Secret Token** | X | X | Level 2 | Level 2 | Level 2 | Level 2 | Level 3 | Level 4 | Level 4 |
@@ -453,3 +453,15 @@ output may be especially problematic and may need to be supplemented
 with a software cryptographic token to provide strong man-in-the-middle
 resistance.
 
+---
+**Footnotes**
+
+<a name="note20">20</a>: Private communication means the Verifier’s message is sent directly to the Claimant’s device.
+
+<a name="note21">21</a>: For more information, see Table A.1 in Appendix A.
+
+<a name="note22">22</a>: Products validated under subsequent versions of FIPS 140-2 are also acceptable.
+
+<a name="note23">23</a>: Note that the table displays tokens that exhibit the properties of “something you have” and “something you know”.
+
+<a name="note24">24</a>: The boxes marked with an “x” denote that the combination already appears in the table
