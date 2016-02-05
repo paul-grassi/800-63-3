@@ -23,7 +23,6 @@ Paul Grassi
 Information Technology Laboratory*
 
 Donna F. Dodson  
-Elaine M. Newton  
 Ray A. Perlner  
 W. Timothy Polk  
 *Computer Security Division  
@@ -127,11 +126,11 @@ related assertions. This publication supersedes NIST SP 800-63-1 and SP 800-63-2
 
 authentication; authentication assurance; authenticator; assertions; credential service provider;
 electronic authentication; electronic credentials; identity proofing;
-passwords; PKI;.
+passwords; PKI.
 
 ### Acknowledgements
 
-The authors, Donna Dodson, Paul Grassi, Elaine Newton, Ray Perlner, and Tim Polk of the National Institute of Standards and Technology (NIST); William Burr of Dakota Consulting; James Fenton of TBD; and Sarbari Gupta and Emad Nabbus of Electrosoft, would like to acknowledge the contributions of our many reviewers, including Lachelle LeVan from GSA and Justin Richer from Bespoke Engineering.
+The authors, Donna Dodson, Paul Grassi, Elaine Newton, Ray Perlner, and Tim Polk of the National Institute of Standards and Technology (NIST); William Burr of Dakota Consulting; James Fenton of TBD; and Sarbari Gupta and Emad Nabbus of Electrosoft, would like to acknowledge the contributions of our many reviewers, including LaChelle LeVan from GSA and Justin Richer from Bespoke Engineering.
 
 ### Executive Summary
 
@@ -197,7 +196,7 @@ above process.
 
 This document takes a different approach than earlier revisions by defining two separate metrics, referred to as *Level of Strength* and *Level of Confidence*. Level of Strength refers to the robustness of the authentication process itself, while Level of Confidence refers to the robustness of the identity proofing process and the binding between an authenticator and a specific individual. A mapping is provided to allow agencies using the existing Level of Assurance model to select appropriate technology based on the corresponding Level of Strength and Level of Confidence. The separation of these metrics better supports applications requiring strong authentication that may be pseudonymous, and the separation of authenticator issuance from the establishment of credentials binding those authenticators to individuals.
 
-Accordingly, with this revision SP 800-63 has been split into a family of documents as follows:
+Accordingly, with this revision SP 800-63 has been split into a family of documents organized as follows:
 
 - SP 800-63-3 *Electronic Authentication Guideline* - Provides guidance on general authentication issues and for using authenticators, credentials, and assertions together in an information system.
 
@@ -213,19 +212,17 @@ After completing a risk assessment and mapping the
 identified risks to the required assurance level, agencies can select
 appropriate technology that, at a minimum, meets the technical
 requirements for the required level of assurance. In particular, the
-document states specific technical requirements for each of the
+documents state specific technical requirements for each of the
 levels of assurance in the following areas:
-
-Strength:
 
 -   Authenticators (typically a cryptographic key or password) for
     authentication (covered in SP 800-63A)
-
-Confidence:
+    
+-	Authenticator lifecycle and management mechanisms (covered in SP 800-63A)
 
 -   Identity proofing and registration of Applicants (covered in SP 800-63B)
 
--   Authenticator and credential management mechanisms (covered in SP 800-63B)
+-   Credential lifecycle and management mechanisms (covered in SP 800-63B)
 
 -   Protocols used to support the authentication mechanism between the
     Claimant and the Verifier (covered in Section TBD of this document)
@@ -251,9 +248,16 @@ A summary of the technical requirements for each of the strength and confidence 
 **Strength Level 1** - Strength Level 1 provides single factor remote network authentication, giving some assurance that the same Claimant who participated in previous transactions is accessing the protected transaction or data. Strength Level 1 allows a wide range of available authentication technologies to be employed and requires only a single authentication factor to be used. It also permits the use of any of the authentication methods of Strength Levels 2 or 3. Successful authentication requires that the Claimant prove through a secure authentication protocol that he or she possesses and controls the authenticator.
 Plaintext passwords or secrets are never transmitted across a network at Level 1. However, this level does not require cryptographic methods or secrets with sufficient entropy to fully block offline attacks. For example, simple password challenge-response protocols are allowed. In many cases an eavesdropper, having intercepted such a protocol exchange or stored credentials, will be able to find the password with a straightforward dictionary attack.
 At Strength Level 1, long-term shared authentication secrets may be revealed to Verifiers. At Level 1, assertions and assertion references require protection from manufacture/modification and reuse attacks.
-**Strength Level 2** – Strength Level 2 provides higher assurance that the same Claimant who participated in previous transactions is accessing the protected transaction or data. multi-factor remote network authentication. At least two different authentication factors are required. Various types of authenticators, including multi-factor Software Cryptographic Authenticators, may be used as described in SP 800-63A. Strength Level 2 also permits any of the authentication methods of Strength Level 3. Strength Level 2 authentication requires cryptographic strength mechanisms that protect the primary authenticator against compromise by the protocol threats for all threats at Strength Level 1 as well as verifier impersonation attacks. Approved cryptographic techniques are required for all assertion protocols used at Strength Level 2 and above.
-Authentication requires that the Claimant prove, through a secure authentication protocol, that he or she controls the authenticator. The Claimant unlocks the authenticator with a password or biometric, or uses a secure multi-authenticator authentication protocol to establish two-factor authentication (through proof of possession of a physical or software authenticator in combination with some memorized secret knowledge). Long-term shared authentication secrets, if used, are never revealed to any party except the Claimant and Verifiers operated directly by the CSP; however, session (temporary) shared secrets may be provided to independent Verifiers by the CSP.
-**Strength Level 3** – Strength Level 3 is intended to provide the highest practical remote network authentication assurance. Authentication at Strength Level 3 is based on proof of possession of a key through a cryptographic protocol. Strength Level 3 is similar to Strength Level 2 except that only “hard” cryptographic authenticators are allowed. The authenticator is required to be a hardware cryptographic module validated at Federal Information Processing Standard (FIPS) 140-2 Level 2 or higher overall with at least FIPS 140-2 Level 3 physical security. Level 4 authenticator requirements can be met by using the PIV authentication key of a FIPS 201 compliant Personal Identity Verification (PIV) Card.
-Strength Level 3 requires strong cryptographic authentication of all communicating parties and all sensitive data transfers between the parties. Either public key or symmetric key technology may be used. Authentication requires that the Claimant prove through a secure authentication protocol that he or she controls the authenticator. All protocol threats at Strength Level 2 must be prevented at Strength Level 3. Protocols shall also be strongly resistant to man-in-the-middle attacks. Long-term shared authentication secrets, if used, are never revealed to any party except the Claimant and Verifiers operated directly by the CSP; however, session (temporary) shared secrets may be provided to independent Verifiers by the CSP. Approved cryptographic techniques are used for all operations. All sensitive data transfers are cryptographically authenticated using keys bound to the authentication process.At Strength Level 3, “bearer” assertions (as defined in SP 800-63C) are not used to establish the identity of the Claimant to the Relying Party (RP) other than on a very short-term basis to maintain the continuity of a session. “Holder-of-key” assertions (as defined in SP 800-63C) may be used, provided that the assertion contains a reference to a key that is possessed by the Subscriber and is cryptographically linked to the Strength Level 3 authenticator used to authenticate to the Verifier. The RP should maintain records of the assertions it receives, to support detection of a compromised verifier impersonating the subscriber.
 
-**Confidence Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted. They may be used by the relying party but must not be depended upon in making authorization decisions. **Confidence Level 2** – Confidence Level 2 introduces the need for either remote or in-person identity proofing. Credentials at Confidence Level 2 provide identifying attributes which have been verified in person or remotely using, at a minimum, the procedures given in SP 800-63B.**Confidence Level 3** – At Confidence Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized representative of the CSP through examination of physical documentation as described in SP 800-63B. 
+**Strength Level 2** – Strength Level 2 provides higher assurance that the same Claimant who participated in previous transactions is accessing the protected transaction or data. At least two different authentication factors are required. Various types of authenticators, including multi-factor Software Cryptographic Authenticators, may be used as described in SP 800-63A. Strength Level 2 also permits any of the authentication methods of Strength Level 3. Strength Level 2 authentication requires cryptographic strength mechanisms that protect the primary authenticator against compromise by the protocol threats for all threats at Strength Level 1 as well as verifier impersonation attacks. Approved cryptographic techniques are required for all assertion protocols used at Strength Level 2 and above.
+
+Authentication requires that the Claimant prove, through a secure authentication protocol, that he or she controls the authenticator. The Claimant unlocks the authenticator with a password or biometric, or uses a secure multi-authenticator authentication protocol to establish two-factor authentication (through proof of possession of a physical or software authenticator in combination with some memorized secret knowledge). Long-term shared authentication secrets, if used, are never revealed to any party except the Claimant and Verifiers operated directly by the CSP; however, session (temporary) shared secrets may be provided to independent Verifiers by the CSP.
+
+**Strength Level 3** – Strength Level 3 is intended to provide the highest practical remote network authentication assurance. Authentication at Strength Level 3 is based on proof of possession of a key through a cryptographic protocol. Strength Level 3 is similar to Strength Level 2 except that only “hard” cryptographic authenticators are allowed. The authenticator is required to be a hardware cryptographic module validated at Federal Information Processing Standard (FIPS) 140-2 Level 2 or higher overall with at least FIPS 140-2 Level 3 physical security. Level 4 authenticator requirements can be met by using the PIV authentication key of a FIPS 201 compliant Personal Identity Verification (PIV) Card.
+
+Strength Level 3 requires strong cryptographic authentication of all communicating parties and all sensitive data transfers between the parties. Either public key or symmetric key technology may be used. Authentication requires that the Claimant prove through a secure authentication protocol that he or she controls the authenticator. All protocol threats at Strength Level 2 must be prevented at Strength Level 3. Protocols shall also be strongly resistant to man-in-the-middle attacks. Long-term shared authentication secrets, if used, are never revealed to any party except the Claimant and Verifiers operated directly by the CSP; however, session (temporary) shared secrets may be provided to independent Verifiers by the CSP. Approved cryptographic techniques are used for all operations. All sensitive data transfers are cryptographically authenticated using keys bound to the authentication process.
+
+At Strength Level 3, “bearer” assertions (as defined in SP 800-63C) are not used to establish the identity of the Claimant to the Relying Party (RP) other than on a very short-term basis to maintain the continuity of a session. “Holder-of-key” assertions (as defined in SP 800-63C) may be used, provided that the assertion contains a reference to a key that is possessed by the Subscriber and is cryptographically linked to the Strength Level 3 authenticator used to authenticate to the Verifier. The RP should maintain records of the assertions it receives, to support detection of a compromised verifier impersonating the subscriber.
+
+**Confidence Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted. They may be used by the relying party but must not be depended upon in making authorization decisions. **Confidence Level 2** – Confidence Level 2 introduces the need for either remote or in-person identity proofing. Credentials at Confidence Level 2 provide identifying attributes which have been verified in person or remotely using, at a minimum, the procedures given in SP 800-63B.**Confidence Level 3** – At Confidence Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized representative of the CSP through examination of physical documentation as described in SP 800-63B.
+ 
