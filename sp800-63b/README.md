@@ -2,7 +2,7 @@
 
 This is a working draft of NIST Special Publication 800-63B *Subscriber Authentication*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
 
-SP 800-63B deals with the use of authenticators (formerly called *tokens*) to remotely authenticate a subscriber to an identity system. The outputs of a successful authentication are:
+SP 800-63B provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified levels of strength.
 
 - An identifier that can be used to associate the subscriber with previous interactions with the same relying party
 

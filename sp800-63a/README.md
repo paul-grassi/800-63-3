@@ -2,7 +2,7 @@
 
 This is a working draft of NIST Special Publication 800-63A *Enrollment and Identity Proofing*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
 
-SP 800-63A deals with the processes by which an credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
+SP 800-63A deals with the processes by which a credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
 
 This document is broken up into sections as follows:
 

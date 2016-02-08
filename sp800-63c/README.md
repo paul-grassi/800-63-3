@@ -2,7 +2,7 @@
 
 This is a working draft of NIST Special Publication 800-63C *Authentication and Attribute Assertions*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
 
-SP 800-63C deals with the processes by which the result of an authentication process can be securely communicated to another party. Assertions are used in federated identity systems where the authentication is performed by one party (sometimes called an Identity Provider) and used by a different party, sometimes called a Relying Party. However, assertions are also used internally to maintain and reestablish user state over a series of interactions. 
+SP 800-63C provides guidance on the use of assertions to convey the results of authentication processes to a relying party. Assertions are used in federated identity systems where the authentication is performed by one party (sometimes called an Identity Provider) and used by a different party, sometimes called a Relying Party. However, assertions are also used internally to maintain and reestablish user state over a series of interactions. 
 
 This document is broken up into sections as follows:
 
