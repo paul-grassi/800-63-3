@@ -193,9 +193,9 @@ Accordingly, with this revision SP 800-63 has been split into a family of docume
 
 - SP 800-63-3 *Electronic Authentication Guideline* - Provides guidance on general authentication issues and for using authenticators, credentials, and assertions together in an information system.
 
-- SP 800-63A *Subscriber Authentication* - Provides guidance on the selection, use, and management of authenticators to provide specified levels of strength.
+- SP 800-63A *Enrollment and Identity Proofing* - Deals with the processes by which a credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
 
-- SP 800-63B *Credential Issuance, Identity Proofing, and Life Cycle* - Provides guidance on the issuance of credentials, including identity proofing, at specified levels of confidence and on the life cycle of credentials.
+- SP 800-63B *Subscriber Authentication* - provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified levels of strength.
 
 - SP 800-63C *Authentication-based Assertions* - Provides guidance on the use of assertions to convey the results of authentication processes to a relying party.
 

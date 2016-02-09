@@ -36,11 +36,9 @@ and systems, based on the risks and their likelihood of occurrence.
 
 SP 800-63 is organized as a family of documents as follows:
 
-- SP 800-63-3 *Electronic Authentication Guideline* - Provides guidance on general authentication issues and for using authenticators, credentials, and assertions together in an information system.
+- SP 800-63A *Enrollment and Identity Proofing* - Deals with the processes by which a credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
 
-- SP 800-63A *Subscriber Authentication* - Provides guidance on the selection, use, and management of authenticators to provide specified levels of strength.
-
-- SP 800-63B *Credential Issuance, Identity Proofing, and Life Cycle* - Provides guidance on the issuance of credentials, including identity proofing, at specified levels of confidence and on the life cycle of credentials.
+- SP 800-63B *Subscriber Authentication* - provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified levels of strength.
 
 - SP 800-63C *Authentication-based Assertions* - Provides guidance on the use of assertions to convey the results of authentication processes to a relying party.
 
@@ -94,17 +92,17 @@ above process. In particular, this document maps the four Levels of Assurance de
 requirements for attribute confidence and authentication strength in the following
 areas:
 
+-   Identity proofing and registration of Applicants (covered in SP 800-63A)
+
+-   Credential lifecycle and management mechanisms (covered in SP 800-63A)
+
 -   Authenticators (typically a cryptographic key or password) for
-    authentication (covered in SP 800-63A)
+    authentication (covered in SP 800-63B)
     
--	Authenticator lifecycle and management mechanisms (covered in SP 800-63A)
-
--   Identity proofing and registration of Applicants (covered in SP 800-63B)
-
--   Credential lifecycle and management mechanisms (covered in SP 800-63B)
+-	Authenticator lifecycle and management mechanisms (covered in SP 800-63B)
 
 -   Protocols used to support the authentication mechanism between the
-    Claimant and the Verifier (covered in Section TBD of this document)
+    Claimant and the Verifier (covered in SP 800-63B)
 
 -   Assertion mechanisms used to communicate the results of a remote
     authentication if these results are sent to other parties (covered
