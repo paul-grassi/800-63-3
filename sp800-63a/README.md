@@ -12,9 +12,9 @@ This document is broken up into sections as follows:
 
 [3. Definitions and Abbreviations](sec3_definitions.md)
 
-[4. Identity Proofing](sec4_proofing.md)
+[4. Confidence Levels](sec4_confidence.md)
 
-[5. Confidence Levels](sec5_confidence.md)
+[5. Identity Proofing](sec5_proofing.md)
 
 [6. Credential Lifecycle Management](sec6_lifecycle.md)
 
