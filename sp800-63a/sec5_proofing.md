@@ -87,13 +87,18 @@ authentication, confidentiality, and integrity.
 ###5.1.2 Validation Requirements
 ###5.1.3 Verification Requirements
 ###5.1.5. Requirements for Derived Credentials
+CSP looks at a credential from a different CSP that it trusts, records the information, and issues its own credential and binds it to an authenticator. I'd call that identity proofing and include that in 63A.
+Where the Applicant already possesses recognized authentication credentials a trusted CSP, the additional CSP may choose to identity proof the Claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.  The following details the proofing requirements for the CSP issuing a derived credential.1.  Before issuing any derived credential the CSP **shall** verify the original credential status and shall verify that the corresponding token is possessed and controlled by the Claimant.  
+2. The CSP **shall** record the details of the original credential used as the basis for derived credential issuance. 
+3. Issuance may be in person or remote. 
 
->**Old Footnote: This document does not require or prevent CSPs from linking the expiration of the original and derived credentials. However, where the revocation status is tightly coupled, this may simplify revocation procedures.  
-I think we should require this.**
-
-Where the Applicant already possesses recognized authentication credentials, the CSP may choose to identity proof the Claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.Before issuing any derived credential the CSP shall verify the original credential status and shall verify that the corresponding token is possessed and controlled by the Claimant. The status of the original credential should be re-checked at a later date (e.g. after a week) to confirm that it was not compromised at the time of issuance of the derived credential. (This guards against the case where an Attacker requests the desired credential before revocation information can be updated.) Further, the CSP shall record the details of the original credential used as the basis for derived credential issuance. If the derived credential is revoked, the CSP that issued the derived credential may notify the issuer of the original credential, if the reason for revocation might motivate action by the issuer of the original credential and applicable law, regulation, and agreements permit such notification.The CSP may issue a derived level 4 credential for a suitable Level 4 capable token, based on an original level 4 credential. Before issuing the derived Level 4 credential, the CSP shall:  
-- Obtain and verify a copy of a biometric recorded when the original credential was issued. An example of such a biometric is the signed biometric data object on a PIV card, however if the biometric reference is not available from the Level 4 token, it may be obtained elsewhere, as long as its authenticity is assured;- Compare a fresh biometric sample obtained in person from the Applicant to the reference biometric retained from the original Level 4 credentials and determine that they match, and;- Determine that the token that contains the token secret associated with the derived credential meets the requirements of Table 6 for a Level 4 token.  
-
-The CSP may issue a Level 3 derived credential based on proof of possession of a Level 4 token. Issuance may be in person or remote. If Level 3 credentials are electronically transmitted, or physically shipped with a token to a claimant, then token activation shall require proof of possession of both the derived token and the original Level 4 token.
-The CSP may issue a Level 2 derived credential based on proof of possession of a Level 3 or 4 token. Issuance may be in person or remote. If Level 2 credentials are electronically transmitted, or physically shipped with a token to a claimant, then token activation shall require proof of possession of both the derived token and the original Level 3 or Level 4 token.
-In some cases, there may be a desire to tightly couple the revocation status of the derived credential to the original. In this case, it is the responsibility of the CSP that issued the derived credential to ensure that a tight coupling is maintained. For example, the issuer of the derived credential could regularly monitor the status of the primary credential.
+> 
+**FOR JIM?**
+The new CSP **shall** set the expiration of the new credential to the expiration of the original credential.
+In situations where the authenticator does not support an automated expiration date, the status of the original credential **shall** be re-checked:
+- At IAL1
+- At IAL2
+- At IAL3
+at a later date (e.g. after a week) to confirm that it was not compromised at the time of issuance of the derived credential. (This guards against the case where an Attacker requests the desired credential before revocation information can be updated.) 
+If the derived credential is revoked, the CSP that issued the derived credential may notify the issuer of the original credential, if the reason for revocation might motivate action by the issuer of the original credential and applicable law, regulation, and agreements permit such notification.  
+**End for Jim**
