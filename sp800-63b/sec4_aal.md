@@ -39,7 +39,7 @@ At AAL 1, authentication of the subscriber MUST be repeated at least once per 24
 
 Authenticator Assurance Level (AAL) 2 provides higher assurance that the same Claimant who participated in previous transactions is accessing the protected transaction or data. At least two different authentication factors are required. Various types of authenticators, including multi-factor Software Cryptographic Authenticators, may be used as described below. AAL 2 also permits any of the authentication methods of AAL 3. AAL 2 authentication requires cryptographic mechanisms that protect the primary authenticator against compromise by the protocol threats for all threats at AAL 1 as well as against verifier impersonation attacks. Approved cryptographic techniques are required at AAL 2 and above.
 
-####4.2.1 Permitted Authenticator Types
+####4.2.1. Permitted Authenticator Types
 
 Two or more single-factor authenticators, or one or more multi-factor authenticators, are required at AAL2. Authenticator requirements are specified in Section 5.
 
@@ -54,7 +54,7 @@ Alternatively, any of following multi-factor authenticators may be used:
 * Multi-Factor Software Cryptographic Authenticator
 * Multi-Factor Cryptographic Device
 
-4.2.2 Authenticator Requirements
+####4.2.2. Authenticator Requirements
 
 Single-factor hardware authenticators used at AAL 2 MUST meet the requirements of FIPS 140-2 Level 1 and multi-factor hardware authenticators MUST meet the requirements of FIPS 140-2 Level 2. Formal verification of compliance is not required.
 
