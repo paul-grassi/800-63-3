@@ -21,6 +21,8 @@ Knowledge based proofing (sometimes referred to as knowledge-based authenticatio
 
 Assurance in a subscriber's identity is described using one of three levels as follows:
 
-**Identity Assurance Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted. They may be used by the relying party but must not be depended upon in making authorization decisions. **Identity Assurance Level 2** – Identity Assurance Level 2 introduces the need for either remote or in-person identity proofing. Credentials at Identity Assurance Level 2 provide identifying attributes which have been verified in person or remotely.**Identity Assurance Level 3** – At Identity Assurance Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized representative of the CSP.
+**Identity Assurance Level 1** – At this level, there is no requirement for a Subscriber's identity be proven.  Attributes provided in conjunction with the authentication process, if any, are self-asserted. **Identity Assurance Level 2** – At IAL2, the claimed identity is proven with evidence that supports the real world exisitence of the claimed identity and identifies and verified the person to whom the claimed identity belongs.  IAL 2 introduces the need for either remote or in-person identity proofing. **Identity Assurance Level 3** – At Identity Assurance Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized and trained representative of the CSP.
+
+Subjects may remain pseudonymous at RP's at both IAL2 or 3.  
 
 Detailed requirements for each of the identity assurance levels is given in Section 5.
