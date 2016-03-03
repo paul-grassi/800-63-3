@@ -1,5 +1,7 @@
 ## 9. Assertions
 
+[ ** Should this section really be about Federation instead of Assertions? ** ]
+
 ### 9.1. Overview
 
 Assertions are statements from a Verifier to an RP that contain
@@ -15,23 +17,26 @@ Subscriber and support the authorization decision at the RP.
 Assertion-based authentication of the Claimant serves several important
 goals. It supports the process of Single-Sign-On for Claimants, allowing
 them to authenticate once to a Verifier and subsequently obtain services
-from multiple RPs without being aware of further authentication.
+from multiple RPs without being aware of further authentication. [** This isn't necessarily a good thing, we want to audience-limit assertions and prevent replay.** ]
+
 Assertion mechanisms also support the implementation of a federated
 identity for a Subscriber, allowing the linkage of multiple
 identities/accounts held by the Subscriber with different RPs through
-the use of a common “federated” identifier. In this context, a
+the use of a common “federated” identifier. [ ** Not necessarily a common identifier, but from the user's perspective a single IdP and associated account can be used at multiple RPs. This can look like different accounts to each RP, such as when using OIDC's Pairwise identifier mechanism. ** ] In this context, a
 federation is a group of entities (RPs, Verifiers and CSPs) that are
 bound together through common agreed-upon business practices, policies,
-trust mechanisms, profiles and protocols. Finally, assertion mechanisms
+trust mechanisms, profiles and protocols. [ ** This is true but it assumes a more static federation profile than is really necessary. ** ]
+
+Finally, assertion mechanisms
 can also facilitate authentication schemes that are based on the
 attributes or characteristics of the Claimant in lieu of (or in addition
 to) the identity of the Claimant. Attributes are often used in
 determining access privileges for Attributes Based Access Control (ABAC)
-or Role Based Access Control (RBAC).
+or Role Based Access Control (RBAC). [ ** What is identity if not a bound collection of attributes? I don't understand this section. ** ]
 
 It is important to note that assertion schemes are fairly complex
 multiparty protocols, and therefore have fairly subtle security
-requirements which shall be satisfied. When evaluating a particular
+requirements which shall [ ** must? ** ] be satisfied. When evaluating a particular
 assertion scheme, it may be instructive to break it down into its
 component interactions. Generally speaking, interactions between the
 Claimant/Subscriber and the Verifier and between the Claimant/Subscriber
@@ -49,7 +54,7 @@ authenticate to the RP.
 -   *The Direct Model* – In the direct model, the Claimant uses his or her
     e-authentication token to authenticate to the Verifier. Following
     successful authentication of the Claimant, the Verifier creates an
-    assertion, and sends it to the Subscriber to be forwarded to the RP.
+    assertion, and sends it to the Subscriber [ ** why do we keep switching these terms? I don't think they're that interchangeable but the differences aren't clear to me here. ** ] to be forwarded to the RP.
     The assertion is used by the Claimant/Subscriber to authenticate to
     the RP. (This is usually handled automatically by the
     Subscriber’s browser.) Figure 4 illustrates this model.
@@ -73,6 +78,8 @@ Figure 4 - *Direct Assertion Model*
 
 Figure 5 - *Indirect Assertion Model*
 
+[ ** I think it would be very useful to have a compare/contrast of the direct and indirect methods of assertion presentation, and in particular discuss the benefits and drawbacks of each. For example, in the direct method a assertion is visible to the user, which could potentially cause leakage of system information included in the assertion. It also allows the assertion to be replayed to other RPs. In the indirect method, there are more round trips, but the information is potentially more limited to the parties that need it. In both cases, the assertion needs to be validated in a number of common ways such as issuer verification, signature validation, audience restriction, etc. We should have good guidelines on this in here. ** ]
+
 As mentioned earlier, an assertion contains a set of claims or
 statements about an authenticated Subscriber. Based on the statements
 contained within it, an authentication assertion will fall into one of
@@ -88,7 +95,7 @@ indirect models):
     she is the rightful owner of the assertion. It is therefore
     difficult for an Attacker to use a holder-of-key assertion issued to
     a Subscriber, since the former cannot prove possession of the secret
-    referenced within the assertion.
+    referenced within the assertion. [ ** This is also a kind of parallel authentication since the user needs to authenticate with a key as well as possession of the associated assertion. Think of using OIDC to log in and get identity information but FIDO at the RP to step-up the transaction. ** ]
 
 -   *Bearer Assertions* – A bearer assertion does not provide a
     mechanism for the Claimant to prove that he or she is the rightful
@@ -101,7 +108,7 @@ indirect models):
     obtain services from the RP. Bearer assertions can be made secure
     only if some part of the assertion or assertion reference, sent to
     the Subscriber by the Verifier, is unpredictable to an Attacker and
-    can reliably be kept secret.
+    can reliably be kept secret. [ ** The indirect model can require other controls that protect it from this, making it not quite the same as a bearer assertion. ** ]
 
 There are cases in which the RP should be anonymous to the Verifier for
 the purpose of privacy. The direct model is more suitable for the
@@ -109,7 +116,7 @@ the purpose of privacy. The direct model is more suitable for the
 authenticate to the Verifier as in the indirect model. However, it is
 possible to devise authentication schemes (e.g., using key hierarchies
 within a group or federation) that allow the use of the indirect model
-to support the “anonymous RP” scenario.
+to support the “anonymous RP” scenario. [ ** This isn't isn't really true since a good assertion protocol will have audience restricted assertions, otherwise you're open to injection and replay attacks. I think this whole paragraph is bad advice and sounds like justification for the setup of an existing system. ** ]
 
 There are other cases where privacy concerns require that the Claimant’s
 identity/account at the Verifier and RP not be linked through use of a
@@ -129,14 +136,14 @@ more RPs to obtain further services. The direct model is used to
 generate assertions for each of these RPs. Parallel scenarios may be
 constructed for the indirect model as well.
 
-There is one other basic assertion model.
+There is one other basic assertion model. [ ** If that's really true then it should be listed with the above, not down here as "oh by the way". But I don't think that's really the case, see below. ** ]
 
 -   *The Proxy Model* – In the proxy model, the Claimant uses his or her
     e-authentication token to authenticate to the Verifier. Following
     successful authentication of the Claimant, the Verifier creates an
     assertion and includes it when interacting directly with the RP,
     acting as an intermediary between the Claimant and the RP. Figure 6
-    illustrates this model.
+    illustrates this model. [ ** there's nothing special about this model, it's just an additional component acting as an IdP on one side and an RP on the other side. We should call it out based on this fact. ** ]
 
 ![](media/proxy_model.png)
 
@@ -176,13 +183,13 @@ level.
 
 #### 9.1.1. Cookies
 
-One type of assertion widely in use is Web cookie technology. Cookies
+One type of assertion widely in use is Web cookie technology. [ ** They aren't really assertions. Assertions are structured and contain information, cookies are keys into session management. At least, if you're doing them right. You really should NOT be encouraging people to cram identity information into a cookie. Overall: This doesn't belong in a chapter on assertions. We should either move this, delete this, or change the context of the chapter. I'm in favor of the latter, personally. ** ]Cookies
 are text files used by a browser to store information provided by a
 particular web site. The contents of the cookie are sent back to the web
 site each time the browser requests a page from the same web site. The
 web site uses the contents of the cookie to identify the user and
 prepare customized Web pages for that user, or to authorize the user for
-certain transactions.
+certain transactions. [ ** Usually the contents of the cookie do not identify the user directly but instead act as a shared secret that keys into some piece of storage on the server that has a reference to the user. Cookies are also derived from an initial authentication transaction to allow subsequent HTTP requests to link to the same state as before without requiring replay of the primary credential on every request. ** ]
 
 Cookies have two mandatory parameters:
 
@@ -204,6 +211,8 @@ Cookies also have four optional parameters:
 
 -   *Secure* – This parameter indicates the cookie requires that a
     secure connection exist for the cookie to be used.
+    
+    [ ** There's also "HTTPOnly" which makes the cookie unavailable to JavaScript directly. ** ]
 
 There are two types of cookies:
 
@@ -214,26 +223,28 @@ There are two types of cookies:
 -   *Persistent cookies* – A cookie that is stored on a user’s hard
     drive until it expires (persistent cookies are set with
     expiration dates) or until the user deletes the cookie.
+    
+    [ ** These distinctions are going away, and quickly. Mobile browsers and even later versions of some desktop browsers like Chrome tend to keep sessions around in between browsers being opened and closed. Also, many people just never really close the browser, and what does "closing" an app on a mobile platform even mean? We're no longer in the 1990's model of the browser as an application with an explicit start up / run / shut down cycle. ** ]
 
 Cookies are effective as assertions for Internet single-sign-on where
 the RP and Verifier are part of the same Internet domain, and when the
-cookie contains authentication status for that domain. They are not
+cookie contains authentication status for that domain. [ ** This is a terrible idea!! The cookie should not be used as a login unto itself but rather as a session identifier. We should absolutely *NOT* be encouraging the use of cookies as primary authentication. Nor should we be encouraging the use of cookies outside the host that generated them, wherever possible. ** ] They are not
 usable in scenarios where the RP and the Verifier are part of disparate
 domains.
 
 Cookies are also often used by the Claimant to re-authenticate to a
-server. This may be considered to be a use of assertion technology. In
+server. This may be considered to be a use of assertion technology. [ ** Why is it considered that? This isn't a good justification and sounds more like hammering a square peg into a round hole. ** ] In
 this case, the server acts as a Verifier when it sets the cookie in the
 Subscriber’s browser, and as an RP when it requests the cookie from a
 Claimant who wishes to re-authenticate to it. Often, the cookie contains
 a random number, and the assertion data that it represents does not
-leave the server. Note that, if the cookie is used as an assertion
-reference in this way, no assertion needs to be sent on an open network,
+leave the server. [ ** This should be the only real recommended use of cookies. ** ] Note that, if the cookie is used as an assertion
+reference in this way, no assertion needs to be sent on an open network [ ** The primary assertion or authentication used to generate the session to which the cookie is attached probably have crossed the network, though. ** ],
 and therefore, confidentiality and integrity requirements for assertion
 data at Level 2 and below may be satisfied by access controls rather
 than by cryptographic methods. (The cookie itself, however, does need to
 be protected.) This is in line with the credential storage requirement
-presented in Section 7.
+presented in Section 7. 
 
 #### 9.1.2. Security Assertion Markup Language (SAML) Assertions
 
@@ -280,7 +291,7 @@ designed to provide strong authentication for client/server applications
 using symmetric-key cryptography. Extensions to Kerberos can support the
 use of public key cryptography for selected steps of the protocol.
 Kerberos also supports confidentiality and integrity protection of
-session data between the Subscriber and the RP.
+session data between the Subscriber and the RP. [ ** Yes, but the question is: do we care? Kerberos is meant for within-network authentications, and so I'm not convinced it's really apropos to be covered here. ** ]
 
 Kerberos supports authentication of a Claimant over an untrusted, shared
 network using two or more Verifiers. The Claimant implicitly
@@ -293,7 +304,7 @@ object called a Kerberos ticket. The ticket contains the same session
 key, the identity of the Subscriber to whom the session key was issued,
 and an expiration time after which the session key is no longer valid.
 The ticket is confidentiality and integrity protected by a
-pre-established that is key shared between the Verifier and the RP.
+pre-established that is key [ ** important: this implies setup and federation. ** ]shared between the Verifier and the RP.
 
 To authenticate using the session key, the Claimant sends the ticket to
 the RP along with encrypted data that proves that the Claimant possesses
@@ -309,7 +320,7 @@ Subscriber, or in the PKINIT variant of Kerberos, a public key
 certificate. It should be noted that most variants of Kerberos based on
 a shared secret key between the Subscriber and Verifier derive this key
 from a user generated password. As such, they are vulnerable to offline
-dictionary attack by a passive eavesdropper.
+dictionary attack by a passive eavesdropper. [ ** honest tech question: is the key derived from the password? I thought the key was protected with a password. So the key can't be guessed but an encrypted key could be unlocked with an offline attack. ** ]
 
 In addition to delivering the session key to the subscriber, the AS also
 issues a ticket using a key it shares with the Ticket Granting Server
@@ -321,10 +332,12 @@ and uses a key it shares with the RP to generate a ticket corresponding
 to the new session key. The subscriber decrypts the session key and uses
 the ticket and the new session key together to authenticate to the RP.
 
+[[ ** If we're keeping the above sections, then I believe we'll also want a section on OpenID Connect. It would make more sense to me to have these in an example appendix to this chapter, since as they stand now they seem more normative. ]]
+
 ### 9.2. Assertion Threats
 
 In this section, it is assumed that the two endpoints of the assertion
-transmission (namely, the Verifier and the RP) are uncompromised.
+transmission (namely, the Verifier and the RP) are uncompromised. [ ** This is a big assumption to make. I think we should call out what a compromised RP can do, for instance, or the catastrophic effects of a compromised IdP. ** ]
 However, the Claimant is not assumed to be entirely trustworthy as the
 Claimant may have an interest in modifying or replacing an assertion to
 obtain a greater level of access to a resource/service provided by the
@@ -416,14 +429,16 @@ and the assertion data referring to the Subscriber shall be strong.
     corresponds to assertion data sent on behalf of the more
     privileged subscriber. This is primarily a threat to the indirect
     model, since in the direct model, assertion data is directly encoded
-    in the secondary authenticator.
+    in the secondary authenticator. [ ** That's not really true, the indirect model is actually more robust against this because you can require more stringent controls around the request for the assertion itself. ** ]
+
+[ ** We're leaving off an important section: session hijacking. The attacker waits until the authentication event occurs, usually through the presentation of an assertion, and then steals the secondary session binding (such as a cookie) and goes from there. This is starting to make me think we need a whole separate section on session management. ** ]
 
 #### 9.2.1. Threat Mitigation Strategies
 
 Mitigation techniques are described below for each of the threats
 described in the last subsection.
 
-Logically speaking, an assertion is issued by a Verifier and consumed by
+Logically speaking, an assertion is issued by a Verifier [ ** OK, can we just call this the IdP? ** ] and consumed by
 an RP – these are the two end points of the session that needs to be
 secured to protect the assertion. In the direct model, the session in
 which the assertion is passed traverses the Subscriber. Furthermore, in
@@ -433,7 +448,7 @@ other between the Subscriber and the RP), with a break in session
 security on the Subscriber’s browser. This is reflected in the
 mitigation strategies described below. In the indirect model, the
 assertion flows directly from the Verifier to the RP; this protocol
-session needs to be protected. All of the threat mitigation strategies
+session needs to be protected. [ ** But so do the other two sessions that bring you the artifact used to get the assertion. This is dangerous and misleading advice! ** ] All of the threat mitigation strategies
 in Section 8 apply to the protocols used to request, retrieve and submit
 assertions and assertion references.
 
@@ -447,6 +462,8 @@ assertions and assertion references.
 2.  The assertion may be sent over a protected session such as TLS. In
     order to protect the integrity of assertions from malicious attack,
     the Verifier shall be authenticated.
+    
+    [ ** BOTH of these mechanisms MUST be used for it to be trustworthy. ** ]
 
 -   *Assertion disclosure* – To mitigate this threat, one of the
     following mechanisms may be implemented:
@@ -454,10 +471,10 @@ assertions and assertion references.
 1.  The assertion may be sent over a protected session to an
     authenticated RP. Note that, in order to protect assertions against
     both disclosure and manufacture/modification using a protected
-    session, both the RP and the Verifier need to be authenticated.
+    session, both the RP and the Verifier need to be authenticated. [ ** This seems to imply mutual TLS. Let's not go there, please. I would rather say they are *validted* than *authenticated* here. ** ]
 
 2.  If assertions are signed by the Verifier, they may be encrypted for
-    a specific RP with no additional integrity protection. It should be
+    a specific RP with no additional integrity protection. [ ** This doesn't talk about key establishment requirements, should it? ** ] It should be
     noted that any protocol that requires a series of messages between
     two parties to be signed by their source and encrypted for their
     recipient provides all the same guarantees as a mutually
@@ -466,11 +483,11 @@ assertions and assertion references.
     against both assertion disclosure and assertion
     manufacture/modification may therefore be described as a mutually
     authenticated protected session or equivalent between Verifier
-    and RP.
+    and RP. [ ** This doesn't seem to really help here. You can get the same level of protection from a signed statement with audience restrictions over server-validated TLS. ** ]
 
 -   *Assertion repudiation by the Verifier* – To mitigate this threat,
     the assertion may be digitally signed by the Verifier using a key
-    that supports non-repudiation. The RP should check the digital
+    that supports non-repudiation. The RP should [ ** MUST? ** ]check the digital
     signature to verify that it was issued by a legitimate Verifier.
 
 -   *Assertion repudiation by the Subscriber* – To mitigate this threat,
@@ -484,7 +501,7 @@ assertions and assertion references.
 -   *Assertion redirect* – To mitigate this threat, the assertion may
     include the identity of the RP for whom it was generated. The RP
     verifies that incoming assertions include its identity as the
-    recipient of the assertion.
+    recipient of the assertion. [ ** Audience restriction should really be mandated, otherwise you have cross-domain assertion injection. ** ]
 
 -   *Assertion reuse* – To mitigate this threat, the following
     mechanisms may be used:
@@ -492,11 +509,11 @@ assertions and assertion references.
 1.  The assertion includes a timestamp and has a short lifetime
     of validity. The RP checks the timestamp and lifetime values to
     ensure that the assertion is currently valid. The lifetime value may
-    either be in the assertion or set by the RP.
+    either be in the assertion or set by the RP. [ ** It seems dangerous for the RP to set its own lifetime on a whim. ** ]
 
 2.  The RP keeps track of assertions that were consumed within
     a (configurable) time window to ensure that an assertion cannot be
-    used more than once within that time window.
+    used more than once within that time window. [ ** But above in the direct assertion model you've got one assertion being replayed to the RP on multiple requests and even to multiple RPs. ** ]
 
 -   *Secondary authenticator manufacture* – To mitigate this threat, one
     of the following mechanisms may be implemented:
@@ -511,7 +528,7 @@ assertions and assertion references.
 
 3.  The Subscriber may authenticate to the RP directly using his or her
     long term token and avoid the need for a secondary
-    authenticator altogether.
+    authenticator altogether. [ ** This seems like dangerous advice. ** ]
 
 -   *Secondary authenticator capture* – To mitigate this threat,
     adequate protections shall be in place throughout the lifetime of
@@ -536,7 +553,7 @@ assertions and assertion references.
     an unauthenticated party while it is still valid. The secondary
     authenticator may be sent in the clear only if the sending party has
     strong assurances that the secondary authenticator will not
-    subsequently be accepted by any other RP. This is possible if the
+    subsequently be accepted by any other RP. [ ** Why would you do this?? EVER?? You're just creating a race condition here. ** ] This is possible if the
     secondary authenticator is specific to a single RP, and if that RP
     will not accept secondary authenticators with the same value until
     the maximum lifespan of the corresponding assertion has passed.
@@ -604,12 +621,12 @@ entropy. Bearer assertions shall be specific to a single
 transaction.<sup>[33](#note33)</sup> Also, if assertion references are used, they shall be
 freshly generated whenever a new assertion is created by the Verifier.
 In other words, bearer assertions and assertion references are generated
-for one-time use.
+for one-time use. [ ** This conflicts with all the advice and normal usage about cookies, above. ** ]
 
 Furthermore, in order to protect assertions against modification in the
 indirect model, all assertions sent from the Verifier to the RP shall
 either be signed by the Verifier, or transmitted from an authenticated
-Verifier via a protected session. In either case, a strong mechanism
+Verifier via a protected session. [ ** should be both, right? ** ] In either case, a strong mechanism
 must be in place which allows the RP to establish a binding between the
 assertion reference and its corresponding assertion, based on integrity
 protected (or signed) communications with the authenticated Verifier.
@@ -619,11 +636,11 @@ assertions that are consumed by an RP which is not part of the same
 Internet domain as the Verifier shall expire if they are not used within
 5 minutes of their creation. Assertions intended for use within a single
 Internet domain, including assertions contained in or referenced by
-cookies, however, may last as long as 12 hours without being used.
+cookies, however, may last as long as 12 hours without being used. [ ** This session timeout seems arbitrary, and what constitutes a "domain" in this practice? ** ]
 
 ##### 9.3.2.2. Level 2
 
-If the underlying credential specifies that the subscriber name is a
+If the underlying credential specifies that the subscriber name [ ** does this mean the display name? username? ** ] is a
 pseudonym, this information must be conveyed in the assertion. Level 2
 assertions shall be protected against manufacture/modification, capture,
 redirect and reuse. Assertion references shall be protected against
@@ -648,12 +665,12 @@ To protect assertions against manufacture, modification, and disclosure,
 assertions which are sent from the Verifier to the RP, whether directly
 or through the Subscriber’s device, shall either be sent via a mutually
 authenticated protected session between the Verifier and RP, or
-equivalently shall be signed by the Verifier and encrypted for the RP.
+equivalently shall be signed by the Verifier and encrypted for the RP. [ ** These requirements don't make much sense and provide very different kinds of protections. Signed by the Verifier and transmitted over server-validated TLS should be just fine here. ** ]
 
 All assertion protocols used at Level 2 and above require the use of
 Approved cryptographic techniques. As such, the use of Kerberos keys
 derived from user generated passwords is not permitted at Level 2 or
-above.
+above. [ ** Again, do we care about Kerb? ** ]
 
 ##### 9.3.2.3. Level 3
 
@@ -692,7 +709,7 @@ assertions provided that the following assurances are met:
 -   The Subscriber can demonstrate that he or she was the party that
     authenticated to the Verifier. This could be demonstrated, for
     example, by the presence of a cookie set by the Verifier in the
-    Subscriber’s browser.
+    Subscriber’s browser. [ ** demonstrate to whom, the RP? ** ]
 
 -   The Verifier can reliably determine whether the Subscriber has been
     in active communication with an RP since the last assertion was
@@ -700,12 +717,12 @@ assertions provided that the following assurances are met:
     evidence that the Subscriber is actively using the services of the
     RP and has not been idle for more than 30 minutes. An authenticated
     assertion by the RP to this effect is considered sufficient evidence
-    for this purpose.
+    for this purpose. [ ** So this requires the RP to communicate back to the Verifier? I don't know of many protocols that do that. ** ]
 
 #### 9.3.2.4. Level 4
 
 At Level 4, bearer assertions (including cookies) shall not be used to
-establish the identity of the Claimant to the RP. Assertions made by the
+establish the identity of the Claimant to the RP. [ ** Establish, maybe no, but once the identity is established, what can we use to carry a session forward at level 4? These are separate questions. This also doesn't account for bearer assertions in the context of other information about the user. ** ] Assertions made by the
 Verifier may however be used to bind keys or other attributes to an
 identity. Holder-of-key assertions may be used, provided that all three
 requirements below are met:
@@ -723,7 +740,7 @@ requirements below are met:
     (where the RP plays the role attributed to the Verifier by
     Section 8).
 
-The RP should maintain records of the assertions it receives, so that if
+The RP should maintain records of the assertions it receives [ ** For how long? In what detail? This could be privacy leaking. ** ], so that if
 a suspicious transaction occurs at the RP, the key asserted by the
 Verifier may be compared to the value registered with the CSP. This
 record keeping allows the RP to detect any attempt by the Verifier to
