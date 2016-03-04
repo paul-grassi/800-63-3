@@ -19,14 +19,19 @@ The following sections list the requirements CSPs must follow to identity proof 
 
 #### 5.1.1 General Requirements per Identity Assurance Level
 For levels 2 and above:  
-1. Records of registration shall be maintained.   
-2. The CSP shall maintain a record of each individual whose identity has been verified and the steps taken to verify his or her identity, including any information collected from the Applicant in compliance with the sections below.  
-3. The CSP shall have the capability to provide records of identity proofing to RPs if required<sup>[11](#note11)</sup>.  
-4. The identity proofing and registration processes shall be performed according to applicable written policy or *practice statement* that specifies the particular steps taken to verify identities.  
-5. The entire proofing transaction, including transactions that involve a 3rd party to the CSP, shall occur over a mutually authenticated protected session. Equivalently, the transaction may consist of time-stamped or sequenced messages signed by their source and encrypted for their recipient. In either case, Approved cryptography is required.  
-6. The CSP shall be able to uniquely identify each Subscriber and any associated authenticators that may have been issued to that Subscriber.   
-7. Personally identifiable information (PII) collected as part of the registration process shall be protected, and all privacy requirements shall be satisfied.  
-8. The results of the identity proofing step (which may include background investigations of the Applicant) shall be protected to ensure source authentication, confidentiality, and integrity.  
+1. Records of registration SHALL be maintained.   
+2. The CSP SHALL maintain a record of each individual whose identity has been verified and the steps taken to verify his or her identity, including any information collected from the Applicant in compliance with the sections below.  
+3. The CSP SHALL have the capability to provide records of identity proofing to RPs if required<sup>[11](#note11)</sup>.  
+4. The identity proofing and registration processes SHALL be performed according to applicable written policy or *practice statement* that specifies the particular steps taken to verify identities.  
+5. The entire proofing transaction, including transactions that involve a 3rd party to the CSP, SHALL occur over a mutually authenticated protected session. Equivalently, the transaction SHOULD consist of time-stamped or sequenced messages and SHOULD signed by their source and SHOULD be encrypted for their recipient.  
+6. Approved cryptography SHALL be used.    
+7. The CSP SHALL be able to uniquely identify each Subscriber and any associated authenticators that may have been issued to that Subscriber.  
+7. Personally identifiable information (PII) collected as part of the registration process SHALL be protected, and all privacy requirements shall be satisfied.  
+8. PII collect SHALL be limited to the minimum data necessary to validate the existance of the claimed identity and associate it the claimed identity to the person providing identity evidence.  
+8. The results of the identity proofing step (which may include background investigations of the Applicant) SHALL be protected to ensure source authentication, confidentiality, and integrity.  
+9. Agencies MAY obtain additional confidence using additional risk mitigation measures so long as additional mitigation approaches do not substitute for the guidelines herein.
+10. Agencies MAY consider partitioning the functionality of an e-authentication enabled application to allow functions requiring less stringent identification of the subscriber to be available at a lower identity assurance level, while other functions are available only at a higher identity assurance level.  
+11. Knowledge based proofing (KBP) (sometimes referred to as knowledge-based authentication (KBA)) verifies the identity by testing the personal knowledge of the individual against information obtained from public databases. KBP SHALL NOT be used to verify the identity of a claimant.
 
 >**For Assertion Chapter** The CSP shall be capable of conveying this information to Verifiers. At Level 1,
 the name associated with the Subscriber is provided by the Applicant and
