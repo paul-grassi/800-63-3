@@ -11,6 +11,7 @@ The following sections list the requirements CSPs must follow to identity proof 
 - Subjects may remain pseudonymous at RP's at both IAL2 or 3.  pseudonymous pseudonymity
 - Allow KYC in as IAL2?
 - Allow mobile in as IAL2?
+- Trusted referee (canadian language), vouchee (already proofed-kind of happens in places like HSIN) or notary
 
 
 
