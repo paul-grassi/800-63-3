@@ -109,8 +109,7 @@ electronic authentication; electronic credentials; identity proofing;
 passwords; PKI.
 
 ### Acknowledgements
-
-The authors, Donna Dodson, Paul Grassi, Elaine Newton, Ray Perlner, and Tim Polk of the National Institute of Standards and Technology (NIST); William Burr of Dakota Consulting; James Fenton of TBD; and Sarbari Gupta and Emad Nabbus of Electrosoft, would like to acknowledge the contributions of our many reviewers, including LaChelle LeVan from GSA and Justin Richer from Bespoke Engineering.
+The authors would like to acknowledge the thought leadership and innovation of the original authors: Donna F. Dodson, Elaine M. Newton, Ray A. Perlner, W. Timothy Polk, Sarbari Gupta, and Emad A. Nabbus.  Without their tireless efforts, we would not have had the incredible baseline by which to evolve 800-63 to the document it is today. In addition we would like to acknowledge the contributions of our many reviewers, including LaChelle LeVan from GSA and Justin Richer from Bespoke Engineering.
 
 ### Executive Summary
 

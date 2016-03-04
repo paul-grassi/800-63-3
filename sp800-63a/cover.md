@@ -2,15 +2,9 @@
 
 # Identity Proofing Requirements
 
-Donna F. Dodson  
 Paul Grassi  
-Elaine M. Newton  
-Ray A. Perlner  
-W. Timothy Polk  
 William E. Burr  
 James L. Fenton  
-Sarbari Gupta  
-Emad A. Nabbus
 
 ![](../sp800-63-3/media/nist_logo.png)
 
@@ -22,27 +16,12 @@ Paul Grassi
 *Applied Cybersecurity Division  
 Information Technology Laboratory*
 
-Donna F. Dodson  
-Ray A. Perlner  
-W. Timothy Polk  
-*Computer Security Division  
-Information Technology Laboratory*
-
-Elaine M. Newton  
-*Information Access Division  
-Information Technology Laboratory*
-
 William E. Burr  
 *Dakota Consulting, Inc.  
 Silver Spring, MD*
 
 James L. Fenton  
 *TBD*
-
-Sarbari Gupta  
-Emad A. Nabbus  
-*Electrosoft Services, Inc.  
-Reston, VA*
 
 MonthTBD 2016
 
@@ -125,8 +104,10 @@ authentication; credential service provider;
 electronic authentication; electronic credentials; identity proofing; PKI.
 
 ### Acknowledgements
-
-The authors, Donna Dodson, Paul Grassi, Elaine Newton, Ray Perlner, and Tim Polk of the National Institute of Standards and Technology (NIST); William Burr of Dakota Consulting; James Fenton of TBD; and Sarbari Gupta and Emad Nabbus of Electrosoft, would like to acknowledge the contributions of our many reviewers, including LaChelle LeVan from GSA and Justin Richer from Bespoke Engineering.
+* UK
+* Canada
+* 
+   
 
 ### Executive Summary
 > tbd - below is old stuff
