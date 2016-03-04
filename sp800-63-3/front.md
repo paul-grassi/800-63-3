@@ -2,15 +2,9 @@
 
 # Electronic Authentication Guideline
 
-Donna F. Dodson  
 Paul Grassi  
-Elaine M. Newton  
-Ray A. Perlner  
-W. Timothy Polk  
 William E. Burr  
 James L. Fenton  
-Sarbari Gupta  
-Emad A. Nabbus
 
 ![](media/nist_logo.png)
 
@@ -22,16 +16,6 @@ Paul Grassi
 *Applied Cybersecurity Division  
 Information Technology Laboratory*
 
-Donna F. Dodson  
-Ray A. Perlner  
-W. Timothy Polk  
-*Computer Security Division  
-Information Technology Laboratory*
-
-Elaine M. Newton  
-*Information Access Division  
-Information Technology Laboratory*
-
 William E. Burr  
 *Dakota Consulting, Inc.  
 Silver Spring, MD*
@@ -39,10 +23,6 @@ Silver Spring, MD*
 James L. Fenton  
 *TBD*
 
-Sarbari Gupta  
-Emad A. Nabbus  
-*Electrosoft Services, Inc.  
-Reston, VA*
 
 MonthTBD 2016
 
