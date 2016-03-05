@@ -6,7 +6,7 @@ SP 800-63A deals with the processes by which a credential, and authenticator(s) 
 
 This document is broken up into sections as follows:
 
-[Front matter](front.md)
+[Front matter](cover.md)
 
 [1. Purpose and 2. Introduction](sec1_2_introduction.md)
 

@@ -8,7 +8,7 @@
 
 *Detail in SP 800-63A*
 
-####4.2.2. Levels of Confidence
+####4.2.2. Identity Assurance Levels
 
 ###4.3. Authentication and Authenticators
 
@@ -16,7 +16,7 @@
 
 *Detail in SP 800-63B*
 
-####4.3.2. Levels of Strength
+####4.3.2. Authenticator Assurance Levels
 
 ###4.4. Assertions
 

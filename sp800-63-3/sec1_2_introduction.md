@@ -19,7 +19,7 @@ recommendation also provides guidelines for Registration Authorities
 
 Current government systems do not separate the functions of
 authentication and attribute providers. However, in some applications, these
-functions are provided by different parties. This document describes authentication strength and attribute confidence as separate metrics, and provides a mapping between these metrics and level of assurance.
+functions are provided by different parties. This document describes authenticator assurance and identity assurance as separate metrics, and provides a mapping between these metrics and overall level of assurance.
 
 These technical guidelines supplement OMB guidance, *E-Authentication
 Guidance for Federal Agencies* \[[OMB M-04-04](#OMB_0404)\] and
@@ -38,7 +38,7 @@ SP 800-63 is organized as a family of documents as follows:
 
 - SP 800-63A *Enrollment and Identity Proofing* - Deals with the processes by which a credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
 
-- SP 800-63B *Subscriber Authentication* - provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified levels of strength.
+- SP 800-63B *Subscriber Authentication* - provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified authenticator assurance levels.
 
 - SP 800-63C *Authentication-based Assertions* - Provides guidance on the use of assertions to convey the results of authentication processes to a relying party.
 
@@ -88,8 +88,8 @@ their e-authentication assurance requirements:
     800-53A](#SP800_53A)\] for conducting the security assessment.
 
 This family of documents provides guidelines for implementing the third step of the
-above process. In particular, this document maps the four Levels of Assurance defined in OMB M-04-04 into corresponding levels of strength and confidence. Other documents in the family state specific technical
-requirements for attribute confidence and authentication strength in the following
+above process. In particular, this document maps the four Levels of Assurance defined in OMB M-04-04 into corresponding authenticator assurance and identity assurance levels. Other documents in the family state specific technical
+requirements for identity assurance and authenticator assurance in the following
 areas:
 
 -   Identity proofing and registration of Applicants (covered in SP 800-63A)
@@ -108,7 +108,7 @@ areas:
     authentication if these results are sent to other parties (covered
     in SP 800-63C).
 
-The overall authentication assurance level is determined by the lowest attribute confidence and authentication strength level achieved in any of the areas listed above, and then by mapping the result to the corresponding Level of Assurance.
+The overall authentication assurance level is determined by the lowest identity assurance and authenticator assurance level achieved in any of the areas listed above, and then by mapping the result to the corresponding Level of Assurance.
 
 Agencies may adjust the level of assurance using additional risk
 mitigation measures. Easing credential assurance level requirements may
@@ -139,9 +139,8 @@ and applications over a network, using the authenticator in an authentication
 protocol. The authentication protocol allows an individual to
 demonstrate to a Verifier that he or she has possession and control of
 the authenticator<sup>[2](#note2)</sup>, in a manner that protects the authenticator secret from
-compromise by different kinds of attacks. Higher authentication
-strength levels require use of stronger authenticators, better protection of
-the authenticator(s) and related secrets from attacks. Higher attribute confidence levels require stronger registration procedures.
+compromise by different kinds of attacks. Higher authenticator assurance levels require use of stronger authenticators, better protection of
+the authenticator(s) and related secrets from attacks. Higher identity assurance levels require stronger registration procedures.
 
 This document family focuses on authenticators that are difficult to forge because they
 contain some type of secret information that is not available to
@@ -281,7 +280,7 @@ clarifications.
 
 ####2.1.3. SP 800-63-3
 
-NIST SP 800-63-3 is a substantial update and restructuring of Special Publication 800-63-2. It introduces the concepts of Level of Security and Level of Confidence to support the growing need for independent treatment of authentication strength and degree of identity proofing (for example, in strong pseudonymous authentication). It also moves from a single document describing authentication to a family of four documents, of which SP 800-63-3 is the top-level document.Other areas of update to SP 800-63-2 include:
+NIST SP 800-63-3 is a substantial update and restructuring of Special Publication 800-63-2. It introduces the concepts of Authenticator Assurance Level and Identity Assurance Level to support the growing need for independent treatment of authentication strength and confidence in the claimant's identity (for example, in strong pseudonymous authentication). It also moves from a single document describing authentication to a family of four documents, of which SP 800-63-3 is the top-level document.Other areas of update to SP 800-63-2 include:
 -	Terminology changes, primarily the use of *authenticator* in place of *token* to avoid conflicting use of the word *token* in assertion technologies-	Updates to authentication and assertion requirements to reflect advances in both security technology and threats-	Requirements on the storage of long-term secrets by verifiers-	Updated requirements regarding remote identity proofing-	Clarification on the use of independent channels and devices as “something you have”-	Removal of pre-registered knowledge tokens (authenticators), with the recognition that they are special cases of (often very weak) passwords.-	Requirements regarding account recovery in the event of loss or theft of an authenticator
 
 ---
