@@ -166,7 +166,7 @@ their e-authentication assurance requirements:
 This document provides guidelines for implementing the third step of the
 above process.
 
-This document takes a different approach than earlier revisions by defining two separate metrics, referred to as *Authenticator Assurance Level* and *Level of Confidence*. Authenticator Assurance Level refers to the robustness of the authentication process itself, while Level of Confidence refers to the robustness of the identity proofing process and the binding between an authenticator and a specific individual. A mapping is provided to allow agencies using the existing Level of Assurance model to select appropriate technology based on the corresponding Authenticator Assurance Level and Level of Confidence. The separation of these metrics better supports applications requiring strong authentication that may be pseudonymous, and the separation of authenticator issuance from the establishment of credentials binding those authenticators to individuals.
+This document takes a different approach than earlier revisions by defining two separate metrics, referred to as *Authenticator Assurance Level* and *Identity Assurance Level*. Authenticator Assurance Level refers to the robustness of the authentication process itself, while Identity Assurance Level refers to the robustness of the identity proofing process and the binding between an authenticator and a specific individual. A mapping is provided to allow agencies using the existing Level of Assurance model to select appropriate technology based on the corresponding Authenticator Assurance Level and Identity Assurance Level. The separation of these metrics better supports applications requiring strong authentication that may be pseudonymous, and the separation of authenticator issuance from the establishment of credentials binding those authenticators to individuals.
 
 Accordingly, with this revision SP 800-63 has been split into a family of documents organized as follows:
 
@@ -203,10 +203,10 @@ levels of assurance in the following areas:
     authentication if these results are sent to other parties (covered
     in SP 800-63C).
 
-The following table shows the mapping between Level of Assurance and corresponding Authenticator Assurance Levels/Confidence values:
+The following table shows the mapping between Level of Assurance and corresponding Authenticator and Identity Assurance Levels:
 
-| Level of Assurance | Authenticator Assurance Level | Level of Confidence |
-|:------------------:|:-----------------------------:|:-------------------:|
+| Level of Assurance | Authenticator Assurance Level | Identity Assurance Level |
+|:------------------:|:-----------------------------:|:------------------------:|
 | 1 | 1 | 1 |
 | 2 (pseudonymous) | 1 | 1 |
 | 2 (non-pseudonymous) | 1 | 2 |
@@ -215,7 +215,7 @@ The following table shows the mapping between Level of Assurance and correspondi
 
 
 
-A summary of the technical requirements for each of the authenticator assurance and confidence levels is provided below.
+A summary of the technical requirements for each of the authenticator and identity  assurance levels is provided below.
 
 **Authenticator Assurance Level 1** - Authenticator Assurance Level (AAL) 1 provides single factor remote network authentication, giving some assurance that the same Claimant who participated in previous transactions is accessing the protected transaction or data. AAL 1 allows a wide range of available authentication technologies to be employed and requires only a single authentication factor to be used. It also permits the use of any of the authentication methods of higher authenticator assurance levels. Successful authentication requires that the Claimant prove through a secure authentication protocol that he or she possesses and controls the authenticator.
 Plaintext passwords or secrets are never transmitted across a network at AAL 1. However, this level does not require cryptographic methods or secrets with sufficient entropy to fully block offline attacks. For example, simple password challenge-response protocols are allowed. In many cases an eavesdropper, having intercepted such a protocol exchange or stored credentials, will be able to find the password with a straightforward dictionary attack.
