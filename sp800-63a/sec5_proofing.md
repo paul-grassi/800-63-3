@@ -1,7 +1,7 @@
-## 5. Identity Proofing and Verification
+# 5. Identity Proofing and Verification
 The following sections list the requirements CSPs must follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are derived to ensure the claimed identity is the actual identity of the person attempting to gain access to a system **and** at-scale attacks are difficult to execute without significant time and cost. 
 
-### Random Thoughts That May Become Requirements Later  
+## Random Thoughts That May Become Requirements Later  
 
 
 - Human-in-the-loop for remote video proofing.  Perhaps if we allow at IAL3?
@@ -12,7 +12,7 @@ The following sections list the requirements CSPs must follow to identity proof 
 - Allow KYC in as IAL2?
 - Allow mobile in as IAL2?
 
-#### 5.1.1 General Requirements per Identity Assurance Level
+## 5.1 General Requirements per Identity Assurance Level
 For levels 2 and above:  
 1. Records of registration SHALL be maintained.   
 2. The CSP SHALL maintain a record of each individual whose identity has been verified and the steps taken to verify his or her identity, including any information collected from the Applicant in compliance with the sections below.  
@@ -39,15 +39,15 @@ Do we want a process section ala GPG45.  At Level 2 and higher, the Applicant su
 ~~~
  
 
-###5.1.2 Validation Requirements
+##5.2 Validation Requirements
 The goal of identity validation is to determine the authenticity and validity of the identity evidence that a claimant provides.  Validation establishes the physical, live existence of the claimed idenity. 
 
-####5.1.2.1 Identity Evidence Properties and Requirements
+###5.2.1 Identity Evidence Properties and Requirements
 >UK Language The purpose of this element is to record the strength of the Identity Evidence provided by the Applicant in support of the Claimed Identity. The following Table demonstrates the properties of the Identity Evidence and the corresponding score for this element. The Identity Evidence must, as a minimum, meet all the properties defined for a particular strength to achieve that score.
 
 This section provides guidelines and requirements on the acceptable properties and qualities of identity evidence that a claimant asserts to claim identity, and the requirements for evidence collected at each identity assurance level.
 
-##### Properties of Identity Evidence
+#### Properties of Identity Evidence
 The following table lists qualities of various form and types of identity evidence that are acceptable to identity proof an individual.  IdentityFor remote identity proofing, the CSP SHOULD collect actual images of asserted identity evidence.  However, in instances when this is not possible or desirable, the CSP MAY collect identity evidence (and its corresponding data) via other means such as online forms or data files.
 
 ~~~
@@ -63,11 +63,11 @@ Score of 3 had 'if it includes security features' and 4 'must'.  Is that ok?
 |Score|Properties of Identity Evidence|
 |:---:|:------------------------------| 
 |1|-The issuing source did not perform identity proofing<br>  -The issuing process for the evidence means that it can reasonably be assumed to have been delivered into the possession of an individual<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates; **or**<br>   the issued evidence contains a photograph/image/Biometric of the person to whom it relates|
-|2|-The issuing source of the evidence confirmed the applicant’s identity through an identity checking process<br>  -The issuing process for the evidence means that it can reasonably be assumed to have been delivered into the possession of the person to whom it relates<br>-The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates; **or**<br>  The issued evidence contains a photograph/image/Biometric of the person to whom it relates<br>  -Where the issued evidence is, or includes, electronic information, that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br> -Where the issued evidence contains physical security features, it requires proprietary knowledge to be able to reproduce it|
-3|-The issuing source of the evidence confirmed the applicant’s identity in a manner that complies with, or is aligned to, the Know Your Customer guidelines, of the US Patriot Act of 2001<br>  -The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates<br>  -The name value on the issued evidence must be the name that the identity was officially known at the time of issuance. Pseudonyms, aliases and initials for given and surnames are not permitted<br>  -The issued evidence contains a photograph/image/Biometric of the person to whom it relates; **or** The ownership or control of the issued evidence can be confirmed through **activity verification**<br>  -Where the issued evidence is, or includes, electronic information that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br>  -Where the issued evidence contains physical security features, it requires proprietary knowledge and proprietary equipment to be able to reproduce it|
-|4|-The issuing source of the evidence confirmed the applicant’s identity in a manner that complies with, or is aligned to, the Know Your Customer guidelines, of the US Patriot Act of 2001<br>  -The issuing source visually identified the applicant and performed further checks to confirm the existence of that identity<br>  -The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates<br>  -The name value on the issued evidence must be the name that the identity was officially known at the time of issuance. Pseudonyms, aliases and initials for forenames and surnames are not permitted<br>  -The issued evidence contains a photograph/image of the person to whom it relates<br>  -The issued evidence contains a fingerprint, facial, or iris biometric of the person to whom it relates<br>  -Where the issued evidence is, or includes, electronic information that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br>  -The issued evidence contains physical security features that require proprietary knowledge and proprietary equipment to be able to reproduce it|
+|2|-The issuing source of the evidence confirmed the applicant’s identity through an identity checking process<br>  -The issuing process for the evidence means that it can reasonably be assumed to have been delivered into the possession of the person to whom it relates<br>-The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates; **or**<br>  The issued evidence contains a photograph/image/Biometric of the person to whom it relates<br>  -Where the issued evidence is, or includes, electronic information, that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br> -Where the issued evidence contains physical security features, it requires proprietary knowledge to be able to reproduce it<br> -The issued evidence is unexpired|
+3|-The issuing source of the evidence confirmed the applicant’s identity in a manner that complies with, or is aligned to, the Know Your Customer guidelines, of the US Patriot Act of 2001<br>  -The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates<br>  -The name value on the issued evidence must be the name that the identity was officially known at the time of issuance. Pseudonyms, aliases and initials for given and surnames are not permitted<br>  -The issued evidence contains a photograph/image/Biometric of the person to whom it relates; **or** The ownership or control of the issued evidence can be confirmed through **activity verification**<br>  -Where the issued evidence is, or includes, electronic information that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br>  -Where the issued evidence contains physical security features, it requires proprietary knowledge and proprietary equipment to be able to reproduce it<br> -The issued evidence is unexpired|
+|4|-The issuing source of the evidence confirmed the applicant’s identity in a manner that complies with, or is aligned to, the Know Your Customer guidelines, of the US Patriot Act of 2001<br>  -The issuing source visually identified the applicant and performed further checks to confirm the existence of that identity<br>  -The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates<br>  -The name value on the issued evidence must be the name that the identity was officially known at the time of issuance. Pseudonyms, aliases and initials for forenames and surnames are not permitted<br>  -The issued evidence contains a photograph/image of the person to whom it relates<br>  -The issued evidence contains a fingerprint, facial, or iris biometric of the person to whom it relates<br>  -Where the issued evidence is, or includes, electronic information that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br>  -The issued evidence contains physical security features that require proprietary knowledge and proprietary equipment to be able to reproduce it<br> -The issued evidence is unexpired|
 
-##### Identity Evidence Requirements per Identity Assurance Level
+#### Identity Evidence Requirements per Identity Assurance Level
 The following table lists the minimum requirement of identity evidence properties a CSP SHALL meet per IAL.  
 
 |IAL|Requirements|
@@ -76,10 +76,10 @@ The following table lists the minimum requirement of identity evidence propertie
 |2|-2 pieces of evidence with a score of 3; **or**<br>  -1 piece of evidence with a score of 3<br>  -2 pieces of evidence with a score of 2|
 |3|-1 piece of evidence with a score of 4<br>  -1 piece of evidence with a score of 3; **or**<br>  -2 pieces of evidence with a score of 3<br>  -1 piece of evidence with a score of 2|
 
-####5.1.2.2 Identity Evidence Validation
+###5.2.2 Identity Evidence Validation
 
 
-###5.1.3 Verification Requirements
+##5.3 Verification Requirements
 - Phone (cell SMS or voice) verification must not be via soft phones such as Google Voice or Skype.
 - KBA allowed if temporal **and** spacial
 - Prove control over email, however email MUST be protected at the same AAL as the IAL.  For example, if proofing is done according to IAL 2, the email must be protected with an authenticator at AAL2. KYC banks get a pass.
@@ -95,7 +95,8 @@ in the registration process. For example, an Applicant could be asked to supply 
 ~~~
 
 
-###5.1.5. Requirements for Derived Credentials
+
+##5.4 Requirements for Derived Credentials
 CSP looks at a credential from a different CSP that it trusts, records the information, and issues its own credential and binds it to an authenticator. I'd call that identity proofing and include that in 63A.
 Where the Applicant already possesses recognized authentication credentials a trusted CSP, the additional CSP may choose to identity proof the Claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.  The following details the proofing requirements for the CSP issuing a derived credential.1.  Before issuing any derived credential the CSP SHALL verify the original credential status and shall verify that the corresponding token is possessed and controlled by the Claimant.  
 2. The CSP SHALL record the details of the original credential used as the basis for derived credential issuance. 
@@ -110,3 +111,5 @@ In situations where the authenticator does not support an automated expiration d
 at a later date (e.g. after a week) to confirm that it was not compromised at the time of issuance of the derived credential. (This guards against the case where an Attacker requests the desired credential before revocation information can be updated.) 
 If the derived credential is revoked, the CSP that issued the derived credential may notify the issuer of the original credential, if the reason for revocation might motivate action by the issuer of the original credential and applicable law, regulation, and agreements permit such notification.  
 ~~~
+
+##5.5 Considerations for Minors and Other Vulnerable People
