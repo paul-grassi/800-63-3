@@ -21,6 +21,7 @@ For levels 2 and above:
 5. The entire proofing transaction, including transactions that involve a 3rd party to the CSP, SHALL occur over a mutually authenticated protected session. Equivalently, the transaction SHOULD consist of time-stamped or sequenced messages and SHOULD signed by their source and SHOULD be encrypted for their recipient.  
 6. Approved cryptography SHALL be used.    
 7. The CSP SHALL be able to uniquely identify each Subscriber and any associated authenticators that may have been issued to that Subscriber.  
+8. **THE SSP SHALL capture the type of identity evidence presented and its unique reference/identification number in records. Image scans SHALL NOT be captured and saved by the CSP.**  
 7. Personally identifiable information (PII) collected as part of the registration process SHALL be protected, and all privacy requirements shall be satisfied.  
 8. PII collect SHALL be limited to the minimum data necessary to validate the existance of the claimed identity and associate it the claimed identity to the person providing identity evidence.  
 8. The results of the identity proofing step (which may include background investigations of the Applicant) SHALL be protected to ensure source authentication, confidentiality, and integrity.  
@@ -74,17 +75,48 @@ The following table lists the minimum requirement of identity evidence propertie
 |:-:|:-----------|
 |1|Identity evidence is not required|
 |2|-2 pieces of evidence with a score of 3; **or**<br>  -1 piece of evidence with a score of 3<br>  -2 pieces of evidence with a score of 2|
-|3|-1 piece of evidence with a score of 4<br>  -1 piece of evidence with a score of 3; **or**<br>  -2 pieces of evidence with a score of 3<br>  -1 piece of evidence with a score of 2|
+|3|- Presentation SHALL be done in person<br>**and**<br>-1 piece of evidence with a score of 4<br>  -1 piece of evidence with a score of 3; **or**<br>  -2 pieces of evidence with a score of 3<br>  -1 piece of evidence with a score of 2|
+
 
 ###5.2.2 Identity Evidence Validation
+Once identity evidence is provided, the accuracy and integrity of the information must be checked against appropriate authoritative entities in order to determine that the presented information contained on idenity evidence is:  
+
+* Correct  
+* Relates to a real individual  
+* Relates to the correct individual  
+
+#### Properties of Identity Evidence Validation
+For each IAL, the CSP is expected to obtain a minimum validation score.  The following table provides details the properties of validations required to achieve a given score.
+
+|Score|Properties of Identity Evidence Validation|
+|:---:|:------------------------------| 
+|0|- Validation of the evidence failed|
+|1|- All personal details from the evidence have been confirmed as valid by comparison with information held/published by the issuing/authoritative Source **or an aggregator**|
+|2|-All personal details *and evidence details* from the evidence have been confirmed as valid by comparison with information held/published by the Issuing/Authoritative Source. **Validation using a 3rd party data aggregator is not sufficient**<br> **or** <br>- The issued evidence has been confirmed as genuine by trained personnel using their skill and appropriate equipment, and confirmed the integrity of the physical security features <br> **or** <br>- The issued evidence has been confirmed as genuine by confirmation of the integrity of the cryptographic security features|
+|3|- The issued evidence has been confirmed as genuine by trained personnel using their skill **and** appropriate equipment, and confirmed the integrity of the physical security features **or** The issued evidence has been confirmed as genuine by confirmation of the integrity of the cryptographic security features <br>**and**<br> - All personal details and evidence details have been confirmed as valid by comparison with information held/published by the Issuing/Authoritative Source **or** evidence details from the evidence have been confirmed as not known to be invalid by comparison with information held/published by the Issuing Source/Authoritative Source|
+|4|- The issued evidence has been confirmed as genuine by trained personnel using their skill **and** appropriate equipment including the integrity of any cryptographic security features<br>**and**<br>- All personal details and evidence details from the evidence have been confirmed as valid by comparison with information held/published by the Issuing Source/Authoritative Source|
+
+#### Identity Evidence Requirements per Identity Assurance Level
+The following table lists the minimum requirements of identity evidence validation properties a CSP SHALL meet per IAL.  
+
+|IAL|Requirements|
+|:-:|:-----------|
+|1|No validation of evidence is required|
+|2|- Each piece of evidence must be validated with a process that is able to achieve a score that matches the summation of identity evidence scores based on the evidence presented; For example, if two forms of identity evidence of score 3 were presented, each evidence must be validated at a score of 3.<br>**- Validation against a 3rd party data aggregated SHALL only be used for 1 piece of presented identity evidence**|
+|3|- Each piece of evidence must be validated with a process that is able to achieve a score that matches the summation of identity evidence scores based on the evidence presented; For example, if two forms of identity evidence of score 3 were presented, each evidence must be validated at a score of 3.<br>- Validation SHALL be performed in person|
+
+####Additional Evidence Validation Guidance
+Identity validation is the process of confirming the accuracy of identity information as established by an authoritative party.7 Depending on the program or service requirements and the privacy considerations, government organizations may validate identity information using different authoritative sources. For example, a date of birth may be electronically validated using a provincial vital statistics registry.If validation using an authoritative source is not feasible, other methods may be used, such as corroborating identity information using one or more instances of evidence of identity. Government organizations are advised to keep in mind the fraud considerations described in subsection 3.7.2.Determining the accuracy of identity information involves confirming that the individual currently exists or previously existed (was alive but is now deceased). Identity information needs to relate to a real individual (living or dead) and not to a non-existent or incorrect individual.When the authoritative source is outside Canadian jurisdiction, the accuracy of identity information may be determined through a risk-managed approach.Accuracy of identity information is independent of whether an individual is living or deceased. An individual’s identity information does not cease to exist after death. In cases of death, it becomes important that an individual’s identity information is used properly by authorized individuals—for example, by the surviving spouse or executor.Factors such as spelling and phonetic variations, name changes and different character sets can make determining the accuracy of identity information challenging. Such factors may make it difficult to prescribe exact match criteria. Government organizations may need to use approximate or statistical matching methods to determine whether identity information acceptably matches an authoritative record.An assigned identifier (see subsection 3.3.3) should be subject to an exact match. In cases where the integrity of an identifier can be determined using a mathematical algorithm (for example, checksum), these methods should be applied as part of the validation process.Table 5 provides guidelines for requirements related to the accuracy of identity information presented in Table 1. This guidance applies only in establishing the accuracy of identity information.
 
 
 ##5.3 Verification Requirements
 - Phone (cell SMS or voice) verification must not be via soft phones such as Google Voice or Skype.
+- Shared devices? Is this solved by in-records check?
 - KBA allowed if temporal **and** spacial
 - Prove control over email, however email MUST be protected at the same AAL as the IAL.  For example, if proofing is done according to IAL 2, the email must be protected with an authenticator at AAL2. KYC banks get a pass.
 - Only allow credit records at higher IAL for 1 of the presented identity evidence materials.
 - Trusted referee (canadian language), vouchee (already proofed-kind of happens in places like HSIN) or notary
+- Capture biometric at IAL3
 
 
 ~~~
