@@ -19,31 +19,27 @@ The following sections list the requirements CSPs must follow to identity proof 
 - Training requirements for proofers.  More than just training, it could be security clearance as well.
 
 #### 5.1.1 General Requirements per Identity Assurance Level
+
 For levels 2 and above:  
-1. Records of registration SHALL be maintained.   
-2. The CSP SHALL maintain a record of each individual whose identity has been verified and the steps taken to verify his or her identity, including any information collected from the Applicant in compliance with the sections below.  
-3. The CSP SHALL have the capability to provide records of identity proofing to RPs if required<sup>[11](#note11)</sup>.  
-4. The identity proofing and registration processes SHALL be performed according to applicable written policy or *practice statement* that specifies the particular steps taken to verify identities.  
+
+1. Records of registration SHALL be maintained.  
+2. The CSP SHALL maintain a record of each individual whose identity has been verified and the steps taken to verify his   or her identity, including any information collected from the Applicant in compliance with the sections below.  
+3. The CSP SHALL have the capability to provide records of identity proofing to RPs if required<sup>[11](#note11)</sup>.
+4. The identity proofing and registration processes SHALL be performed according to applicable written policy or *practice statement* that specifies the particular steps taken to verify identities.
 5. The entire proofing transaction, including transactions that involve a 3rd party to the CSP, SHALL occur over a mutually authenticated protected session. Equivalently, the transaction SHOULD consist of time-stamped or sequenced messages and SHOULD signed by their source and SHOULD be encrypted for their recipient.  
-6. Approved cryptography SHALL be used.    
+6. Approved cryptography SHALL be used.  
 7. The CSP SHALL be able to uniquely identify each Subscriber and any associated authenticators that may have been issued to that Subscriber.  
 8. The CSP SHALL record the identification/reference number of the presented identity evidence.
-9. The CSP SHALL NOT records an image/scan/copy of the presented identity evidence.
-7. Personally identifiable information (PII) collected as part of the registration process SHALL be protected, and all privacy requirements shall be satisfied.  
-8. PII collect SHALL be limited to the minimum data necessary to validate the existance of the claimed identity and associate it the claimed identity to the person providing identity evidence.  
-8. The results of the identity proofing step (which may include background investigations of the Applicant) SHALL be protected to ensure source authentication, confidentiality, and integrity.  
-9. Agencies MAY obtain additional confidence using additional risk mitigation measures so long as additional mitigation approaches do not substitute for the guidelines herein.
-10. Agencies MAY consider partitioning the functionality of an e-authentication enabled application to allow functions requiring less stringent identification of the subscriber to be available at a lower identity assurance level, while other functions are available only at a higher identity assurance level.  
-11. Knowledge based proofing (KBP) (sometimes referred to as knowledge-based authentication (KBA)) verifies the identity by testing the personal knowledge of the individual against information obtained from public databases. 
+9. **The CSP SHALL NOT record an image/scan/copy of the presented identity evidence.**  
+10. Personally identifiable information (PII) collected as part of the registration process SHALL be protected, and all privacy requirements shall be satisfied.  
+11. PII collect SHALL be limited to the minimum data necessary to validate the existance of the claimed identity and associate it the claimed identity to the person providing identity evidence.  
+12. The results of the identity proofing step (which may include background investigations of the Applicant) SHALL be protected to ensure source authentication, confidentiality, and integrity.  
+13. Agencies MAY obtain additional confidence using additional risk mitigation measures so long as additional mitigation approaches do not substitute for the guidelines herein.
+14. Agencies MAY consider partitioning the functionality of an e-authentication enabled application to allow functions requiring less stringent identification of the subscriber to be available at a lower identity assurance level, while other functions are available only at a higher identity assurance level.  
+15. Knowledge based proofing (KBP) (sometimes referred to as knowledge-based authentication (KBA)) verifies the identity by testing the personal knowledge of the individual against information obtained from public databases. KBP SHALL NOT be used to verify the identity of a claimant. KBP MAY be used to resolve to a unique, claimed identity.
 
 ~~~
-KBP SHALL NOT be used to verify the identity of a claimant. KBP MAY be used to resolve to a unique, claimed identity.
-
-For Assertion Chapter The CSP shall be capable of conveying this information to Verifiers. At Level 1, the name associated with the Subscriber is provided by the Applicant and accepted without verification. At Level 2, the identifier associated with the subscriber may be pseudonymous but the RA or CSP shall retain the actual identity of the Subscriber. In addition, pseudonymous Level 2 credentials shall be distinguishable from Level 2 credentials that contain verified names.
-
-At Level 3 and above, the name associated with the Subscriber shall be verified. 
-
-Do we want a process section ala GPG45.  At Level 2 and higher, the Applicant supplies his or her full legal name, an address of record, and date of birth, and may, subject to the policy of the RA or CSP, also supply other PII. Detailed level-by-level identity proofing requirements are stated in Table 3.
+Do we want a process section ala GPG45.  Hold if comment.  At Level 2 and higher, the Applicant supplies his or her full legal name, an address of record, and date of birth, and may, subject to the policy of the RA or CSP, also supply other PII. Detailed level-by-level identity proofing requirements are stated in Table 3.
 ~~~
  
 
@@ -97,28 +93,59 @@ The following table lists the minimum requirement of identity evidence propertie
 - Prove control over email, however email MUST be protected at the same AAL as the IAL.  For example, if proofing is done according to IAL 2, the email must be protected with an authenticator at AAL2. KYC banks get a pass.
 - Only allow credit records at higher IAL for 1 of the presented identity evidence materials.
 - Trusted referee (canadian language), vouchee (already proofed-kind of happens in places like HSIN) or notary
+- Once a CSP has met the minimum requirements for an IAL:
+	- The CSP MAY use additional risk-based/indicators/context/adaptive  authentication methods to increase confidence in identity verification.
+	- If the CSP is an authoritative source, the only entity that maintains control over specific data, and the data has never been aggregated by a 3rd party, the CSP MAY use knowledge based authentication verification to increase confidence in identity verification.
 
+###5.1.4 Requirements for Identity Proofing Transaction Binding (continuation)
+Registration, identity proofing, token creation/issuance, and credential issuance are separate processes that can be broken up into a number of separate physical encounters or electronic transactions. (Two electronic transactions are considered to be separate if they are not part of the same protected session.) 
 
-~~~
+####5.1.4.1 Continuation (1 CSP, just finishing transactions)
 
-In some contexts, once an agency has met the minimum requirements for an assurance level, the agency may choose to use additional risk-based, adaptive authentication methods to increase confidence
-in the registration process. For example, an Applicant could be asked to supply non-public information on his or her past dealing with the agency that could help confirm the Applicant’s identity.
+#####IAL1 Requirements
+No specific requirements, however effort should be made by the CSP to uniquely identify the claimant and provide a suitable user experience such that risk of establishing multiple authenticators is limited.
 
-~~~
+#####IAL2 Requirements
+1. For remote transactions:
+	2. The applicant SHALL identify himself/herself in each new transaction by presenting a temporary secret which was established during a prior transaction or encounter, or sent to the Applicant’s phone number, email address, or physical address of record.
+	3. Permanent secrets shall only be issued to the Applicant within a protected session.
+2. For physical transactions:
+	3. The applicant SHALL identify himself/herself in person by either using a secret as described above, or through the use of a biometric that was recorded during a prior encounter.
+	4. Temporary secrets SHALL not be reused.
+	5. If the CSP issues permanent secrets during a physical transaction, then they SHALL be loaded locally onto a physical device that is issued in person to the applicant or delivered in a manner that confirms the address of record.
+
+#####IAL3 Requirements
+1. Only physical transactions SHALL apply. 
+2. The applicant SHALL identify himself/herself in person in each new physical transaction through the use of a biometric that was recorded during a prior encounter.
+3. If the CSP issues permanent secrets, then they SHALL be loaded locally onto a physical device that is issued in person or delivered in a manner that confirms the address of record.
+
+####5.1.4.2 Increasing IAL (Componentization)
+* Come with AAL2 or
+* Proofing at IAL2 with AAL1 BUT
+* issue a temporary secret OOB (includes text, email, phone, address, paper, qrcode or proof of posession of authenticator within the proofing session 
+* Come back at AAL2 and bind with temporary secret
+* time the secret out
 
 
 ###5.1.5. Requirements for Derived Credentials
-CSP looks at a credential from a different CSP that it trusts, records the information, and issues its own credential and binds it to an authenticator. I'd call that identity proofing and include that in 63A.
-Where the Applicant already possesses recognized authentication credentials a trusted CSP, the additional CSP may choose to identity proof the Claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.  The following details the proofing requirements for the CSP issuing a derived credential.1.  Before issuing any derived credential the CSP SHALL verify the original credential status and shall verify that the corresponding token is possessed and controlled by the Claimant.  
-2. The CSP SHALL record the details of the original credential used as the basis for derived credential issuance. 
-3. Issuance may be in person or remote. 
+```**Jim credential lifecycle requirements for expiration?**```
+  
+Where the Applicant already possesses recognized authentication credentials from a trusted CSP, the additional CSP may choose to identity proof the Claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.  The following details the proofing requirements for the CSP.
 
-~~~
-The new CSP SHALL set the expiration of the new credential to the expiration of the original credential.
-In situations where the authenticator does not support an automated expiration date, the status of the original credential **shall** be re-checked:
-- At IAL1
-- At IAL2
-- At IAL3
-at a later date (e.g. after a week) to confirm that it was not compromised at the time of issuance of the derived credential. (This guards against the case where an Attacker requests the desired credential before revocation information can be updated.) 
-If the derived credential is revoked, the CSP that issued the derived credential may notify the issuer of the original credential, if the reason for revocation might motivate action by the issuer of the original credential and applicable law, regulation, and agreements permit such notification.  
-~~~
+####5.1.5.1 General Requirements
+1.  Before issuing any derived credential the CSP SHALL verify the original credential status and SHALL verify that the corresponding credential is possessed and controlled by the claimant.  
+2. The CSP SHALL record the details of the original credential used as the basis for derived credential issuance. 
+3. The CSP SHALL set the expiration of the new credential to the expiration of the original credential.
+4. The CSP that issued the derived credential SHOULD notify the issuer of the original credential if the derived credential is revoked.
+
+####5.1.5.1 IAL3 Requirements
+1. The CSP MAY perform remote or in-person proofing, but SHALL support at least one proofing process. 
+2. The CSP SHALL check the expiration/revocation/termination status of the original credential weekly
+
+
+####5.1.5.1 IAL4 Requirements
+1. The CSP SHALL perform in-person proofing only
+2. The CSP SHALL check the expiration/revocation/termination status of the original credential daily
+3. The CSP SHALL obtain and verify a copy of a biometric recorded when the original credential was issued. An example of such a biometric is the signed biometric data object, however if the biometric reference is not available from the original AAL 3 authenticator, it may be obtained elsewhere, as long as its authenticity is assured
+4. Compare a fresh biometric sample obtained in person from the Applicant to the reference biometric retained from the original Level 4 credentials and determine that they match
+5. Determine that the authenticator of the original credential meets all requirements of an IAL3 authenticator
