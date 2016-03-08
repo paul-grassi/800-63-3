@@ -1,16 +1,22 @@
-## 5. Identity Proofing and Verification
+##<a name="ipv-section"></a> 5. Identity Proofing and Verification
 The following sections list the requirements CSPs must follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are derived to ensure the claimed identity is the actual identity of the person attempting to gain access to a system **and** at-scale attacks are difficult to execute without significant time and cost. 
 
 ### Random Thoughts That May Become Requirements Later  
 
 
 - Human-in-the-loop for remote video proofing.  Perhaps if we allow at IAL3?
-
 - user can't pause session and return later. Or maybe allow a small window
 - Visual match to photo id vs. combo of visual and automated match
 - Subjects may remain pseudonymous at RP's at both IAL2 or 3.  pseudonymous pseudonymity
 - Allow KYC in as IAL2?
-- Allow mobile in as IAL2?
+- Allow mobile in as IAL2?  
+- Deprecate KYC single factor in the future?
+- SMS Laundering  
+- KYC Reg Sucks.  Red flags rule (identity theft)? Grandfather banks and mno, with TFA, to allow the as valid identities.
+- Reasonable matching (see canada)
+- Should we do tiers within each IAL just to give agencies a chance to select psuedonymous vs identified.  And then enforce this on the CSP side.  Log in with IAL 2/3, but don't give away jack about me.
+- Digital license?  Already covered by the new requirements?
+- Training requirements for proofers.  More than just training, it could be security clearance as well.
 
 #### 5.1.1 General Requirements per Identity Assurance Level
 For levels 2 and above:  
@@ -21,6 +27,8 @@ For levels 2 and above:
 5. The entire proofing transaction, including transactions that involve a 3rd party to the CSP, SHALL occur over a mutually authenticated protected session. Equivalently, the transaction SHOULD consist of time-stamped or sequenced messages and SHOULD signed by their source and SHOULD be encrypted for their recipient.  
 6. Approved cryptography SHALL be used.    
 7. The CSP SHALL be able to uniquely identify each Subscriber and any associated authenticators that may have been issued to that Subscriber.  
+8. The CSP SHALL record the identification/reference number of the presented identity evidence.
+9. The CSP SHALL NOT records an image/scan/copy of the presented identity evidence.
 7. Personally identifiable information (PII) collected as part of the registration process SHALL be protected, and all privacy requirements shall be satisfied.  
 8. PII collect SHALL be limited to the minimum data necessary to validate the existance of the claimed identity and associate it the claimed identity to the person providing identity evidence.  
 8. The results of the identity proofing step (which may include background investigations of the Applicant) SHALL be protected to ensure source authentication, confidentiality, and integrity.  
@@ -31,7 +39,7 @@ For levels 2 and above:
 ~~~
 KBP SHALL NOT be used to verify the identity of a claimant. KBP MAY be used to resolve to a unique, claimed identity.
 
-For Assertion Chapte.r The CSP shall be capable of conveying this information to Verifiers. At Level 1, the name associated with the Subscriber is provided by the Applicant and accepted without verification. At Level 2, the identifier associated with the subscriber may be pseudonymous but the RA or CSP shall retain the actual identity of the Subscriber. In addition, pseudonymous Level 2 credentials shall be distinguishable from Level 2 credentials that contain verified names.
+For Assertion Chapter The CSP shall be capable of conveying this information to Verifiers. At Level 1, the name associated with the Subscriber is provided by the Applicant and accepted without verification. At Level 2, the identifier associated with the subscriber may be pseudonymous but the RA or CSP shall retain the actual identity of the Subscriber. In addition, pseudonymous Level 2 credentials shall be distinguishable from Level 2 credentials that contain verified names.
 
 At Level 3 and above, the name associated with the Subscriber shall be verified. 
 
@@ -48,7 +56,7 @@ The goal of identity validation is to determine the authenticity and validity of
 This section provides guidelines and requirements on the acceptable properties and qualities of identity evidence that a claimant asserts to claim identity, and the requirements for evidence collected at each identity assurance level.
 
 ##### Properties of Identity Evidence
-The following table lists qualities of various form and types of identity evidence that are acceptable to identity proof an individual.  IdentityFor remote identity proofing, the CSP SHOULD collect actual images of asserted identity evidence.  However, in instances when this is not possible or desirable, the CSP MAY collect identity evidence (and its corresponding data) via other means such as online forms or data files.
+The following table lists qualities of various form and types of identity evidence that are acceptable to identity proof an individual. However, in instances when this is not possible or desirable, the CSP MAY collect identity evidence (and its corresponding data) via other means such as online forms or data files.
 
 ~~~
 Identity evidence, regardless of properties, MUST be issued by a legitimate 3rd party and MUST have authoritative records to validate evidence.
@@ -69,12 +77,16 @@ Score of 3 had 'if it includes security features' and 4 'must'.  Is that ok?
 
 ##### Identity Evidence Requirements per Identity Assurance Level
 The following table lists the minimum requirement of identity evidence properties a CSP SHALL meet per IAL.  
+<center>
+<a name="privacy-section-header"></a>**Requirements pre IAL**
 
 |IAL|Requirements|
 |:-:|:-----------|
 |1|Identity evidence is not required|
 |2|-2 pieces of evidence with a score of 3; **or**<br>  -1 piece of evidence with a score of 3<br>  -2 pieces of evidence with a score of 2|
 |3|-1 piece of evidence with a score of 4<br>  -1 piece of evidence with a score of 3; **or**<br>  -2 pieces of evidence with a score of 3<br>  -1 piece of evidence with a score of 2|
+
+</center>
 
 ####5.1.2.2 Identity Evidence Validation
 
