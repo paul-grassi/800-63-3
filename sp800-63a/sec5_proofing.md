@@ -1,4 +1,8 @@
 ##<a name="ipv-section"></a> 5. Identity Proofing and Verification
+
+**Credential or Authenticator?  
+User, applicant, claimant, subject?**
+
 The following sections list the requirements CSPs must follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are derived to ensure the claimed identity is the actual identity of the person attempting to gain access to a system **and** at-scale attacks are difficult to execute without significant time and cost. 
 
 ### Random Thoughts That May Become Requirements Later  
@@ -76,8 +80,7 @@ Score of 3 had 'if it includes security features' and 4 'must'.  Is that ok?
 
 #### Identity Evidence Requirements per Identity Assurance Level
 The following table lists the minimum requirement of identity evidence properties a CSP SHALL meet per IAL.  
-<center>
-<a name="privacy-section-header"></a>**Requirements pre IAL**
+
 
 |IAL|Requirements|
 |:-:|:-----------|
@@ -85,7 +88,6 @@ The following table lists the minimum requirement of identity evidence propertie
 |2|-2 pieces of evidence with a score of 3; **or**<br>  -1 piece of evidence with a score of 3<br>  -2 pieces of evidence with a score of 2|
 |3|-1 piece of evidence with a score of 4<br>  -1 piece of evidence with a score of 3; **or**<br>  -2 pieces of evidence with a score of 3<br>  -1 piece of evidence with a score of 2|
 
-</center>
 
 ####5.1.2.2 Identity Evidence Validation
 
@@ -106,6 +108,7 @@ Registration, identity proofing, token creation/issuance, and credential issuanc
 The following sections provide requirements for ensuring the integrity of identity proofing when proofing and/or credential issuance do not occur within the same session and/or organizational entity.
 
 ####5.1.4.1 Identity Proofing Transaction Binding
+The following requirements apply when the applicant does not already have an existing credential with the CSP or any other CSP that supports federation. **this language sucks**
 
 
 #####IAL1 Requirements
@@ -121,11 +124,21 @@ No specific requirements, however effort should be made by the CSP to uniquely i
 	5. If the CSP issues permanent secrets during a physical transaction, then they SHALL be loaded locally onto a physical device that is issued in person to the applicant or delivered in a manner that confirms the address of record.
 
 #####IAL3 Requirements
-1. Only physical transactions SHALL apply. 
+1. Only physical encounters SHALL apply. 
 2. The applicant SHALL identify himself/herself in person in each new physical transaction through the use of a biometric that was recorded during a prior encounter.
 3. If the CSP issues permanent secrets, then they SHALL be loaded locally onto a physical device that is issued in person or delivered in a manner that confirms the address of record.
 
-####5.1.4.2 Increasing IAL (Componentization)
+####5.1.4.2 Binding Identity to an Authenticator
+In some instances, a user may already have an existing token, from the CSP with whom the user wishes perform identity proofing, or from another CSP.  The following requirements apply when a user choses to increase IAL.
+
+1. The CSP MAY accept an existing authenticator at or above the desired IAL
+2. The CSP SHALL require the user to authenticate using their existing authenticate
+3. The CSP SHALL execute all required identity proofing processes for the desired IAL
+4. If the user successfully completes identity proofing, the CSP SHALL issue a temporary secret that confirms address of record or require the user to register their own authenticator only after proving proof of possession (for example, activating a private key by physically touching the token)
+5. The temporary secret SHALL expire within **XXXXX**
+6. What to do with AAL2?
+7. What to do with AAL1?
+
 * Come with AAL2 or
 * Proofing at IAL2 with AAL1 BUT
 * issue a temporary secret OOB (includes text, email, phone, address, paper, qrcode or proof of posession of authenticator within the proofing session 
