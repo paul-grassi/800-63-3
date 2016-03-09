@@ -1,6 +1,6 @@
 ## 4. Authenticator Assurance Levels
 
-As described in Section 2, this guideline defines three Authenticator Assurance Levels (AALs). In order to satisfy the requirements of a given AAL, a claimant must authenticate themselves with at least a given level of strength to be recognized as a subscriber. The result of an authentication process is an identifier, that simply conveys a "handle" to that subscriber that will be used each time that subscriber authenticates to that relying party. Optionally, other attributes that identify the subscriber as a unique person may also be provided.
+As described in Section 2, this guideline defines three Authenticator Assurance Levels (AALs). In order to satisfy the requirements of a given AAL, a claimant SHALL authenticate themselves with at least a given level of strength to be recognized as a subscriber. The result of an authentication process is an identifier, that simply conveys a "handle" to that subscriber that will be used each time that subscriber authenticates to that relying party. Optionally, other attributes that identify the subscriber as a unique person may also be provided.
 
 Detailed normative requirements for authenticators and verifiers at each AAL are provided in Section 5.
 
@@ -29,11 +29,11 @@ Hardware authenticators ("devices" from the list above) used at AAL1 SHOULD be d
 
 ####4.1.3. Assertion Requirements
 
-In order to be valid at AAL 1, authentication assertions must meet the requirements of Assertion Level 1 as defined in SP 800-63C.
+In order to be valid at AAL 1, authentication assertions SHALL meet the requirements of Assertion Level 1 as defined in SP 800-63C.
 
 ####4.1.4. Reauthentication
 
-At AAL 1, authentication of the subscriber MUST be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber MUST be repeated following a period of at least 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
+At AAL 1, authentication of the subscriber SHALL be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of at least 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
 
 ###4.2. Authenticator Assurance Level 2
 
@@ -43,7 +43,7 @@ Authenticator Assurance Level (AAL) 2 provides higher assurance that the same Cl
 
 Two or more single-factor authenticators, or one or more multi-factor authenticators, are required at AAL2. Authenticator requirements are specified in Section 5.
 
-If a combination of single-factor authenticators is used, it MUST include a Memorized Secret authenticator and one possession-based ("something you have") authenticator from the following list:
+If a combination of single-factor authenticators is used, it SHALL include a Memorized Secret authenticator and one possession-based ("something you have") authenticator from the following list:
 * Look-up Secret
 * Out of Band
 * Single Factor OTP Device
@@ -56,15 +56,15 @@ Alternatively, any of following multi-factor authenticators may be used:
 
 ####4.2.2. Authenticator Requirements
 
-Single-factor hardware authenticators used at AAL 2 MUST meet the requirements of FIPS 140-2 Level 1 and multi-factor hardware authenticators MUST meet the requirements of FIPS 140-2 Level 2. Formal verification of compliance is not required.
+Single-factor hardware authenticators used at AAL 2 SHALL meet the requirements of FIPS 140-2 Level 1 and multi-factor hardware authenticators SHALL meet the requirements of FIPS 140-2 Level 2. Formal verification of compliance is not required.
 
 ####4.2.3. Assertion Requirements
 
-In order to be valid at AAL 2, authentication assertions must meet the requirements of Assertion Level 2 as defined in SP 800-63C.
+In order to be valid at AAL 2, authentication assertions SHALL meet the requirements of Assertion Level 2 as defined in SP 800-63C.
 
 ####4.2.4. Reauthentication
 
-At AAL 2, authentication of the subscriber MUST be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber MUST be repeated following a period of at least 30 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication requires the use of both authentication factors.
+At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of at least 30 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication requires the use of both authentication factors.
 
 ###4.3. Authenticator Assurance Level 3
 
@@ -78,14 +78,14 @@ Authentication Assurance Level 3 requires the use of one of two kinds of hardwar
 
 ####4.3.2. Authenticator Requirements
 
-Multi-factor hardware authenticators at AAL 3 MUST be verified to meet the requirements of FIPS 140-2 Level 2.
+Multi-factor hardware authenticators at AAL 3 SHALL be verified to meet the requirements of FIPS 140-2 Level 2.
 
 ####4.3.3. Assertion Requirements
-In order to be valid at AAL 3, authentication assertions must meet the requirements of Assertion Level 3 as defined in SP 800-63C.
+In order to be valid at AAL 3, authentication assertions SHALL meet the requirements of Assertion Level 3 as defined in SP 800-63C.
 
 ####4.3.4. Reauthentication
 
-At AAL 3, authentication of the subscriber MUST be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber MUST be repeated following a period of at least 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
+At AAL 3, authentication of the subscriber SHALL be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of at least 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
 
 
 
