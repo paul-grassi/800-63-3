@@ -2,7 +2,8 @@
 
 ##All Identity Assurance LEvels
 1.  A relying party (RP) may ask the subject for additional information not available by the CSP.
-2. 
+
+**How do we deal with a user going to an LOA1 app with an LOA3 credential.  We don't want them to know jack about the user**
 
 ##IAL1
 1.  The CSP **shall not** require any personal information be collected.  An RP may ask the subject for additional information not available by the CSP.
