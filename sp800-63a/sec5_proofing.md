@@ -18,7 +18,12 @@ The following sections list the requirements CSPs must follow to identity proof 
 - Digital license?  Already covered by the new requirements?
 - Training requirements for proofers.  More than just training, it could be security clearance as well.
 
-#### 5.1.1 General Requirements per Identity Assurance Level
+## 5.1 Process Overview
+* The CSP SHALL collect full legal name, an address of record, and date of birth from the applicant.
+
+Include process overview mapped to sections.  This is especially important with the new binding chapter.
+
+## 5.2 General Requirements per Identity Assurance Level
 
 For levels 2 and above:  
 
@@ -37,21 +42,19 @@ For levels 2 and above:
 13. Agencies MAY obtain additional confidence using additional risk mitigation measures so long as additional mitigation approaches do not substitute for the guidelines herein.
 14. Agencies MAY consider partitioning the functionality of an e-authentication enabled application to allow functions requiring less stringent identification of the subscriber to be available at a lower identity assurance level, while other functions are available only at a higher identity assurance level.  
 15. Knowledge based proofing (KBP) (sometimes referred to as knowledge-based authentication (KBA)) verifies the identity by testing the personal knowledge of the individual against information obtained from public databases. KBP SHALL NOT be used to verify the identity of a claimant. KBP MAY be used to resolve to a unique, claimed identity.
+16. Exact matches of personal information may be difficult to achieve to due multiple factors. The CSP MAY employ appropriate matching alogrithms to account for differences in personal information and other relevant proofing data across multiple pieces of evidence, authoritative records, and 3rd party records. Matching algorithms used SHALL be publicly avialable.
 
-~~~
-Do we want a process section ala GPG45.  Hold if comment.  At Level 2 and higher, the Applicant supplies his or her full legal name, an address of record, and date of birth, and may, subject to the policy of the RA or CSP, also supply other PII. Detailed level-by-level identity proofing requirements are stated in Table 3.
-~~~
  
 
-###5.1.2 Validation Requirements
+##5.3 Validation Requirements
 The goal of identity validation is to determine the authenticity and validity of the identity evidence that a claimant provides.  Validation establishes the physical, live existence of the claimed idenity. 
 
-####5.1.2.1 Identity Evidence Properties and Requirements
+###5.3.1 Identity Evidence Properties and Requirements
 >UK Language The purpose of this element is to record the strength of the Identity Evidence provided by the Applicant in support of the Claimed Identity. The following Table demonstrates the properties of the Identity Evidence and the corresponding score for this element. The Identity Evidence must, as a minimum, meet all the properties defined for a particular strength to achieve that score.
 
 This section provides guidelines and requirements on the acceptable properties and qualities of identity evidence that a claimant asserts to claim identity, and the requirements for evidence collected at each identity assurance level.
 
-##### Properties of Identity Evidence
+#### Properties of Identity Evidence
 The following table lists qualities of various form and types of identity evidence that are acceptable to identity proof an individual. However, in instances when this is not possible or desirable, the CSP MAY collect identity evidence (and its corresponding data) via other means such as online forms or data files.
 
 ~~~
@@ -71,7 +74,7 @@ Score of 3 had 'if it includes security features' and 4 'must'.  Is that ok?
 3|-The issuing source of the evidence confirmed the applicant’s identity in a manner that complies with, or is aligned to, the Know Your Customer guidelines, of the US Patriot Act of 2001<br>  -The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates<br>  -The name value on the issued evidence must be the name that the identity was officially known at the time of issuance. Pseudonyms, aliases and initials for given and surnames are not permitted<br>  -The issued evidence contains a photograph/image/Biometric of the person to whom it relates; **or** The ownership or control of the issued evidence can be confirmed through **activity verification**<br>  -Where the issued evidence is, or includes, electronic information that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br>  -Where the issued evidence contains physical security features, it requires proprietary knowledge and proprietary equipment to be able to reproduce it|
 |4|-The issuing source of the evidence confirmed the applicant’s identity in a manner that complies with, or is aligned to, the Know Your Customer guidelines, of the US Patriot Act of 2001<br>  -The issuing source visually identified the applicant and performed further checks to confirm the existence of that identity<br>  -The issuing process for the evidence ensured that it was delivered into the possession of the person to whom it relates<br>  -The issued evidence contains at least one identification/reference number that uniquely identifies itself or the person to whom it relates<br>  -The name value on the issued evidence must be the name that the identity was officially known at the time of issuance. Pseudonyms, aliases and initials for forenames and surnames are not permitted<br>  -The issued evidence contains a photograph/image of the person to whom it relates<br>  -The issued evidence contains a fingerprint, facial, or iris biometric of the person to whom it relates<br>  -Where the issued evidence is, or includes, electronic information that information is protected using cryptographic methods and those methods ensure the integrity of the information and enable the authenticity of the claimed issuing source to be confirmed<br>  -The issued evidence contains physical security features that require proprietary knowledge and proprietary equipment to be able to reproduce it|
 
-##### Identity Evidence Requirements per Identity Assurance Level
+#### Identity Evidence Requirements per Identity Assurance Level
 The following table lists the minimum requirement of identity evidence properties a CSP SHALL meet per IAL.  
 <center>
 <a name="privacy-section-header"></a>**Requirements pre IAL**
@@ -97,10 +100,13 @@ The following table lists the minimum requirement of identity evidence propertie
 	- The CSP MAY use additional risk-based/indicators/context/adaptive  authentication methods to increase confidence in identity verification.
 	- If the CSP is an authoritative source, the only entity that maintains control over specific data, and the data has never been aggregated by a 3rd party, the CSP MAY use knowledge based authentication verification to increase confidence in identity verification.
 
-###5.1.4 Requirements for Identity Proofing Transaction Binding (continuation)
-Registration, identity proofing, token creation/issuance, and credential issuance are separate processes that can be broken up into a number of separate physical encounters or electronic transactions. (Two electronic transactions are considered to be separate if they are not part of the same protected session.) 
+###5.1.4 Binding Requirements (continuation)
+Registration, identity proofing, token creation/issuance, and credential issuance are separate processes that can be broken up into a number of separate physical encounters or electronic transactions. (Two electronic transactions are considered to be separate if they are not part of the same protected session.) These transactions may span distict organizational entities, and in some instance, especially with the separation of credential from proofing, a subject may already possess authenticators at a suitable AAL without having been proofed at the equivalent IAL. For example, a user may have a two-factor credential from a social network provider, considered AAL2 and IAL1, and would like to use those credentials at a relying party that requires IAL2.
 
-####5.1.4.1 Continuation (1 CSP, just finishing transactions)
+The following sections provide requirements for ensuring the integrity of identity proofing when proofing and/or credential issuance do not occur within the same session and/or organizational entity.
+
+####5.1.4.1 Identity Proofing Transaction Binding
+
 
 #####IAL1 Requirements
 No specific requirements, however effort should be made by the CSP to uniquely identify the claimant and provide a suitable user experience such that risk of establishing multiple authenticators is limited.
