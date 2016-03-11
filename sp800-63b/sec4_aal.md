@@ -29,11 +29,11 @@ Hardware authenticators ("devices" from the list above) used at AAL1 SHOULD be d
 
 ####4.1.3. Assertion Requirements
 
-In order to be valid at AAL 1, authentication assertions SHALL meet the requirements of Assertion Level 1 as defined in SP 800-63C.
+In order to be valid at AAL 1, authentication assertions SHALL meet the requirements defined in SP 800-63C.
 
 ####4.1.4. Reauthentication
 
-At AAL 1, authentication of the subscriber SHALL be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of at least 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
+At AAL 1, authentication of the subscriber SHALL be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following no more than 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
 
 ###4.2. Authenticator Assurance Level 2
 
@@ -60,11 +60,11 @@ Single-factor hardware authenticators used at AAL 2 SHALL meet the requirements 
 
 ####4.2.3. Assertion Requirements
 
-In order to be valid at AAL 2, authentication assertions SHALL meet the requirements of Assertion Level 2 as defined in SP 800-63C.
+In order to be valid at AAL 2, authentication assertions SHALL meet the requirements defined in SP 800-63C.
 
 ####4.2.4. Reauthentication
 
-At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of at least 30 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication requires the use of both authentication factors.
+At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a no more than 30 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication requires the use of both authentication factors.
 
 ###4.3. Authenticator Assurance Level 3
 
@@ -81,11 +81,24 @@ Authentication Assurance Level 3 requires the use of one of two kinds of hardwar
 Multi-factor hardware authenticators at AAL 3 SHALL be verified to meet the requirements of FIPS 140-2 Level 2.
 
 ####4.3.3. Assertion Requirements
-In order to be valid at AAL 3, authentication assertions SHALL meet the requirements of Assertion Level 3 as defined in SP 800-63C.
+In order to be valid at AAL 3, authentication assertions SHALL meet the requirements of proof-of-possession assertions as defined in SP 800-63C.
 
 ####4.3.4. Reauthentication
 
-At AAL 3, authentication of the subscriber SHALL be repeated at least once per 24 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of at least 2 hours of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
+At AAL 3, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of no more than 15 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
+
+###4.4. Summary of Requirements
+
+*(Non-normative; refer to preceding sections for normative requirements)*
+
+The following table summarizes the requirements for each of the authenticator assurance levels:
+
+Requirement | AAL 1 | AAL 2 | AAL 3
+------------|-------|-------|-------
+**Authenticator types** | Memorized Secret<br />Look-up Secret<br />Out of Band<br />SF OTP Device<br />MF OTP Device<br />SF Cryptographic Device<br />MF Software Cryptographic Authenticator<br />MF Cryptographic Device | Memorized secret plus:<br />&nbsp;Look-up Secret<br />&nbsp;Out of Band<br />&nbsp;SF OTP Device<br />&nbsp;SF Cryptographic Device<br />or:<br />&nbsp;MF OTP Device<br />&nbsp;MF Software Cryptographic Authenticator<br />&nbsp;MF Cryptographic Device | MF OTP Device<br />MF Cryptographic Device
+**FIPS 140 verification** | Designed to meet Level 1 | Level 1 (single factor),<br /> Level 2 (multi factor); self-asserted | Verified to meet Level 2
+**Assertions** | Bearer or proof of possession | Bearer or proof of possession | Proof of possession only
+**Reauthentication** | 24 hours or 2 hours inactivity | 12 hours or 30 minutes inactivity | 12 hours or 15 minutes inactivity
 
 
 
