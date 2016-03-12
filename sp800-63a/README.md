@@ -1,8 +1,8 @@
 # SP 800-63A
 
-This is a working draft of NIST Special Publication 800-63A *Enrollment and Identity Proofing*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
+This is a working draft of NIST Special Publication 800-63A *Identity Proofing*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
 
-SP 800-63A deals with the processes by which a credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
+SP 800-63A deals with the processes by which an individual can prove their identity to a CSP prior to credential issuance.
 
 This document is broken up into sections as follows:
 
@@ -10,23 +10,21 @@ This document is broken up into sections as follows:
 
 [1. Purpose and 2. Introduction](sec1_2_introduction.md)
 
-[3. Definitions and Abbreviations](sec3_definitions.md)
+[2. Definitions and Abbreviations](sec3_definitions.md)
 
-[4. Confidence Levels](sec4_confidence.md)
+[3. Identity Proofing](sec5_proofing.md)
 
-[5. Identity Proofing](sec5_proofing.md)
+[4. Threats and Security Considerations](sec7_security.md)
 
-[6. Credential Lifecycle Management](sec6_lifecycle.md)
+[5. Privacy Requirements & Considerations](privacy.md)
 
-[7. Threats and Security Considerations](sec7_security.md)
+[6. Usability](sec9_usability.md)
 
-[8. Privacy Requirements & Considerations](privacy.md)
-
-[9. Usability](sec9_usability.md)
-
-[10. References](sec10_references.md)
+[7. References](sec10_references.md)
 
 ##Deprecations
+The following sections have been removed in their entirety.
+
 |**800-63-2 Section Number**   |     **Section Name**  | **Rationale** |
 |---------------|------------------------|------------------|
 |5.3.2 | Requirements for Educational and Financial Institutions and Other Organizations |The advent of trust frameworks have allowed for organizations to federate identity to government services.  Individual agencies may adopt trust frameworks or define their own, mapping organizational policies and processes to 800-63 requirements as necessary and appropriate.|
