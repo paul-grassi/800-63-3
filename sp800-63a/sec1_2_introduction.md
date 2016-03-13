@@ -25,9 +25,13 @@ These technical guidelines apply to remote electronic authentication of human us
 Assurance in a subscriber's identity is described using one of three levels as follows:
 
 ###Identity Assurance Level 1
-At this level, there is no requirement for a Subscriber's identity be proven.  Attributes provided in conjunction with the authentication process, if any, are self-asserted. ###Identity Assurance Level 2
-At IAL2, the claimed identity is proven with evidence that supports the real world exisitence of the claimed identity and identifies and verified the person to whom the claimed identity belongs.  IAL 2 introduces the need for either remote or in-person identity proofing. ###Identity Assurance Level 3
-At Identity Assurance Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized and trained representative of the CSP.
+At this level, there is no requirement for a Subscriber's identity be proven.  Attributes (0 to n) provided in conjunction with the authentication process, if any, are self-asserted. ###Identity Assurance Level 2
+**@privacy**
+
+At IAL2, the claimed identity is proven with evidence that supports the real world exisitence of the claimed identity and identifies and verified the person to whom the claimed identity belongs.  IAL 2 introduces the need for either remote or in-person identity proofing.  IAL 2 supports pseudonymous identity with verified attributes. ###Identity Assurance Level 3
+**@privacy**
+
+At Identity Assurance Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized and trained representative of the CSP. IAL 3 supports pseudonymous identity with verified attributes.
 
 Subjects may remain pseudonymous at RP's at both IAL2 or 3.  
 
