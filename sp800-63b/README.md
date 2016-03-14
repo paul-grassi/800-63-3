@@ -18,16 +18,16 @@ This document is broken up into sections as follows:
 
 [3. Definitions and Abbreviations](sec3_definitions.md)
 
-[4. Identity Proofing](sec4_proofing.md)
+[4. Authenticator Assurance Levels](sec4_aal.md)
 
-[5. Confidence Levels](sec5_confidence.md)
+[5. Authenticator and Verifier Requirements](sec5_authenticators.md)
 
-[6. Credential Lifecycle Management](sec6_lifecycle.md)
+[6. Authenticator Lifecycle Management](sec6_lifecycle.md)
 
 [7. Threats and Security Considerations](sec7_security.md)
 
 [8. Privacy Considerations](sec8_privacy.md)
 
-[9. Usability](sec9_usability.md)
+[9. Usability Considerations](sec9_usability.md)
 
 [10. References](sec10_references.md)
