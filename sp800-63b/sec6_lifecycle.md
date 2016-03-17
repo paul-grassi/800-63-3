@@ -52,5 +52,5 @@ There is no requirement for expiration of authenticators. Due to the the cogniti
 
 CSPs MUST revoke the binding of authenticators promptly when an online identity ceases to exist or when attributes bound directly to the authenticator change (e.g., change of name, termination of employment). 
 
-***CRLs etc?***
+***CRLs etc?  response time limits***
 
