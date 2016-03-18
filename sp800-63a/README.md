@@ -8,19 +8,19 @@ This document is broken up into sections as follows:
 
 [Front matter](cover.md)
 
-[1. Purpose and 2. Introduction](sec1_2_introduction.md)
+[1. Purpose and Introduction](sec1_2_introduction.md)
 
 [2. Definitions and Abbreviations](sec3_definitions.md)
 
-[3. Identity Proofing](sec5_proofing.md)
+[3. Identity Proofing Requirements](sec5_proofing.md)
 
 [4. Threats and Security Considerations](sec7_security.md)
 
-[5. Privacy Requirements & Considerations](privacy.md)
+[5. Privacy Considerations](privacy.md)
 
-[6. Usability](sec9_usability.md)
+[6. Usability Considerations](sec_usability.md)
 
-[7. References](sec10_references.md)
+[7. References](sec_references.md)
 
 ##Deprecations
 The following sections have been removed in their entirety.

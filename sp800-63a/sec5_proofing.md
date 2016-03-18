@@ -2,7 +2,8 @@
 #<a name="ipv-section"></a> 5. Identity Proofing and Verification
 
 **Credential or Authenticator?  
-User, applicant, claimant, subject?**
+User, applicant, claimant, subject?
+fix the damn headers**
 
 The following sections list the requirements CSPs must follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are derived to ensure the claimed identity is the actual identity of the person attempting to gain access to a system **and** at-scale attacks are difficult to execute without significant time and cost. 
 
@@ -22,6 +23,8 @@ The following sections list the requirements CSPs must follow to identity proof 
 - Should we do tiers within each IAL just to give agencies a chance to select psuedonymous vs identified.  And then enforce this on the CSP side.  Log in with IAL 2/3, but don't give away jack about me.
 - Digital license?  Already covered by the new requirements?
 - Training requirements for proofers.  More than just training, it could be security clearance as well.
+- Call center for remote proofing?
+- Pairwise identifier?  No attributes, authenticate only. Direct authentication only with a user comes with their own, local credential.  IdP not involved, as the IdP can solve this with assertions.
 
 ## 5.1 Process Overview
 **@privacy:**  
@@ -123,6 +126,34 @@ Identity validation is the process of confirming the accuracy of identity inform
 
 
 ##5.3 Verification Requirements
+The purpose of identity verification is to determine that the identity evidence and attributes presented by the claimant is actually belonging to that person.  The following table details the verification methods necessary to achieve appropriate identity verification.
+
+**Need to determine what the heck to do with KBV and micro-payment verification.  Current language needs help.**
+
+**Need to get verification code in here and hard phone**
+**trust referee in this table**
+
+|Score|Properties of Identity Verification|
+|:---:|:------------------------------| 
+|0|- Unable to confirm that the applicant is the owner of the claimed identity|
+|1|- The Applicant has been confirmed as having access to the evidence provided to support the claimed identity|
+|2|- The Applicant’s ownership of the Claimed Identity has been confirmed by a Dynamic Knowledge Based Verification <br>**or**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by proving control of an account<br>**or**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by a physical comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity<br>**or**<br>**- The Applicant’s ownership of the Claimed Identity has been confirmed by a Biometric comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity**|
+|3|- The Applicant’s ownership of the Claimed Identity has been confirmed by physical comparison using a photograph/image **or** Biometric comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity<br>**AND**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by Dynamic Knowledge Based Verification **or** proving control of an account|
+|4|- The Applicant’s ownership of the Claimed Identity has been confirmed by a physical comparison of the Applicant using a photograph/image to the strongest pieces of Identity Evidence **OR** By a Biometric comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity<br>**AND**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by both a Dynamic Knowledge Based Verification **and** proving control of an account<br>**AND**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by an interaction with the Applicant via the declared address|
+
+#### Identity Verification Requirements per Identity Assurance Level
+The following table lists the minimum requirements of identity verification properties a CSP SHALL meet per IAL.  
+
+|IAL|Requirements|
+|:-:|:-----------|
+|1|No verification of identity is required|
+|2|At a minimum the Applicant must be Verified as being the owner of the Claimed Identity by a process that is able to achieve a score of 3 for Verification.|
+|3|At a minimum the Applicant must be Verified as being the owner of the Claimed Identity by a process that is able to achieve a score of 4 for Verification.|
+
+
+###Knowledge Based Verification Requirements
+KBV MAY be used if the CSP is, or maintains a relationship with, an authoritative source, the authoritative source is the only entity that maintains control over specific data, the data has never been aggregated or accessed by a 3rd party.  In instances with the CSP leverages and 3rd party for KBV, the 3rd party provide SHALL NOT provide the authoritative data to the CSP.  Rather, only boolean values or error codes SHALL be returned.  
+
 - Enrollment codes sent to a mobile phone (cell SMS or voice) verification must not be via soft phones such as Google Voice or Skype.
 - Shared devices? Is this solved by in-records check?
 - KBA allowed if temporal **and** spacial
