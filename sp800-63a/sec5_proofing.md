@@ -1,9 +1,9 @@
 
 #<a name="ipv-section"></a> 5. Identity Proofing and Verification
 
-**Credential or Authenticator?  
-User, applicant, claimant, subject?
-fix the damn headers**
+**Jim - I tweaked all the UK/Canada requirements to be US-centric.  BUT, many of the scores in the 0-1 range are never used in IAL calculation.  So what to do?  You will see that in the 'REquirements per IAL' tables in each section.
+Need to fix - Credential or Authenticator?  
+Also need to fix - User, applicant, claimant, subject?**
 
 The following sections list the requirements CSPs must follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are derived to ensure the claimed identity is the actual identity of the person attempting to gain access to a system **and** at-scale attacks are difficult to execute without significant time and cost. 
 
