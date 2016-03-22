@@ -2,7 +2,7 @@
 
 ***SHOULD include proof-of-presence***
 
-Section 4 specified the types of authenticators that may be used for each of the three Authenticator Assurance Levels (AALs). This section provides the detailed requirements for each of the authenticator types. With the exception of validation requirements specified in Section 4, the technical requirements for each of the token types is the same regardless of the level at which it is used. For example, a multi-factor cryptographic device may be used at any AAL; the requirements are not different except that validation is not required at AAL 1 and may be asserted by the device's manufacturer at AAL 2.
+Section 4 specified the types of authenticators that may be used for each of the three Authenticator Assurance Levels (AALs). This section provides the detailed requirements for each of the authenticator types. With the exception of validation requirements specified in Section 4, the technical requirements for each of the authenticator types is the same regardless of the level at which it is used. For example, a multi-factor cryptographic device may be used at any AAL; the requirements are not different except that validation is not required at AAL 1 and may be asserted by the device's manufacturer at AAL 2.
 
 ###5.1. Requirements by Authenticator Type
 
@@ -22,7 +22,7 @@ Verifiers SHALL require memorized secrets to be at least 8 characters in length.
 
 Memorized secret verifiers SHALL NOT permit the subscriber to store a "hint" that is accessible to an unauthenticated claimant. Verifiers also SHALL NOT prompt subscribers to use specific types of information (e.g., "What was the name of your first pet?") when choosing memorized secrets.
 
-When processing requests to establish and change memorized secrets, verifiers SHOULD compare the prospective secrets against a dictionary of known commonly-used and/or compromised values. If the chosen secret is found in the dictionary, the subscriber SHOULD be required to choose a different value. ***Need to explain to the user***
+When processing requests to establish and change memorized secrets, verifiers SHOULD compare the prospective secrets against a dictionary of known commonly-used and/or compromised values. If the chosen secret is found in the dictionary, the subscriber SHOULD be required to choose a different value. The subscriber SHOULD be advised that they need to select a different secret because their previous choice was commonly used.
 
 Verifiers SHOULD NOT impose other composition rules (mixtures of different character types, for example) on memorized secrets. Verifiers SHOULD NOT require memorized secrets to be changed arbitrarily (e.g., periodically) unless there is evidence of a breach of authentication information.
 
@@ -56,13 +56,17 @@ An Out of Band authenticator is a physical device that is uniquely addressable a
 
 Two key requirements are that the device be uniquely addressable and that communication over the secondary channel be private. Some voice-over-IP telephone services can deliver text messages and voice calls without the need for possession of a physical device; these SHALL NOT be used for out of band authentication. Mechanisms such as smartphone applications employing secure communications protocols are preferred for out-of-band authentication.
 
-#####5.1.3.1. Out of Band Authenticators
+Ability to receive email messages or other types of instant message does not generally prove the possession of a specific device, so they SHALL NOT be used as out of band authentication methods.
 
-***Allow SMS with verification that it's a phone number***
+#####5.1.3.1. Out of Band Authenticators
 
 The out of band authenticator SHALL establish a secure communication channel with the  verifier that is resistant to man-in-the-middle attacks (e.g., TLS using certificates that are trusted by the authenticator) in order to retrieve the out of band secret. This secure communication channel is considered to be out of band with respect to the primary communication channel, even if they terminate on the same device, provided the device does not leak information from one to the other.
 
-The out of band authenticator SHALL uniquely authenticate itself using at least a 124-bit identifying key to the verifier in order to receive the authentication secret. This key SHOULD be stored in the most secure storage available on the device (e.g., keychain storage).
+The out of band authenticator SHALL uniquely authenticate itself in one of the following ways in order to receive the authentication secret:
+
+- Authentication to the verifier using at least a 124-bit identifying key. This key SHOULD be stored in the most secure storage available on the device (e.g., keychain storage).
+
+- Authentication to a public mobile telephone network using a SIM card or equivalent that uniquely identifies the device
 
 Out of band authenticators SHOULD NOT display the authentication secret on a device that is locked by the owner (i.e., requires an entry of a PIN or passcode). However, authenticators MAY indicate the receipt of an authentication secret on a locked device.
 
@@ -70,9 +74,11 @@ Out of band authenticators SHOULD NOT display the authentication secret on a dev
 
 Out of band verifiers SHALL generate a random authentication secret with at least 20 bits of entropy using an approved random number generator. They then optionally signal the device containing the subscriber's authenticator to indicate readiness to authenticate.
 
-The verifier then waits for a secure (e.g., TLS) connection from an authenticator and verifies the authenticator's identifying key. The verifier SHALL NOT store the identifying key itself, but SHALL use a verification method such as hashing (using an approved hash function) or proof of possession of the identifying key to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator and waits for the secret to be returned on the primary communication channel. The authentication secret SHALL be considered invalid if not received over the primary channel within 5 minutes.
+If the out of band verification is to be made using a text message on a public mobile telephone network, the verifier SHALL utilize a service that verifies that the pre-registered telephone number being used is actually associated with a mobile network and not with a VoIP service. It then sends the text message to the pre-registered telephone number. Changing the pre-registered telephone number SHALL NOT be possible without two-factor authentication at the time of the change.
 
-***Send the website/service name to the authenticator too?***
+If out of band verification is to be made using a secure application (e.g., on a smart phone), the verifier MAY send a push notification to that device. The verifier then waits for a secure (e.g., TLS) connection from that authenticator and verifies the authenticator's identifying key. The verifier SHALL NOT store the identifying key itself, but SHALL use a verification method such as hashing (using an approved hash function) or proof of possession of the identifying key to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator and waits for the secret to be returned on the primary communication channel.
+
+In all cases, The authentication secret SHALL be considered invalid if not received over the primary channel within 5 minutes.
 
 If the authentication secret has less than 64 bits of entropy, the verifier SHALL implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. See section 5.2.2 for further guidance on throttling.
 
@@ -166,9 +172,7 @@ A multi-factor cryptographic device is a hardware device that contains a protect
 
 Multi-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate a secret key that is unique to the authenticator and is accessible only through the input of an additional factor, either a memorized secret or a biometric.
 
-Each authentication operation using the authenticator SHALL require the input of the additional factor. ***Can we require this? Not clear that PIV cards do this.*** Input of the additional factor MAY be accomplished via either direct input on the device or via a hardware connection (e.g., USB or ***what do we call the smartcard interface?***). 
-
-***Do we rate limit at the authenticator or the verifier? Better visibility if done at the verifier, but it doesn't know what the entropy of the activation secret is.***
+Each authentication operation using the authenticator SHOULD require the input of the additional factor. Input of the additional factor MAY be accomplished via either direct input on the device or via a hardware connection (e.g., USB or smartcard). 
 
 #####5.1.8.2 Multi-Factor Cryptographic Device Verifiers
 
@@ -177,8 +181,6 @@ Multi-factor cryptographic device verifiers generate a challenge nonce, send it 
 The verifier contains either symmetric or asymmetric public keys corresponding to each authenticator. While both types of keys SHALL be protected against modification, symmetric keys SHALL additionally be strongly protected against unauthorized disclosure.
 
 The challenge nonce SHALL be at least 64 bits in length, and SHALL either be unique over the lifetime of the authenticator or statistically unique (generated using an approved random number generator). The verification operation SHALL use approved cryptography.
-
-***Attestation certificate verification? Otherwise how do we know it's a multifactor authentication? Issuer trust?***
 
 #### 5.2. General Authenticator Requirements
 
@@ -190,7 +192,7 @@ Physical authenticators SHALL be protected by the subscriber against theft or lo
 
 *cf. 800-63-2 sec 8.2.3, p.75*
 
-When using an authenticator that produces a low entropy output or when the authenticator requires an activation factor with low entropy, it is necessary to implement controls at the verifier to protect against online guessing attacks. An explicit requirement for such tokens is given in the token requirements above: the verifier shall effectively limit online attackers to 100 failed attempts on a single account in any 30 day period.
+When using an authenticator that produces a low entropy output or when the authenticator requires an activation factor with low entropy, it is necessary to implement controls at the verifier to protect against online guessing attacks. An explicit requirement for such authenticators is given in the authenticator requirements above: the verifier shall effectively limit online attackers to 100 failed attempts on a single account in any 30 day period.
 
 The simplest way of implementing a throttling mechanism (which is not the recommended approach) would be to keep a counter of failed attempts that is reset at the beginning of each calendar month, and to lock the account for the rest of the month, when the counter exceeds 50. Aside from the fact that this system would not technically meet the requirement on the first of March in non-leap years, this throttling mechanism has a number of more severe problems. Most notably, it leaves the verifier open to a very easy denial of service attack: on the first day of the month, an attacker simply makes 50 failed attempts on each subscriber account he or she knows about, and the system is unusable for the next 29 days.
 
@@ -218,7 +220,7 @@ For a variety of reasons, this document supports only limited use of biometrics 
 
 - Many types of biometric can be obtained through artifacts (e.g., latent fingerprints) or high resolution images (e.g., iris patterns) and therefore cannot be considered secrets. While presentation attack detection (PAD) technologies such as liveness detection can mitigate use of such methods, this requires additional trust in the sensor to ensure that PAD is operating properly in accordance with the needs of the CSP and the subscriber.
 
-Accordingly, biometrics SHALL be used only to "unlock" hardware multi-factor authentication tokens. Biometrics are also used in some cases to prevent repudiation of registration and to verify that the same individual participates in all phases of the registration process as described in SP 800-63A.
+Accordingly, biometrics SHALL be used only to "unlock" hardware multi-factor authentication authenticators. Biometrics are also used in some cases to prevent repudiation of registration and to verify that the same individual participates in all phases of the registration process as described in SP 800-63A.
 
 To be acceptable for this purpose, the biometric system SHALL have an equal error rate [ref] of less than 1 in 1000. In other words, if the sensor is tuned so that the false reject rate is 1 in 1000, the false accept rate SHALL be less than 1 in 1000.
 
