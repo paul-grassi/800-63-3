@@ -1,3 +1,3 @@
-##8. Privacy Considerations
+##9. Usability Considerations
 
 ***To be completed***
