@@ -1,8 +1,8 @@
-##5. Authenticator and Verifier Requirements
+##5. <a name="AAL_SEC5"></a>Authenticator and Verifier Requirements
 
 ***SHOULD include proof-of-presence***
 
-Section 4 specified the types of authenticators that may be used for each of the three Authenticator Assurance Levels (AALs). This section provides the detailed requirements for each of the authenticator types. With the exception of validation requirements specified in Section 4, the technical requirements for each of the authenticator types is the same regardless of the level at which it is used. For example, a multi-factor cryptographic device may be used at any AAL; the requirements are not different except that validation is not required at AAL 1 and may be asserted by the device's manufacturer at AAL 2.
+This section provides the detailed requirements specific for each of the authenticator types. With the exception of validation requirements specified in Section 4, the technical requirements for each of the authenticator types is the same regardless of the AAL at which it is used.
 
 ###5.1. Requirements by Authenticator Type
 
@@ -14,8 +14,6 @@ A Memorized Secret authenticator (commonly referred to as a *password* or *PIN* 
 
 Memorized secrets SHALL be at least 8 characters in length. Subscribers should expect that some values for memorized secrets may be disallowed based on their appearance on a blacklist of compromised values. No other complexity requirements for memorized secrets are imposed; a rationale for this is presented in Appendix A.
 
-Claimants authenticating via memorized secrets SHOULD ensure that the communication channel authenticates the Verifier (e.g., using X.509 certificates they trust or can verify) and uses approved encryption (e.g., a current version of TLS) before entering their memorized secret.
-
 #####5.1.1.2. Memorized Secret Verifiers
 
 Verifiers SHALL require memorized secrets to be at least 8 characters in length. Verifiers SHALL permit memorized secrets to be at least 64 characters in length. All printing ASCII (ref) characters as well as the space character SHALL be acceptable in memorized secrets; Unicode (ref) characters SHOULD be accepted as well.
@@ -24,7 +22,7 @@ Memorized secret verifiers SHALL NOT permit the subscriber to store a "hint" tha
 
 When processing requests to establish and change memorized secrets, verifiers SHOULD compare the prospective secrets against a dictionary of known commonly-used and/or compromised values. If the chosen secret is found in the dictionary, the subscriber SHOULD be required to choose a different value. The subscriber SHOULD be advised that they need to select a different secret because their previous choice was commonly used.
 
-Verifiers SHOULD NOT impose other composition rules (mixtures of different character types, for example) on memorized secrets. Verifiers SHOULD NOT require memorized secrets to be changed arbitrarily (e.g., periodically) unless there is evidence of a breach of authentication information.
+Verifiers SHOULD NOT impose other composition rules (mixtures of different character types, for example) on memorized secrets. Verifiers SHOULD NOT require memorized secrets to be changed arbitrarily (e.g., periodically) unless there is evidence of compromise of the authenticator or a Claimant requests a change.
 
 Verifiers SHALL use approved encryption and SHALL authenticate themselves to the claimant (e.g., through the use of a X.509 certificate acceptable to the claimant) when requesting memorized secrets in order to provide resistance to eavesdropping and phishing attacks.
 
@@ -51,6 +49,7 @@ Look-up secrets SHALL be generated using an approved random number generator and
 Verifiers SHALL use approved encryption and SHALL authenticate themselves to the claimant (e.g., through the use of a X.509 certificate acceptable to the claimant) when requesting look-up secrets in order to provide resistance to eavesdropping and phishing attacks.
 
 ####5.1.3. Out of Band
+**Deprecated**
 
 An Out of Band authenticator is a physical device that is uniquely addressable and can receive a Verifier-selected secret for one-time use. The device is possessed and controlled by the Claimant and supports private communication over a secondary channel that is separate from the primary channel for e-authentication. The claimant presents the received secret to the verifier using the primary channel for e-authentication.
 
