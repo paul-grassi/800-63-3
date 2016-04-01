@@ -36,7 +36,7 @@ In order to be valid at AAL 1, authentication assertions SHALL meet the requirem
 No requirements to reauthenticate after a period of inactivity. **We need some parameters here**
 
 ####4.1.5 Security Controls
-The CSP MUST employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and must ensure that the minimum assurance requirements associated with the low baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and SHALL ensure that the minimum assurance requirements associated with the low baseline are satisfied.
 
 ###4.2. Authenticator Assurance Level 2
 
@@ -72,7 +72,7 @@ In order to be valid at AAL 2, authentication assertions SHALL meet the requirem
 At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a no more than 30 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication requires the use of both authentication factors.
 
 ####4.2.5 Security Controls
-The CSP MUST employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and must ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and SHALL ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
 
 
 ###4.3. Authenticator Assurance Level 3
@@ -97,7 +97,7 @@ In order to be valid at AAL 3, authentication assertions SHALL meet the requirem
 At AAL 3, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of no more than 15 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
 
 ####4.3.5 Security Controls
-The CSP MUST employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and must ensure that the minimum assurance requirements associated with the high baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and SHALL ensure that the minimum assurance requirements associated with the high baseline are satisfied.
 
 ###4.4 FIPS 140-2 Requirements
 Need language that if CSP is agency and the entire lifecycle of the authenticator, to include issuance and verifier is 100% agency, then ALL FIPS 140 requirements SHALL apply.  Even if they use COTS.  The FIPS 140 "relaxation" is for commercial solutions that claimants bring to the party, not authenticators an agency decides they want to issue on their own.
