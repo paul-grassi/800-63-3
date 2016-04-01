@@ -32,9 +32,7 @@ Verifiers SHALL store memorized secrets in a form that is resistant to offline a
 A look-up secret authenticator is a physical or electronic record that stores a set of secrets shared between the Claimant and the CSP. The Claimant uses the authenticator to look up the appropriate secret(s) needed to respond to a prompt from the Verifier. For example, a Claimant may be asked by the Verifier to provide a specific subset of the numeric or character strings printed on a card in table format.
 
 #####5.1.2.1 Look-up Secret Authenticators
-CSPs creating look-up secret authenticators SHALL use an approved random number generator to generate the list of secrets, and SHALL deliver the authenticator securely to the subscriber and to the verifier. ***Describe what delivery methods are acceptable.*** Look-up secrets SHALL have at least 64 bits of entropy, or SHALL have at least 20 bits of entropy if the number of failed authentication attempts is limited as described in Section 5.2.2.
-
-Claimants authenticating via look-up secrets SHOULD ensure that the communication channel authenticates the Verifier (e.g., using X.509 certificates they trust or can verify) and uses approved encryption (e.g., a current version of TLS) before entering a secret they have looked up.
+CSPs creating look-up secret authenticators SHALL use an approved random number generator to generate the list of secrets, and SHALL deliver the authenticator securely to the subscriber. ***Describe what delivery methods are acceptable.*** Look-up secrets SHALL have at least 64 bits of entropy, or SHALL have at least 20 bits of entropy if the number of failed authentication attempts is limited as described in Section 5.2.2.
 
 If the authenticator uses look-up secrets sequentially from a list, the subscriber MAY dispose of used secrets, but only after a successful authentication.
 
@@ -73,7 +71,7 @@ Out of band authenticators SHOULD NOT display the authentication secret on a dev
 
 Out of band verifiers SHALL generate a random authentication secret with at least 20 bits of entropy using an approved random number generator. They then optionally signal the device containing the subscriber's authenticator to indicate readiness to authenticate.
 
-If the out of band verification is to be made using a text message on a public mobile telephone network, the verifier SHALL utilize a service that verifies that the pre-registered telephone number being used is actually associated with a mobile network and not with a VoIP service. It then sends the text message to the pre-registered telephone number. Changing the pre-registered telephone number SHALL NOT be possible without two-factor authentication at the time of the change.
+If the out of band verification is to be made using a SMS message on a public mobile telephone network, the verifier SHALL verify that the pre-registered telephone number being used is actually associated with a mobile network and not with a VoIP (or other software-based) service. It then sends the SMS message to the pre-registered telephone number. Changing the pre-registered telephone number SHALL NOT be possible without two-factor authentication at the time of the change.
 
 If out of band verification is to be made using a secure application (e.g., on a smart phone), the verifier MAY send a push notification to that device. The verifier then waits for a secure (e.g., TLS) connection from that authenticator and verifies the authenticator's identifying key. The verifier SHALL NOT store the identifying key itself, but SHALL use a verification method such as hashing (using an approved hash function) or proof of possession of the identifying key to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator and waits for the secret to be returned on the primary communication channel.
 
@@ -83,7 +81,7 @@ If the authentication secret has less than 64 bits of entropy, the verifier SHAL
 
 ####5.1.4. Single Factor OTP Device
 
-A single factor OTP device is a hardware device that supports the spontaneous generation of one-time passwords. This device has an embedded secret that is used as the seed for generation of one-time passwords and does not require activation through a second factor. Authentication is accomplished by using the authenticator output (i.e., the one-time password) in an authentication protocol, thereby proving possession and control of the device. A one-time password device may, for example, display 6 characters at a time.
+A single factor OTP device is a hardware device that supports the time-based generation of one-time passwords. This includes software-based OTP generators installed on devices such as mobile phones. This device has an embedded secret that is used as the seed for generation of one-time passwords and does not require activation through a second factor. Authentication is accomplished by using the authenticator output (i.e., the one-time password) in an authentication protocol, thereby proving possession and control of the device. A one-time password device may, for example, display 6 characters at a time.
 
 Single factor OTP devices are similar to look-up secret authenticators with the exception that the secrets are cryptographically generated by the authenticator and verifier and compared by the verifier. The secret is computed based on a nonce that may be time-based or from a counter on the authenticator and verifier.
 
@@ -93,7 +91,7 @@ Single factor OTP authenticators contain two persistent values. The first is a s
 
 The secret key SHALL be a 128-bit or longer AES key or of equivalent strength. The nonce SHALL be of sufficient length to ensure that it is unique for each operation of the device.
 
-The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output MAY be truncated to as few as 6 decimal digits (approximately 20 bits of entropy). Note that when the authenticator output is truncated in this manner a given output value may repeat; the term "one-time password" is somewhat of a misnomer.
+The authenticator output is obtained by using an approved block cipher or hash function to combine the key and nonce in a secure manner. The authenticator output MAY be truncated to as few as 6 decimal digits (approximately 20 bits of entropy).
 
 If the nonce used to generate the authenticator output is based on a real-time clock, the nonce SHALL be changed at least once every 2 minutes. The OTP value associated with a given nonce SHALL be accepted only once.
 
@@ -109,21 +107,25 @@ If the authenticator output has less than 64 bits of entropy, the verifier SHALL
 
 ####5.1.5. Multi-Factor OTP Devices
 
-A multi-factor (MF) OTP device hardware device that generates one-time passwords for use in authentication and which requires activation through a second factor of authentication. The second factor of authentication may be achieved through some kind of integral entry pad, an integral biometric (e.g., fingerprint) reader or a direct computer interface (e.g., USB port). The one-time password is typically displayed on the device and manually input to the Verifier as a password, although direct electronic input from the device to a computer is also allowed. The authenticator output is the one-time password. For example, a one-time password device may display 6 characters at a time. The MF OTP device is *something you have*, and it may be activated by either *something you know* or *something you are*.
+A multi-factor (MF) OTP device hardware device generates one-time passwords for use in authentication and which requires activation through a second factor of authentication. The second factor of authentication may be achieved through some kind of integral entry pad, an integral biometric (e.g., fingerprint) reader or a direct computer interface (e.g., USB port). The one-time password is typically displayed on the device and manually input to the Verifier, although direct electronic output from the device as input to a computer is also allowed. For example, a one-time password device may display 6 characters at a time. The MF OTP device is *something you have*, and it may be activated by either *something you know* or *something you are*.
 
 #####5.1.5.1. Multi-Factor OTP Authenticators
 
-Multi-factor OTP authenticators operate in a similar manner to single-factor OTP verifiers (see section 5.4.1), except that they require the entry of either a memorized secret or use of a biometric to obtain a password from the authenticator. Each use of the authenticator SHALL require the input of the additional factor. In the event that the memorized secret or the biometric are incorrect, the authenticator SHALL not provide any indication of this; the authenticator SHALL output an incorrect password that is indistinguishable from the correct password except by the verifier.
+Multi-factor OTP authenticators operate in a similar manner to single-factor OTP verifiers (see section 5.4.1), except that they require the entry of either a memorized secret or use of a biometric to obtain a password from the authenticator. Each use of the authenticator SHALL require the input of the additional factor. In the event that the memorized secret or the biometric are incorrect, the authenticator SHALL not provide any indication of this; the authenticator SHALL output an incorrect password that is indistinguishable from the correct password except by the verifier. **We need to make sure we are consistent**
 
-The authenticator output SHALL have at least 6 decimal digits (approximately 20 bits) of entropy. The unencrypted key and activation secret or biometric SHALL be immediately erased from storage immediately after a password has been generated.
+The authenticator output SHALL have at least 6 decimal digits (approximately 20 bits) of entropy. The unencrypted key and activation secret or biometric sample (and any biometric data derived from the biometric sample such as a probe produced through signal processing) SHALL be immediately erased from storage immediately after a password has been generated.
 
-The memorized secret used by the authenticator SHALL be at least 6 decimal digits (approximately 20 bits) in length or of equivalent complexity. A biometric activation factor SHALL meet the requirements of section 5.2.3. If the activation factor (memorized secret or biometric information) is supplied to the authentication over an interface such as USB, a physical action (e.g., pressing a button on the device) SHOULD be required to cause a one-time password to be generated.
+The memorized secret used by the authenticator SHALL be at least 6 decimal digits (approximately 20 bits) in length or of equivalent complexity. A biometric activation factor SHALL meet the requirements of section 5.2.3. If the activation factor (memorized secret or biometric information) is supplied to the authenticator over an interface such as USB, a physical action (e.g., pressing a button on the device) SHOULD be required to cause a one-time password to be generated.
+**from -2
+The one-time password shall be generated by using an Approved block cipher or hash function to combine a symmetric key stored on a personal hardware device with a nonce to generate a one-time password.The nonce may be a date and time, a counter generated on the device. Each authentication shall require entry of a password or other activation data through an integrated input mechanism.**
 
 #####5.1.5.2. Multi-Factor OTP Verifiers
 
 Multi-factor OTP verifiers effectively duplicate the process of generating the OTP used by the authenticator, but without the requirement that a second factor be provided. As such, the symmetric keys used by authenticators SHALL be strongly protected against compromise.
+**from -2
+The one-time password shall have a limited lifetime of less than 2 minutes.**
 
-If the authenticator output or activation secret has less than 64 bits of entropy or if the authenticator is activated by a biometric, the verifier SHALL implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to 100 or fewer in any 30-day period. See section 5.2.2 for further guidance on throttling.
+If the authenticator output or activation secret has less than 64 bits of entropy or if the authenticator is activated by a biometric, the verifier SHALL implement a throttling mechanism that effectively limits the number of failed authentication attempts an Attacker can make on the Subscriber’s account to **Jim?Went from 100/30 to 3/1. OK?:3 or fewer in any 1-day period**. See section 5.2.2 for further guidance on throttling.
     
 ####5.1.6. Single Factor Cryptographic Devices
 
@@ -153,8 +155,6 @@ A multi-factor software cryptographic authenticator is a cryptographic key is st
 
 Multi-factor software cryptographic authenticators encapsulate a secret key that is unique to the authenticator and is accessible only through the input of an additional factor, either a memorized secret or a biometric. 
 
-***Wondering about the use of a biometric here: how is it possible to meet FIPS 140-2 Level 1 requirements in a software container if it is activated by a biometric also input in software? Seems we need hardware here somewhere.***
-
 Each authentication operation using the authenticator SHALL require the input of the additional factor. In the event that the memorized secret or the biometric are incorrect, the authenticator SHALL not provide any indication of this; the authenticator SHALL output an incorrect value that is indistinguishable from a correct one except by the verifier.
 
 The unencrypted secret key and activation secret or biometric SHALL be immediately erased from storage immediately after an authentication transaction has taken place.
@@ -171,6 +171,7 @@ A multi-factor cryptographic device is a hardware device that contains a protect
 
 Multi-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate a secret key that is unique to the authenticator and is accessible only through the input of an additional factor, either a memorized secret or a biometric.
 
+**This is essential proof of presence, right**
 Each authentication operation using the authenticator SHOULD require the input of the additional factor. Input of the additional factor MAY be accomplished via either direct input on the device or via a hardware connection (e.g., USB or smartcard). 
 
 #####5.1.8.2 Multi-Factor Cryptographic Device Verifiers
@@ -185,7 +186,7 @@ The challenge nonce SHALL be at least 64 bits in length, and SHALL either be uni
 
 ##### 5.2.1. Physical Authenticators
 
-Physical authenticators SHALL be protected by the subscriber against theft or loss. The subscriber SHALL contact their CSP immediately if loss or theft of the authenticator is suspected.
+CSPs SHALL provide subscriber instructions on how to appropriately  protect the authenticator against theft or loss. The CSP SHALL provide a mechanism to revoke or suspend the authenticator immediately upon notification from subscriber that loss or theft of the authenticator is suspected.
 
 #####5.2.2. Rate Limiting (Throttling)
 
