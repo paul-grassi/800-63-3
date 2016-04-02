@@ -10,7 +10,7 @@ James L. Fenton
 
 ## DRAFT NIST Special Publication 800-63-A
 
-# Identity Proofing Requirements
+# Enrollment and Identity Proofing
 
 Paul Grassi  
 *Applied Cybersecurity Division  
@@ -60,8 +60,8 @@ organizations on a voluntary basis and is not subject to copyright in
 the United States. Attribution would, however, be appreciated by NIST.
 
 National Institute of Standards and Technology Special Publication
-800-63-3  
-Natl. Inst. Stand. Technol. Spec. Publ. 800-63-3, xxx pages (MonthTBD
+800-63A  
+Natl. Inst. Stand. Technol. Spec. Publ. 800-63A, xxx pages (MonthTBD
 2016)  
 CODEN: NSPUE2
 
@@ -91,17 +91,11 @@ activities with industry, government, and academic organizations.
 
 ### Abstract
 
-This document provides technical guidelines for Federal agencies
-implementing electronic authentication to implement effective identity proofing processes based on risk. The
-recommendation covers remote authentication of users (such as employees,
-contractors, or private individuals) interacting with government IT
-systems over open networks. It defines technical requirements for each
-of the three identity assurance levels. This publication supersedes NIST SP 800-63-1 and SP 800-63-2.
+This document and its companion documents, SP 800-63-3, SP 800-63B, and SP 800-63C, provide technical guidelines to agencies for the implementation of electronic authentiction (e-authentication). This document focuses on the enrollment and establishment of an online identity for users. Central to this is a process known as *identity proofing* in which a user provides evidence to a credential service provider (CSP) reliably identifying themselves, thereby allowing the CSP to assert that identification at a useful identity assurance level online. This document defines technical requirements for each of three identity assurance levels. This publication supersedes corresponding sections of NIST SP 800-63-1 and SP 800-63-2.
 
 ### Keywords
 
-authentication; credential service provider;
-electronic authentication; electronic credentials; identity proofing; PKI.
+authentication; credential service provider; electronic authentication; electronic credentials; identity proofing.
 
 ### Acknowledgements
 * UK
