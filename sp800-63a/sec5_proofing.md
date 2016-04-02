@@ -1,11 +1,7 @@
 
 #<a name="ipv-section"></a> 5. Identity Proofing and Verification
 
-**Jim - I tweaked all the UK/Canada requirements to be US-centric.  BUT, many of the scores in the 0-1 range are never used in IAL calculation.  So what to do?  You will see that in the 'REquirements per IAL' tables in each section.
-Need to fix - Credential or Authenticator?  
-Also need to fix - User, applicant, claimant, subject?**
-
-The following sections list the requirements CSPs must follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are derived to ensure the claimed identity is the actual identity of the person attempting to gain access to a system **and** at-scale attacks are difficult to execute without significant time and cost. 
+The following sections list the requirements CSPs SHALL follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are intended to ensure the claimed identity is the actual identity of the person attempting to enroll with the CSP and at-scale attacks are difficult to execute without significant time and cost. 
 
 ## 5.1 General Requirements per Identity Assurance Level
 
@@ -21,7 +17,7 @@ The following requirements apply to any CSP performing identity proofing at IAL 
 5.  The CSP SHALL record the identification/reference number of the presented identity evidence.
 9. **The CSP SHALL NOT record an image/scan/copy of the presented identity evidence.**  
 10. Personally identifiable information (PII) collected as part of the registration process SHALL be protected, and all privacy requirements shall be satisfied.  
-11. PII collect SHALL be limited to the minimum data necessary to validate the existance of the claimed identity and associate it the claimed identity to the person providing identity evidence. 
+11. PII collect SHALL be limited to the minimum data necessary to validate the existence of the claimed identity and associate it the claimed identity to the person providing identity evidence. 
 12. **Jim:  Put in assertions/authenticator docs? CSP SHALL support pseudonymous pairwise identifiers**
 12. Exact matches of personal information may be difficult to achieve due to multiple factors. The CSP MAY employ appropriate matching alogrithms to account for differences in personal information and other relevant proofing data across multiple pieces of evidence, authoritative records, and 3rd party records. Matching algorithms/rules used SHALL be publicly avialable. 
 13. The entire proofing transaction, including transactions that involve a 3rd party, SHALL occur over a mutually authenticated protected session. Equivalently, the transaction SHOULD consist of time-stamped or sequenced messages and SHOULD signed by their source and be encrypted for their recipient.  
