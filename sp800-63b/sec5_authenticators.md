@@ -1,7 +1,5 @@
 ##5. <a name="AAL_SEC5"></a>Authenticator and Verifier Requirements
 
-***SHOULD include proof-of-presence***
-
 This section provides the detailed requirements specific for each of the authenticator types. With the exception of validation requirements specified in Section 4, the technical requirements for each of the authenticator types is the same regardless of the AAL at which it is used.
 
 ###5.1. Requirements by Authenticator Type
@@ -47,7 +45,6 @@ Look-up secrets SHALL be generated using an approved random number generator and
 Verifiers SHALL use approved encryption and SHALL authenticate themselves to the claimant (e.g., through the use of a X.509 certificate acceptable to the claimant) when requesting look-up secrets in order to provide resistance to eavesdropping and phishing attacks.
 
 ####5.1.3. Out of Band
-**Deprecated**
 
 An Out of Band authenticator is a physical device that is uniquely addressable and can receive a Verifier-selected secret for one-time use. The device is possessed and controlled by the Claimant and supports private communication over a secondary channel that is separate from the primary channel for e-authentication. The claimant presents the received secret to the verifier using the primary channel for e-authentication.
 
@@ -71,7 +68,7 @@ Out of band authenticators SHOULD NOT display the authentication secret on a dev
 
 Out of band verifiers SHALL generate a random authentication secret with at least 20 bits of entropy using an approved random number generator. They then optionally signal the device containing the subscriber's authenticator to indicate readiness to authenticate.
 
-If the out of band verification is to be made using a SMS message on a public mobile telephone network, the verifier SHALL verify that the pre-registered telephone number being used is actually associated with a mobile network and not with a VoIP (or other software-based) service. It then sends the SMS message to the pre-registered telephone number. Changing the pre-registered telephone number SHALL NOT be possible without two-factor authentication at the time of the change.
+If the out of band verification is to be made using a SMS message on a public mobile telephone network, the verifier SHALL verify that the pre-registered telephone number being used is actually associated with a mobile network and not with a VoIP (or other software-based) service. It then sends the SMS message to the pre-registered telephone number. Changing the pre-registered telephone number SHALL NOT be possible without two-factor authentication at the time of the change.  **OOB using SMS is deprecated**, and will no longer be supported in future releases of this guidance.
 
 If out of band verification is to be made using a secure application (e.g., on a smart phone), the verifier MAY send a push notification to that device. The verifier then waits for a secure (e.g., TLS) connection from that authenticator and verifies the authenticator's identifying key. The verifier SHALL NOT store the identifying key itself, but SHALL use a verification method such as hashing (using an approved hash function) or proof of possession of the identifying key to uniquely identify the authenticator. Once authenticated, the verifier transmits the authentication secret to the authenticator and waits for the secret to be returned on the primary communication channel.
 
@@ -171,7 +168,6 @@ A multi-factor cryptographic device is a hardware device that contains a protect
 
 Multi-factor cryptographic device authenticators use tamper-resistant hardware to encapsulate a secret key that is unique to the authenticator and is accessible only through the input of an additional factor, either a memorized secret or a biometric.
 
-**This is essential proof of presence, right**
 Each authentication operation using the authenticator SHOULD require the input of the additional factor. Input of the additional factor MAY be accomplished via either direct input on the device or via a hardware connection (e.g., USB or smartcard). 
 
 #####5.1.8.2 Multi-Factor Cryptographic Device Verifiers
@@ -211,7 +207,11 @@ Finally, if the verifier accepts authentication attempts for a large number of s
 
 For a variety of reasons, this document supports only limited use of biometrics for authentication. These include:- Biometric False Accept Rates (FAR) and False Reject Rates (FRR) do not provide confidence in the authentication of the Subscriber by themselves. In addition, FAR and FRR do not account for spoofing attacks.
 - Biometric matching is probabilistic, whereas the other authentication factors are deterministic
-- Biometrics are difficult to revoke compared to other authentication factors.  For example, PKI certificates and passwords- Biometric characteristics do not constitute secrets.  They can be obtained online or by taking a picture of someone with a camera phone (e.g. facial images) with or without their knowledge, lifted from through objects someone touches (e.g., latent fingerprints), or captured  with high resolution images (e.g., iris patterns for blue eyes). While presentation attack detection (PAD) technologies such as liveness detection can mitigate use of such methods, this requires additional trust in the sensor to ensure that PAD is operating properly in accordance with the needs of the CSP and the subscriber.Biometric matching SHOULD be performed on the user device or MAY be performed at a central verifier. The biometric system SHALL have a tested equal error rate [ref] of **1 in 1000** or better. The biometric system SHALL be operational with a false match rate of **1 in 1000** or better. 
+- Biometrics are difficult to revoke compared to other authentication factors.  For example, PKI certificates and passwords- Biometric characteristics do not constitute secrets.  They can be obtained online or by taking a picture of someone with a camera phone (e.g. facial images) with or without their knowledge, lifted from through objects someone touches (e.g., latent fingerprints), or captured  with high resolution images (e.g., iris patterns for blue eyes). While presentation attack detection (PAD) technologies such as liveness detection can mitigate use of such methods, this requires additional trust in the sensor to ensure that PAD is operating properly in accordance with the needs of the CSP and the subscriber.Biometric matching SHOULD be performed on the user device or MAY be performed at a central verifier. 
+
+Biometrics SHALL be used with another authentication factor that SHALL be revokable.  
+
+The biometric system SHALL have a tested equal error rate [ref] of **1 in 1000** or better. The biometric system SHALL be operational with a false match rate of **1 in 1000** or better. 
 
 If matching is performed centrally:
   * Use of the biometric SHALL be bound tightly to a single, specific device that is identified by at least a 64-bit secret key or equivalent strength asymmetric key 
@@ -223,7 +223,7 @@ If matching is performed centrally:
 Biometrics are also used in some cases to prevent repudiation of registration and to verify that the same individual participates in all phases of the registration process as described in SP 800-63A.
 
 
-####5.2.4. Reauthentication and Session Management
+####<a name="reauth_sm"></a>5.2.4. Reauthentication and Session Management
 
 Authenticated sessions often require continuation for a period of time between interactions. This section addresses the requirements for reauthentication to securely address that need.
 

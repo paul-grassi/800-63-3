@@ -46,17 +46,6 @@ Authenticator Assurance Level (AAL) 2 provides higher assurance that the same Cl
 
 Two or more single-factor authenticators (of multiple factors), or one or more multi-factor authenticators, are required at AAL2. Authenticator requirements are specified in Section 5.
 
-If a combination of single-factor authenticators is used, it SHALL include a Memorized Secret authenticator and one possession-based ("something you have") authenticator from the following list:
-* Look-up Secret
-* Out of Band **Deprecated**
-* Single Factor OTP Device
-* Single Factor Cryptographic Device
-
-Alternatively, any of following multi-factor authenticators may be used:
-* Multi-factor OTP Device
-* Multi-Factor Software Cryptographic Authenticator
-* Multi-Factor Cryptographic Device
-
 ####4.2.2. Authenticator Requirements
 
 Single-factor hardware authenticators used at AAL 2 SHOULD meet the requirements of FIPS 140-2 Level 1 and multi-factor hardware authenticators SHOULD meet the requirements of FIPS 140-2 Level 2.
@@ -67,9 +56,7 @@ In order to be valid at AAL 2, authentication assertions SHALL meet the requirem
 
 ####4.2.4. Reauthentication
 
-**I so badly want remember my device here**
-
-At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a no more than 30 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication requires the use of both authentication factors.
+At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a no more than 30 minutes of user inactivity. The CSP MAY prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication MAY use one of two authentication factors if the AAL2 requirements of [Section 5.2.4](sec5_authenticators.md#reauth_sm) are met.
 
 ####4.2.5 Security Controls
 The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) and SHALL ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
@@ -113,7 +100,7 @@ Requirement | AAL 1 | AAL 2 | AAL 3
 **Authenticator types** | Memorized Secret<br />Look-up Secret<br />Out of Band<br />SF OTP Device<br />MF OTP Device<br />SF Cryptographic Device<br />MF Software Cryptographic Authenticator<br />MF Cryptographic Device | Memorized secret plus:<br />&nbsp;Look-up Secret<br />&nbsp;Out of Band<br />&nbsp;SF OTP Device<br />&nbsp;SF Cryptographic Device<br />or:<br />&nbsp;MF OTP Device<br />&nbsp;MF Software Cryptographic Authenticator<br />&nbsp;MF Cryptographic Device | MF OTP Device<br />MF Cryptographic Device
 **FIPS 140 verification** | Designed to meet Level 1 | Level 1 (single factor),<br /> Level 2 (multi factor); self-asserted | Verified to meet Level 2
 **Assertions** | Bearer or proof of possession | Bearer or proof of possession | Proof of possession only
-**Reauthentication** | None | 12 hours or 30 minutes inactivity | 12 hours or 15 minutes inactivity
+**Reauthentication** | None | 12 hours or 30 minutes inactivity, may use one authentication factor | 12 hours or 15 minutes inactivity, shall use both authentication factors
 **[[SP 800-53]](sec10_references.md/#SP800-53) Security Controls**|Low Baseline|Moderate Baseline|High Baseline
 
 
