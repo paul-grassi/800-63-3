@@ -1,5 +1,7 @@
 #<a name="privacy-section-header"></a>Privacy Requirements and Considerations
 
+When developing e-authentication processes and systems, agencies SHALL consult OMB Guidance for Implementing the Privacy Provisions of the E-Government Act of 2002 [OMB M-03-22](sec_references.md/#M-03-22)
+
 ##All Identity Assurance LEvels
 1.  A relying party (RP) may ask the subject for additional information not available by the CSP.
 
