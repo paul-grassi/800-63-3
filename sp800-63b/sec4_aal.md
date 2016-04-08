@@ -18,7 +18,7 @@ Authenticator Assurance Level 1 permits the use of any of the following authenti
 
 * Memorized Secret
 * Look-up Secret
-* Out of Band **(Deprecated)**
+* Out of Band (Partially deprecated. See [Section 5.1.3](sec5_authenticators.md/#out-of-band) for more details)
 * Single Factor OTP Device
 * Multi-Factor OTP Device
 * Single Factor Cryptographic Device

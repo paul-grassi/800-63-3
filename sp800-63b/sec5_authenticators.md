@@ -44,7 +44,7 @@ Look-up secrets SHALL be generated using an approved random number generator and
 
 Verifiers SHALL use approved encryption and SHALL authenticate themselves to the claimant (e.g., through the use of a X.509 certificate acceptable to the claimant) when requesting look-up secrets in order to provide resistance to eavesdropping and phishing attacks.
 
-####5.1.3. Out of Band
+####<a name="out-of-band"></a>5.1.3. Out of Band
 
 An Out of Band authenticator is a physical device that is uniquely addressable and can receive a Verifier-selected secret for one-time use. The device is possessed and controlled by the Claimant and supports private communication over a secondary channel that is separate from the primary channel for e-authentication. The claimant presents the received secret to the verifier using the primary channel for e-authentication.
 
