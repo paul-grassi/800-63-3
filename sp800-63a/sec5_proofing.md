@@ -127,7 +127,8 @@ The following table lists the minimum requirements of identity verification prop
 |2|- MAY be performed remote or in-person<br>- At a minimum the applicant must be verified as being the owner of the Claimed Identity by a process that is able to achieve a score of 3 for Verification.<br>- Remote sessions SHALL time out after 5 minutes of inactivity|
 |3|- SHALL be performed in person (see also section 5.1.1)<br>- At a minimum the Applicant must be Verified as being the owner of the Claimed Identity by a process that is able to achieve a score of 4 for Verification.<br>|
 
-###5.3.2. Address Confirmation Requirements
+###<a name="address_confirmation"></a>5.3.2. Address Confirmation Requirements
+
 Address confirmation is a critical step in identity proofing.  It allows the CSP validate and verify claimed identity information as well as defend against at scale attacks as address verification occurs in out of band channels from the actual proofing process.  The following is a set of requirements for address confirmation.
 
 
@@ -162,7 +163,9 @@ The CSP MAY determine to utilize trusted referees, such as notaries, legal guard
 In some instances, the CSP MAY allow an individual that has successfully completed identity proofing with the same CSP to act as a trusted referee for another individual.  The CSP SHALL not accept this type of trusted referee verification at IAL3.
 
 ###5.3.5. Binding Requirements
-Enrollment, identity proofing, token creation/issuance, and credential issuance are separate processes that can be broken up into a number of separate physical encounters or electronic transactions. (Two electronic transactions are considered to be separate if they are not part of the same protected session.) These transactions may span distinct organizational entities, and in some instance, especially with the separation of credential from proofing, a subject may already possess authenticators at a suitable AAL without having been proofed at the equivalent IAL. For example, a user may have a two-factor credential from a social network provider, considered AAL2 and IAL1, and would like to use those credentials at a relying party that requires IAL2.
+See [800-63B, Section 6.1, Authenticator Binding](../sp800-63b/sec6_lifecycle.md/#binding) for instructions on binding authenticators to subscribers.  
+**Delete after Jim is complete**  
+Enrollment, identity proofing, authenticator creation/issuance, and credential issuance are separate processes that can be broken up into a number of separate physical encounters or electronic transactions. (Two electronic transactions are considered to be separate if they are not part of the same protected session.) These transactions may span distinct organizational entities, and in some instance, especially with the separation of credential from proofing, a subject may already possess authenticators at a suitable AAL without having been proofed at the equivalent IAL. For example, a user may have a two-factor authenticator from a social network provider, considered AAL2 and IAL1, and would like to use those credentials at a relying party that requires IAL2.
 
 The following sections provide requirements for ensuring the integrity of identity proofing when proofing and/or credential issuance do not occur within the same session and/or organizational entity.
 
