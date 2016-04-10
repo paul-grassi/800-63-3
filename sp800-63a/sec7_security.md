@@ -1,50 +1,36 @@
-### 5.2 Registration and Issuance Threats
-There are two general categories of threats to the registration process:
-impersonation and either compromise or malfeasance of the infrastructure
-(RAs and CSPs). This recommendation concentrates on addressing
-impersonation threats. Infrastructure threats are addressed by normal
-computer security controls (e.g., separation of duties, record keeping,
-independent audits) and are outside the scope of this document<sup>[9](#note9)</sup>.
+#7. Enrollment and Proofing Threats
+There are two general categories of threats to the enrollment process: impersonation and either compromise or malfeasance of the infrastructure (CSPs). This recommendation focuses on addressing impersonation threats. Infrastructure threats are addressed by normal computer security controls (e.g., separation of duties, record keeping, independent audits) and are outside the scope of this document<sup>[9](#note9)</sup>.
 
-The threats to the issuance process include impersonation attacks and
-threats to the transport mechanism for the token and credential
-issuance. Table 1 lists the threats related to registration and
-issuance.
+The threats to the enrollment process include impersonation attacks and threats to the transport mechanisms for identity proofing, and authenticator binding, and credential issuance. Table 1 lists the threats related to enrollment and identity proofing.
 
-**Table 1 - Registration and Issuance Threats**
+**Table 1 - Enrollment and Identity Proofing Threats**
 
 |**Activity**   |     **Threat/Attack**  | **Example** |
 |---------------|------------------------|------------------|
-|Registration<sup>[10](#note10)</sup> | Impersonation of claimed identity | An Applicant claims an incorrect identity by using a forged driver's license.|
-| | Repudiation of registration | A Subscriber denies registration, claiming that he or she did not register that token.|
-|Issuance|Disclosure | A key created by the CSP for a Subscriber is copied by an Attacker as it is transported from the CSP to the Subscriber during token issuance.|
-| |Tampering | A new password created by the Subscriber is modified by an Attacker as it is being submitted to the CSP during the credential issuance phase.
-| |Unauthorized issuance | A person claiming to be the Subscriber (but in reality is not the Subscriber) is issued credentials for that Subscriber.
+|Enrollment<sup>[10](#note10)</sup> | Falsified identity proofing evidence | An applicant claims an incorrect identity by using a forged driver's license.|
+| | Fraudulent use of another's identity | An applicant uses a passport associated with a different individual
+| | Repudiation of enrollment | A subscriber denies enrollment, claiming that he or she did not enroll with the CSP.|
+|Issuance|Disclosure | A key created by the CSP for a Subscriber is copied by an attacker as it is transported from the CSP to the subscriber during token issuance.|
+| |Tampering | A new password created by the subscriber is modified by an attacker as it is being submitted to the CSP during the credential issuance phase.
+| |Unauthorized issuance | A person claiming to be the subscriber (but in reality is not the subscriber) is issued credentials for that subscriber.
 
-#### 5.2.1 Threat Mitigation Strategies
-Registration threats can be deterred by making impersonation more
-difficult to accomplish or increasing the likelihood of detection. This
-recommendation deals primarily with methods for making impersonation
-more difficult; however, it does prescribe certain methods and
-procedures that may help to prove who carried out an impersonation. At
-each level, methods are employed to determine that a person with the
-claimed identity exists, that the Applicant is the person who is
-entitled to the claimed identity, and that the Applicant cannot later
-repudiate the registration. As the level of assurance increases, the
-methods employed provide increasing resistance to casual, systematic and
+##7.1. Threat Mitigation Strategies
+Enrollment threats can be deterred by making impersonation more difficult to accomplish or by increasing the likelihood of detection. This recommendation deals primarily with methods for making impersonation more difficult; however, it does prescribe certain methods and procedures that may help to prove who carried out an impersonation. At each level, methods are employed to determine that a person with the claimed identity exists, that the Applicant is the person who is entitled to the claimed identity, and that the Applicant cannot later repudiate the enrollment. As the level of assurance increases, the methods employed provide increasing resistance to casual, systematic and
 insider impersonation. Table 2 lists strategies for mitigating threats
-to the registration and issuance processes.
+to the enrollment and issuance processes.
 
-**Table 2 - Registration and Issuance Threat Mitigation Strategies**
+**Table 2 - Enrollment and Issuance Threat Mitigation Strategies**
 
 | **Activity** | **Threat/Attack** | **Mitigation Strategy** |
 |--------------|-------------------|-------------------------|
-| Registration | Impersonation of claimed identity | RAs request documentation that provides a specified level of confidence (or assurance) in the identity of the Applicant and makes it more difficult for imposters to successfully pass the identity proofing step. Government issued documents such as driver’s licenses, and passports presented by the Applicant are often used to assert the identity of the Applicant. |
-| | | Have the Applicant provide non-government issued documentation (e.g. electricity bills in the name of the Applicant with the current address of the Applicant printed on the bill, or a credit card bill) to help in achieving a higher level of confidence in the identity of the Applicant. |
-| | Repudiation of registration | Have the Applicant sign a form acknowledging participation in the registration activity. |
+| Enrollment | Falsified identity proofing evidence | CSP validates physical security features of presented evidence.
+| | | CSP validates personal details in the evidence with the issuer or other authoritative source.
+| | Fraudulent use of another's identity | CSP verifies photo or biometric of applicant against information on evidence or obtained from issuer or other authoritative source.
+| | | Verify Applicant-provided non-government issued documentation (e.g. electricity bills in the name of the Applicant with the current address of the Applicant printed on the bill, or a credit card bill) to help in achieving a higher level of confidence in the identity of the applicant. |
+| | Repudiation of enrollment | Have the applicant sign a form acknowledging participation in the enrollment activity. |
 | |
 | Issuance | Disclosure | Issue the token in person, physically mail it in a sealed envelope to a secure location, or use a protected session to send the token electronically.
 | | Tampering | Issue credentials in person, physically mailing storage media in a sealed envelope, or through the use of a communication protocol that protects the integrity of the session data.
 | | | Establish a procedure that allows the Subscriber to authenticate the CSP as the source of any token and credential data that he or she may receive.
-| | Unauthorized issuance | Establish procedures to ensure that the individual who receives the token is the same individual who participated in the registration procedure.
+| | Unauthorized issuance | Establish procedures to ensure that the individual who receives the token is the same individual who participated in the enrollment procedure.
 | | | Implement a dual-control issuance process that ensures two independent individuals shall cooperate in order to issue a token and/or credential.
