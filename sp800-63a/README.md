@@ -12,22 +12,14 @@ This document is broken up into sections as follows:
 
 [2. Definitions and Abbreviations](sec3_definitions.md)
 
-[3. Identity Proofing Requirements](sec5_proofing.md)
+[3. Identity Assurance Levels](sec4_ial.md)
 
-[4. Threats and Security Considerations](sec7_security.md)
+[4. Identity Proofing Requirements](sec5_proofing.md)
 
-[5. Privacy Considerations](privacy.md)
+[5. Threats and Security Considerations](sec7_security.md)
 
-[6. Usability Considerations](sec_usability.md)
+[6. Privacy Considerations](privacy.md)
 
-[7. References](sec_references.md)
+[7. Usability Considerations](sec_usability.md)
 
-##Deprecations
-The following sections have been removed in their entirety.
-
-|**800-63-2 Section Number**   |     **Section Name**  | **Rationale** |
-|---------------|------------------------|------------------|
-|5.3.2 | Requirements for Educational and Financial Institutions and Other Organizations |The advent of trust frameworks have allowed for organizations to federate identity to government services.  Individual agencies may adopt trust frameworks or define their own, mapping organizational policies and processes to 800-63 requirements as necessary and appropriate.|
-|5.3.3| Requirements for Certificates Issued under FPKI and Mapped Policies|Federal PKI is a trust framework and has defined a mapping to 800-63.  This is appropriate and should live within the auspices of FPKI, not 800-63.|
-|5.3.4|Requirements for One-Time Use||
-|5.3.5|Requirements for Derived Credentials|Removed LOA4 text. Refer to SP 800-157|
+[8. References](sec_references.md)

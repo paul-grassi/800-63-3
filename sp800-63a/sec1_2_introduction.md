@@ -34,11 +34,5 @@ At IAL 2 and IAL 3, pseudonymity results from the non-assertion of identifying a
 Detailed requirements for each of the IALs is given in Section 5.
 
 
-##2.3 Process Flow
-The paradigm of this document is that individuals (referred to as *applicants* at this stage) are enrolled and undergo a registration process, consisting principally of identity proofing, in which their identity attributes are collected and verified. These attributes are then bound to an authenticator (described in SP 800-63B). The attributes MAY also be placed on a physical authenticator, usually in a signed form; such an authenticator is referred to as a credential. Higher Identity Assurance Levels require stronger enrollment and identity proofing procedures.
-
-![](media/Proofing_process.png)
-
-
 ###Requirements Notation and Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
