@@ -24,7 +24,7 @@ In the context of [OMB M-04-04](#GSA03) and this document, assurance is defined 
 Two related keys, a public key and a private key that are used to perform complementary operations, such as encryption and decryption or signature generation and signature verification.
 
 #### Attack
-An attempt by an unauthorized individual to fool a Verifier or a Relying Party into believing that the unauthorized individual in question is the Subscriber.
+An attempt by an unauthorized individual to defeat security controls. For example, to fool a Verifier or a Relying Party into believing that the unauthorized individual in question is the Subscriber.
 
 #### Attacker
 A party who acts with malicious intent to compromise an information system.
@@ -76,12 +76,12 @@ A party whose identity is to be verified using an authentication protocol.
 An interactive feature added to web-forms to distinguish use of the form by humans as opposed to automated agents. Typically, it requires entering text corresponding to a distorted image or from a sound stream.
 
 #### Credential
-An object or data structure that authoritatively binds an identity (and optionally, additional attributes) to a token possessed and controlled by a Subscriber.
+An object or data structure that authoritatively binds an identity (and optionally, additional attributes) to an authticator possessed and controlled by a Subscriber.
 
 While common usage often assumes that the credential is maintained by the Subscriber, this document also uses the term to refer to electronic records maintained by the CSP which establish a binding between the Subscriber’s token and identity.
 
 #### Credential Service Provider (CSP)
-A trusted entity that issues or registers Subscriber tokens and issues electronic credentials to Subscribers. The CSP may encompass Registration Authorities (RAs) and Verifiers that it operates. A CSP may be an independent third party, or may issue credentials for its own use.
+A trusted entity that issues or registers Subscriber authenticators and issues electronic credentials to Subscribers. The CSP may encompass Registration Authorities (RAs) and Verifiers that it operates. A CSP may be an independent third party, or may issue credentials for its own use.
 
 #### Cross Site Request Forgery (CSRF)
 An attack in which a Subscriber who is currently authenticated to an RP and connected through a secure session, browses to an Attacker’s website which causes the Subscriber to unknowingly invoke unwanted actions at the RP.
@@ -96,14 +96,14 @@ A value used to control cryptographic operations, such as decryption, encryption
 
 See also Asymmetric keys, Symmetric key.
 
-#### Cryptographic Token
-A token where the secret is a cryptographic key.
+#### Cryptographic Authenticator
+An authenticator where the secret is a cryptographic key.
 
 #### Data Integrity
 The property that data has not been altered by an unauthorized entity.
 
 #### Derived Credential
-A credential issued based on proof of possession and control of a token associated with a previously issued credential, so as not to duplicate the identity proofing process.
+A credential issued based on proof of possession and control of one or more authenticators associated with a previously issued credential, so as not to duplicate the identity proofing process.
 
 #### Digital Signature
 An asymmetric key operation where the private key is used to digitally sign data and the public key is used to verify the signature. Digital signatures provide authenticity protection, integrity protection, and non-repudiation.
@@ -115,7 +115,7 @@ An attack in which an Attacker listens passively to the authentication protocol 
 The process of establishing confidence in user identities electronically presented to an information system.
 
 #### Entropy
-A measure of the amount of uncertainty that an Attacker faces to determine the value of a secret. Entropy is usually stated in bits. See [Appendix A](#_Appendix_A:_Estimating_Entropy and ).
+A measure of the amount of uncertainty that an Attacker faces to determine the value of a secret. Entropy is usually stated in bits.
 
 #### Federal Information Security Management Act (FISMA)
 Title III of the E-Government Act requiring each federal agency to develop, document, and implement an agency-wide program to provide information security for the information and information systems that support the operations and assets of the agency, including those provided or managed by another agency, contractor, or other source.
@@ -124,9 +124,6 @@ Title III of the E-Government Act requiring each federal agency to develop, docu
 Under the Information Technology Management Reform Act (Public Law 104-106), the Secretary of Commerce approves standards and guidelines that are developed by the National Institute of Standards and Technology (NIST) for Federal computer systems. These standards and guidelines are issued by NIST as Federal Information Processing Standards (FIPS) for use government-wide. NIST develops FIPS when there are compelling Federal government requirements such as for security and interoperability and there are no acceptable industry standards or solutions. See background information for more details.
 
 FIPS documents are available online through the FIPS home page: <http://www.nist.gov/itl/fips.cfm>
-
-#### Guessing Entropy
-A measure of the difficulty that an Attacker has to guess the average password used in a system. In this document, entropy is stated in bits. When a password has n-bits of guessing entropy then an Attacker has as much difficulty guessing the average password as in guessing an n-bit random quantity. The Attacker is assumed to know the actual password frequency distribution. See [Appendix A](#_Appendix_A:_Estimating_Entropy and ).
 
 #### Hash Function
 A function that maps a bit string of arbitrary length to a fixed length bit string. Approved hash functions satisfy the following properties:
@@ -159,11 +156,8 @@ An attack on the authentication protocol run in which the Attacker positions him
 #### Message Authentication Code (MAC)
 A cryptographic checksum on data that uses a symmetric key to detect both accidental and intentional modifications of the data. MACs provide authenticity and integrity protection, but not non-repudiation protection.
 
-#### Min-entropy
-A measure of the difficulty that an Attacker has to guess the most commonly chosen password used in a system. In this document, entropy is stated in bits. When a password has n-bits of min-entropy then an Attacker requires as many trials to find a user with that password as is needed to guess an n-bit random quantity. The Attacker is assumed to know the most commonly used password(s). See [Appendix A](#_Appendix_A:_Estimating_Entropy and ).
-
 ####Multi-Factor
-A characteristic of an authentication system or a token that uses more than one authentication factor.
+A characteristic of an authentication system or an authenticator that uses more than one authentication factor.
 
 The three types of authentication factors are something you know, something you have, and something you are.
 
@@ -284,7 +278,7 @@ The act of deceiving an individual into revealing sensitive information by assoc
 A type of publication issued by NIST. Specifically, the Special Publication 800-series reports on the Information Technology Laboratory's research, guidelines, and outreach efforts in computer security, and its collaborative activities with industry, government, and academic organizations.
 
 #### Strongly Bound Credentials
-Credentials that describe the binding between a user and token in a tamper-evident fashion. (For more discussion, see Section 7.1.1.)
+Credentials that are bound to a subscriber in a tamper-evident fashion.
 
 #### Subscriber
 A party who has received a credential bound to an authenticator from a CSP.
@@ -311,10 +305,10 @@ A public or symmetric key that is trusted because it is directly built into hard
 An entity that verifies the Claimant’s identity by verifying the Claimant’s possession and control of a token using an authentication protocol. To do this, the Verifier may also need to validate credentials that link the token and identity and check their status.
 
 #### Verifier Impersonation Attack
-A scenario where the Attacker impersonates the Verifier in an authentication protocol, usually to capture information that can be used to masquerade as a Claimant to the real Verifier.
+A scenario where the Attacker impersonates the Verifier in an authentication protocol, usually to capture information that can be used to masquerade as a subscriber to the real Verifier.
 
 #### Weakly Bound Credentials
-Credentials that describe the binding between a user and token in a manner than can be modified without invalidating the credential. (For more discussion, see Section 7.1.1.)
+Credentials that are bound to a subscriber in a manner than can be modified without invalidating the credential.
 
 #### Zeroize
 Overwrite a memory location with data consisting entirely of bits with the value zero so that the data is destroyed and not recoverable. This is often contrasted with deletion methods that merely destroy reference to data within a file system rather than the data itself.
