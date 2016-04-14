@@ -32,6 +32,9 @@ Something that the Claimant possesses and controls (typically a cryptographic mo
 #### Authenticity
 The property that data originated from its purported source.
 
+#### Authoritative Source
+An entity whose resources, work, data, or processes is known to be accurate, valid, fresh, and reliable because its authorities and authenticity is widely recognized.  An authoritative source maintains sole control over the specific elements it creates, issues, manages, or maintains.  The elements have never been aggregated or released by a third party outside of existing authorities, laws, regulations, contracts, policies, or agreements it publicly maintains and is acountable to in criminal or civil law.
+
 #### Biometrics
 Automated recognition of individuals based on their behavioral and biological characteristics.
 

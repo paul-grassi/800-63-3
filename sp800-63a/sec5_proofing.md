@@ -12,10 +12,10 @@ The goal of identity validation is to determine the authenticity, validity, and 
 
 This section provides requirements on the acceptable properties and qualities of identity evidence that a claimant asserts remotely at IAL 2 or presents in-person at IAL 2 or 3.
 
-The following table lists qualities of the various form and types of identity evidence that are acceptable to begin identity proofing an individual. The evidence MUST, at a minimum, meet all the properties defined to achieve that score.
+The following table lists qualities of the various form and types of identity evidence that are acceptable to begin identity proofing an individual. The evidence SHALL, at a minimum, meet all the properties defined to achieve that score.
 
 > **Open items for Jim to help decide:**  
-Identity evidence, regardless of properties, MUST be issued by a legitimate third party and MUST have authoritative records to validate evidence.  
+Identity evidence, regardless of properties, SHALL be issued by a legitimate third party and SHALL have authoritative records to validate evidence.  
 Might want to just make the table additive:  All of 3 + these things...  
 What about name change since we have content about issuance and name  
 Score of 3 had 'if it includes security features' and 4 'must'.  Is that ok?
@@ -37,7 +37,6 @@ Once identity evidence is obtained by the CSP, the accuracy, authenticity, and i
 * Genuine, authentic, and not a counterfeit, fake, or forgery.
 * The information is correct  
 * The information relates to a real individual  
-* The information relates to the correct individual  ***But isn't this verification?***
 
 #### 5.2.2.1. Methods to Perform Identity Evidence Validation
 For each pice of evidence, the CSP determines a validation score.  The following table provides details the evidence validation properties required to achieve a given score.
@@ -71,24 +70,20 @@ The following table details the verification methods necessary to achieve approp
 
 
 
-###<a name="kbv"></a>5.3.3. Knowledge Based Verification Requirements
+###<a name="kbv"></a>5.3.3. Knowledge Based Requirements
 
-- Remote sessions SHALL time out after 5 minutes of inactivity
-**For Paul to update**
+The following requirements apply to IAL 2 and 3.
 
-KBV MAY be used if the CSP is, or maintains a relationship with, an authoritative source, the authoritative source is the only entity that maintains control over specific data, the data has never been aggregated or accessed by a third party.  In instances with the CSP leverages and third party for KBV, the third party provide SHALL NOT provide the authoritative data to the CSP.  Rather, only boolean values or error codes SHALL be returned.  
-
-- Enrollment codes sent to a mobile phone (cell SMS or voice) verification must not be via soft phones such as Google Voice or Skype.
-- Shared devices? Is this solved by in-records check?
-- KBA allowed if temporal **and** spacial
-
-- Trusted referee (canadian language), vouchee (already proofed-kind of happens in places like HSIN) or notary
-
-- Capture biometric at IAL3
-
-- Once a CSP has met the minimum requirements for an IAL:
-	- The CSP MAY use additional risk-based/indicators/context/adaptive  authentication methods to increase confidence in identity verification.
-	- If the CSP is an authoritative source, the only entity that maintains control over specific data, and the data has never been aggregated or accessed by a third party, the CSP MAY use knowledge based authentication verification to increase confidence in identity verification.
+- There are no restrictions for the use of KBV to fulfill the identity resolutions step of identity proofing.
+- A CSP SHALL offer an in-person or virtual remote option to any KBV process
+- A CSP SHALL allow a resolved, validated, or verified identity to opt-out of KBV in current and/or future attempts to identity proof.
+- A CSP MAY use KBV to verify an identity if the CSP is, or maintains a relationship with, an authoritative source. In instances when the CSP leverages a third party authoritative source, the third party provide SHALL NOT provide the authoritative data to the CSP.  Rather, only boolean values, risk indicators, or error codes SHALL be returned.
+- A CSP MAY use KBV to verify an applicants identity against one (1) piece of validated identity evidence.  The CSP SHALL NOT use KBV to verify the application relationship to validated identity evidence.
+- KBV questions SHALL NOT be diversionary.  The CSP SHALL not allow answers to KBV questions be 'None of the Above', 'Not Applicable (N/A)', or similar be regarded as a correct answer.
+- CSPs SHALL time out KBV sessions after 5 minutes of inactivity.  In cases of session timeout, the CSP SHALL restart the entire KBV process.
+- CSPs SHOULD allow two (2) attempts for an applicant to complete the KBV.  CSPs MAY allow no more than three (3) attempts to complete the KBV.
+- CSPs SHALL never ask the same KBV questions in subsequent attempts.
+- CSPs SHALL ensure that one KBV question does not allude, hint, or provide an answer to a subsequent KBV question in any session or attempt by the applicant.
 
 ###5.3.4. Trusted Referee Requirements
 The CSP MAY determine to utilize trusted referees, such as notaries, legal guardian, or some other form of certified individual that can legally vouch for and/or act on behalf of the individual.  CSP MAY use a trusted referee for both remote and in-person processes.  
