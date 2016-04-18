@@ -1,6 +1,6 @@
-## DRAFT NIST Special Publication 800-63-B
+## DRAFT NIST Special Publication 800-63B
 
-# Authenticator Requirements
+# Subscriber Authentication
 
 Paul Grassi  
 William E. Burr  
@@ -8,9 +8,9 @@ James L. Fenton
 
 ![](../sp800-63-3/media/nist_logo.png)
 
-## DRAFT NIST Special Publication 800-63-A
+## DRAFT NIST Special Publication 800-63B
 
-# Authenticator Requirements
+# Subscriber Authentication
 
 Paul Grassi  
 *Applied Cybersecurity Division  

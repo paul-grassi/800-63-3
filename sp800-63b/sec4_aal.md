@@ -1,12 +1,10 @@
 ## <a name="AAL_SEC4"></a>4. Authenticator Assurance Levels
 
-**JIM: Added security controls and retention.  Not sure why we need to specify this.  Existing law/reg should apply, but I carried -2 requirements over just in case.** 
-
 In order to satisfy the requirements of a given AAL, a claimant SHALL authenticate themselves with at least a given level of strength to be recognized as a subscriber. The result of an authentication process is an identifier, that MAY be pseudonymous, that SHALL be used each time that subscriber authenticates to that relying party. Optionally, other attributes that identify the subscriber as a unique person may also be provided.
 
 Detailed normative requirements for authenticators and verifiers at each AAL are provided in Section 5.
 
-FIPS 140 requirements are satisfied by FIP 140-2 or newer revisions.
+FIPS 140 requirements are satisfied by FIPS 140-2 or newer revisions.
 
 ###4.1. Authenticator Assurance Level 1
 
@@ -27,7 +25,7 @@ Authenticator Assurance Level 1 permits the use of any of the following authenti
 
 ####4.1.2. Authenticator Requirements
 
-Hardware authenticators ("devices" from the list above) used at AAL1 SHOULD be designed to meet the requirements of FIPS 140-2 Level 1.
+Hardware authenticators ("devices" from the list above) used by commercial credential service providers at AAL 1 SHALL be designed to meet the requirements of FIPS 140 Level 1. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with FIPS 140 Level 1.
 
 ####4.1.3. Assertion Requirements
 
@@ -35,13 +33,13 @@ In order to be valid at AAL 1, authentication assertions SHALL meet the requirem
 
 ####4.1.4. Reauthentication
 
-No requirements to reauthenticate after a period of inactivity. **We need some parameters here**
+At AAL 1, reauthentication of the subscriber SHALL be repeated at least once per 30 days, regardless of user activity.
 
 ####4.1.5 Security Controls
 The CSP SHALL employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the low baseline are satisfied.
 
 ####4.1.6 Records Retention
-CSP shall comply with their respective records retention policies in accordance with whatever laws and/or regulations apply to those entities. Otherwise, no retention period is required.
+The CSP shall comply with their respective records retention policies in accordance with whatever laws and/or regulations apply. Otherwise, no retention period is required.
 
 ###4.2. Authenticator Assurance Level 2
 
@@ -51,9 +49,20 @@ Authenticator Assurance Level (AAL) 2 provides higher assurance that the same Cl
 
 Two or more single-factor authenticators (of multiple factors), or one or more multi-factor authenticators, are required at AAL2. Authenticator requirements are specified in Section 5.
 
+If a combination of single-factor authenticators is used, it SHALL include a Memorized Secret authenticator and one possession-based ("something you have") authenticator from the following list:
+* Look-up Secret
+* Out of Band
+* Single Factor OTP Device
+* Single Factor Cryptographic Device
+
+Alternatively, any of following multi-factor authenticators may be used:
+* Multi-factor OTP Device
+* Multi-Factor Software Cryptographic Authenticator
+* Multi-Factor Cryptographic Device
+
 ####4.2.2. Authenticator Requirements
 
-Single-factor hardware authenticators used at AAL 2 SHOULD meet the requirements of FIPS 140-2 Level 1 and multi-factor hardware authenticators SHOULD meet the requirements of FIPS 140-2 Level 2.
+Single-factor hardware authenticators used by commercial credential service providers at AAL 2 SHALL meet the requirements of FIPS 140 Level 1 and multi-factor hardware authenticators SHALL meet the requirements of FIPS 140 Level 2. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with FIPS 140 at those levels.
 
 ####4.2.3. Assertion Requirements
 
@@ -61,7 +70,7 @@ In order to be valid at AAL 2, authentication assertions SHALL meet the requirem
 
 ####4.2.4. Reauthentication
 
-At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a no more than 30 minutes of user inactivity. The CSP MAY prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication MAY use one of two authentication factors if the AAL2 requirements of [Section 5.2.4](sec5_authenticators.md#reauth_sm) are met.
+At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a no more than 30 minutes of user inactivity. The CSP MAY prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication MAY use one of two authentication factors if the AAL 2 requirements of [Section 5.2.4](sec5_authenticators.md#reauth_sm) are met.
 
 ####4.2.5 Security Controls
 The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
@@ -82,7 +91,7 @@ Authentication Assurance Level 3 requires the use of one of two kinds of hardwar
 
 ####4.3.2. Authenticator Requirements
 
-Multi-factor hardware authenticators at AAL 3 SHALL be verified to meet the requirements of FIPS 140-2 Level 2.
+Multi-factor hardware authenticators at AAL 3 SHALL be verified to meet the requirements of FIPS 140 Level 2.
 
 ####4.3.3. Assertion Requirements
 In order to be valid at AAL 3, authentication assertions SHALL meet the requirements of proof-of-possession assertions as defined in SP 800-63C.
@@ -91,16 +100,13 @@ In order to be valid at AAL 3, authentication assertions SHALL meet the requirem
 
 At AAL 3, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following a period of no more than 15 minutes of user inactivity. It is permissible to prompt the user to cause activity just before the inactivity timeout, if desired.
 
-####4.3.5 Security Controls
+####4.3.5. Security Controls
 The CSP SHALL employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the high baseline are satisfied.
 
-####4.3.6 Records Retention
-CSP shall comply with their respective records retention policies in accordance with whatever laws and/or regulations apply to those entities. Otherwise, retention of records is required for ten years and 6 months
+####4.3.6. Records Retention
+CSP shall comply with their respective records retention policies in accordance with whatever laws and/or regulations apply to those entities. Otherwise, retention of records is required for ten years and 6 months.
 
-###4.4 FIPS 140-2 Requirements
-Need language that if CSP is agency and the entire lifecycle of the authenticator, to include issuance and verifier is 100% agency, then ALL FIPS 140 requirements SHALL apply.  Even if they use COTS.  The FIPS 140 "relaxation" is for commercial solutions that claimants bring to the party, not authenticators an agency decides they want to issue on their own.
-
-###4.5 Summary of Requirements
+###4.4. Summary of Requirements
 
 *(Non-normative; refer to preceding sections for normative requirements)*
 
@@ -111,7 +117,7 @@ Requirement | AAL 1 | AAL 2 | AAL 3
 **Authenticator types** | Memorized Secret<br />Look-up Secret<br />Out of Band<br />SF OTP Device<br />MF OTP Device<br />SF Cryptographic Device<br />MF Software Cryptographic Authenticator<br />MF Cryptographic Device | Memorized secret plus:<br />&nbsp;Look-up Secret<br />&nbsp;Out of Band<br />&nbsp;SF OTP Device<br />&nbsp;SF Cryptographic Device<br />or:<br />&nbsp;MF OTP Device<br />&nbsp;MF Software Cryptographic Authenticator<br />&nbsp;MF Cryptographic Device | MF OTP Device<br />MF Cryptographic Device
 **FIPS 140 verification** | Designed to meet Level 1 | Level 1 (single factor),<br /> Level 2 (multi factor); self-asserted | Verified to meet Level 2
 **Assertions** | Bearer or proof of possession | Bearer or proof of possession | Proof of possession only
-**Reauthentication** | None | 12 hours or 30 minutes inactivity, may use one authentication factor | 12 hours or 15 minutes inactivity, shall use both authentication factors
+**Reauthentication** | 30 days | 12 hours or 30 minutes inactivity; may use one authentication factor | 12 hours or 15 minutes inactivity; shall use both authentication factors
 **[[SP 800-53]](sec10_references.md/#SP800-53) (or equivalent) Security Controls**|Low Baseline|Moderate Baseline|High Baseline
 **Records Retention**|Not required|7 years, 6 months|10 years, 6 months
 

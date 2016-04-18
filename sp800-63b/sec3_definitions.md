@@ -36,7 +36,7 @@ A claim of a named quality or characteristic inherent in or ascribed to someone 
 The process of establishing confidence in the identity of users or information systems.
 
 #### Authentication Protocol
-A defined sequence of messages between a Claimant and a Verifier that demonstrates that the Claimant has possession and control of a valid token to establish his/her identity, and optionally, demonstrates to the Claimant that he or she is communicating with the intended Verifier.
+A defined sequence of messages between a Claimant and a Verifier that demonstrates that the Claimant has possession and control of a valid token to establish his/her identity. Secure authentication protocols also demonstrate to the Claimant that he or she is communicating with the intended Verifier.
 
 #### Authentication Protocol Run
 An exchange of messages between a Claimant and a Verifier that results in authentication (or authentication failure) between the two parties.
