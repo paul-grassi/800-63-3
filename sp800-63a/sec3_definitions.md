@@ -33,6 +33,7 @@ Something that the Claimant possesses and controls (typically a cryptographic mo
 The property that data originated from its purported source.
 
 #### Authoritative Source
+Maybe use issuing source from GPG  
 An entity whose resources, work, data, or processes is known to be accurate, valid, fresh, and reliable because its authorities and authenticity is widely recognized.  An authoritative source maintains sole control over the specific elements it creates, issues, manages, or maintains.  The elements have never been aggregated or released by a third party outside of existing authorities, laws, regulations, contracts, policies, or agreements it publicly maintains and is acountable to in criminal or civil law.
 
 #### Biometrics
@@ -68,8 +69,11 @@ A set of attributes that uniquely describe a person within a given context.
 #### Identity Proofing
 The process by which a CSP and a Registration Authority (RA) collect and verify information about a person for the purpose of issuing credentials to that person.
 
-#### Knowledge Based Proofing
-Identity proofing of an individual based on knowledge of information associated with his or her claimed identity in public databases. Often referred to as Knowledge Based Authentication (KBA) or Knowledge Based Verification (KBV)
+#### Issuing Source
+An authority that is responsible for the generation of data and/or documents that can be used as identity evidence.
+
+#### Knowledge Based Verification
+Identity proofing of an individual based on knowledge of information associated with his or her claimed identity in public databases. Often referred to as Knowledge Based Authentication (KBA) or Knowledge Based Proofing (KBP)
 
 #### Network
 An open communications medium, typically the Internet, that is used to transport messages between the Claimant and other parties. Unless otherwise stated, no assumptions are made about the security of the network; it is assumed to be open and subject to active (i.e., impersonation, man-in-the-middle, session hijacking) and passive (i.e., eavesdropping) attack at any point between the parties (e.g., Claimant, Verifier, CSP or RP).
