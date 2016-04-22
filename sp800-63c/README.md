@@ -1,8 +1,10 @@
 # SP 800-63C
 
-This is a working draft of NIST Special Publication 800-63C *Authentication and Attribute Assertions*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
+This is a working draft of NIST Special Publication 800-63C, *Assertions and Federation*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
 
-SP 800-63C provides guidance on the use of assertions to convey the results of authentication processes to a relying party. Assertions are used in federated identity systems where the authentication is performed by one party (sometimes called an Identity Provider) and used by a different party, sometimes called a Relying Party. However, assertions are also used internally to maintain and reestablish user state over a series of interactions. 
+SP 800-63C provides guidance on the use of assertions to convey the results of authentication processes to a relying party. Assertions are used in federated identity systems where the authentication is performed a verifier (sometimes called an Identity Provider) and used by a different party, sometimes called a Relying Party. Federation permits a centrally-managed set of credentials to be used at a number if different relying parties.
+
+Keys and other secrets used to maintain state (stored in cookies, local storage, etc.) have been sometimes characterized as local assertions, but have very different requirements and characteristics than assertions conveyed between different parties. Accordingly, such "local assertions" are treated as reauthentication secrets and covered in SP 800-63B.
 
 This document is broken up into sections as follows:
 
@@ -16,13 +18,11 @@ This document is broken up into sections as follows:
 
     4.1. Bearer assertions
     4.2. Holder of key assertions
-    4.3. Shared secrets
-    4.4. Signed assertions
 
-[5. Types of Assertions](sec5_types.md)
+[5. Assertion Models](sec5_models.md)
 
-    5.1 Internal assertions (cookies, etc.) 
-    5.2 External assertions (to external relying parties)
+    5.1 Direct Model
+    5.2 Indirect Model
 
 [6. Examples](sec6_examples.md)
 
