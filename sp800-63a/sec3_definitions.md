@@ -33,8 +33,7 @@ Something that the Claimant possesses and controls (typically a cryptographic mo
 The property that data originated from its purported source.
 
 #### Authoritative Source
-Maybe use issuing source from GPG  
-An entity whose resources, work, data, or processes is known to be accurate, valid, fresh, and reliable because its authorities and authenticity is widely recognized.  An authoritative source maintains sole control over the specific elements it creates, issues, manages, or maintains.  The elements have never been aggregated or released by a third party outside of existing authorities, laws, regulations, contracts, policies, or agreements it publicly maintains and is acountable to in criminal or civil law.
+An authority that has access to sufficient information from an issuing source that they are able to confirm the validity of a piece of identity evidence. An issuing source may also be an authoritative source.
 
 #### Biometrics
 Automated recognition of individuals based on their behavioral and biological characteristics.

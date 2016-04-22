@@ -1,5 +1,6 @@
 
 #<a name="ipv-section"></a> 5. Identity Proofing and Verification
+**digital/non-cryptographic**
 
 The following sections list the steps CSPs SHALL follow to identity proof an individual at each identity assurance level. The requirements for each identity assurance level are intended to ensure the claimed identity is the actual identity of the person attempting to enroll with the CSP and that scalable attacks are difficult to execute without significant time and cost. 
 
@@ -47,7 +48,7 @@ For each pice of evidence, the CSP determines a validation score.  The following
 
 ##5.3. Identity Verification
 
-The purpose of identity verification is to confirm that the presented identity evidence and attributes relates to the person making the claim.  
+The purpose of identity verification is to confirm that the presented identity evidence and information is associated to the individual making the claim.  
 
 ###5.3.1. Identity Verification Methods
 The following table details the verification methods necessary to achieve appropriate identity verification.
@@ -63,27 +64,37 @@ The following table details the verification methods necessary to achieve approp
 
 
 
-###<a name="kbv"></a>5.3.3. Knowledge Based Requirements
+###<a name="kbv"></a>5.3.3. Knowledge Based Verification Requirements
 
 **Must include knowledge of account activity**
 
-The following requirements apply to IAL 2 and 3.
+The following requirements apply to the identity verification steps for IAL 2 and 3. There are no restrictions for the use of KBV to complete identity resolution.
 
-- There are no restrictions for the use of KBV to fulfill the identity resolutions step of identity proofing.
-- A CSP SHALL offer an in-person or virtual remote option to any KBV process
 - A CSP SHALL allow a resolved, validated, or verified identity to opt-out of KBV in current and/or future attempts to identity proof.
-- A CSP MAY use KBV to verify an identity if the CSP is, or maintains a relationship with, an authoritative source. In instances when the CSP leverages a third party authoritative source, the third party provide SHALL NOT provide the authoritative data to the CSP.  Rather, only boolean values, risk indicators, or error codes SHALL be returned.
-- A CSP MAY use KBV to verify an applicants identity against one (1) piece of validated identity evidence.  The CSP SHALL NOT use KBV to verify the application relationship to validated identity evidence.
-- KBV questions SHALL NOT be diversionary.  The CSP SHALL not allow answers to KBV questions be 'None of the Above', 'Not Applicable (N/A)', or similar be regarded as a correct answer.
-- CSPs SHALL time out KBV sessions after 5 minutes of inactivity.  In cases of session timeout, the CSP SHALL restart the entire KBV process.
-- CSPs SHOULD allow two (2) attempts for an applicant to complete the KBV.  CSPs MAY allow no more than three (3) attempts to complete the KBV.
-- CSPs SHALL never ask the same KBV questions in subsequent attempts.
-- CSPs SHALL ensure that one KBV question does not allude, hint, or provide an answer to a subsequent KBV question in any session or attempt by the applicant.
+- A CSP SHALL time out KBV sessions after 5 minutes of inactivity.  In cases of session timeout, the CSP SHALL restart the entire KBV process.
+- A CSP SHOULD allow two (2) attempts for an applicant to complete the KBV.  CSPs MAY allow no more than three (3) attempts to complete the KBV.
+
+- A CSP SHOULD verify knowledge of recent transactional history that the CSP is a participant to.  For example, verification of amount and confirmation number of a micro-deposit to a claimed and valid bank account.
+- A CSP MAY perform KBV by asking questions of the claimed identity to demonstrate they are the owner of the claimed information. 
+	- A CSP MAY use KBV to verify an identity if the CSP is, or maintains a relationship with, an authoritative source. In instances when the CSP leverages a third party authoritative source, the third party provider SHALL NOT assert the authoritative data to the CSP.  Rather, only boolean values, risk indicators, or error codes SHALL be returned.
+	- A CSP MAY use KBV to verify an applicants identity against one (1) piece of validated identity evidence.  The CSP SHALL NOT use KBV to verify the application relationship to validated identity evidence.
+	- KBV questions SHALL NOT be diversionary.  The CSP SHALL not allow answers to KBV questions be 'None of the Above', 'Not Applicable (N/A)', or similar be regarded as a correct answer.
+	- A CSP SHALL NOT ask the same KBV questions in subsequent attempts.
+	- A CSP SHALL ensure that one KBV question does not allude, hint, or provide an answer to a subsequent KBV question in any session or attempt by the applicant.
+	- A CSP SHALL require a minimum of four (4) KBV questions each requiring a correct answer to successfully complete the KBV step.
+
 
 ###5.3.4. Trusted Referee Requirements
 The CSP MAY determine to utilize trusted referees, such as notaries, legal guardian, or some other form of certified individual that can legally vouch for and/or act on behalf of the individual.  CSP MAY use a trusted referee for both remote and in-person processes.  
 
 In some instances, the CSP MAY allow an individual that has successfully completed identity proofing with the same CSP to act as a trusted referee for another individual.  The CSP SHALL not accept this type of trusted referee verification at IAL3.
+
+###5.3.4. Considerations for Minors and Other Vulnerable People
+
+Enrollment of minors under age 18, unable to meet the evidence requirements of identity proofing SHOULD involve a parent or legal adult guardian as a trusted referee as described in Section 5.3.4. Minors under age 13 require special consideration to ensure compliance with the Children's Online Privacy Protection Act of 1998, 15 USC 6501-6505 and 16 CFR Part 312.
+
+Other vulnerable persons SHOULD be enrolled by a conservator or other person with power of attorney.
+
 
 ###5.3.5. Binding Requirements
 See [800-63B, Section 6.1, Authenticator Binding](../sp800-63b/sec6_lifecycle.md/#binding) for instructions on binding authenticators to subscribers.  
@@ -115,8 +126,3 @@ CSP looks at a credential from a different CSP that it trusts, records the infor
 
 
 
-##5.5 Considerations for Minors and Other Vulnerable People
-
-Enrollment of minors under age 18 normally requires the involvement of a parent or legal adult guardian as trusted referee as described in Section 5.3.4. Minors under age 13 require special consideration to ensure compliance with the Children's Online Privacy Protection Act of 1998, 15 USC 6501-6505 and 16 CFR Part 312.
-
-Other vulnerable persons may be enrolled by a conservator or other person with power of attorney.
