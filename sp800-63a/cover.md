@@ -59,18 +59,23 @@ other Federal official. This publication may be used by nongovernmental
 organizations on a voluntary basis and is not subject to copyright in
 the United States. Attribution would, however, be appreciated by NIST.
 
+<center>
 National Institute of Standards and Technology Special Publication
 800-63A  
 Natl. Inst. Stand. Technol. Spec. Publ. 800-63A, xxx pages (MonthTBD
 2016)  
 CODEN: NSPUE2
 
+`Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose.There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by Federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, Federal agencies may wish to closely follow the development of these new publications by NIST.Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. All NIST Computer Security Division publications, other than the ones noted above, are available at http://csrc.nist.gov/publications.`
+
+{::comment} 
 **Comments on this publication may be submitted to:**
 
 National Institute of Standards and Technology  
 Attn: Computer Security Division, Information Technology Laboratory  
 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930  
 Email: <eauth-comments@nist.gov>
+{:/comment}
 
 
 ### Reports on Computer Systems Technology
@@ -97,13 +102,17 @@ This document and its companion documents, SP 800-63-3, SP 800-63B, and SP 800-6
 
 authentication; credential service provider; electronic authentication; electronic credentials; identity proofing.
 
+{::comment} 
 ### Acknowledgements
 * UK
 * Canada
-* 
-   
 
-### Executive Summary
+[:/comment]
+</center>
+
+
+
+## Executive Summary
 > tbd - below is old stuff
 
 Electronic authentication (e-authentication) is the process of
@@ -227,4 +236,22 @@ Authenticator Assurance Level 3 requires strong cryptographic authentication of 
 At Authenticator Assurance Level 3, “bearer” assertions (as defined in SP 800-63C) are not used to establish the identity of the Claimant to the Relying Party (RP) other than on a very short-term basis to maintain the continuity of a session. “Holder-of-key” assertions (as defined in SP 800-63C) may be used, provided that the assertion contains a reference to a key that is possessed by the Subscriber and is cryptographically linked to the Authenticator Assurance Level 3 authenticator used to authenticate to the Verifier. The RP should maintain records of the assertions it receives, to support detection of a compromised verifier impersonating the subscriber.
 
 **Identity Assurance Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted. They may be used by the relying party but must not be depended upon in making authorization decisions. **Identity Assurance Level 2** – Identity Assurance Level 2 introduces the need for either remote or in-person identity proofing. Credentials at Confidence Level 2 provide identifying attributes which have been verified in person or remotely using, at a minimum, the procedures given in this document.**Identity Assurance Level 3** – At Identity Assurance Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized representative of the CSP through examination of physical documentation as described in this document.
+
+## Table of Contents
+[1. Purpose and Introduction](sec1_2_introduction.md)
+
+[2. Definitions and Abbreviations](sec3_definitions.md)
+
+[3. Identity Assurance Levels](sec4_ial.md)
+
+[4. Identity Proofing Requirements](sec5_proofing.md)
+
+[5. Threats and Security Considerations](sec7_security.md)
+
+[6. Privacy Considerations](privacy.md)
+
+[7. Usability Considerations](sec_usability.md)
+
+[8. References](sec_references.md)
+
  

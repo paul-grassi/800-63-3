@@ -38,7 +38,7 @@ Once identity evidence is obtained by the CSP, the accuracy, authenticity, and i
 #### 5.2.2.1. Methods to Perform Identity Evidence Validation
 For each pice of evidence, the CSP determines a validation score.  The following table provides details the evidence validation properties required to achieve a given score.
 
-|Score|Method(s)|
+|Strength|Method(s)|
 |:---:|:------------------------------| 
 |Unacceptable|Validation of the evidence failed.|
 |Weak|All personal details from the evidence have been confirmed as valid by comparison with information held or published by an authoritative source.|
@@ -51,22 +51,19 @@ For each pice of evidence, the CSP determines a validation score.  The following
 The purpose of identity verification is to confirm that the presented identity evidence and information is associated to the individual making the claim.  
 
 ###5.3.1. Identity Verification Methods
-The following table details the verification methods necessary to achieve appropriate identity verification.
+The following table details the verification methods necessary to achieve appropriate identity verification.  
 
-
-|Score|Identity Verification Methods|
+|Strength|Identity Verification Methods|
 |:---:|:------------------------------| 
-|0|Unable to confirm that the applicant is the owner of the claimed identity.|
-|1|The Applicant has been confirmed as having access to the evidence provided to support the claimed identity.|
-|2|- The Applicant’s ownership of the Claimed Identity has been confirmed by Dynamic Knowledge Based Verification <br>**or**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by proving control of an account. Account control MAY be verified by depositing a small but random amount of funds to the applicant's account and verifying the applicant's ability to identify that transaction and its amount.<br>**or**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by a physical or biometric comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity<br>|
-|3|- The Applicant’s ownership of the Claimed Identity has been confirmed by physical comparison using a photograph/image **or** Biometric comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity<br>**AND**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by Dynamic Knowledge Based Verification **or** proving control of an account **or** a trusted referee confirms the identity of the claimant|
-|4|- The Applicant’s ownership of the Claimed Identity has been confirmed by a physical comparison of the Applicant using a photograph/image to the strongest pieces of Identity Evidence **OR** By a Biometric comparison of the Applicant to the strongest piece of Identity Evidence provided to support the Claimed Identity<br>**AND**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by both a Dynamic Knowledge Based Verification **and** proving control of an account<br>**AND**<br>- The Applicant’s ownership of the Claimed Identity has been confirmed by an interaction with the Applicant via the declared address|
+|Unacceptable|Unable to confirm that the applicant is the owner of the claimed identity.|
+|Weak|The applicant has been confirmed as having access to the evidence provided to support the claimed identity.|
+|Adequate|- The applicant’s ownership of the claimed identity has been confirmed by Knowledge Based Verification.  See [Section 5.3.2](#kbv)  for more details.<br>**OR**<br>- The applicant’s ownership of the claimed identity has been confirmed by a physical **or** biometric comparison of the applicant to the strongest piece of evidence provided.|
+|Strong|- The applicant’s ownership of the claimed identity has been confirmed by physical comparison using a photograph/image **or** Biometric comparison of the Applicant to the strongest piece of evidence provided to support the claimed identity.<br>**AND**<br>- The applicant’s ownership of the claimed identity has been confirmed by Knowledge Based Verification See [Section 5.3.2](#kbv) for more details **or** a trusted referee confirms the identity of the claimant.|
+|Superior|- The applicant’s ownership of the claimed identity has been confirmed by a physical comparison of the applicant using a photograph/image to the strongest pieces of evidence **or** by a biometric comparison of the applicant to the strongest piece of evidence provided to support the claimed identity.<br>**AND**<br>- The applicant’s ownership of the claimed identity has been confirmed by Knowledge Based VerificationSee [Section 5.3.2](#kbv) for more details.<br>**AND**<br>- The applicant’s ownership of the claimed identity has been confirmed by an interaction with the applicant via the postal address of record.|
 
 
 
-###<a name="kbv"></a>5.3.3. Knowledge Based Verification Requirements
-
-**Must include knowledge of account activity**
+###<a name="kbv"></a>5.3.2. Knowledge Based Verification Requirements
 
 The following requirements apply to the identity verification steps for IAL 2 and 3. There are no restrictions for the use of KBV to complete identity resolution.
 
@@ -84,16 +81,15 @@ The following requirements apply to the identity verification steps for IAL 2 an
 	- A CSP SHALL require a minimum of four (4) KBV questions each requiring a correct answer to successfully complete the KBV step.
 
 
-###5.3.4. Trusted Referee Requirements
+###5.3.3. Trusted Referee Requirements
 The CSP MAY determine to utilize trusted referees, such as notaries, legal guardian, or some other form of certified individual that can legally vouch for and/or act on behalf of the individual.  CSP MAY use a trusted referee for both remote and in-person processes.  
 
 In some instances, the CSP MAY allow an individual that has successfully completed identity proofing with the same CSP to act as a trusted referee for another individual.  The CSP SHALL not accept this type of trusted referee verification at IAL3.
 
-###5.3.4. Considerations for Minors and Other Vulnerable People
-
+###5.3.4. Considerations for Minors and Other People with Unique Needs
 Enrollment of minors under age 18, unable to meet the evidence requirements of identity proofing SHOULD involve a parent or legal adult guardian as a trusted referee as described in Section 5.3.4. Minors under age 13 require special consideration to ensure compliance with the Children's Online Privacy Protection Act of 1998, 15 USC 6501-6505 and 16 CFR Part 312.
 
-Other vulnerable persons SHOULD be enrolled by a conservator or other person with power of attorney.
+Other individuals may have difficulty completing the identity proofing process based on various circumstances, such as not possessing the complete set of evidence requirements at a given IAL.  In these circumstances, the CSP SHOULD allow the applicant to be enrolled by a conservator or other person with power of attorney.
 
 
 ###5.3.5. Binding Requirements
