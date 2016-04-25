@@ -47,18 +47,20 @@ Authenticator Assurance Level (AAL) 2 provides higher assurance that the same Cl
 
 ####4.2.1. Permitted Authenticator Types
 
-Two or more single-factor authenticators (of multiple factors), or one or more multi-factor authenticators, are required at AAL2. Authenticator requirements are specified in Section 5.
+At AAL2, it is required to have (a) a multi-factor authenticator, or (b) a combination of two single-factor authenticators. Authenticator requirements are specified in Section 5.
 
-If a combination of single-factor authenticators is used, it SHALL include a Memorized Secret authenticator and one possession-based ("something you have") authenticator from the following list:
+When a multi-factor authenticator is used, any of the following may be used:
+
+* Multi-Factor OTP Device
+* Multi-Factor Software Cryptographic Authenticator
+* Multi-Factor Cryptographic Device
+
+When a combination of two single-factor authenticators is used, it SHALL include a Memorized Secret authenticator and one possession-based ("something you have") authenticator from the following list:
+
 * Look-up Secret
 * Out of Band
 * Single Factor OTP Device
 * Single Factor Cryptographic Device
-
-Alternatively, any of following multi-factor authenticators may be used:
-* Multi-factor OTP Device
-* Multi-Factor Software Cryptographic Authenticator
-* Multi-Factor Cryptographic Device
 
 ####4.2.2. Authenticator Requirements
 
