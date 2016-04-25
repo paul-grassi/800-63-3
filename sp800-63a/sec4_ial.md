@@ -54,35 +54,22 @@ At IAL 3, identity proofing SHOULD be performed in person. In addition, "virtual
 The CSP SHALL NOT proof any applications.  Applicates MAY self-assert 0 or more attributes to the CSP.
 
 ##4.5. Identity Assurance Level 2
-IAL 2 allows for remote or in-person identity proofing.  IAL supports a wide range of acceptable identity evidence and validation techniques in order to increase user adoption, decrease false negatives (legitimate applicants that cannot successfully complete identity proofing), and detect to the best extent possible the presentation of fraudulent identities by a malicious applicant.
+IAL 2 allows for remote or in-person identity proofing.  IAL supports a wide range of acceptable identity evidence and validation techniques in order to increase user adoption, decrease false negatives (legitimate applicants that cannot successfully complete identity proofing), and detect to the best extent possible the presentation of fraudulent identities by a malicious applicant. CSPs MAY exceed these requirements.
 
 ###4.5.1. Evidence Requirements
-Two (2) pieces of STRONG evidence; **OR**
-One (1) piece of STRONG evidence plus two (2) pieces of ADEQUATE evidence.
+- Two (2) pieces of STRONG evidence; **OR**
+- One (1) piece of STRONG evidence plus two (2) pieces of ADEQUATE evidence.
 
 ###4.5.2. Validation Requirements
-- Each piece of evidence must be validated with a process that is able to achieve the same strength as the evidence presented; For example, if two forms pieceof STRONG identity evidence are presented, each evidence will be validated at a strength of STRONG.
+- Each piece of evidence must be validated with a process that is able to achieve the same strength as the evidence presented; For example, if two forms of STRONG identity evidence are presented, each evidence will be validated at a strength of STRONG.
 - Validation against a third party data service SHALL only be used for one piece of presented identity evidence.
 
 ###4.5.3. Verification Requirements
 At a minimum, the applicant must be verified by a process that is able to achieve a strength of STRONG.
 
-##4.6. Identity Assurance Level 3
-IAL 3 adds additional rigor to the steps required at IAL 3, to include providing further evidence of superior strength, and is subjected to additional and specific processes, including the use of biometrics, to further protect the identity and RP from impersonation, fraud, or other significantly harmful damages.  In addition, IAL 3 SHALL be performed in-person. SHALL be performed in person.  See [Section 4.3](#in-person) for more details.
-
-###4.6.1. Evidence Requirements
-
-
-###4.6.2. Validation Requirements
-
-###4.6.3. Verification Requirements
-
-##4.7. Address Confirmation
-Some language about enrollment code.  See section 5 for data.
-
-###4.7.1. Identity Assurance Level 1
-No requirements for address confirmation.
-###4.7.2. Identity Assurance Level 2
+###4.5.4. Address Confirmation
+- CSPs SHALL send an enrollment code to an address of record of the application.
+- The application SHALL present a valid enrollment code to complete the identity proofing process.
 - Self-asserted address data SHALL NOT be used for confirmation.
 - An enrollment code consisting of at least 6 random digits SHALL be included in address confirmation.
 - May be sent to a mobile telephone (SMS or voice), landline telephone, email, or physical mailing address verified records
@@ -91,7 +78,25 @@ No requirements for address confirmation.
 - Enrollment codes sent by means other than physical mail SHALL be valid for a maximum of 10 minutes; those sent to a postal address of record SHALL be valid for a maximum of 7 days.
 - A notification of proofing SHALL be sent via a different address of record than the destination of the enrollment code.
 
-###4.7.3. Identity Assurance Level 3
+##4.6. Identity Assurance Level 3
+IAL 3 adds additional rigor to the steps required at IAL 3, to include providing further evidence of superior strength, and is subjected to additional and specific processes, including the use of biometrics, to further protect the identity and RP from impersonation, fraud, or other significantly harmful damages.  In addition, IAL 3 SHALL be performed in-person. SHALL be performed in person.  See [Section 4.3](#in-person) for more details. CSPs MAY exceed these requirements.
+
+###4.6.1. Evidence Requirements
+- One (1) piece of SUPERIOR evidence plus one (1) piece of STRONG evidence; **OR**
+- Two (2) pieces of STRONG evidence plus one (1) piece of ADEQUATE evidence
+
+###4.6.2. Validation Requirements  
+
+- SHALL be performed in person.  See [Section 4.3](#in-person) for more details.
+- Requirements are the same as IAL 2.
+
+###4.6.3. Verification Requirements
+- SHALL be performed in person.  See [Section 4.3](#in-person) for more details.
+- At a minimum, the applicant must be verified by a process that is able to achieve a strength of SUPERIOR.
+
+###4.6.4 Address Confirmation
+- CSPs SHALL send an enrollment code to an address of record of the application.
+- The application SHALL present a valid enrollment code to complete the identity proofing process.
 - Self-asserted address data SHALL NOT be used for confirmation.
 - An enrollment code consisting of at least 6 random digits SHALL be included in address confirmation.
 - SHALL be sent the physical mailing address verified in records
@@ -100,18 +105,18 @@ No requirements for address confirmation.
 - A notification of proofing SHALL be sent via a different address of record than the destination of the enrollment code.
 
 
-##4.8. Summary of Requirements
+##4.7. Summary of Requirements
 *(Non-normative; refer to preceding sections for normative requirements)*
 
 The following table summarizes the requirements for each of the authenticator assurance levels:
 
 Requirement | IAL 1 | IAL 2 | IAL 3
 ------------|-------|-------|-------
-Resolution||
-Evidence|Identity evidence is not required|2 pieces of evidence with a score of 3;<br>**OR**<br>  1 piece of STRONG evidence plus 2 pieces of ADEQUATE evidence|1 piece of SUPERIOR evidence plus 1 piece of STRONG evidence; <br>**OR**<br>  Two (2) pieces of STRONG evidence and 1 piece of ADEQUATE evidence
-Validation|No validation of evidence is required|- Each piece of evidence must be validated with a process that is able to achieve the same strength as the evidence presented; For example, if two forms pieceof STRONG identity evidence are presented, each evidence will be validated at a strength of STRONG.<br><br>- Validation against a third party data service SHALL only be used for one piece of presented identity evidence.|- SHALL be performed in person.  See [Section 4.3](#in-person) for more details. **THIS IS NOT RIGHT**- Requirements are the same as IAL 2, with additional requirement that validation SHALL be performed in person or using an approved virtual in-person technology.
-Verification| No verification of identity is required |- MAY be performed remote or in-person<br><br>- At a minimum, the applicant must be verified by a process that is able to achieve a strength of STRONG.|- SHALL be performed in person.  See [Section 4.3](#in-person) for more details.)<br><br>- At a minimum, the applicant must be verified by a process that is able to achieve a strength of SUPERIOR.<br>
-Address Confirmation|No requirements for address confirmation|- Self-asserted address data SHALL NOT be used for confirmation.<br>- An enrollment code consisting of at least 6 random digits SHALL be included in address confirmation.<br>- May be sent to a mobile telephone (SMS or voice), landline telephone, email, or physical mailing address obtained from records- SHALL NOT be sent any form of software-based (i.e., VoIP) telephone number.<br>- If the enrollment code is also intended to be an authentication factor, it SHALL be reset upon first use.<br>- Enrollment codes sent by means other than physical mail SHALL be valid for a maximum of 10 minutes; those sent to a postal address of record SHALL be valid for a maximum of 7 days.<br> - A notification of proofing SHALL be sent via a different address of record than the destination of the enrollment code|All IAL 2 requirements apply.  However, only postal address SHALL be used for address confirmation.
+Resolution|No requirements|Collect full name, home postal address, and DOB.  KBV may be used for added confidence.||
+Evidence|Identity evidence is not required|Two (2) pieces of STRONG evidence<br>**OR**<br>One (1) piece of STRONG evidence plus two (2) pieces of ADEQUATE evidence|One (1) piece of SUPERIOR evidence plus one (1) piece of STRONG evidence<br>**OR**<br>Two (2) pieces of STRONG evidence plus one (1) piece of ADEQUATE evidence
+Validation|No validation of evidence is required|- Each piece of evidence must be validated with a process that is able to achieve the same strength as the evidence presented; For example, if two forms of STRONG identity evidence are presented, each evidence will be validated at a strength of STRONG.<br><br>- Validation against a third party data service SHALL only be used for one piece of presented identity evidence.|- SHALL be performed in person.  See [Section 4.3](#in-person) for more details.<br><br>- Requirements are the same as IAL 2.
+Verification| No verification of identity is required |- At a minimum, the applicant must be verified by a process that is able to achieve a strength of STRONG.|- SHALL be performed in person.  See [Section 4.3](#in-person) for more details.<br><br>- At a minimum, the applicant must be verified by a process that is able to achieve a strength of SUPERIOR.<br>
+Address Confirmation|No requirements for address confirmation|- Self-asserted address data SHALL NOT be used for confirmation.<br>- An enrollment code consisting of at least 6 random digits SHALL be included in address confirmation.<br>- May be sent to a mobile telephone (SMS or voice), landline telephone, email, or physical mailing address obtained from records- SHALL NOT be sent any form of software-based (i.e., VoIP) telephone number.<br>- If the enrollment code is also intended to be an authentication factor, it SHALL be reset upon first use.<br>- Enrollment codes sent by means other than physical mail SHALL be valid for a maximum of 10 minutes; those sent to a postal address of record SHALL be valid for a maximum of 7 days.<br> - A notification of proofing SHALL be sent via a different address of record than the destination of the enrollment code|- Self-asserted address data SHALL NOT be used for confirmation.<br>- An enrollment code consisting of at least 6 random digits SHALL be included in address confirmation.<br>- SHALL be sent the physical mailing address verified in records<br>- If the enrollment code is also intended to be an authentication factor, it SHALL be reset upon first use.<br>- Enrollment code SHALL be valid for a maximum of 5 days.<br>- A notification of proofing SHALL be sent via a different address of record than the destination of the enrollment code.
 
 
 
