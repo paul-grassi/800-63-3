@@ -2,7 +2,9 @@
 
 # Subscriber Authentication
 
-Paul Grassi  
+Paul A. Grassi  
+Elaine M. Newton  
+Ray A. Perlner  
 William E. Burr  
 James L. Fenton  
 
@@ -12,8 +14,15 @@ James L. Fenton
 
 # Subscriber Authentication
 
-Paul Grassi  
+Paul A. Grassi  
 *Applied Cybersecurity Division  
+Information Technology Laboratory*
+
+Elaine M. Newton  
+*Information Technology Laboratory*
+
+Ray A. Perlner  
+*Computer Security Division  
 Information Technology Laboratory*
 
 William E. Burr  
