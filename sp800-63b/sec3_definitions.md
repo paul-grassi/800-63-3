@@ -117,6 +117,9 @@ The process of establishing confidence in user identities electronically present
 #### Entropy
 A measure of the amount of uncertainty that an attacker faces to determine the value of a secret. Entropy is usually stated in bits.
 
+#### Equal Error Rate (EER)
+The value where the false match rate (FMR) and false non-match rate (FNMR) of a sensor are equal. EER is a figure of merit for the sensor; the lower the EER is, the more certain the sensor's decision is likely to be.
+
 #### Federal Information Security Management Act (FISMA)
 Title III of the E-Government Act requiring each federal agency to develop, document, and implement an agency-wide program to provide information security for the information and information systems that support the operations and assets of the agency, including those provided or managed by another agency, contractor, or other source.
 
