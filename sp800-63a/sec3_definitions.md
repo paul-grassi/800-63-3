@@ -21,7 +21,16 @@ An attempt by an unauthorized individual to fool a Verifier or a Relying Party i
 A party who acts with malicious intent to compromise an information system.
 
 #### Attribute
-A claim of a named quality or characteristic inherent in or ascribed to someone or something. (See term in [\[ICAM\]](#ICAM) for more information.)
+A claim of a named quality or characteristic inherent in or ascribed to someone or something.
+
+### Attribute Claim
+`Needs work`  
+The minimzed set of information assigned to an attribute regardless of formatting.  For example, for the attribute 'birthday', the claim is 'older than' or 'born in December'.
+
+### Attribute Value
+`Needs work`  
+The entire set of information assigned to an attribute regardless of formatting.  For example, for the attribute 'birthday', the value is '12/1/1980' or 'December 1, 1980'.
+ 
 
 #### Authentication
 The process of establishing confidence in the identity of users or information systems.

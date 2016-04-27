@@ -5,6 +5,9 @@
 When developing e-authentication processes and systems, agencies SHALL consult OMB Guidance for Implementing the Privacy Provisions of the E-Government Act of 2002 [OMB M-03-22](sec_references.md/#M-03-22)
 
 ##All Identity Assurance Levels
+**For Federation - C**
+RPs SHALL only request the minimum number of attributes required to provide a service and SHOULD attempt to request attribute claims rather than full attribute values. 	
+
 1.  A relying party (RP) MAY ask the subject for additional information not available by the CSP.
 2. A CSP SHOULD allow a claimaint to use a credential that his higher than the IAL and/or AAL required by the RP.  However, the CSP SHALL retain pseudonymity of the claimant if the claimant choses to use a credential that is higher than required by the RP.  For example, a claimant may chose to use a smartcard to access an AAL/IAL 1 RP.  Though the CSP should not reveal anything other than a pseudonymous identifier to the RP.
 ##IAL1

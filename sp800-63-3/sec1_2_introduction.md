@@ -1,14 +1,13 @@
 
 ## 1. Purpose
 
-This recommendation and its companion documents, SP 800-63A, SP 800-63B, and SP 800-63C, provide technical guidelines to agencies for the
-implementation of electronic authentication (e-authentication).
+This recommendation and its companion documents, SP 800-63A, SP 800-63B, and SP 800-63C, provide technical guidelines to agencies for the implementation of digital authentication.
 
 ##2. Introduction
 
-Electronic authentication (e-authentication) is the process of
-establishing confidence in user identities electronically presented to
-an information system. E-authentication presents a technical challenge
+Digital authentication is the process of
+establishing confidence in user identities presented to
+an information system. Digital authentication presents a technical challenge
 when this process involves the remote authentication of individual
 people over a network. This recommendation provides technical guidelines
 to agencies to allow an individual person to remotely authenticate
@@ -31,7 +30,7 @@ authentication assurance in terms of the likely consequences of an
 authentication error. As the consequences of an authentication error
 become more serious, the required level of assurance increases. The OMB
 guidance provides agencies with criteria for determining the level of
-e-authentication assurance required for specific electronic transactions
+assurance required for specific digital transactions
 and systems, based on the risks and their likelihood of occurrence.
 
 SP 800-63 is organized as a family of documents as follows:
@@ -45,7 +44,7 @@ SP 800-63 is organized as a family of documents as follows:
 It is anticipated that SP 800-63A, SP 800-63B, and SP 800-63C will be revised asynchronously with each other and with this document. The latest revision of each should be used for guidance.
 
 OMB guidance outlines a five-step process by which agencies should meet
-their e-authentication assurance requirements:
+their authentication assurance requirements:
 
 1.  *Conduct a risk assessment of the government system* – No specific
     risk assessment methodology is prescribed for this purpose;
@@ -58,12 +57,12 @@ their e-authentication assurance requirements:
     2.2 of OMB M-04-04 provides the guidance necessary for agencies to
     perform this mapping.
 
-3.  *Select technology based on e-authentication technical guidance* –
+3.  *Select technology based on digital authentication technical guidance* –
     After the appropriate assurance level has been determined, OMB
     guidance states that agencies should select technologies that meet
     the corresponding technical requirements, as specified by
     this document. Some agencies may possess existing
-    e-authentication technology. Agencies should verify that any
+    digital authentication technology. Agencies should verify that any
     existing technology meets the requirements specified in
     this document.
 
@@ -115,12 +114,12 @@ mitigation measures. Easing credential assurance level requirements may
 increase the size of the enabled customer pool, but agencies shall
 ensure that this does not corrupt the system’s choice of the appropriate
 assurance level. Alternatively, agencies may consider partitioning the
-functionality of an e-authentication enabled application to allow less
+functionality of an digital authentication enabled application to allow less
 sensitive functions to be available at a lower level of authentication
 and attribute assurance, while more sensitive functions are available
 only at a higher level of assurance.
 
-These technical guidelines cover remote electronic authentication of
+These technical guidelines cover remote digital authentication of
 human users to IT systems over a network. They do not address the
 authentication of a person who is physically present, for example, for
 access to buildings, although some credentials and authenticators that are used
@@ -131,7 +130,7 @@ Subscribers. However, these guidelines do not specifically address
 machine-to-machine (such as router-to-router) authentication, or
 establish specific requirements for issuing authentication credentials
 and authenticators to machines and servers when they are used in
-e-authentication protocols with people.
+authentication protocols with people.
 
 The paradigm of this document is that individuals are enrolled, issued an authenticator, and
 undergo a registration process in which their identity is bound to that authenticator. Thereafter, the individuals are remotely authenticated to systems
@@ -176,7 +175,7 @@ authenticating users. Agencies may determine based on their risk
 analysis that additional measures are appropriate in certain contexts.
 In particular, privacy requirements and legal risks may lead agencies to
 determine that additional authentication measures or other process
-safeguards are appropriate. When developing e-authentication processes
+safeguards are appropriate. When developing digital authentication processes
 and systems, agencies should consult *OMB Guidance for Implementing the
 Privacy Provisions of the E-Government Act of 2002* \[[OMB
 M-03-22](#_General_References)\]. See the *Guide to Federal Agencies on
@@ -194,21 +193,29 @@ FISMA directs Federal agencies to develop, document, and implement
 agency-wide programs to provide information security for the information
 and information systems that support the operations and assets of the
 agency. This includes the security authorization of IT systems that
-support e-authentication. It is recommended that non-Federal entities
+digital authentication. It is recommended that non-Federal entities
 implementing these guidelines follow equivalent standards of security
 management, certification and accreditation to ensure the secure
-operations of their e-authentication systems.
+operations of their digital systems.
 
-###2.1. Change History
+###2.1. Relationship to Other Standards and Guidelines
 
-####2.1.1. SP 800-63-1
+This document has been written with the intention of achieving alignment to National and International standards describing levels of identity assurance, including CESG Good Practice Guide No. 43 (GPG 43), Requirements for Secure Delivery of Online Public Services (RSDOPS) (reference [a]). It provides an interpretation of these levels of assurance in the context of IPV for UK public sector for both citizen and internal system users.7. This is not meant to imply that there is direct correlation between the Assured Identity Levels in this document and the levels in those standards but that it is seen that this document fulfils the criteria as demonstrated in those standards.8. This document only covers the identity proofing and verification processes, therefore, it may only fulfil part of the requirements of these standards and further measures are required in order to wholly comply (e.g. issuing of a credential). 
+
+
+
+GPG 45 RSDOPS STORK 2.0 29115:2011 ISO 29003 NIST 800-63N/ALevel 01N/AN/AN/AN/ALevel 1Level 1QAA Level 1LoA 1LoA 1Level 1Level 2Level 2QAA Level 2LoA 2LoA 2Level 2Level 3Level 3QAA Level 3LoA 3LoA 3Level 3Level 4N/A2QAA Level 4LoA 4LoA 4Level 4
+
+###2.2. Change History
+
+####2.2.1. SP 800-63-1
 
 NIST SP 800-63-1 updated NIST SP 800-63 to reflect current authenticator (then referred to as token)
 technologies and restructured to provide a better understanding of the
-e-authentication architectural model used here. Additional (minimum)
+digital authentication architectural model used here. Additional (minimum)
 technical requirements were specified for the CSP, protocols utilized to
 transport authentication information, and assertions if implemented
-within the e-authentication model. Other changes to NIST SP 800-63
+within the digital authentication model. Other changes to NIST SP 800-63
 included:
 
 -   Recognition of more types of tokens, including pre-registered
@@ -224,7 +231,7 @@ included:
 -   Emphasis that the document is aimed at Federal IT systems;
 
 -   Recognition of different models, including a broader
-    e-authentication model (in contrast to the simpler model common
+    digital authentication model (in contrast to the simpler model common
     among Federal IT systems shown in Figure 1) and an additional
     assertion model, the Proxy Model, presented in Figure 6;
 
@@ -266,7 +273,7 @@ made in NIST SP 800-63-1:
     reduce and isolate any damage done by a malicious or negligent
     trusted entity.
 
-####2.1.2 SP 800-63-2
+####2.2.2 SP 800-63-2
 
 NIST SP 800-63-2 was a limited update of Special Publication 800-63-1 and
 substantive changes were made only in section 5. *Registration and
@@ -278,7 +285,7 @@ registration. Other changes to section 5 were minor explanations and
 clarifications.
 
 
-####2.1.3. SP 800-63-3
+####2.2.3. SP 800-63-3
 
 NIST SP 800-63-3 is a substantial update and restructuring of Special Publication 800-63-2. It introduces the concepts of Authenticator Assurance Level and Identity Assurance Level to support the growing need for independent treatment of authentication strength and confidence in the claimant's identity (for example, in strong pseudonymous authentication). It also moves from a single document describing authentication to a family of four documents, of which SP 800-63-3 is the top-level document.Other areas of update to SP 800-63-2 include:
 -	Terminology changes, primarily the use of *authenticator* in place of *token* to avoid conflicting use of the word *token* in assertion technologies-	Updates to authentication and assertion requirements to reflect advances in both security technology and threats-	Requirements on the storage of long-term secrets by verifiers-	Updated requirements regarding remote identity proofing-	Clarification on the use of independent channels and devices as “something you have”-	Removal of pre-registered knowledge tokens (authenticators), with the recognition that they are special cases of (often very weak) passwords.-	Requirements regarding account recovery in the event of loss or theft of an authenticator
