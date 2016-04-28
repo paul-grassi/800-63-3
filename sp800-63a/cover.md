@@ -1,16 +1,26 @@
-## DRAFT NIST Special Publication 800-63-A
+# DRAFT NIST Special Publication 800-63
+## Revision 3
 
-# Enrollment and Identity Proofing Requirements
+# Digital Authentication Guideline
 
-Paul A. Grassi  
+Paul Grassi  
 William E. Burr  
-James L. Fenton  
+James L. Fenton
 
-![](../sp800-63-3/media/nist_logo.png)
 
-## DRAFT NIST Special Publication 800-63-A
 
-# Enrollment and Identity Proofing Requirements
+
+
+
+
+This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX  
+![](media/csd.png)
+![](media/nist_logo.png)
+
+# DRAFT NIST Special Publication 800-63-3
+# Revision 3
+
+# Digital Authentication Guideline
 
 Paul A. Grassi  
 *Applied Cybersecurity Division  
@@ -23,9 +33,11 @@ Silver Spring, MD*
 James L. Fenton  
 *Independent Consultant*
 
-Month-TBD 2016
+This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX
 
-![](../sp800-63-3/media/commerce_logo.png)
+Month TBD 2016
+
+![](media/commerce_logo.png)
 
 U.S. Department of Commerce  
 *Penny Pritzker, Secretary*
@@ -42,21 +54,21 @@ Nothing in this publication should be taken to contradict the standards and guid
 
 <center>
 National Institute of Standards and Technology Special Publication
-800-63A  
-Natl. Inst. Stand. Technol. Spec. Publ. 800-63A, xxx pages (MonthTBD
+800-63-3  
+Natl. Inst. Stand. Technol. Spec. Publ. 800-63-3, xxx pages (MonthTBD
 2016)  
 CODEN: NSPUE2
 
-|Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose.There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by Federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, Federal agencies may wish to closely follow the development of these new publications by NIST.Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. All NIST Computer Security Division publications, other than the ones noted above, are available at http://csrc.nist.gov/publications.|
+This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX`Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose. There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.  Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).`
 
-{::comment} 
-**Comments on this publication may be submitted to:**
+**Comments on this publication may be submitted to:
+Public comment period: Month Day, YYYY through Month Day, YYYY**
+All comments are subject to release under the Freedom of Information Act (FOIA).
 
 National Institute of Standards and Technology  
 Attn: Computer Security Division, Information Technology Laboratory  
 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930  
 Email: <eauth-comments@nist.gov>
-{:/comment}
 
 
 ### Reports on Computer Systems Technology
@@ -84,9 +96,13 @@ This document and its companion documents, SP 800-63-3, SP 800-63B, and SP 800-6
 authentication; credential service provider; electronic authentication; digital authentication; electronic credentials; digital credentials; identity proofing.
 
 
-### Acknowledgements
-The authors would like to acknowledge the contributions and guidance of our international peers, including Adam Cooper, Alastair Treharne, and Julian White from the Cabinet Office, United Kingdom, and Tim Bouma from the Treasury Board of Canada Secretariat, Government of Canada. In addition, we would like to acknowledge the original authors, contributes, and reviewers of previous versions of SP 800-63. Without their expertise and commitment to securing government services this version would not be possible. They made this update easy.
 
+### Acknowledgements
+The authors would like to acknowledge the contributions and guidance of our international peers, including Adam Cooper, Alastair Treharne, and Julian White from the Cabinet Office, United Kingdom, and Tim Bouma from the Treasury Board of Canada Secretariat, Government of Canada. 
+
+The authors would also like to acknowledge the thought leadership and innovation of the original authors: Donna F. Dodson, Elaine M. Newton, Ray A. Perlner, W. Timothy Polk, Sarbari Gupta, and Emad A. Nabbus.  Without their tireless efforts, we would not have had the incredible baseline by which to evolve 800-63 to the document it is today. 
+
+###Audience  ###Compliance with NIST Standards and Guidelines###Conformance Testing###Note to Reviewers###Note to Readers###Trademark Information 
 ###Requirements Notation and Conventions
 The terms “shall” and “shall not” indicate requirements to be followed strictly in order to conform to the publication and from which no deviation is permitted.
  
@@ -95,7 +111,11 @@ The terms “should” and “should not” indicate that among several possibil
 The terms “may” and “need not” indicate a course of action permissible within the limits of the publication.
  
 The terms “can” and “cannot” indicate a possibility and capability, whether material, physical or causal.
+
 </center>
+
+
+
 
 
 

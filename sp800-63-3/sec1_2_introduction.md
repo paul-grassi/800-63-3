@@ -204,7 +204,8 @@ This document has been written with the intention of achieving alignment to Nati
 
 
 
-GPG 45 RSDOPS STORK 2.0 29115:2011 ISO 29003 NIST 800-63N/ALevel 01N/AN/AN/AN/ALevel 1Level 1QAA Level 1LoA 1LoA 1Level 1Level 2Level 2QAA Level 2LoA 2LoA 2Level 2Level 3Level 3QAA Level 3LoA 3LoA 3Level 3Level 4N/A2QAA Level 4LoA 4LoA 4Level 4
+GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003|NIST 800-63
+:----:|:----:|:-------:|:--------:|:-------:|:---------:|N/ALevel 01N/AN/AN/AN/ALevel 1Level 1QAA Level 1LoA 1LoA 1Level 1Level 2Level 2QAA Level 2LoA 2LoA 2Level 2Level 3Level 3QAA Level 3LoA 3LoA 3Level 3Level 4N/A2QAA Level 4LoA 4LoA 4Level 4
 
 ###2.2. Change History
 
