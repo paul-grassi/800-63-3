@@ -109,6 +109,14 @@ passwords; PKI.
 The authors would like to acknowledge the thought leadership and innovation of the original authors: Donna F. Dodson, Elaine M. Newton, Ray A. Perlner, W. Timothy Polk, Sarbari Gupta, and Emad A. Nabbus.  Without their tireless efforts, we would not have had the incredible baseline by which to evolve 800-63 to the document it is today. 
 
 ###Audience  ###Compliance with NIST Standards and Guidelines###Conformance Testing###Note to Reviewers###Note to Readers###Trademark Information 
+###Requirements Notation and Conventions
+The terms “shall” and “shall not” indicate requirements to be followed strictly in order to conform to the publication and from which no deviation is permitted.
+ 
+The terms “should” and “should not” indicate that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited.
+ 
+The terms “may” and “need not” indicate a course of action permissible within the limits of the publication.
+ 
+The terms “can” and “cannot” indicate a possibility and capability, whether material, physical or causal.
 
 </center>
 
