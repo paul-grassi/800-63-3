@@ -1,19 +1,28 @@
-## DRAFT NIST Special Publication 800-63-B
+## DRAFT NIST Special Publication 800-63B
 
-# Authenticator Requirements
+# Subscriber Authentication
 
-Paul Grassi  
+Paul A. Grassi  
+Elaine M. Newton  
+Ray A. Perlner  
 William E. Burr  
 James L. Fenton  
 
 ![](../sp800-63-3/media/nist_logo.png)
 
-## DRAFT NIST Special Publication 800-63-A
+## DRAFT NIST Special Publication 800-63B
 
-# Authenticator Requirements
+# Subscriber Authentication
 
-Paul Grassi  
+Paul A. Grassi  
 *Applied Cybersecurity Division  
+Information Technology Laboratory*
+
+Elaine M. Newton  
+*Information Technology Laboratory*
+
+Ray A. Perlner  
+*Computer Security Division  
 Information Technology Laboratory*
 
 William E. Burr  
@@ -43,12 +52,9 @@ information security standards and guidelines, including minimum
 requirements for Federal information systems, but such standards and
 guidelines shall not apply to national security systems without the
 express approval of appropriate Federal officials exercising policy
-authority over such systems. This guideline is consistent with the
-requirements of the Office of Management and Budget (OMB) Circular
-A-130, Section 8b(3), *Securing Agency Information Systems*, as analyzed
-in Circular A-130, Appendix IV: *Analysis of Key Sections*. Supplemental
-information is provided in Circular A-130, Appendix III, *Security of
-Federal Automated Information Resources*.
+authority over such systems. This guideline is consistent with the information security
+requirements of Office of Management and Budget (OMB) Circular
+A-130.
 
 Nothing in this publication should be taken to contradict the standards
 and guidelines made mandatory and binding on Federal agencies by the
@@ -61,7 +67,7 @@ the United States. Attribution would, however, be appreciated by NIST.
 
 National Institute of Standards and Technology Special Publication
 800-63-3  
-Natl. Inst. Stand. Technol. Spec. Publ. 800-63-3, xxx pages (MonthTBD
+Natl. Inst. Stand. Technol. Spec. Publ. 800-63B, xxx pages (MonthTBD
 2016)  
 CODEN: NSPUE2
 

@@ -31,3 +31,5 @@ This document is broken up into sections as follows:
 [9. Usability Considerations](sec9_usability.md)
 
 [10. References](sec10_references.md)
+
+[Appendix A. Strength of Memorized Secrets](appA_memorized.md)
