@@ -1,9 +1,9 @@
-# DRAFT NIST Special Publication 800-63
-## Revision 3
+# DRAFT NIST Special Publication 800-63-A
 
 # Digital Authentication Guideline
+###Enrollment and Identity Proofing Requirements
 
-Paul Grassi  
+Paul A. Grassi  
 William E. Burr  
 James L. Fenton
 
@@ -15,12 +15,12 @@ James L. Fenton
 
 This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX  
 ![](media/csd.png)
-![](media/nist_logo.png)
+![](../sp800-63-3/media/nist_logo.png)
 
-# DRAFT NIST Special Publication 800-63-3
-# Revision 3
+# DRAFT NIST Special Publication 800-63-A
 
 # Digital Authentication Guideline
+###Enrollment and Identity Proofing Requirements
 
 Paul A. Grassi  
 *Applied Cybersecurity Division  
@@ -37,7 +37,7 @@ This publication is available free of charge from:http://dx.doi.org/10.6028/NIS
 
 Month TBD 2016
 
-![](media/commerce_logo.png)
+![](../sp800-63-3/media/commerce_logo.png)
 
 U.S. Department of Commerce  
 *Penny Pritzker, Secretary*
