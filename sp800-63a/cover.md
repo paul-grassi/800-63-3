@@ -1,4 +1,4 @@
-# DRAFT NIST Special Publication 800-63-A
+# <a name="800-63a"></a> DRAFT NIST Special Publication 800-63-A
 
 # Digital Authentication Guideline
 ###Enrollment and Identity Proofing Requirements
@@ -31,7 +31,8 @@ William E. Burr
 Silver Spring, MD*
 
 James L. Fenton  
-*Independent Consultant*
+*Independent Consultant  
+Los Altos, CA*
 
 This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX
 
