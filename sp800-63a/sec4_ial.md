@@ -41,13 +41,13 @@ The following requirements apply to any CSP performing identity proofing at IAL 
 
 ## <a name="in-person"></a>4.3. In-person Proofing Requirements
 
-At IAL 3, identity proofing SHALL be performed in person. "Virtual in-person" identity proofing MAY be employed by a CSP as an equivalent process to in-person identity proofing. Any such "virtual in-person" identity proofing and enrollment transaction SHALL meet the following requirements:
+At IAL 3, identity proofing SHALL be performed in person. "Virtual in-person" identity proofing MAY be employed by a CSP as an equivalent process to in-person identity proofing. Any such "virtual in-person" identity proofing and enrollment transaction SHALL meet the following requirements, in addition to the IAL 3 validation and verification requirements specified in [Section 5.2. Identity Evidence Validation](sec5_proofing.md/#validate) and [Section 5.3. Identity Verification](sec5_proofing.md/#verify):
 
 1. The CSP monitors the entire identity proofing transaction by a continuous high-resolution video transmission of the applicant, from which the applicant SHALL NOT depart during the identity proofing session.
 2. All actions taken by the applicant during the enrollment and identity proofing process are visible through the camera.
 3. Evidence documentation SHALL be scanned by an integrated document scanner. **Jim - This should be covered in the actual validation and verification requirements, so doesn't need to be said**
 4. All digital verification of evidence (e.g., via chip or wireless technologies) SHALL be performed by sensors that are integrated into the solution. **Jim, This should be covered in the actual validation and verification requirements, so doesn't need to be said**
-5. Collection of biometrics SHALL be done in such a way that ensures that the biometric is collected from the applicant, and not another individual. All biometric requirements in [Section 5.2.3](../sp800-63b/sec5_authenticators.md/#biometric_use) apply.
+5. Collection of biometrics SHALL be done in such a way that ensures that the biometric is collected from the applicant, and not another individual. All biometric requirements in [SP 800-63B, Section 5.2.3 Biometric Considerations](../sp800-63b/sec5_authenticators.md/#biometric_use) apply.
 6. The CSP SHALL have a live operator participate remotely with the applicant for the entirety of the identity proofing and registration session.
 7. A CSP SHOULD have a live operator participate in-person with the applicant for the entirely of the identity proofing and registration session.
 6. The CSP SHALL require operators to have undergone a training program to detect potential fraud.
