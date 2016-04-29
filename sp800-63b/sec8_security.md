@@ -1,8 +1,8 @@
-##7. Threats and Security Considerations
+##8. Threats and Security Considerations
 
 This section is non-normative.
 
-### 7.1. Authenticator Threats
+### 8.1. Authenticator Threats
 An attacker who can gain control of an authenticator will often be able to masquerade as the authenticator's owner. Threats to authenticators can be categorized based on attacks on the types of authentication factors that comprise the authenticator:
 
 - *Something you have* may be lost, damaged, stolen from the owner or cloned by an attacker. For example, an attacker who gains access to the owner’s computer might copy a software authenticator. A hardware authenticator might be stolen, tampered with, or duplicated.
@@ -38,7 +38,7 @@ This document assumes that the subscriber is not colluding with the attacker who
 | Online guessing | The attacker connects to the verifier online and attempts to guess a valid authenticator output in the context of that verifier. | Online dictionary attacks are used to guess memorized secrets. |
 | | | Online guessing is used to guess authenticator outputs for a one-time password device registered to a legitimate claimant. |
 
-### 7.2. Threat Mitigation Strategies
+### 8.2. Threat Mitigation Strategies
 Related mechanisms that assist in mitigating the threats identified above are summarized in Table 5.
 
 **Table 5 - Mitigating Authenticator Threats**
@@ -73,7 +73,7 @@ There are several other strategies that may be applied to mitigate the threats d
 
 - *Out of band techniques* may be employed to verify proof of possession of registered devices (e.g., cell phones).
 
-###7.3. Authenticator Recovery
+###8.3. Authenticator Recovery
 
 The weak point in many authentication mechanisms is the process followed when a subscriber loses control of one or more authenticators and needs to replace them. In many cases, the options remaining available to authenticate the subscriber are limited, and economic concerns (cost of maintaining call centers, etc.) motivate the use of inexpensive, and frequently less secure, backup authentication methods. To the extent that authenticator recovery is human-assisted, there is also the risk of social engineering attacks.
 
