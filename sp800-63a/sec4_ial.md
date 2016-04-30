@@ -26,7 +26,7 @@ Figure 1.  The Identity Proofing Process
 The following requirements apply to any CSP performing identity proofing at IAL 2 or 3. 
 
 1. Identity proofing SHALL NOT be performed to determine suitability and/or entitlement to any protected service or benefit. The RP, not the CSP, is responsible for collecting and validation information for access control purposes.
-2. The CSP SHALL collect and maintain a record of the full legal name, date of birth, and the mailing/residential address of record of the applicant.  The CSP MAY collect additional attributes to assist in identity proofing.  The CSP SHALL request explicit consent from the individual to allow the CSP to collect and store the additional attribtues.
+2. The CSP SHALL collect and maintain a record of the full legal name, date of birth, and the mailing/residential address of record of the applicant.  The CSP MAY collect additional attributes to assist in identity resolution.  The CSP SHALL request explicit consent from the individual to collect and store the additional attributes.
 2. The CSP SHALL record the types of identity evidence presented in the proofing process, including any identification and reference number. The CSP SHALL NOT record an image, scan, or other copy of the evidence.
 3. The CSP SHALL maintain a record of all steps taken to verify the identity of the applicant, to include steps that are additive to mandatory requirements specified herein.
 4. The identity proofing and enrollment processes SHALL be performed according to an applicable written policy or *practice statement* that specifies the particular steps taken to verify identities.
