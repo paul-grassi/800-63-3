@@ -10,6 +10,7 @@ William E. Burr
 James L. Fenton  
 
 This publication is available free of charge from:
+
 http://dx.doi.org/10.6028/NIST.SP.XXX  
 ![](../sp800-63-3/media/csd.png)
 ![](../sp800-63-3/media/nist_logo.png)
@@ -39,6 +40,7 @@ James L. Fenton
 *Independent Consultant*
 
 This publication is available free of charge from:
+
 http://dx.doi.org/10.6028/NIST.SP.XXX
 
 Month TBD 2016
@@ -83,7 +85,6 @@ Attn: Computer Security Division, Information Technology Laboratory
 Email: <eauth-comments@nist.gov>
 
 
-
 ### Reports on Computer Systems Technology
 
 The Information Technology Laboratory (ITL) at the National Institute of
@@ -111,30 +112,24 @@ authentication; credential service provider; digital authentication; digital cre
 
 ### Acknowledgements
 
-The authors would also like to acknowledge the thought leadership and innovation of the original authors: Donna F. Dodson, W. Timothy Polk, Sarbari Gupta, and Emad A. Nabbus.  Without their tireless efforts, we would not have had the incredible baseline from which to evolve 800-63 to the document it is today. 
+The authors would also like to acknowledge the thought leadership and innovation of the original authors: Donna F. Dodson, W. Timothy Polk, Sarbari Gupta, and Emad A. Nabbus.  Without their tireless efforts, we would not have had the incredible baseline from which to evolve 800-63 to the document it is today.
 
 ### Audience
-
 ### Compliance with NIST Standards and Guidelines
-
 ### Conformance Testing
-
 ### Note to Reviewers
-
 ### Note to Readers
-
 ### Trademark Information
 
 ### Requirements Notation and Conventions
 
 The terms “shall” and “shall not” indicate requirements to be followed strictly in order to conform to the publication and from which no deviation is permitted.
- 
-The terms “should” and “should not” indicate that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited.
- 
-The terms “may” and “need not” indicate a course of action permissible within the limits of the publication.
- 
-The terms “can” and “cannot” indicate a possibility and capability, whether material, physical or causal.
 
+The terms “should” and “should not” indicate that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited.
+
+The terms “may” and “need not” indicate a course of action permissible within the limits of the publication.
+
+The terms “can” and “cannot” indicate a possibility and capability, whether material, physical or causal.
 
    
 

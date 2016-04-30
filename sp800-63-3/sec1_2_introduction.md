@@ -209,7 +209,12 @@ This document has been written to satisfy the needs of federal agencies. However
 
 
 NIST 800-63|GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003
-:---------:|:----:|:----:|:-------:|:--------:|:-------:|N/A|N/A|Level 01|N/A|N/A|N/AAAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4
+:---------:|:----:|:----:|:-------:|:--------:|:-------:|
+N/A|N/A|Level 01|N/A|N/A|N/A
+AAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1
+AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2
+AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3
+AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4
 
 ###2.2. Change History
 
@@ -292,8 +297,16 @@ clarifications.
 
 ####2.2.3. SP 800-63-3
 
-NIST SP 800-63-3 is a substantial update and restructuring of Special Publication 800-63-2. It introduces the concepts of Authenticator Assurance Level and Identity Assurance Level to support the growing need for independent treatment of authentication strength and confidence in the claimant's identity (for example, in strong pseudonymous authentication). It also moves from a single document describing authentication to a family of four documents, of which SP 800-63-3 is the top-level document.Other areas of update to SP 800-63-2 include:
--	Terminology changes, primarily the use of *authenticator* in place of *token* to avoid conflicting use of the word *token* in assertion technologies-	Updates to authentication and assertion requirements to reflect advances in both security technology and threats-	Requirements on the storage of long-term secrets by verifiers-	Updated requirements regarding remote identity proofing-	Clarification on the use of independent channels and devices as “something you have”-	Removal of pre-registered knowledge tokens (authenticators), with the recognition that they are special cases of (often very weak) passwords.-	Requirements regarding account recovery in the event of loss or theft of an authenticator
+NIST SP 800-63-3 is a substantial update and restructuring of Special Publication 800-63-2. It introduces the concepts of Authenticator Assurance Level and Identity Assurance Level to support the growing need for independent treatment of authentication strength and confidence in the claimant's identity (for example, in strong pseudonymous authentication). It also moves from a single document describing authentication to a family of four documents, of which SP 800-63-3 is the top-level document.
+
+Other areas of update to SP 800-63-2 include:
+-	Terminology changes, primarily the use of *authenticator* in place of *token* to avoid conflicting use of the word *token* in assertion technologies
+-	Updates to authentication and assertion requirements to reflect advances in both security technology and threats
+-	Requirements on the storage of long-term secrets by verifiers
+-	Updated requirements regarding remote identity proofing
+-	Clarification on the use of independent channels and devices as “something you have”
+-	Removal of pre-registered knowledge tokens (authenticators), with the recognition that they are special cases of (often very weak) passwords.
+-	Requirements regarding account recovery in the event of loss or theft of an authenticator
 
 ---
 **Footnotes**

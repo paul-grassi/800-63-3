@@ -8,7 +8,8 @@ Paul A. Grassi
 James L. Fenton
 
 
-This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX  
+This publication is available free of charge from:
+http://dx.doi.org/10.6028/NIST.SP.XXX  
 ![](media/csd.png)
 ![](media/nist_logo.png)
 
@@ -26,7 +27,8 @@ James L. Fenton
 *Independent Consultant  
 Los Altos, CA*
 
-This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX
+This publication is available free of charge from:
+http://dx.doi.org/10.6028/NIST.SP.XXX
 
 Month TBD 2016
 
@@ -52,7 +54,13 @@ Natl. Inst. Stand. Technol. Spec. Publ. 800-63-3, xxx pages (MonthTBD
 2016)  
 CODEN: NSPUE2
 
-This publication is available free of charge from:http://dx.doi.org/10.6028/NIST.SP.XXX|Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose. There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.  Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).|
+This publication is available free of charge from:
+http://dx.doi.org/10.6028/NIST.SP.XXX
+
+`Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose.
+There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.
+Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).`
+
 
 **Comments on this publication may be submitted to:
 Public comment period: Month Day, YYYY through Month Day, YYYY**
@@ -103,11 +111,11 @@ passwords; PKI.
 The authors would like to acknowledge the thought leadership and innovation of the original authors: Donna F. Dodson, Elaine M. Newton, Ray A. Perlner, W. Timothy Polk, Sarbari Gupta, and Emad A. Nabbus.  Without their tireless efforts, we would not have had the incredible baseline by which to evolve 800-63 to the document it is today. 
 
 ### Audience
-  ### Compliance with NIST Standards and Guidelines
-### Conformance Testing
-### Note to Reviewers
-### Note to Readers
-### Trademark Information 
+### Compliance with NIST Standards and Guidelines
+### Conformance Testing
+### Note to Reviewers
+### Note to Readers
+### Trademark Information 
 
 ### Requirements Notation and Conventions
 
@@ -168,7 +176,11 @@ Accordingly, with this revision, SP 800-63 has been split into a family of docum
 
 A summary of each identity and authenticator assurance levels is provided below.
 
-**Identity Assurance Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted. **Identity Assurance Level 2** – IAL 2 introduces the need for either remote or in-person identity proofing. IAL 2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in [SP 800-63A](../sp800-63a/cover.md/#800-63a).**Identity Assurance Level 3** – At IAL 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized representative of the CSP through examination of physical documentation as described in [SP 800-63A](../sp800-63a/cover.md/#800-63a).
+**Identity Assurance Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted.
+
+**Identity Assurance Level 2** – IAL 2 introduces the need for either remote or in-person identity proofing. IAL 2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in [SP 800-63A](../sp800-63a/cover.md/#800-63a).
+
+**Identity Assurance Level 3** – At IAL 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized representative of the CSP through examination of physical documentation as described in [SP 800-63A](../sp800-63a/cover.md/#800-63a).
 
 **Authenticator Assurance Level 1** - AAL 1 provides single factor digital authentication, giving some assurance that the same claimant who participated in previous transactions is accessing the protected transaction or data. AAL 1 allows a wide range of available authentication technologies to be employed and requires only a single authentication factor to be used. It also permits the use of any of the authentication methods of higher authenticator assurance levels. Successful authentication requires that the claimant prove through a secure authentication protocol that he or she possesses and controls the authenticator.
 
