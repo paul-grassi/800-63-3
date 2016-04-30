@@ -1,5 +1,7 @@
 ##5. Federated Identity
 
+> Waiting on Sarah
+
 Strawman/Brainstorm of what this section could include:
 
 * 800-63-3 does not presuppose a federated architecture - it is agnostic, and allows agencies to deploy their requirements as a singleton instance.  

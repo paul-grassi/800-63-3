@@ -24,12 +24,12 @@ A party who acts with malicious intent to compromise an information system.
 A claim of a named quality or characteristic inherent in or ascribed to someone or something.
 
 ### Attribute Claim
-`Needs work`  
-The minimzed set of information assigned to an attribute regardless of formatting.  For example, for the attribute 'birthday', the claim is 'older than' or 'born in December'.
+
+A statement asserting a property of a subcriber without necessarily containing identity information, independent of format. For example, for the attribute 'birthday', a claim could be 'older than 18' or 'born in December'.
 
 ### Attribute Value
-`Needs work`  
-The entire set of information assigned to an attribute regardless of formatting.  For example, for the attribute 'birthday', the value is '12/1/1980' or 'December 1, 1980'.
+
+A complete statement asserting a property of a subcriber, format independent. For example, for the attribute 'birthday', a value could be '12/1/1980' or 'December 1, 1980'.
  
 
 #### Authentication

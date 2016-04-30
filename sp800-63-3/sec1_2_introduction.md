@@ -1,9 +1,9 @@
 
-## 1. Purpose
+## 1. <a name="purpose"></a>Purpose
 
 This recommendation and its companion documents, SP 800-63A, SP 800-63B, and SP 800-63C, provide technical guidelines to agencies for the implementation of digital authentication.
 
-##2. Introduction
+##2. <a name="intro"></a>Introduction
 
 Digital authentication is the process of
 establishing confidence in user identities presented to
@@ -87,7 +87,7 @@ their authentication assurance requirements:
     800-53A](#SP800_53A)\] for conducting the security assessment.
 
 This family of documents provides guidelines for implementing the third step of the
-above process. In particular, this document maps the four Levels of Assurance defined in OMB M-04-04 into corresponding authenticator assurance and identity assurance levels. Other documents in the family state specific technical
+above process. In particular, this document maps the four (4) Levels of Assurance defined in OMB M-04-04 into corresponding authenticator assurance and identity assurance levels. Other documents in the family state specific technical
 requirements for identity assurance and authenticator assurance in the following
 areas:
 
@@ -198,14 +198,18 @@ implementing these guidelines follow equivalent standards of security
 management, certification and accreditation to ensure the secure
 operations of their digital systems.
 
-###2.1. Relationship to Other Standards and Guidelines
+### 2.1. How to Use this Suite of Special Publications
 
-This document has been written with the intention of achieving alignment to National and International standards describing levels of identity assurance, including CESG Good Practice Guide No. 43 (GPG 43), Requirements for Secure Delivery of Online Public Services (RSDOPS) (reference [a]). It provides an interpretation of these levels of assurance in the context of IPV for UK public sector for both citizen and internal system users.7. This is not meant to imply that there is direct correlation between the Assured Identity Levels in this document and the levels in those standards but that it is seen that this document fulfils the criteria as demonstrated in those standards.8. This document only covers the identity proofing and verification processes, therefore, it may only fulfil part of the requirements of these standards and further measures are required in order to wholly comply (e.g. issuing of a credential). 
+The business model, marketplace, and the composition of the way identity services are delivered has drastically changed since initial versions of Special Publication 800-63 were released.  Notably, CSPs can be componentized and composed of multiple independently operated and owned business entities.  In addition, there is a significant benefit to provide strong authenticators even if no identity proofing is required.  Therefore, a suite of special publications under the 800-63 moniker has been created to facilitate these new models and make it easy to access the specific requirements for the function an entity may serve under the overall digital authentication model.  Each document stands alone.  However, it is expected that all CSPs, even componentized, will be required to meet the guidelines in [SP 800-63A](../sp800-63a/cover.md/#800-63a) and [SP 800-63B](../sp800-63b/cover.md/#800-63b).  If the CSP also participates in an identity federation, which is preferred over a standalone CSP, meeting the requirements of [SP 800-63C](../sp800-63c/cover.md/#800-63c) will apply.
+
+### 2.2. Relationship to Other Standards and Guidelines
+> Need to add Canada to this
+
+This document has been written to satisfy the needs of federal agencies. However, with the expansion of citizen services throughout the world that require identity and authenticaiotn assurance, as well as an increasing number of use cases that promote international identity federation and interoperability, it is intended to achieve alignment to national and international standards that describe levels of identity assurance. This is not meant to imply that there is direct correlation between the IALs and AALs in this document and the levels in those standards, but that it is seen that this document fulfils the criteria as demonstrated in those standards.
 
 
-
-GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003|NIST 800-63
-:----:|:----:|:-------:|:--------:|:-------:|:---------:|N/ALevel 01N/AN/AN/AN/ALevel 1Level 1QAA Level 1LoA 1LoA 1Level 1Level 2Level 2QAA Level 2LoA 2LoA 2Level 2Level 3Level 3QAA Level 3LoA 3LoA 3Level 3Level 4N/A2QAA Level 4LoA 4LoA 4Level 4
+NIST 800-63|GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003
+:---------:|:----:|:----:|:-------:|:--------:|:-------:|N/A|N/A|Level 01|N/A|N/A|N/AAAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4
 
 ###2.2. Change History
 

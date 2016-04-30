@@ -3,7 +3,7 @@
 The following sections list the objectives and steps a CSP SHALL follow to identity proof an individual to meet the security requirements per IAL. The requirements are intended to ensure the claimed identity is the actual identity of the person attempting to enroll with the CSP and that scalable attacks effecting a large population of enrolled individuals are difficult to execute without significant time and cost. 
 
 
-##5.2. Evidence Validation
+## <a name="validate"></a>5.2. Identity Evidence Validation
 
 The goal of identity validation is to collect from the applicant the most appropriate identity evidence and determine its authenticity, validity, and accuracy.  dentity Validation is made up of two process steps: collecting the appropriate identity evidence and confirming the data is valid and related to an actual, live individual.
 
@@ -44,7 +44,7 @@ The following table lists qualities, ranging from weak to superior, of identity 
 |Strong|- The evidence has been confirmed as genuine by trained personnel and appropriate equipment, confirming the integrity of the physical security features **OR** The evidence has been confirmed as genuine by confirmation of the integrity of cryptographic security features.<br>**AND**<br> - All personal details and evidence details have been confirmed as valid by comparison with information held/published by the issuing source **OR** evidence details have been confirmed as valid by comparison with information held/published by the issuing source|
 |Superior|- The evidence has been confirmed as genuine by trained personnel and appropriate equipment including the integrity of any physical and cryptographic security features<br>**AND**<br>- All personal details and evidence details from the evidence have been confirmed as valid by comparison with information held/published by the issuing source|
 
-##5.3. Identity Verification
+##5.3. <a name="verify"></a> Identity Verification
 
 The goal of identity validation is to establish a linkage to the physical, live existence of the claimed identity to the person actually presenting the evidence.  I
 
