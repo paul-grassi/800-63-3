@@ -144,7 +144,7 @@ The three (3) IALs reflect the options agencies may select based on their risk p
 
 
 **IAL 1**:
-At this level, there is no requirement for a applicants identity to be proven.  Any attributes provided in conjunction with the authentication process are self-asserted. 
+At this level, there is no requirement for an applicants identity to be proven.  Any attributes provided in conjunction with the authentication process are self-asserted. 
 
 **IAL 2**:
 At IAL 2, the claimed identity is proven with evidence that supports the real world existence of the claimed identity and identifies and verifies the person to whom the claimed identity belongs.  IAL 2 introduces the need for either remote or in-person identity proofing.  Attributes MAY be asserted by CSPs to RPs in support of pseudonymous identity with verified attributes. 
@@ -163,20 +163,24 @@ A mapping is provided below to allow agencies using the existing Level of Assura
 | 4 | 3 |
 
 ## Table of Contents
-[1. Purpose and Introduction](sec1_2_introduction.md)
+[1. Purpose](sec1_2_introduction.md/#purpose)
 
-[2. Definitions and Abbreviations](sec3_definitions.md)
+[2. Introduction](sec1_2_introduction.md/#intro)
 
-[3. Identity Assurance Levels](sec4_ial.md)
+[3. Definitions and Abbreviations](sec3_definitions.md)
 
-[4. Identity Proofing Requirements](sec5_proofing.md)
+[4. Identity Assurance Level Requirements](sec4_ial.md)
 
-[5. Threats and Security Considerations](sec7_security.md)
+[5. Identity Proofing Requirements](sec5_proofing.md)
 
-[6. Privacy Considerations](privacy.md)
+[6. Requirements for Derived Credentials](sec6_dc.md)
 
-[7. Usability Considerations](sec_usability.md)
+[7. Privacy Considerations](sec7_privacy.md)
 
-[8. References](sec_references.md)
+[8. Usability Considerations](sec8_usability.md)
+
+[9. Threats and Security Considerations](sec9_security.md)
+
+[10. References](sec10_references.md)
 
  
