@@ -1,7 +1,9 @@
 # 6. Requirements for Derived Credentials
 
 CSP looks at a credential from a different CSP that it trusts, records the information, and issues its own credential and binds it to an authenticator. I'd call that identity proofing and include that in 63A.
-Where the applicant already possesses recognized authentication credentials from a trusted CSP, the additional CSP may choose to identity proof the claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.  The following details the proofing requirements for the CSP issuing a derived credential.
+
+Where the applicant already possesses recognized authentication credentials from a trusted CSP, the additional CSP may choose to identity proof the claimant by verifying possession and control of the token associated with the credentials and issue a new derived credential.  The following details the proofing requirements for the CSP issuing a derived credential.
+
 ####5.5.1. General Requirements
 
 - Before issuing any derived credential the CSP SHALL verify the original credential status and SHALL verify that the corresponding credential is possessed and controlled by the claimant.  

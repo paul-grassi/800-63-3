@@ -21,9 +21,11 @@ The outcome of identity proofing is to:
 Assurance in a subscriber's identity is described using one of three IALs: 
 
 **Identity Assurance Level 1**:
-At this level, there is no requirement for an applicants identity to be proven.  Any attributes provided in conjunction with the authentication process are self-asserted. 
+At this level, there is no requirement for an applicants identity to be proven.  Any attributes provided in conjunction with the authentication process are self-asserted.
+
 **Identity Assurance Level 2**:
-At IAL 2, the claimed identity is proven with evidence that supports the real world existence of the claimed identity and identifies and verifies the person to whom the claimed identity belongs.  IAL 2 introduces the need for either remote or in-person identity proofing.  Attributes MAY be asserted by CSPs to RPs in support of pseudonymous identity with verified attributes. 
+At IAL 2, the claimed identity is proven with evidence that supports the real world existence of the claimed identity and identifies and verifies the person to whom the claimed identity belongs.  IAL 2 introduces the need for either remote or in-person identity proofing.  Attributes MAY be asserted by CSPs to RPs in support of pseudonymous identity with verified attributes.
+
 **Identity Assurance Level 3**:
 At Identity Assurance Level 3, in-person identity proofing is required. Identifying attributes must be verified by an authorized and trained representative of the CSP. As with IAL 2, attributes MAY be asserted by CSPs to RPs in support of pseudonymous identity with verified attributes. 
 
