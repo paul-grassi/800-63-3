@@ -1,7 +1,7 @@
 
-# <a name="ial-section"></a> 4. Identity Assurance Levels
+# <a name="ial-section"></a> 4. Identity Assurance Level Requirements
 
-The paradigm of this document is that individuals (referred to as *applicants* at this stage) undergo an identity proofing and enrollement process, in which their identity evidence and attributes are collected, validated, and verified. These attributes are then bound to an authenticator (described in SP 800-63B).
+The paradigm of this document is that individuals (referred to as *applicants* at this stage) undergo an identity proofing and enrollment process, in which their identity evidence and attributes are collected, validated, and verified. These attributes are then bound to an authenticator (described in SP 800-63B).
 
 The only outcome of identity proofing is to ensure that the applicant is who he/she claims to be.  This includes presentation, validation and verification of the following core attributes:  
 
@@ -13,7 +13,7 @@ It is possible that additional information could be collected in the process of 
 
 ## 4.1. Process Flow
 
-The following diagram outlines the basic flow for Identity Proofing and Enrollement, to include the corresponding sections with normative requirements.
+The following diagram outlines the basic flow for Identity Proofing and Enrollment, to include the corresponding sections with normative requirements.
 
 <a name="figure1"></a>
 <center>
@@ -37,7 +37,7 @@ The following requirements apply to any CSP performing identity proofing at IAL 
 12. Exact matches of personal information may be difficult to achieve due to multiple factors. The CSP MAY employ appropriate matching algorithms to account for differences in personal information and other relevant proofing data across multiple pieces of evidence, authoritative records, and third party records. Matching algorithms/rules used SHALL be publicly or community of interest available. For example, included as part of the written policy or practice statement referenced above. 
 13. The entire proofing transaction, including transactions that involve a third party, SHALL occur over mutually authenticated protected sessions. Equivalently, the transaction SHALL consist of time-stamped or sequenced messages which are signed by their source and be encrypted for their recipient.  ***Jim: Why? Uncomfortable with the last sentence***  
 13. Agencies MAY obtain additional confidence in remote identity proofing using risk mitigation measures such as geolocation, device characteristics, and behavioral characteristics, so long as additional mitigation approaches do not substitute for requirements contained herein. The CSP SHALL NOT apply additional risk-based approaches without explicit user consent. **Naomi - Cool?  If user bails, they will fail proofing**
-15. Knowledge based verification (KBV) (sometimes referred to as knowledge based authentication (KBA)) is typically used to verify a claimed identity by testing the personal knowledge of the applicant against information obtained from public databases. KBP MAV be used to resolve to a unique, claimed identity. KBV MAY be used to verify the identity of a applicant provided the requirements in Section [Knowledge Based Requirements](./sec5_proofing.md/#kbv) are met. 
+15. Knowledge based verification (KBV) (sometimes referred to as knowledge based authentication (KBA)) is typically used to verify a claimed identity by testing the personal knowledge of the applicant against information obtained from public databases. KBP MAV be used to resolve to a unique, claimed identity. KBV MAY be used to verify the identity of an applicant provided the requirements in Section [Knowledge Based Requirements](./sec5_proofing.md/#kbv) are met. 
 
 ## <a name="in-person"></a>4.3. In-person Proofing Requirements
 
@@ -52,7 +52,7 @@ At IAL 3, identity proofing SHALL be performed in person. "Virtual in-person" id
 7. A CSP SHOULD have a live operator participate in-person with the applicant for the entirely of the identity proofing and registration session.
 6. The CSP SHALL require operators to have undergone a training program to detect potential fraud.
 7. The CSP SHALL employ tamper detection and resistance features appropriate for the environment in which it is located. For example, a kiosk located in a restricted area or one where it is monitored by a trusted individual requires less tamper detection than one that is located in a semi-public area such as a retail store.
-8. All communications between the kiosk and the CSP shall take place over a mutually-authenticated encrypted session that securely authenticates the kiosk.
+8. All communications between the kiosk and the CSP shall take place over a mutually authenticated encrypted session that securely authenticates the kiosk.
 
 
 ##4.4. Identity Assurance Level 1
