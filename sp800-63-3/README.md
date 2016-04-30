@@ -6,7 +6,7 @@ This is a working draft of NIST Special Publication 800-63-3 *Electronic Authent
 
 This document is broken up into sections as follows:
 
-[Front matter](front.md)
+[Front matter](cover.md)
 
 [1. Purpose and 2. Introduction](sec1_2_introduction.md)
 
