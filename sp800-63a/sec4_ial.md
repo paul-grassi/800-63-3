@@ -132,7 +132,7 @@ The CSP SHALL perform identity proofing in-person.
 
 ### 4.5.6. Biometric Collection
 
-The CSP SHALL collect and records a current biometric (e.g., photograph or fingerprints) to ensure that the applicant cannot repudiate application.
+The CSP SHALL collect and record a current biometric (e.g., photograph or fingerprints) to ensure that the applicant cannot repudiate application.
 
 ##4.7. Summary of Requirements
 *(Non-normative; refer to preceding sections for normative requirements)*
