@@ -1,8 +1,8 @@
 ## DRAFT NIST Special Publication 800-63C
 
-# Assertions and Federation
+# Federation and Assertions
 
-Paul Grassi  
+Paul A. Grassi  
 James L. Fenton  
 Justin Richer  
 Sarah Squire
@@ -11,14 +11,15 @@ Sarah Squire
 
 ## DRAFT NIST Special Publication 800-63C
 
-# Assertions and Federation
+# Federation and Assertions
 
-Paul Grassi  
+Paul A. Grassi  
 *Applied Cybersecurity Division  
 Information Technology Laboratory*
 
 James L. Fenton  
-*TBD*
+*Independent Consultant  
+Los Altos, CA*
 
 Justin Richer  
 *Bespoke Engineering  
