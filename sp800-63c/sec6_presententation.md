@@ -1,44 +1,44 @@
-##5. Assertion Models
+##6. Assertion Presentation
 
-There are three basic models for assertion-based authentication. After successful authentication with the Verifier, the Subscriber is issued an assertion or an assertion reference, which the Subscriber uses to authenticate to the RP.
+Assertions may be presented in either an *indirect* or *direct* manner from the verifier to the RP. Each model has its benefits and drawbacks. Assertions may also be proxied to facilitate federation between verifiers and RPs.
 
-###5.1. The Direct Model
+###6.1. Indirect presentation
 
-In the direct model, the Claimant uses his or her e-authentication token to authenticate to the Verifier. Following successful authentication of the Claimant, the Verifier creates an assertion, and sends it to the Subscriber to be forwarded to the RP. The assertion is used by the Claimant/Subscriber to authenticate to the RP. (This is usually handled automatically by the Subscriber’s browser.) Figure 1 illustrates this model.
+In the *indirect* model, the subscriber is given an artifact to present to the RP, such as an HTTP redirect. The artifact itself contains no information about the subscriber. The RP presents the artifact to the verifier, usually along with authentication of the RP itself, to fetch the assertion. 
 
-![](media/direct_assertion.png)
+In this model, the assertion itself is presented directly from the verifier to the RP, minimizing chances of interception and manipulation by a third party (including the subscriber themselves). This also allows the RP to query the verifier for additional attributes about the subscriber.
 
-Figure 1 - *Direct Assertion Model*
+The assertion is still considered a *bearer* assertion if the artifact required to fetch the Assertion does not require presentation of additional proof of key possession after the assertion has been fetched.
 
-###5.2. The Indirect Model
 
-In the indirect model, the Claimant uses his or her token to authenticate to the Verifier. Following successful authentication, the Verifier creates an assertion as well as an assertion reference (which identifies the Verifier and includes a pointer to the full assertion held by the Verifier). The assertion reference is sent to the Subscriber to be forwarded to the RP. In this model, the assertion reference is used by the Claimant/Subscriber to authenticate to the RP. The RP then uses the assertion reference to explicitly request the assertion from the Verifier. Figure 2 illustrates this model.
+###6.2. Direct Presentation
 
-![](media/indirect_assertion.png)
+In the *direct* model, the verifier creates an assertion and sends it directly to the subscriber after successful authentication. The assertion is used by the subscriber to authenticate to the RP. This is often handled by mechanisms within the subscriber’s browser.) 
 
-Figure 2 - *Indirect Assertion Model*
+###6.3. Comparison of indirect and direct presentation methods
 
-[ ** I think it would be very useful to have a compare/contrast of the direct and indirect methods of assertion presentation, and in particular discuss the benefits and drawbacks of each. For example, in the direct method a assertion is visible to the user, which could potentially cause leakage of system information included in the assertion. It also allows the assertion to be replayed to other RPs. In the indirect method, there are more round trips, but the information is potentially more limited to the parties that need it. In both cases, the assertion needs to be validated in a number of common ways such as issuer verification, signature validation, audience restriction, etc. We should have good guidelines on this in here. ** ]
+In the direct method, an assertion is visible to the user, which could potentially cause leakage of system information included in the assertion. Since the assertion is visible to the subscirber, the direct method also allows the assertion to be replayed to other RPs by the subscriber. 
 
-###5.3. The Proxy Model
+In the indirect method, there are more network transactions required, but the information is limited to the parties that need it. Since an RP is expecting to get an assertion only from the verifier directly, the attack surface is reduced.
 
-In the proxy model, the Claimant uses his or her e-authentication token to authenticate to the Verifier. Following successful authentication of the Claimant, the Verifier creates an assertion and includes it when interacting directly with the RP, acting as an intermediary between the Claimant and the RP. Figure 3 illustrates this model. [ ** there's nothing special about this model, it's just an additional component acting as an IdP on one side and an RP on the other side. We should call it out based on this fact. ** ]
+In both cases, the assertion needs to be validated in a number of common ways such as issuer verification, signature validation, and audience restriction.
 
-![](media/proxy_model.png)
+###6.4. Assertion proxying
 
-Figure 3 – *Proxy Model*
+In some implementations, a proxy takes in an assertion from the verifier  and creates a derived assertion when interacting directly with the RP, acting as an intermediary between the subscriber, verifier, and the RP. 
 
-The RP grants or denies the request based, at least in part, on the authentication assertion made by the Verifier. There are several common reasons for such proxies:
+There are several common reasons for such proxies:
 
 - Portals that provide users access to multiple RPs that require user authentication
 
-- Web caching mechanisms that are required to satisfy the RP’s access control policies, especially when client-authenticated TLS with the Claimant is required
+- Web caching mechanisms that are required to satisfy the RP’s access control policies, especially when client-authenticated TLS with the subscriber is required
 
 - Network monitoring and/or filtering mechanisms that terminate TLS in order to inspect and manipulate the traffic
 
-It is good practice to protect communications between the Verifier and the RP. Current commercial implementations tend to do this by having the proxy use client-authenticated TLS with the Verifier and pass the authentication assertion in the HTTP header.
+###6.5. Protecting Information
 
-Note that the Verifier may have access to information that may be useful to the RP in enforcing security policies, such as device identity, location, system health checks, and configuration management. If so, it may be a good idea to pass this information along to the RP. ***Consider privacy here***
+It is good practice to protect communications between the verifier and the RP. Current commercial implementations tend to do this by having the proxy use client-authenticated TLS with the verifier and pass the authentication assertion in the HTTP header.
 
+Note that the verifier may have access to information that may be useful to the RP in enforcing security policies, such as device identity, location, system health checks, and configuration management. If so, it may be a good idea to pass this information along to the RP within the bounds of the subscriber's privacy preferences.
 
 
