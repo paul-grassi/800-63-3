@@ -2,7 +2,7 @@
 
 >Under Construction
 
-When developing e-authentication processes and systems, agencies SHALL consult OMB Guidance for Implementing the Privacy Provisions of the E-Government Act of 2002 [OMB M-03-22](sec_references.md/#M-03-22)
+When developing e-authentication processes and systems, agencies SHALL consult OMB Guidance for Implementing the Privacy Provisions of the E-Government Act of 2002 [OMB M-03-22](sec10_references.md/#M-03-22)
 
 ##All Identity Assurance Levels
 **For Federation - C**
