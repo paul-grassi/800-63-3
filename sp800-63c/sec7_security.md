@@ -2,7 +2,7 @@
 
 *This section is non-normative.*
 
-Verifiers, RPs, subscribers, and parties outside of a typical assertions transaction may be malicious or become comporomised. They might have an interest in modifying or replacing an assertion to obtain a greater level of access to a resource/service provided by the
+Verifiers, RPs, subscribers, and parties outside of a typical assertions transaction may be malicious or become compromised. An attacker might have an interest in modifying or replacing an assertion to obtain a greater level of access to a resource/service provided by the
 RP. They might be interested in obtaining or modifying
 assertions and assertion references to impersonate a subscriber or
 access unauthorized data or services. Furthermore, it is possible that
@@ -13,11 +13,11 @@ the purpose of this type of threat, authorized parties who attempt to
 exceed their privileges may be considered attackers. This section lists some common attacks against assertion transmission transactions.
 
 -   *Assertion manufacture/modification* – An attacker generates a
-    bogus assertion or modifies the assertion content (such as the
-    authentication or attribute statements) of an existing assertion,
+    forged assertion or modifies the content of an existing assertion (such as the
+    authentication or attribute statements),
     causing the RP to grant inappropriate access to the subscriber. For
     example, an attacker may modify the assertion to extend the validity
-    period; a subscriber may modify the assertion to have access to
+    period and keep using an assertion; or a subscriber may modify the assertion to have access to
     information that they should not be able to view.
 
 -   *Assertion disclosure* – Assertions may contain authentication and
@@ -31,7 +31,7 @@ exceed their privileges may be considered attackers. This section lists some com
     verifier can claim that it was not generated through the services of
     the verifier.
 
--   *Assertion repudiation by the Subscriber* – Since it is possible for
+-   *Assertion repudiation by the subscriber* – Since it is possible for
     a compromised or malicious subscriber to issue assertions to the
     wrong party, a subscriber can repudiate any transaction with the RP
     that was authenticated using only a bearer assertion.
@@ -46,14 +46,13 @@ In addition to reliable and confidential transmission of assertion data
 from the verifier to the RP, assertion protocols have a further goal: in
 order for the subscriber to be recognized by the RP, they are
 issued some secret information, the knowledge of which distinguishes the
-subscriber from attackers who wish to impersonate the subscriber. In the
-case of holder-of-key assertions, this secret is generally the
-subscriber’s long term token secret, which would already have been
-established with the CSP prior to the initiation of the assertion
-protocol.
+subscriber from attackers who wish to impersonate the subscriber. 
 
-In other cases, the verifier will generate a temporary secret
-and transmit it to the authenticated subscriber for this purpose. When this secret is used to authenticate to the RP. This temporary secret will be referred to here as a secondary
+In the
+case of holder-of-key assertions, this secret could already have been
+established with the CSP prior to the initiation of the assertion
+protocol. In other cases, the verifier will generate a temporary secret
+and transmit it to the authenticated subscriber for this purpose. When this secret is used to authenticate to the RP, this temporary secret will be referred to as a secondary
 authenticator. Secondary authenticators include assertions in the direct
 model, session keys in Kerberos, assertion references in the indirect
 model, and cookies used for authentication. The threats to the secondary
@@ -65,8 +64,8 @@ authenticator are as follows:
 
 -   *Secondary authenticator capture* – An attacker may use a session
     hijacking attack to capture the secondary authenticator when the
-    verifier transmits it to the Subscriber after the primary
-    authentication step, or the Attacker may use a man-in-the-middle
+    verifier transmits it to the subscriber after the primary
+    authentication step, or the attacker may use a man-in-the-middle
     attack to obtain the secondary authenticator as it is being used by
     the subscriber to authenticate to the RP. If, as in the indirect
     model, the RP needs to send the secondary authenticator back to the
@@ -93,8 +92,8 @@ and the assertion data referring to the subscriber needs to be strong.
 Mitigation techniques are described below for each of the threats
 described in the last subsection.
 
--   *Assertion manufacture/modification*: To mitigate this threat, both
-    of the following mechanisms are used:
+-   *Assertion manufacture/modification*: To mitigate this threat,
+    the following mechanisms are used:
 
   	1.  The assertion is digitally signed by the verifier. The RP 
     checks the digital signature to verify that it was issued by a
@@ -103,6 +102,8 @@ described in the last subsection.
 	2.  The assertion is sent over a protected session such as TLS. In
     order to protect the integrity of assertions from malicious attack,
     the verifier is authenticated.
+    
+    3. The assertion contains a non-guessable random identifier. 
 
 -   *Assertion disclosure* – To mitigate this threat, one of the
     following mechanisms may be implemented:
@@ -110,7 +111,7 @@ described in the last subsection.
 	1.  The assertion may be sent over a protected session to an
     authenticated RP. Note that, in order to protect assertions against
     both disclosure and manufacture/modification using a protected
-    session, both the RP and the Verifier need to be validated. 
+    session, both the RP and the verifier need to be validated. 
 
 	2.  Assertions may signed by the verifier and encrypted for
     a specific RP.  It should be
@@ -122,16 +123,16 @@ described in the last subsection.
     authenticated protected session or equivalent between the verifier
     and the RP. 
 
--   *Assertion repudiation by the Verifier* – To mitigate this threat,
+-   *Assertion repudiation by the verifier* – To mitigate this threat,
     the assertion is digitally signed by the verifier using a key
     that supports non-repudiation. The RP checks the digital
     signature to verify that it was issued by a legitimate verifier.
 
--   *Assertion repudiation by the Subscriber* – To mitigate this threat,
+-   *Assertion repudiation by the subscriber* – To mitigate this threat,
     the verifier issues holder-of-key assertions, rather than bearer assertions.
     The subscriber can then prove possession of the asserted key to
-    the RP. If the asserted key matches the subscriber’s long term
-    credential (as provided by the CSP) it will be proof to all parties
+    the RP. If the asserted key matches the subscriber’s presented key,
+    it will be proof to all parties
     involved that it was the subscriber who authenticated to the RP
     rather than a compromised verifier impersonating the subscriber.
 
