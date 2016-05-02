@@ -88,7 +88,7 @@ As described in the preceding sections, credentials bind an authenticator to the
 
 #### 4.3.3. Authentication Process
 
-The authentication process begins with the claimant demonstrating to the verifier possession and control of a authenticator that is bound to the asserted identity through an authentication protocol. Once possession and control has been demonstrated, the Vvrifier verifies that the credential remains valid, usually by interacting with the CSP.
+The authentication process begins with the claimant demonstrating to the verifier possession and control of a authenticator that is bound to the asserted identity through an authentication protocol. Once possession and control has been demonstrated, the Verifier verifies that the credential remains valid, usually by interacting with the CSP.
 
 The exact nature of the interaction between the verifier and the claimant during the authentication protocol is extremely important in determining the overall security of the system. Well designed protocols can protect the integrity and confidentiality of traffic between the claimant and the verifier both during and after the authentication exchange, and it can help limit the damage that can be done by an attacker masquerading as a legitimate verifier.
 
