@@ -4,7 +4,7 @@ In order to satisfy the requirements of a given Authenticator Assurance Level (A
 
 Detailed normative requirements for authenticators and verifiers at each AAL are provided in Section 5.
 
-FIPS 140 requirements are satisfied by [[FIPS 140-2]](sec10_references.md/#FIPS140-2) or newer revisions.
+FIPS 140 requirements are satisfied by [[FIPS 140-2]](references.md/#FIPS140-2) or newer revisions.
 
 ###4.1. Authenticator Assurance Level 1
 
@@ -25,7 +25,7 @@ Authenticator Assurance Level 1 permits the use of any of the following authenti
 
 ####4.1.2. Authenticator Requirements
 
-Hardware authenticators ("devices" from the list above) used by commercial credential service providers at AAL 1 SHALL be designed to meet the requirements of [[FIPS 140]](sec10_references.md/#FIPS140-2) Level 1. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with [[FIPS 140]](sec10_references.md/#FIPS140-2) Level 1.
+Hardware authenticators ("devices" from the list above) used by commercial credential service providers at AAL 1 SHALL be designed to meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 1. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with [[FIPS 140]](references.md/#FIPS140-2) Level 1.
 
 ####4.1.3. Assertion Requirements
 
@@ -37,7 +37,7 @@ At AAL 1, reauthentication of the subscriber SHALL be repeated at least once per
 
 ####4.1.5. Security Controls
 
-The CSP SHALL employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the low baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the low baseline are satisfied.
 
 ####4.1.6. Records Retention
 
@@ -68,7 +68,7 @@ When a combination of two single-factor authenticators is used, it SHALL include
 
 ####4.2.2. Authenticator Requirements
 
-Single-factor hardware authenticators used by commercial credential service providers at AAL 2 SHALL meet the requirements of [[FIPS 140]](sec10_references.md/#FIPS140-2) Level 1 and multi-factor hardware authenticators SHALL meet the requirements of [[FIPS 140]](sec10_references.md/#FIPS140-2) Level 2. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with [[FIPS 140]](sec10_references.md/#FIPS140-2) at those levels.
+Single-factor hardware authenticators used by commercial credential service providers at AAL 2 SHALL meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 1 and multi-factor hardware authenticators SHALL meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 2. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with [[FIPS 140]](references.md/#FIPS140-2) at those levels.
 
 ####4.2.3. Assertion Requirements
 
@@ -80,7 +80,7 @@ At AAL 2, authentication of the subscriber SHALL be repeated at least once per 1
 
 ####4.2.5. Security Controls
 
-The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
 
 ####4.2.6. Records Retention
 
@@ -97,7 +97,7 @@ Authentication Assurance Level 3 requires the use of one of two kinds of hardwar
 
 ####4.3.2. Authenticator Requirements
 
-The authenticator is required to be a hardware cryptographic module validated at [[FIPS 140]](sec10_references.md/#FIPS140-2) Level 2 or higher overall with at least [[FIPS 140]](sec10_references.md/#FIPS140-2) Level 3 physical security. AAL 3 authenticator requirements can be met by using the PIV authentication key of a [[FIPS 201]](sec10_references.md/#FIPS201) compliant Personal Identity Verification (PIV) Card.
+The authenticator is required to be a hardware cryptographic module validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher overall with at least [[FIPS 140]](references.md/#FIPS140-2) Level 3 physical security. AAL 3 authenticator requirements can be met by using the PIV authentication key of a [[FIPS 201]](references.md/#FIPS201) compliant Personal Identity Verification (PIV) Card.
 
 ####4.3.3. Assertion Requirements
 
@@ -109,7 +109,7 @@ At AAL 3, authentication of the subscriber SHALL be repeated at least once per 1
 
 ####4.3.5. Security Controls
 
-The CSP SHALL employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](sec10_references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the high baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the high baseline are satisfied.
 
 ####4.3.6. Records Retention
 
@@ -127,7 +127,7 @@ Requirement | AAL 1 | AAL 2 | AAL 3
 **FIPS 140 verification** | Level 1 | Level 1 (single factor),<br /> Level 2 (multi factor) | Level 2 overall<br />Level 3 physical security
 **Assertions** | Bearer or proof of possession | Bearer or proof of possession | Proof of possession only
 **Reauthentication** | 30 days | 12 hours or 30 minutes inactivity; may use one authentication factor | 12 hours or 15 minutes inactivity; shall use both authentication factors
-**Security Controls**|[[SP 800-53]](sec10_references.md/#SP800-53) Low Baseline (or equivalent)|[[SP 800-53]](sec10_references.md/#SP800-53) Moderate Baseline (or equivalent)|[[SP 800-53]](sec10_references.md/#SP800-53) High Baseline (or equivalent)
+**Security Controls**|[[SP 800-53]](references.md/#SP800-53) Low Baseline (or equivalent)|[[SP 800-53]](references.md/#SP800-53) Moderate Baseline (or equivalent)|[[SP 800-53]](references.md/#SP800-53) High Baseline (or equivalent)
 **Records Retention**|Not required|7 years, 6 months|10 years, 6 months
 
 

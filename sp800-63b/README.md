@@ -1,6 +1,6 @@
 # SP 800-63B
 
-This is a working draft of NIST Special Publication 800-63B *Subscriber Authentication*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
+This is a working draft of NIST Special Publication 800-63B *Authentication and Lifecycle Management*. This document is a sub-document referenced by [SP 800-63-3](../sp800-63-3/README.md) covering the associated topics that had been previously in SP 800-63-2.
 
 SP 800-63B provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified levels of strength.
 
@@ -24,12 +24,14 @@ This document is broken up into sections as follows:
 
 [6. Authenticator Lifecycle Management](sec6_lifecycle.md)
 
-[7. Threats and Security Considerations](sec7_security.md)
+[7. Session Management](sec7_session.md)
 
-[8. Privacy Considerations](sec8_privacy.md)
+[8. Threats and Security Considerations](sec8_security.md)
 
-[9. Usability Considerations](sec9_usability.md)
+[9. Privacy Considerations](sec9_privacy.md)
 
-[10. References](sec10_references.md)
+[10. Usability Considerations](sec10_usability.md)
+
+[11. References](references.md)
 
 [Appendix A. Strength of Memorized Secrets](appA_memorized.md)

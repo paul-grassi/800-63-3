@@ -165,13 +165,15 @@ The three AALs correspond to the existing Levels of Assurance, specified in OMB 
 
 [6. Authenticator Lifecycle Requirements](sec6_lifecycle.md)
 
-[7. Threats and Security Considerations](sec7_security.md)
+[7. Session Management](sec7_session.md)
 
-[8. Privacy Considerations](sec8_privacy.md)
+[8. Threats and Security Considerations](sec8_security.md)
 
-[9. Usability Considerations](sec9_usability.md)
+[8. Privacy Considerations](sec9_privacy.md)
 
-[10. References](sec10_references.md)
+[10. Usability Considerations](sec10_usability.md)
+
+[11. References](references.md)
 
 [Appendix A. Strength of Memorized Secrets](appA_memorized.md)
 
