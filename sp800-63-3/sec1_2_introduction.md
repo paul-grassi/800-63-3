@@ -178,17 +178,17 @@ determine that additional authentication measures or other process
 safeguards are appropriate. When developing digital authentication processes
 and systems, agencies should consult *OMB Guidance for Implementing the
 Privacy Provisions of the E-Government Act of 2002* \[[OMB
-M-03-22](#_General_References)\]. See the *Guide to Federal Agencies on
-Implementing Electronic Processes* \[[DOJ 2000](#DOJ2000)\] for
+M-03-22](sec5_references.md/#M-03-22)\]. See the *Guide to Federal Agencies on
+Implementing Electronic Processes* \[[DOJ 2000](sec5_references.md/#DOJ2000)\] for
 additional information on legal risks, especially those that are related
 to the need to satisfy legal standards of proof and prevent repudiation,
 as well as *Use of Electronic Signatures in Federal Organization
-Transactions* \[[GSA ESIG](#GSA_ESIG)\].
+Transactions* \[[GSA ESIG](sec5_references.md/#GSAESIG)\].
 
 Additionally, Federal agencies implementing these guidelines should
 adhere to the requirements of Title III of the E-Government Act,
 entitled the *Federal Information Security Management Act*
-\[[FISMA](#FISMA)\], and the related NIST standards and guidelines.
+\[[FISMA](sec5_references.md/#FISMA)\], and the related NIST standards and guidelines.
 FISMA directs Federal agencies to develop, document, and implement
 agency-wide programs to provide information security for the information
 and information systems that support the operations and assets of the

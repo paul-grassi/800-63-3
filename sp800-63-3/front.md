@@ -201,7 +201,7 @@ The following table details valid combinations of IAL and AAL the agencies may s
 ||*2*|Allowed|Allowed|**NO**|
 ||*3*|Allowed|Allowed|Allowed|
 
-The rationale for the prohibitions above are based on [Executive Order 13681](sec6_references.md/#EO13681) which states "...that all agencies making personal data accessible to citizens through digital applications require the use of multiple factors of authentication..." Based on this, an agency is required to issue an multi-factor authenticator at the higher IALs.  AAL 1 authenticators are not acceptable when an agency identity proofs according to the rules for IAL 2 and 3. 
+The rationale for the prohibitions above are based on [Executive Order 13681](sec5_references.md/#EO13681) which states "...that all agencies making personal data accessible to citizens through digital applications require the use of multiple factors of authentication..." Based on this, an agency is required to issue an multi-factor authenticator at the higher IALs.  AAL 1 authenticators are not acceptable when an agency identity proofs according to the rules for IAL 2 and 3. 
 
 ## Table of Contents
 [1. Purpose](sec1_2_introduction.md/#purpose)
@@ -212,8 +212,6 @@ The rationale for the prohibitions above are based on [Executive Order 13681](se
 
 [4. Digital Authentication Model](sec4_model.md)
 
-[5. Identity Federation](sec5_federation.md)
-
-[6. References](sec6_references.md)
+[5. References](sec5_references.md)
 
  
