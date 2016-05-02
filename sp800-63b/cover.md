@@ -59,7 +59,7 @@ This publication has been developed by NIST in accordance with its statutory res
 
 Nothing in this publication should be taken to contradict the standards and guidelines made mandatory and binding on Federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines be interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the OMB, or any other Federal official. This publication may be used by nongovernmental organizations on a voluntary basis and is not subject to copyright in the United States. Attribution would, however, be appreciated by NIST.
 
-<center>
+<center markdown="1">
 National Institute of Standards and Technology Special Publication 800-63B  
 Natl. Inst. Stand. Technol. Spec. Publ. 800-63B, xxx pages (MonthTBD 2016)  
 CODEN: NSPUE2
@@ -72,7 +72,9 @@ http://dx.doi.org/10.6028/NIST.SP.XXX
 `There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.`  
 `Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).`
 
-<center>
+{::comment}
+
+<center markdown="1">
 **Comments on this publication may be submitted to eauth-comments@nist.gov  
 Public comment period: Month Day, YYYY through Month Day, YYYY**  
 All comments are subject to release under the Freedom of Information Act (FOIA).
@@ -80,8 +82,10 @@ All comments are subject to release under the Freedom of Information Act (FOIA).
 National Institute of Standards and Technology  
 Attn: Computer Security Division, Information Technology Laboratory  
 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930  
-Email: <eauth-comments@nist.gov>
+Email: <eauth-comment@nist.gov>
 </center>
+
+{:/comment}
 
 ### Reports on Computer Systems Technology
 

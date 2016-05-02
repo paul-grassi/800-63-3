@@ -29,15 +29,15 @@ Hardware authenticators ("devices" from the list above) used by commercial crede
 
 ####4.1.3. Assertion Requirements
 
-In order to be valid at AAL 1, authentication assertions SHALL meet the requirements defined in [SP 800-63C](../sp800-63c/README.md). Bearer assertions MAY be used.
+In order to be valid at AAL 1, authentication assertions SHALL meet the requirements defined in [SP 800-63C](../sp800-63c/cover.md/#800-63c). Bearer assertions MAY be used.
 
 ####<a name="aal1reauth"></a>4.1.4. Reauthentication
 
-At AAL 1, reauthentication of the subscriber SHALL be repeated at least once per 30 days, regardless of user activity.
+At AAL 1, reauthentication of the subscriber SHOULD be repeated at least once per 30 days, regardless of user activity.
 
 ####4.1.5. Security Controls
 
-The CSP SHALL employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the low baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the low baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the *low* baseline are satisfied.
 
 ####4.1.6. Records Retention
 
@@ -72,15 +72,15 @@ Single-factor hardware authenticators used by commercial credential service prov
 
 ####4.2.3. Assertion Requirements
 
-In order to be valid at AAL 2, authentication assertions SHALL meet the requirements defined in [SP 800-63C](../sp800-63c/README.md). Bearer assertions MAY be used.
+In order to be valid at AAL 2, authentication assertions SHALL meet the requirements defined in [SP 800-63C](../sp800-63c/cover.md/#800-63c). Bearer assertions MAY be used.
 
 ####<a name="aal2reauth"></a>4.2.4. Reauthentication
 
-At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following no more than 30 minutes of user inactivity. The CSP MAY prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication MAY use one of two authentication factors if the AAL 2 requirements of [Section 5.2.4](sec5_authenticators.md#reauth_sm) are met.
+At AAL 2, authentication of the subscriber SHALL be repeated at least once per 12 hours, regardless of user activity. Reauthentication of the subscriber SHALL be repeated following no more than 30 minutes of user inactivity. The CSP MAY prompt the user to cause activity just before the inactivity timeout, if desired. Reauthentication MAY use one of two authentication factors if the AAL 2 requirements of [Section 5.2.4](sec5_authenticators.md/#reauth_sm) are met.
 
 ####4.2.5. Security Controls
 
-The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the moderate baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the moderate baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the *moderate* baseline are satisfied.
 
 ####4.2.6. Records Retention
 
@@ -89,6 +89,7 @@ CSPs shall comply with their respective records retention policies in accordance
 ###4.3. Authenticator Assurance Level 3
 
 AAL 3 is intended to provide the highest practical remote network authentication assurance. Authentication at AAL 3 is based on proof of possession of a key through a cryptographic protocol. AAL 3 is similar to AAL 2 except that only “hard” cryptographic authenticators are allowed.
+
 ####4.3.1. Permitted Authenticator Types
 
 Authentication Assurance Level 3 requires the use of one of two kinds of hardware devices:
@@ -101,7 +102,7 @@ The authenticator is required to be a hardware cryptographic module validated at
 
 ####4.3.3. Assertion Requirements
 
-In order to be valid at AAL 3, authentication assertions SHALL meet the requirements of proof-of-possession assertions as defined in [SP 800-63C](../sp800-63c/README.md).
+In order to be valid at AAL 3, authentication assertions SHALL meet the requirements of proof-of-possession assertions as defined in [SP 800-63C](../sp800-63c/cover.md/#800-63c).
 
 ####<a name="aal3reauth"></a>4.3.4. Reauthentication
 
@@ -109,7 +110,7 @@ At AAL 3, authentication of the subscriber SHALL be repeated at least once per 1
 
 ####4.3.5. Security Controls
 
-The CSP SHALL employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the high baseline are satisfied.
+The CSP SHALL employ appropriately tailored security controls from the high baseline of security controls defined in [[SP 800-53]](references.md/#SP800-53) or equivalent industry standard and SHALL ensure that the minimum assurance requirements associated with the *high* baseline are satisfied.
 
 ####4.3.6. Records Retention
 
