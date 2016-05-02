@@ -1,6 +1,6 @@
 # 10. References
 
-<a name="gpg45"></a>[UK Cabinet Office GPG 45] Identity proofing and verification of an individual, November 3, 2014 available at: https://www.gov.uk/government/publications/identity-proofing-and-verification-of-an-individual
+<a name="gpg45"></a>[GPG 45] UK Cabinet Office, Good Practice Guide 45, *Identity proofing and verification of an individual*, November 3, 2014, available at: https://www.gov.uk/government/publications/identity-proofing-and-verification-of-an-individual
 
 <a name="canada"></a>[Canadian Guideline on Identity Assurance] available at: http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=30678&section=HTML
 

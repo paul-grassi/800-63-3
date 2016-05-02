@@ -1,7 +1,6 @@
 ## 3. Definitions and Abbreviations
 
-There are a variety of definitions used in the area of authentication.
-While many terms are consistent with the original version of SP 800-63, some have changed in this revision. Since there is no single, consistent definition of many of these terms, careful attention to how the terms are defined here is warranted.
+There is a variety of terms used in the area of authentication. While the definitions of many terms are consistent with the original version of SP 800-63, some have changed in this revision. Since there is no single, consistent definition of many of these terms, careful attention to how the terms are defined here is warranted.
 
 The definitions in this section are primarily those that are referenced in this document. Refer to the other documents in the SP 800-63 document family for additional definitions and abbreviations specific to their content.
 
@@ -18,7 +17,7 @@ A statement from a verifier to a Relying Party (RP) that contains identity infor
 A data object, created in conjunction with an assertion, which identifies the verifier and includes a pointer to the full assertion held by the verifier.
 
 #### Assurance
-In the context of [OMB M-04-04](#GSA03) and this document, assurance is defined as 1) the degree of confidence in the vetting process used to establish the identity of an individual to whom the credential was issued, and 2) the degree of confidence that the individual who uses the credential is the individual to whom the credential was issued.
+In the context of [[OMB M-04-04]](sec10_references.md/#M-04-04) and this document, assurance is defined as 1) the degree of confidence in the vetting process used to establish the identity of an individual to whom the credential was issued, and 2) the degree of confidence that the individual who uses the credential is the individual to whom the credential was issued.
 
 #### Asymmetric Keys
 Two related keys, a public key and a private key that are used to perform complementary operations, such as encryption and decryption or signature generation and signature verification.
@@ -30,13 +29,13 @@ An attempt by an unauthorized individual to defeat security controls. For exampl
 A party who acts with malicious intent to compromise an information system.
 
 #### Attribute
-A claim of a named quality or characteristic inherent in or ascribed to someone or something. (See term in [\[ICAM\]](#ICAM) for more information.)
+A claim of a named quality or characteristic inherent in or ascribed to someone or something. (See term in [[ICAM]](#ICAM) for more information.)
 
 #### Authentication
 The process of establishing confidence in the identity of users or information systems.
 
 #### Authentication Protocol
-A defined sequence of messages between a claimant and a verifier that demonstrates that the claimant has possession and control of a valid token to establish his/her identity. Secure authentication protocols also demonstrate to the claimant that he or she is communicating with the intended verifier.
+A defined sequence of messages between a claimant and a verifier that demonstrates that the claimant has possession and control of a valid authenticator to establish his/her identity. Secure authentication protocols also demonstrate to the claimant that he or she is communicating with the intended verifier.
 
 #### Authentication Protocol Run
 An exchange of messages between a claimant and a verifier that results in authentication (or authentication failure) between the two parties.
@@ -44,7 +43,7 @@ An exchange of messages between a claimant and a verifier that results in authen
 #### Authentication Secret
 A generic term for any secret value that could be used by an attacker to impersonate the subscriber in an authentication protocol.
 
-These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The token secret is the canonical example of a long term authentication secret, while the token authenticator, if it is different from the token secret, is usually a short term authentication secret.
+These are further divided into *short-term authentication secrets*, which are only useful to an attacker for a limited period of time, and *long-term authentication secrets*, which allow an attacker to impersonate the subscriber until they are manually reset. The authenticator secret is the canonical example of a long term authentication secret, while the authenticator output, if it is different from the authenticator secret, is usually a short term authentication secret.
 
 #### Authenticator
 Something that the claimant possesses and controls (typically a cryptographic module or password) that is used to authenticate the claimant’s identity. In previous versions of this guideline, this was referred to as a *token*.
@@ -53,7 +52,7 @@ Something that the claimant possesses and controls (typically a cryptographic mo
 A metric describing robustness of the authentication process proving that the claimant is in control of a given subscriber's authenticator(s).
 
 #### Authenticator Output
-The output value generated by an authenticator. The ability to generate valid authenticator outputs on demand proves that the claimant possesses and controls the authenticator. Protocol messages sent to the verifier are dependent upon the token authenticator output, but they may or may not explicitly contain it.
+The output value generated by an authenticator. The ability to generate valid authenticator outputs on demand proves that the claimant possesses and controls the authenticator. Protocol messages sent to the verifier are dependent upon the authenticator output, but they may or may not explicitly contain it.
 
 #### Authenticator Secret
 The secret value contained within an authenticator.
@@ -64,7 +63,7 @@ An assertion that does not provide a mechanism for the subscriber to prove that 
 #### Biometrics
 Automated recognition of individuals based on their behavioral and biological characteristics.
 
-In this document, biometrics may be used to unlock authentication tokens and prevent repudiation of registration.
+In this document, biometrics may be used to unlock multifactor authenticators and prevent repudiation of registration.
 
 #### Challenge-Response Protocol
 An authentication protocol where the verifier sends the claimant a challenge (usually a random value or a nonce) that the claimant combines with a secret (such as by hashing the challenge and a shared secret together, or by applying a private key operation to the challenge) to generate a response that is sent to the verifier. The verifier can independently verify the response generated by the claimant (such as by re-computing the hash of the challenge and the shared secret and comparing to the response, or performing a public key operation on the response) and establish that the claimant possesses and controls the secret.
@@ -76,9 +75,9 @@ A party whose identity is to be verified using an authentication protocol.
 An interactive feature added to web-forms to distinguish use of the form by humans as opposed to automated agents. Typically, it requires entering text corresponding to a distorted image or from a sound stream.
 
 #### Credential
-An object or data structure that authoritatively binds an identity (and optionally, additional attributes) to an authticator possessed and controlled by a subscriber.
+An object or data structure that authoritatively binds an identity (and optionally, additional attributes) to an authenticator possessed and controlled by a subscriber.
 
-While common usage often assumes that the credential is maintained by the subscriber, this document also uses the term to refer to electronic records maintained by the CSP which establish a binding between the subscriber’s token and identity.
+While common usage often assumes that the credential is maintained by the subscriber, this document also uses the term to refer to electronic records maintained by the CSP which establish a binding between the subscriber’s authenticator(s) and their identity.
 
 #### Credential Service Provider (CSP)
 A trusted entity that issues or registers subscriber authenticators and issues electronic credentials to subscribers. The CSP may encompass verifiers that it operates. A CSP may be an independent third party, or may issue credentials for its own use.
@@ -177,7 +176,7 @@ An attack where the attacker obtains some data (typically by eavesdropping on an
 An attack against an authentication protocol where the attacker either assumes the role of a claimant with a genuine verifier or actively alters the authentication channel.
 
 #### Online Guessing Attack
-An attack in which an attacker performs repeated logon trials by guessing possible values of the token authenticator.
+An attack in which an attacker performs repeated logon trials by guessing possible values of the authenticator output.
 
 #### Passive Attack
 An attack against an authentication protocol where the attacker intercepts data traveling along the network between the claimant and verifier, but does not alter the data (i.e., eavesdropping).
@@ -204,7 +203,7 @@ The ability to activate and use the authenticator in an authentication protocol.
 A formal statement of the practices followed by the parties to an authentication process (i.e., RA, CSP, or verifier). It usually describes the policies and practices of the parties and can become legally binding.
 
 #### Private Credentials
-Credentials that cannot be disclosed by the CSP because the contents can be used to compromise the token. (For more discussion, see Section 7.1.1.)
+Credentials that cannot be disclosed by the CSP because the contents can be used to compromise the authenticator.
 
 #### Private Key
 The secret part of an asymmetric key pair that is used to digitally sign or decrypt data.
@@ -212,21 +211,19 @@ The secret part of an asymmetric key pair that is used to digitally sign or decr
 #### Protected Session
 A session wherein messages between two participants are encrypted and integrity is protected using a set of shared secrets called session keys.
 
-A participant is said to be *authenticated* if, during the session, he, she or it proves possession of a long term token in addition to the session keys, and if the other party can verify the identity associated with that token. If both participants are authenticated, the protected session is said to be *mutually authenticated*.
+A participant is said to be *authenticated* if, during the session, he, she or it proves possession of an authenticator in addition to the session keys, and if the other party can verify the identity associated with that authenticator. If both participants are authenticated, the protected session is said to be *mutually authenticated*.
 
 #### Pseudonym
-A false name.
-
-In this document, all unverified names are assumed to be pseudonyms.
+A false name. In this document, all unverified names are assumed to be pseudonyms.
 
 #### Public Credentials
-Credentials that describe the binding in a way that does not compromise the token. (For more discussion, see Section 7.1.1.)
+Credentials that describe the binding in a way that does not compromise the authenticator.
 
 #### Public Key
 The public part of an asymmetric key pair that is used to verify signatures or encrypt data.
 
 #### Public Key Certificate
-A digital document issued and digitally signed by the private key of a Certificate authority that binds the name of a subscriber to a public key. The certificate indicates that the subscriber identified in the certificate has sole control and access to the private key. See also \[[RFC 5280](#RFC_5280)\].
+A digital document issued and digitally signed by the private key of a certificate authority that binds the name of a subscriber to a public key. The certificate indicates that the subscriber identified in the certificate has sole control and access to the private key. See also [[RFC 5280]](sec10_references.md/#RFC_5280).
 
 #### Public Key Infrastructure (PKI)
 A set of policies, processes, server platforms, software and workstations used for the purpose of administering certificates and public-private key pairs, including the ability to issue, maintain, and revoke public key certificates.
@@ -235,7 +232,7 @@ A set of policies, processes, server platforms, software and workstations used f
 The process through which an Applicant applies to become a subscriber of a CSP and the CSP validates the identity of the Applicant.
 
 #### Relying Party (RP)
-An entity that relies upon the subscriber's token and credentials or a verifier's assertion of a claimant’s identity, typically to process a transaction or grant access to information or a system.
+An entity that relies upon the subscriber's authenticator and credentials or a verifier's assertion of a claimant’s identity, typically to process a transaction or grant access to information or a system.
 
 #### Remote
 (*As in remote authentication or remote transaction*) An information exchange between network-connected devices where the information cannot be reliably protected end-to-end by a single organization’s security controls.
@@ -296,13 +293,13 @@ See *Authenticator Output*.
 See *Authenticator Secret*.
 
 #### Transport Layer Security (TLS)
-An authentication and security protocol widely implemented in browsers and web servers. TLS is defined by \[[RFC 2246](#_General_References)\], \[[RFC 3546](#_General_References)\], and \[[RFC 5246](#RFC_5246)\]. TLS is similar to the older Secure Sockets Layer (SSL) protocol, and TLS 1.0 is effectively SSL version 3.1. NIST SP 800-52, *Guidelines for the Selection and Use of Transport Layer Security (TLS) Implementations* specifies how TLS is to be used in government applications.
+An authentication and security protocol widely implemented in browsers and web servers. TLS is defined by [[RFC 5246]](sec10_references.md/#RFC5246). TLS is similar to the older Secure Sockets Layer (SSL) protocol, and TLS 1.0 is effectively SSL version 3.1. NIST [[SP 800-52]](sec10_references.md/#SP800-52), *Guidelines for the Selection and Use of Transport Layer Security (TLS) Implementations* specifies how TLS is to be used in government applications.
 
 #### Trust Anchor
 A public or symmetric key that is trusted because it is directly built into hardware or software, or securely provisioned via out-of-band means, rather than because it is vouched for by another trusted entity (e.g. in a public key certificate).
 
 #### Verifier
-An entity that verifies the claimant’s identity by verifying the claimant’s possession and control of a token using an authentication protocol. To do this, the verifier may also need to validate credentials that link the token and identity and check their status.
+An entity that verifies the claimant’s identity by verifying the claimant’s possession and control of one or two authenticators using an authentication protocol. To do this, the verifier may also need to validate credentials that link the authenticator(s) and identity and check their status.
 
 #### Verifier Impersonation Attack
 A scenario where the attacker impersonates the verifier in an authentication protocol, usually to capture information that can be used to masquerade as a subscriber to the real verifier.
