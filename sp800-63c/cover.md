@@ -1,7 +1,7 @@
 # <a name="800-63c"></a> DRAFT NIST Special Publication 800-63C
 
 # Digital Authentication Guideline
-### Assertions and Federation
+### Federation and Assertions
 
 Paul A. Grassi  
 James L. Fenton  
@@ -16,7 +16,7 @@ http://dx.doi.org/10.6028/NIST.SP.XXX
 # DRAFT NIST Special Publication 800-63C
 
 # Digital Authentication Guideline
-### Assertions and Federation
+### Federation and Assertions
 
 Paul A. Grassi  
 *Applied Cybersecurity Division  

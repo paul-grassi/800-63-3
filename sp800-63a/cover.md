@@ -162,11 +162,11 @@ A mapping is provided below to allow agencies using the existing Level of Assura
 
 [6. Requirements for Derived Credentials](sec6_dc.md)
 
-[7. Privacy Considerations](sec7_privacy.md)
+[7. Threats and Security Considerations](sec7_security.md)
 
-[8. Usability Considerations](sec8_usability.md)
+[8. Privacy Considerations](sec8_privacy.md)
 
-[9. Threats and Security Considerations](sec9_security.md)
+[9. Usability Considerations](sec9_usability.md)
 
 [10. References](sec10_references.md)
 
