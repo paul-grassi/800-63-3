@@ -5,8 +5,8 @@
 
 Paul A. Grassi  
 James L. Fenton  
-Justin Richer  
-Sarah Squire
+Justin P. Richer  
+Sarah K. Squire
 
 This publication is available free of charge from:
 http://dx.doi.org/10.6028/NIST.SP.XXX  
@@ -26,11 +26,11 @@ James L. Fenton
 *Independent Consultant  
 Los Altos, CA*
 
-Justin Richer  
+Justin P. Richer  
 *Bespoke Engineering  
 Billerica, MA*
 
-Sarah Squire  
+Sarah K. Squire  
 *Engage Identity  
 Seattle, WA*
 
