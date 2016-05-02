@@ -1,4 +1,4 @@
-# DRAFT NIST Special Publication 800-63-3
+# <a name="800-63-3"></a>DRAFT NIST Special Publication 800-63-3
 
 # Digital Authentication Guideline
 
@@ -56,7 +56,9 @@ http://dx.doi.org/10.6028/NIST.SP.XXX
 `There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.`  
 `Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).`
 
-<center>
+{::comment}
+
+<center markdown="1">
 **Comments on this publication may be submitted to eauth-comments@nist.gov  
 Public comment period: Month Day, YYYY through Month Day, YYYY**  
 All comments are subject to release under the Freedom of Information Act (FOIA).
@@ -66,6 +68,8 @@ Attn: Computer Security Division, Information Technology Laboratory
 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930  
 Email: <eauth-comments@nist.gov>
 </center>
+
+{:/comment}
 
 ### Reports on Computer Systems Technology
 
@@ -124,13 +128,13 @@ The terms “can” and “cannot” indicate a possibility and capability, whet
 
 ## Executive Summary
 
-Digital authentication is the process of establishing confidence in user identities digitally presented to an information system. Digital authentication presents a technical challenge when this process involves the authentication of individual people over an open network, for the purpose of digital government and commerce. 
+Digital authentication is the process of establishing confidence in user identities digitally presented to an information system. Digital authentication presents a technical challenge when this process involves the authentication of individual people over an open network for the purpose of digital government and commerce. 
 
-The suite of SP 800-63-3 documents provide technical guidelines to agencies to allow an individual to authenticate his or her identity to a Federal digital service.  This document may inform but does not restrict or constrain the development or use of standards for application outside of the Federal government, such as e-commerce transactions. These guidelines address only traditional, widely implemented methods for digital authentication, primarily based on secrets. With these methods, the individual to be authenticated proves that he or she knows or possesses a valid authenticator or combination of authenticators.
+The suite of SP 800-63-3 documents provides technical guidelines to agencies to allow an individual to authenticate his or her identity to a Federal digital service.  This document may inform but does not restrict or constrain the development or use of standards for application outside of the Federal government, such as e-commerce transactions. These guidelines address only traditional, widely implemented methods for digital authentication, primarily based on secrets. With these methods, the individual to be authenticated proves that he or she knows or possesses a valid authenticator or combination of authenticators.
 
 These technical guidelines supplement OMB guidance, *E-Authentication
-Guidance for Federal Agencies* \[[OMB M-04-04](#OMB_0404)\] and
-supersede NIST SP 800-63-1 and SP 800-63-2. OMB M-04-04 defines four levels of assurance, Levels 1 to 4, in terms of the consequences of authentication errors and misuse of credentials. Level 1 is the lowest assurance level, and Level 4 is the highest. The OMB guidance defines the required level of authentication assurance in terms of the likely consequences of an authentication error. As the consequences of an authentication error become more serious, the required level of assurance increases. The OMB guidance provides agencies with the criteria for determining the level of digital authentication assurance required for specific applications and transactions, based on the risks and their likelihood of occurrence of each application or transaction.
+Guidance for Federal Agencies* [[OMB M-04-04]](sec5_references.md/#M-04-04) and
+supersede NIST SP 800-63-1 and SP 800-63-2. OMB M-04-04 defines four levels of assurance, Levels 1 to 4, in terms of the consequences of authentication errors and misuse of credentials. Level 1 is the lowest assurance level, and Level 4 is the highest. The OMB guidance defines the required level of identity assurance in terms of the likely consequences of an authentication error. As the consequences of an authentication error become more serious, the required level of assurance increases. The OMB guidance provides agencies with the criteria for determining the level of identity assurance required for specific applications and transactions, based on the risks and their likelihood of occurrence of each application or transaction.
 
 OMB guidance outlines a five-step process by which agencies should meet their digital authentication assurance requirements:
 
@@ -145,7 +149,7 @@ OMB guidance outlines a five-step process by which agencies should meet their di
 
 5.  Periodically reassess the information system to determine technology refresh requirements.
 
-This document suite provides guidelines for implementing the third step of the above process.  A new approach for digital authentication solutions is required by these guidelines, separating the individual elements of authentication assurance into discrete, component parts. For non-federated systems, agencies will select and combine two (2) individual components, referred to as *Identity Assurance Level (IAL)* and *Authenticator Assurance Level (AAL)*. For federated systems, a 
+This document suite provides guidelines for implementing the third step of the above process.  A new approach for digital authentication solutions is required by these guidelines, separating the individual elements of identity assurance into discrete, component parts. For non-federated systems, agencies will select and combine two (2) individual components, referred to as *Identity Assurance Level (IAL)* and *Authenticator Assurance Level (AAL)*. For federated systems, a 
 third component, *Federation Assurance Level (FAL)*, is required. 
 
 * IAL refers to the robustness of the identity proofing process and the binding between an authenticator and a specific individual. 
@@ -158,7 +162,7 @@ Accordingly, with this revision, SP 800-63 has been split into a family of docum
 
 - SP 800-63-3 *Digital Authentication Guideline* - Provides guidance on general authentication issues and for using authenticators, credentials, and assertions together in an information system.
 
-- SP 800-63A *Enrollment and Identity Proofing* - Deals with the processes by which a credential, and authenticator(s) associated with that credential can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
+- SP 800-63A *Enrollment and Identity Proofing* - Deals with the processes by which a credential, and authenticator(s) associated with that credential, can be bound to a specific individual. This typically happens when that individual is enrolled in an identity system, through the identity proofing process.
 
 - SP 800-63B *Authentication and Lifecycle Management* - provides guidance on the selection, use, and management of authenticators (formerly called *tokens*) to authenticate a remote subscriber to an identity system at specified authenticator assurance levels.
 
@@ -167,7 +171,7 @@ Accordingly, with this revision, SP 800-63 has been split into a family of docum
 
 ### IAL and AAL Summary
 
-A summary of each identity and authenticator assurance levels is provided below.
+A summary of each of the identity and authenticator assurance levels is provided below.
 
 **Identity Assurance Level 1** – At this level, attributes provided in conjunction with the authentication process, if any, are self-asserted.
 
@@ -179,7 +183,7 @@ A summary of each identity and authenticator assurance levels is provided below.
 
 **Authenticator Assurance Level 2** – AAL 2 provides higher assurance that the same claimant who participated in previous transactions is accessing the protected transaction or data. At least two different authentication factors are required. Various types of authenticators, including multi-factor Software Cryptographic Authenticators, may be used as described in [SP 800-63B](../sp800-63b/cover.md/#800-63b). AAL 2 also permits any of the authentication methods of AAL 3. AAL 2 authentication requires cryptographic mechanisms that protect the primary authenticator against compromise by the protocol threats for all threats at AAL 1 as well as verifier impersonation attacks. Approved cryptographic techniques are required for all assertion protocols used at AAL 2 and above.
 
-**Authentication Assurance Level 3** – AAL 3 is intended to provide the highest practical digital authentication assurance. Authentication at AAL 3 is based on proof of possession of a key through a cryptographic protocol. AAL 3 is similar to AAL 2 except that only “hard” cryptographic authenticators are allowed. The authenticator is required to be a hardware cryptographic module validated at Federal Information Processing Standard (FIPS) 140 Level 2 or higher overall with at least FIPS 140 Level 3 physical security. AAL 3 authenticator requirements can be met by using the PIV authentication key of a FIPS 201 compliant Personal Identity Verification (PIV) Card.
+**Authenticator Assurance Level 3** – AAL 3 is intended to provide the highest practical digital authentication assurance. Authentication at AAL 3 is based on proof of possession of a key through a cryptographic protocol. AAL 3 is similar to AAL 2 except that only “hard” cryptographic authenticators are allowed. The authenticator is required to be a hardware cryptographic module validated at Federal Information Processing Standard (FIPS) 140 Level 2 or higher overall with at least FIPS 140 Level 3 physical security. AAL 3 authenticator requirements can be met by using the PIV authentication key of a FIPS 201 compliant Personal Identity Verification (PIV) Card.
 
 ### Backwards Compatability to M-04-04 Levels of Assurance
 
@@ -197,16 +201,15 @@ Agency risk profiles and mission need will help determine the acceptable combina
 
 ### Acceptable IAL and AAL Combinations
 
-The following table details valid combinations of IAL and AAL the agencies may select:
+The following table details valid combinations of IAL and AAL that agencies may select:
 
-|||IAL|||
-|:-:|:-:|:-:|:-:|:-:|
-|||*1*|*2*|*3*|
-|**AAL**|*1*|Allowed|**NO**|**NO**|
-||*2*|Allowed|Allowed|**NO**|
-||*3*|Allowed|Allowed|Allowed|
+| | IAL 1 | IAL 2 | IAL 3 |
+|:-:|:-:|:-:|:-:|
+| **AAL 1** | Allowed | **NO** | **NO** |
+| **AAL 2** | Allowed | Allowed | **NO** |
+| **AAL 3** | Allowed | Allowed | Allowed |
 
-The rationale for the prohibitions above are based on [Executive Order 13681](sec5_references.md/#EO13681) which states "...that all agencies making personal data accessible to citizens through digital applications require the use of multiple factors of authentication..." Based on this, an agency is required to issue an multi-factor authenticator at the higher IALs.  AAL 1 authenticators are not acceptable when an agency identity proofs according to the rules for IAL 2 and 3. 
+The rationale for the prohibitions above are based on [Executive Order 13681](sec5_references.md/#EO13681) which states "...that all agencies making personal data accessible to citizens through digital applications require the use of multiple factors of authentication..." Based on this, an agency is required to issue an multi-factor authenticator at the higher IALs.  AAL 1 authentication is not acceptable for applications that require identity proofing at IAL 2 or 3.
 
 ## Table of Contents
 
