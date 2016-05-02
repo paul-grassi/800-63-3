@@ -111,7 +111,7 @@ There are significant benefits with regards to federated architectures, includin
 * Pseudonymous attribute assertions. Agencies can request a minimized set of attributes, to include claims, to fulfill service delivery.
 * Mission enablement. Agencies can focus on mission, rather than the business of identity management.
   
-The following sections discuss the components of a federated identity architecutre should an agency elect this type of model.
+The following sections discuss the components of a federated identity architecture should an agency elect this type of model.
 
 #### 4.4.1 Assertions
 
