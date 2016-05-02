@@ -8,4 +8,4 @@
 
 <a name="M-04-04"></a>[M-04-04] OMB Memorandum M-04-04, *E-Authentication Guidance for Federal Agencies* (December 16, 2003), available at: <https://www.whitehouse.gov/sites/default/files/omb/memoranda/fy04/m04-04.pdf>.
 
-<a name="rfl"></a>[Red Flags Rule] 15 U.S.C. 1681m(e)(4), Pub. L. 111-319, 124 Stat. 3457, *Fair and Accurate Credit Transaction Act of 2003* (December 18, 2010), available at: <https://www.ftc.gov/sites/default/files/documents/federal_register_notices/identity-theft-red-flags-and-address-discrepancies-under-fair-and-accurate-credit-transactions-act/071109redflags.pdf>.
+<a name="rfr"></a>[Red Flags Rule] 15 U.S.C. 1681m(e)(4), Pub. L. 111-319, 124 Stat. 3457, *Fair and Accurate Credit Transaction Act of 2003* (December 18, 2010), available at: <https://www.ftc.gov/sites/default/files/documents/federal_register_notices/identity-theft-red-flags-and-address-discrepancies-under-fair-and-accurate-credit-transactions-act/071109redflags.pdf>.
