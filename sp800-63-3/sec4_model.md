@@ -2,7 +2,7 @@
 
 ### <a name="4-1"></a>4.1. Overview 
 
-In accordance with [OMB M-04-04](sec6_references.md/#M-04-04), digital is the process of establishing confidence in individual identities presented to a digital system. Systems can use the authenticated identity to determine if that individual is authorized to perform an online transaction. In most cases, the authentication and transaction take place across an open network such as the Internet; however, in some cases access to the network may be limited and access control decisions may take this into account.
+In accordance with [OMB M-04-04](sec5_references.md/#M-04-04), digital is the process of establishing confidence in individual identities presented to a digital system. Systems can use the authenticated identity to determine if that individual is authorized to perform an online transaction. In most cases, the authentication and transaction take place across an open network such as the Internet; however, in some cases access to the network may be limited and access control decisions may take this into account.
 
 The digital authentication model used in these guidelines reflects current technologies and architectures used in government. More complex models that separate functions, such as issuing credentials and providing attributes, among larger numbers of parties are also available and may have advantages in some classes of applications. While a simpler model is used in this document, it does not preclude agencies from separating these functions. In addition, certain enrollment, identity proofing, and issuance processes performed by the CSP are sometimes delegated to an entity known as the Registration Authority (RA) or Identity Manager (IM). A close relationship between the RA/IM and CSP is typical, and the nature of this relationship may differ among RAs, IMs, and CSPs. The types of relationship and their requirements is outside of the scope of this document.  Accordingly, the term CSP will be used to be inclusive of RA/IM functions.
 
@@ -46,7 +46,7 @@ Figure 1 - Digital Authentication Model
 
 ### 4.2. Enrollment and Identity Proofing
 
-Normative requirements can be found in [Special Publication 800-63A, Enrollment and Identity Proofing](../sp800-63a/cover.md/#800-63a)
+Normative requirements can be found in [Special Publication 800-63A, Enrollment and Identity Proofing](../sp800-63a/cover.md/#800-63a).
 
 The previous section introduced the different participants in the conceptual digital authentication model. This section provides additional details regarding the relationships and responsibilities of the participants involved with enrollment and identity proofing.
 
@@ -56,7 +56,7 @@ The CSP establishes a mechanism to uniquely identify each subscriber, register t
 
 ### 4.3. Authentication and Lifecycle Managment
 
-Normative requirements can be found in [Special Publication 800-63B, Authentication and Lifecycle Management](../sp800-63b/cover.md/#800-63b)
+Normative requirements can be found in [Special Publication 800-63B, Authentication and Lifecycle Management](../sp800-63b/cover.md/#800-63b).
 
 #### 4.3.1. Authenticators
 
@@ -98,7 +98,20 @@ The verifier is a functional role, but is frequently implemented in combination 
 
 ### 4.4. Federation and Assertions
 
-Normative requirements can be found in [Special Publication 800-63C, Federation and Assertions](../sp800-63c/cover.md/#800-63c)
+Normative requirements can be found in [Special Publication 800-63C, Federation and Assertions](../sp800-63c/cover.md/#800-63c).
+
+These guidelines do not presuppose a federated identity architecture, rather the guidance is agnostic to the types of models that exist in the marketplace, allowing agencies to deploy a digital authentication scheme according to their own requirements. However, identity federation, consistent with the National Strategy for Trusted Identities in Cyberspace (NSTIC) [[NSTIC]](sec5_references.md/#theNSTIC), is preferred over a singleton instance that serves a single agency or RP.
+
+There are significant benefits with regards to federated architectures, including, but not limited to:  
+
+* Enhanced user experience.  For example, an individual can be identity proofed once and can reuse the issued authenticator at multiple RPs
+* Cost reduction, to both the user (one authenticator) and the agency (reduction in IT infrastructure)
+* Data minimization, agencies do not need to pay for collection, storage, disposal, and compliance activities related to storing personal information
+* Privacy enhancing
+* Pseudonymous attribute assertions. Agencies can request a minimized set of attributes, to include claims, to fulfill service delivery.
+* Mission enablement. Agencies can focus on mission, rather than the business of identity management.
+  
+The following sections discuss the components of a federated identity architecutre should an agency elect this type of model.
 
 #### 4.4.1 Assertions
 
