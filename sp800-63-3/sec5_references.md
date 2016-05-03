@@ -21,4 +21,14 @@ Security Management Act*, available at: <http://csrc.nist.gov/drivers/documents/
 
 <a name="M-03-22"></a>[OMB M-03-22] OMB Memorandum M-03-22, *OMB Guidance for Implementing
 the Privacy Provisions of the E-Government Act of 2002* (September 26,
-2003), available at: <http://www.whitehouse.gov/omb/memoranda/m03-22.html>.
+2003), available at:
+<http://www.whitehouse.gov/omb/memoranda/m03-22.html>.
+
+<a name="SP800-30">[SP 800-30]</a> NIST Special Publication 800-30, Revision 1, *Guide for Conducting Risk Assessments*, September 2012.
+
+<a name="SP800-53A">[SP 800-53A]</a> NIST Special Publication 800-53A, Revision 4, *Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans*, December 2014.
+
+<a name="GPG45"></a>[GPG 45] UK Cabinet Office, Good Practice Guide 45, *Identity proofing and verification of an individual*, November 3, 2014, available at: <https://www.gov.uk/government/publications/identity-proofing-and-verification-of-an-individual>.
+
+<a name="RSDOPS"></a>[RSDOPS] UK Cabinet Office, Good Practice Guide 43, *Requirements for Secure Delivery of Online Public Services (RSDOPS)*, November 3, 2014, available at: <https://www.gov.uk/government/publications/requirements-for-secure-delivery-of-online-public-services>.
+
