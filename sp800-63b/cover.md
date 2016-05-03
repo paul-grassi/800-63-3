@@ -36,7 +36,7 @@ William E. Burr
 Silver Spring, MD*
 
 James L. Fenton  
-*Independent Consultant  
+*Altmode Networks  
 Los Altos, CA*
 
 This publication is available free of charge from:
