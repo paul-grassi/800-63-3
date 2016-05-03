@@ -25,3 +25,7 @@ the Privacy Provisions of the E-Government Act of 2002* (September 26,
 
 <a name="800-30"></a>[SP 800-30] NIST Special Publication 800-30, *Guide for Conducting
 Risk Assessments* (September 2012), available at: <http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf>.
+
+<a name="800-37"></a>[SP 800-37] NIST Special Publication 800-37, *Guide for Applying the Risk Management Framework to Federal Information Systems, A Security Life Cycle Approach* (February 2010), available at: <http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r1.pdf>.
+
+<a name="800-53a"></a>[SP 800-53A] NIST Special Publication 800-53A, *Assessing Security and Privacy Controls in Federal Information Systems and Organizations, Building Effective Assessment Plans* (December 2014), available at: <http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53Ar4.pdf>.

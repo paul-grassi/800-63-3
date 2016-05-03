@@ -21,7 +21,7 @@ authentication and attribute providers. However, in some applications, these
 functions are provided by different parties. This document describes authenticator assurance and identity assurance as separate metrics, and provides a mapping between these metrics and overall level of assurance.
 
 These technical guidelines supplement OMB guidance, *E-Authentication
-Guidance for Federal Agencies* \[[OMB M-04-04](#OMB_0404)\] and
+Guidance for Federal Agencies* \[[OMB M-04-04](sec5_references.md/#M-04-04)\] and
 supersede NIST SP 800-63-1 and SP 800-63-2. OMB M-04-04 defines four levels of
 assurance, Levels 1 to 4, in terms of the consequences of authentication
 errors and misuse of credentials. Level 1 is the lowest assurance level
@@ -49,7 +49,7 @@ their authentication assurance requirements:
 1.  *Conduct a risk assessment of the government system* – No specific
     risk assessment methodology is prescribed for this purpose;
     however, while NIST Special
-    Publication (SP) 800-30 \[[SP 800-30](sec5_references.md/#800-30)\] offers a general
+    Publication (SP) 800-30 [[SP 800-30](sec5_references.md/#800-30)] offers a general
     process for Risk Assessment and Risk Mitigation.
 
 2.  *Map identified risks to the appropriate assurance level* – Section
@@ -69,21 +69,21 @@ their authentication assurance requirements:
     level* – As some implementations may create or compound particular
     risks, agencies should conduct a final validation to confirm that
     the system achieves the required assurance level for the
-    user-to-agency process. NIST SP 800-53A \[[SP 800-53A](#SP800_53A)\]
+    user-to-agency process. NIST SP 800-53A [[SP 800-53A](sec5_references.md/#800_53a)]
     provides guidelines for the assessment of the implemented system
     during the validation process. Validation should be performed as
     part of a security authorization process as described in NIST SP
-    800-37, Revision 1 \[[SP 800-37](#SP800_37)\].
+    800-37, Revision 1 [[SP 800-37](sec5_references.md/#800-37)].
 
 5.  *Periodically reassess the information system to determine
     technology refresh requirements* – The agency shall periodically
     reassess the information system to ensure that the identity
     authentication requirements continue to be satisfied. NIST SP
-    800-37, Revision 1 \[[SP 800-37](#SP800_37)\] provides guidelines on
+    800-37, Revision 1 [[SP 800-37](sec5_references.md/#800-37)] provides guidelines on
     the frequency, depth and breadth of periodic reassessments. As with
     the initial validation process, agencies should follow the
-    assessment guidelines specified in SP 800-53A \[[SP
-    800-53A](#SP800_53A)\] for conducting the security assessment.
+    assessment guidelines specified in SP 800-53A [[SP
+    800-53A](sec5_references.md/#800_53a)] for conducting the security assessment.
 
 This family of documents provides guidelines for implementing the third step of the
 above process. In particular, this document maps the four (4) Levels of Assurance defined in OMB M-04-04 into corresponding authenticator assurance and identity assurance levels. Other documents in the family state specific technical
@@ -136,7 +136,7 @@ undergo a registration process in which their identity is bound to that authenti
 and applications over a network, using the authenticator in an authentication
 protocol. The authentication protocol allows an individual to
 demonstrate to a Verifier that he or she has possession and control of
-the authenticator<sup>[2](#note2)</sup>, in a manner that protects the authenticator secret from
+the authenticator <sup>[1](#note1)</sup>, in a manner that protects the authenticator secret from
 compromise by different kinds of attacks. Higher authenticator assurance levels require use of stronger authenticators, better protection of
 the authenticator(s) and related secrets from attacks. Higher identity assurance levels require stronger registration procedures.
 
@@ -147,7 +147,7 @@ contexts. Certain authentication technologies, particularly biometrics
 and knowledge based authentication, use information that is private
 rather than secret. While they are discussed to a limited degree, they
 are largely avoided because their security is often weak or difficult to
-quantify<sup>[3](#note3)</sup>, especially in the remote situations that are the primary
+quantify <sup>[2](#note2)</sup>, especially in the remote situations that are the primary
 scope of this document.
 
 Knowledge based authentication achieves authentication by testing the
@@ -309,9 +309,7 @@ Other areas of update to SP 800-63-2 include:
 ---
 **Footnotes**
 
-<a name="note1">1</a>: At the time of publication, the specific URL for this tool is at <http://www.idmanagement.gov/drilldown.cfm?action=era>.  Alternatively, the tool can be found by searching for “Electronic Risk and Requirements Assessment (e-RA)” at <http://www.idmanagement.gov/>.
+<a name="note1">1</a>: SP 800-63-3 uses the term *authenticator* in place of *token* in order to avoid conflicts with the common use of *token* in assertion protocols. See Section 3 for more information.
 
-<a name="note2">2</a>: SP 800-63-3 uses the term *authenticator* in place of *token* in order to avoid conflicts with the common use of *token* in assertion protocols. See Section 3 for more information.
-
-<a name="note3">3</a>: For example, see article by V. Griffith and M. Jakobsson, entitled “Messin’ with Texas – Deriving Mother’s Maiden Names Using Public Records,” in RSA CryptoBytes, Winter 2007. 
+<a name="note2">2</a>: For example, see article by V. Griffith and M. Jakobsson, entitled “Messin’ with Texas – Deriving Mother’s Maiden Names Using Public Records,” in RSA CryptoBytes, Winter 2007. 
 
