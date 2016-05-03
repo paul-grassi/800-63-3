@@ -23,7 +23,7 @@ Paul A. Grassi
 Information Technology Laboratory*
 
 James L. Fenton  
-*Independent Consultant  
+*Altmode Networks  
 Los Altos, CA*
 
 Justin P. Richer  
