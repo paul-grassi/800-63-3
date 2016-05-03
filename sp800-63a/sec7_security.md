@@ -1,5 +1,5 @@
 #7. Threats and Security Considerations
-There are two general categories of threats to the enrollment process: impersonation and either compromise or malfeasance of the infrastructure (CSPs). This recommendation focuses on addressing impersonation threats. Infrastructure threats are addressed by normal computer security controls (e.g., separation of duties, record keeping, independent audits) and are outside the scope of this document<sup>[9](#note9)</sup>.
+There are two general categories of threats to the enrollment process: impersonation and either compromise or malfeasance of the infrastructure (CSPs). This recommendation focuses on addressing impersonation threats. Infrastructure threats are addressed by normal computer security controls (e.g., separation of duties, record keeping, independent audits) and are outside the scope of this document.
 
 The threats to the enrollment process include impersonation attacks and threats to the transport mechanisms for identity proofing, and authenticator binding, and credential issuance. Table 1 lists the threats related to enrollment and identity proofing.
 
@@ -7,7 +7,7 @@ The threats to the enrollment process include impersonation attacks and threats 
 
 |**Activity**   |     **Threat/Attack**  | **Example** |
 |---------------|------------------------|------------------|
-|Enrollment<sup>[10](#note10)</sup> | Falsified identity proofing evidence | An applicant claims an incorrect identity by using a forged driver's license.|
+|Enrollment | Falsified identity proofing evidence | An applicant claims an incorrect identity by using a forged driver's license.|
 | | Fraudulent use of another's identity | An applicant uses a passport associated with a different individual
 | | Repudiation of enrollment | A subscriber denies enrollment, claiming that he or she did not enroll with the CSP.|
 |Issuance|Disclosure | A key created by the CSP for a Subscriber is copied by an attacker as it is transported from the CSP to the subscriber during token issuance.|
