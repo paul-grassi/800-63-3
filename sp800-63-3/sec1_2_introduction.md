@@ -48,9 +48,8 @@ their authentication assurance requirements:
 
 1.  *Conduct a risk assessment of the government system* – No specific
     risk assessment methodology is prescribed for this purpose;
-    however, the e-RA tool<sup>[1](#note1)</sup> at &lt;<http://www.idmanagement.gov/>&gt;
-    is an example of a suitable tool and methodology, while NIST Special
-    Publication (SP) 800-30 \[[SP 800-30](#SP800_30)\] offers a general
+    however, while NIST Special
+    Publication (SP) 800-30 \[[SP 800-30](sec5_references.md/#800-30)\] offers a general
     process for Risk Assessment and Risk Mitigation.
 
 2.  *Map identified risks to the appropriate assurance level* – Section
@@ -208,13 +207,13 @@ The business model, marketplace, and the composition of the way identity service
 This document has been written to satisfy the needs of federal agencies. However, with the expansion of citizen services throughout the world that require identity and authenticaiotn assurance, as well as an increasing number of use cases that promote international identity federation and interoperability, it is intended to achieve alignment to national and international standards that describe levels of identity assurance. This is not meant to imply that there is direct correlation between the IALs and AALs in this document and the levels in those standards, but that it is seen that this document fulfils the criteria as demonstrated in those standards.
 
 
-NIST 800-63|GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003
-:---------:|:----:|:----:|:-------:|:--------:|:-------:|
-N/A|N/A|Level 01|N/A|N/A|N/A
-AAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1
-AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2
-AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3
-AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4
+NIST 800-63|GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003|Government of Canada
+:---------:|:----:|:----:|:-------:|:--------:|:-------:|:------------------:
+N/A|N/A|Level 01|N/A|N/A|N/A|N/A
+AAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1|IAL/CAL 1
+AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2|IAL/CAL 2
+AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3IAL/CAL 3
+AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4IAL/CAL 4
 
 ###2.2. Change History
 
