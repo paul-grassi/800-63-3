@@ -17,7 +17,7 @@ The following diagram outlines the basic flow for Identity Proofing and Enrollme
 
 <a name="figure1"></a>
 <center>
-![](media/ProofingProcess.bmp)
+![](media/ProofingProcess.png)
 Figure 1.  The Identity Proofing Process
 </center>
 
@@ -28,16 +28,15 @@ The following requirements apply to any CSP performing identity proofing at IAL 
 1. Identity proofing SHALL NOT be performed to determine suitability and/or entitlement to any protected service or benefit. The RP, not the CSP, is responsible for collecting and validation information for access control purposes.
 2. The CSP SHALL collect and maintain a record of the full legal name, date of birth, and the mailing/residential address of record of the applicant.  The CSP MAY collect additional attributes to assist in identity resolution.  The CSP SHALL request explicit consent from the individual to collect and store the additional attributes.
 2. The CSP SHALL record the types of identity evidence presented in the proofing process, including any identification and reference number. The CSP SHALL NOT record an image, scan, or other copy of the evidence.
-3. The CSP SHALL maintain a record of all steps taken to verify the identity of the applicant, to include steps that are additive to mandatory requirements specified herein.
+3. The CSP SHALL maintain a record of all steps taken to verify the identity of the applicant, to include steps that are additive to mandatory requirements specified herein. Equivalently, records SHALL consist of time-stamped or sequenced messages which are signed by their source.
 4. The identity proofing and enrollment processes SHALL be performed according to an applicable written policy or *practice statement* that specifies the particular steps taken to verify identities.
-5. Collection of personally identifiable information (PII) shall be limited to the minimum necessary to validate the existence of the claimed identity and associate the claimed identity to the person providing identity evidence. 
-6. The CSP SHALL NOT retain any PII collected, other than that listed above, without explicit consent from the applicant. 
-7. The CSP SHALL require explicit consent from the applicant to store any biometric collected for non-repudiation at IAL 3. **Jim, what happened here?  The sentence you checked in was:  'All PII collected in the proofing process, other than that listed above, other information the applicant consents to have asserted by the CSP, and the biometric collected for non-repudiation at IAL 3, SHALL NOT be retained by the CSP beyond the end of the proofing/enrollment process.' Do you agree with how I changed it?**
+5. Collection of personally identifiable information (PII) SHALL be limited to the minimum necessary to validate the existence of the claimed identity and associate the claimed identity to the person providing identity evidence. 
+6. The CSP SHALL NOT retain any personal data collected, including biometrics, other than that listed in steps 2,3, and 5, without explicit consent from the applicant. 
 6. All personally identifiable information (PII) collected as part of the enrollment process SHALL be protected to ensure confidentiality, integrity, and attribution of the information source. 
 12. Exact matches of personal information may be difficult to achieve due to multiple factors. The CSP MAY employ appropriate matching algorithms to account for differences in personal information and other relevant proofing data across multiple pieces of evidence, authoritative records, and third party records. Matching algorithms/rules used SHALL be publicly or community of interest available. For example, included as part of the written policy or practice statement referenced above. 
-13. The entire proofing transaction, including transactions that involve a third party, SHALL occur over mutually authenticated protected sessions. Equivalently, the transaction SHALL consist of time-stamped or sequenced messages which are signed by their source and be encrypted for their recipient.  ***Jim: Why? Uncomfortable with the last sentence***  
+13. The entire proofing transaction, including transactions that involve a third party, SHALL occur over mutually authenticated protected sessions.
 13. Agencies MAY obtain additional confidence in remote identity proofing using risk mitigation measures such as geolocation, device characteristics, and behavioral characteristics, so long as additional mitigation approaches do not substitute for requirements contained herein. The CSP SHALL NOT apply additional risk-based approaches without explicit user consent. **Naomi - Cool?  If user bails, they will fail proofing**
-15. Knowledge based verification (KBV) (sometimes referred to as knowledge based authentication (KBA)) is typically used to verify a claimed identity by testing the personal knowledge of the applicant against information obtained from public databases. KBP MAV be used to resolve to a unique, claimed identity. KBV MAY be used to verify the identity of an applicant provided the requirements in Section [Knowledge Based Requirements](./sec5_proofing.md/#kbv) are met. 
+15. Knowledge based verification (KBV) (sometimes referred to as knowledge based authentication (KBA)) is typically used to verify a claimed identity by testing the personal knowledge of the applicant against information obtained from public databases. KBP MAY be used to resolve to a unique, claimed identity. KBV MAY be used to verify the identity of an applicant provided the requirements in Section [Knowledge Based Requirements](./sec5_proofing.md/#kbv) are met. 
 
 ## <a name="in-person"></a>4.3. In-person Proofing Requirements
 
@@ -45,8 +44,7 @@ At IAL 3, identity proofing SHALL be performed in person. "Virtual in-person" id
 
 1. The CSP monitors the entire identity proofing transaction by a continuous high-resolution video transmission of the applicant, from which the applicant SHALL NOT depart during the identity proofing session.
 2. All actions taken by the applicant during the enrollment and identity proofing process are visible through the camera.
-3. Evidence documentation SHALL be scanned by an integrated document scanner. **Jim - This should be covered in the actual validation and verification requirements, so doesn't need to be said**
-4. All digital verification of evidence (e.g., via chip or wireless technologies) SHALL be performed by sensors that are integrated into the solution. **Jim, This should be covered in the actual validation and verification requirements, so doesn't need to be said**
+4. All digital verification of evidence (e.g., via chip or wireless technologies) SHALL be performed by scanners and sensors that are integrated into the solution and in the entire field of view of the camera and the remote, live operator.
 5. Collection of biometrics SHALL be done in such a way that ensures that the biometric is collected from the applicant, and not another individual. All biometric requirements in [SP 800-63B, Section 5.2.3 Biometric Considerations](../sp800-63b/sec5_authenticators.md/#biometric_use) apply.
 6. The CSP SHALL have a live operator participate remotely with the applicant for the entirety of the identity proofing and registration session.
 7. A CSP SHOULD have a live operator participate in-person with the applicant for the entirely of the identity proofing and registration session.
