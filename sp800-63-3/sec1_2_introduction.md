@@ -202,7 +202,6 @@ operations of their digital systems.
 The business model, marketplace, and the composition of the way identity services are delivered has drastically changed since initial versions of Special Publication 800-63 were released.  Notably, CSPs can be componentized and composed of multiple independently operated and owned business entities.  In addition, there is a significant benefit to provide strong authenticators even if no identity proofing is required.  Therefore, a suite of special publications under the 800-63 moniker has been created to facilitate these new models and make it easy to access the specific requirements for the function an entity may serve under the overall digital authentication model.  Each document stands alone.  However, it is expected that all CSPs, even componentized, will be required to meet the guidelines in [SP 800-63A](../sp800-63a/cover.md/#800-63a) and [SP 800-63B](../sp800-63b/cover.md/#800-63b).  If the CSP also participates in an identity federation, which is preferred over a standalone CSP, meeting the requirements of [SP 800-63C](../sp800-63c/cover.md/#800-63c) will apply.
 
 ### 2.2. Relationship to Other Standards and Guidelines
-> Need to add Canada to this
 
 This document has been written to satisfy the needs of federal agencies. However, with the expansion of citizen services throughout the world that require identity and authenticaiotn assurance, as well as an increasing number of use cases that promote international identity federation and interoperability, it is intended to achieve alignment to national and international standards that describe levels of identity assurance. This is not meant to imply that there is direct correlation between the IALs and AALs in this document and the levels in those standards, but that it is seen that this document fulfils the criteria as demonstrated in those standards.
 
@@ -212,8 +211,8 @@ NIST 800-63|GPG 45|RSDOPS|STORK 2.0|29115:2011|ISO 29003|Government of Canada
 N/A|N/A|Level 01|N/A|N/A|N/A|N/A
 AAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1|IAL/CAL 1
 AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2|IAL/CAL 2
-AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3IAL/CAL 3
-AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4IAL/CAL 4
+AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3|IAL/CAL 3
+AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4|IAL/CAL 4
 
 ###2.2. Change History
 
