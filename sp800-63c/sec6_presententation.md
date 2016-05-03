@@ -4,28 +4,30 @@ Assertions may be presented in either an *indirect* or *direct* manner from the 
 
 ###6.1. Indirect presentation
 
-In the *indirect* model, the subscriber is given an artifact to present to the RP, such as an HTTP redirect. The artifact itself contains no information about the subscriber. The RP presents the artifact to the verifier, usually along with authentication of the RP itself, to fetch the assertion. 
+In the *indirect* model, the subscriber is given an assertion reference to present to the RP, such as an HTTP redirect. The assertion reference itself contains no information about the subscriber. The RP presents the assertion reference to the verifier, usually along with authentication of the RP itself, to fetch the assertion. 
 
-In this model, the assertion itself is presented directly from the verifier to the RP, minimizing chances of interception and manipulation by a third party (including the subscriber themselves). This also allows the RP to query the verifier for additional attributes about the subscriber.
+![Figure 1: Indirect presentation](media/indirect.png)
+
+In this model, the assertion itself is requested directly from the verifier to the RP, minimizing chances of interception and manipulation by a third party (including the subscriber themselves). This also allows the RP to query the verifier for additional attributes about the subscriber not included in the assertion itself.
 
 The assertion is still considered a *bearer* assertion if the artifact required to fetch the Assertion does not require presentation of additional proof of key possession after the assertion has been fetched.
+
+In the indirect method, there are more network transactions required, but the information is limited to the parties that need it. Since an RP is expecting to get an assertion only from the verifier directly, the attack surface is reduced.
 
 
 ###6.2. Direct Presentation
 
 In the *direct* model, the verifier creates an assertion and sends it directly to the subscriber after successful authentication. The assertion is used by the subscriber to authenticate to the RP. This is often handled by mechanisms within the subscriber’s browser.) 
 
-###6.3. Comparison of indirect and direct presentation methods
+![Figure 2: Direct presentation](media/direct.png)
 
 In the direct method, an assertion is visible to the user, which could potentially cause leakage of system information included in the assertion. Since the assertion is visible to the subscirber, the direct method also allows the assertion to be replayed to other RPs by the subscriber. 
 
-In the indirect method, there are more network transactions required, but the information is limited to the parties that need it. Since an RP is expecting to get an assertion only from the verifier directly, the attack surface is reduced.
-
 In both cases, the assertion needs to be validated in a number of common ways such as issuer verification, signature validation, and audience restriction.
 
-###6.4. Assertion proxying
+###6.3. Assertion proxying
 
-In some implementations, a proxy takes in an assertion from the verifier  and creates a derived assertion when interacting directly with the RP, acting as an intermediary between the subscriber, verifier, and the RP. 
+In some implementations, a proxy takes in an assertion from the verifier  and creates a derived assertion when interacting directly with the RP, acting as an intermediary between the subscriber, verifier, and the RP. (See section 4.1.4.)
 
 There are several common reasons for such proxies:
 
@@ -35,7 +37,7 @@ There are several common reasons for such proxies:
 
 - Network monitoring and/or filtering mechanisms that terminate TLS in order to inspect and manipulate the traffic
 
-###6.5. Protecting Information
+###6.4. Protecting Information
 
 It is good practice to protect communications between the verifier and the RP. Current commercial implementations tend to do this by having the proxy use client-authenticated TLS with the verifier and pass the authentication assertion in the HTTP header.
 
