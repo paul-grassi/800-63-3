@@ -7,7 +7,7 @@ Paul A. Grassi
 Elaine M. Newton  
 Ray A. Perlner  
 William E. Burr  
-James L. Fenton
+James L. Fenton  
 Justin P. Richer
 
 This publication is available free of charge from:
