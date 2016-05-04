@@ -26,7 +26,7 @@ William E. Burr
 Silver Spring, MD*
 
 James L. Fenton  
-*Independent Consultant  
+*Altmode Networks  
 Los Altos, CA*
 
 This publication is available free of charge from:
@@ -112,13 +112,13 @@ The authors would also like to acknowledge the thought leadership and innovation
 
 ### Requirements Notation and Conventions
 
-The terms “shall” and “shall not” indicate requirements to be followed strictly in order to conform to the publication and from which no deviation is permitted.
+The terms “SHALL” and “SHALL NOT” indicate requirements to be followed strictly in order to conform to the publication and from which no deviation is permitted.
 
-The terms “should” and “should not” indicate that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited.
+The terms “SHOULD” and “SHOULD NOT” indicate that among several possibilities one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited.
 
-The terms “may” and “need not” indicate a course of action permissible within the limits of the publication.
+The terms “MAY” and “NEED NOT” indicate a course of action permissible within the limits of the publication.
 
-The terms “can” and “cannot” indicate a possibility and capability, whether material, physical or causal.
+The terms “CAN” and “CANNOT” indicate a possibility and capability, whether material, physical or causal.
 
 ## Executive Summary
 

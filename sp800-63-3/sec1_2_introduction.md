@@ -19,7 +19,7 @@ Current government systems do not separate the functions of
 authentication and attribute providers. However, in some applications, these
 functions are provided by different parties. This document suite describes authenticator assurance and identity assurance as separate metrics, and provides a mapping between these metrics and overall level of assurance.
 These technical guidelines supplement OMB guidance, *E-Authentication
-Guidance for Federal Agencies* \[[OMB M-04-04](#OMB_0404)\] and
+Guidance for Federal Agencies* \[[OMB M-04-04](sec5_references.md/#M-04-04)\] and
 supersede NIST SP 800-63-1 and SP 800-63-2. OMB M-04-04 defines four levels of
 assurance, Levels 1 to 4, in terms of the consequences of authentication
 errors and misuse of credentials. Level 1 is the lowest assurance level
@@ -47,7 +47,7 @@ their authentication assurance requirements:
 1.  *Conduct a risk assessment of the government system* – No specific
     risk assessment methodology is prescribed for this purpose;
     however, NIST Special
-    Publication (SP) 800-30 [[SP 800-30]](sec6_references.md/#SP800-30) offers a general
+    Publication (SP) 800-30 [[SP 800-30]](sec5_references.md/#SP800-30) offers a general
     process for risk assessment and risk mitigation.
 
 2.  *Map identified risks to the appropriate assurance level* – Section
@@ -63,7 +63,7 @@ their authentication assurance requirements:
     existing technology meets the requirements specified in
     this document suite.
 
-4.  *Validate that the implemented s<ystem has met the required assurance
+4.  *Validate that the implemented system has met the required assurance
     level* – As some implementations may create or compound particular
     risks, agencies should conduct a final validation to confirm that
     the system achieves the required assurance level for the
@@ -138,7 +138,7 @@ the authenticator, in a manner that protects the authenticator secret from
 compromise by different kinds of attacks. Higher authenticator assurance levels require use of stronger authenticators, better protection of
 the authenticator(s) and related secrets from attacks. Higher identity assurance levels require stronger registration procedures.
 
-This document suite family focuses on authenticators that are difficult to forge because they
+This document suite focuses on authenticators that are difficult to forge because they
 contain some type of secret information that is not available to
 unauthorized parties and that is preferably not used in unrelated
 contexts. Certain authentication technologies, particularly biometrics
@@ -204,13 +204,13 @@ The business model, marketplace, and the composition of the way identity service
 This document has been written to satisfy the needs of federal agencies. However, with the expansion of citizen services throughout the world that require identity and authenticaiotn assurance, as well as an increasing number of use cases that promote international identity federation and interoperability, it is intended to achieve alignment to national and international standards that describe levels of identity assurance. This is not meant to imply that there is direct correlation between the IALs and AALs in this document and the levels in those standards, but that it is seen that this document fulfils the criteria as demonstrated in those standards.
 
 
-SP 800-63|[[GPG 45]](sec5_references/#GPG45)|[[RSDOPS]](sec5_references/#RSDOPS)|STORK 2.0|29115:2011|ISO 29003
-:---------:|:----:|:----:|:-------:|:--------:|:-------:|
-N/A|N/A|Level 01|N/A|N/A|N/A
-AAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1
-AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2
-AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3
-AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4
+SP 800-63|[[GPG 45]](sec5_references/#GPG45)|[[RSDOPS]](sec5_references/#RSDOPS)|STORK 2.0|29115:2011|ISO 29003|Government of Canada
+:---------:|:----:|:----:|:-------:|:--------:|:-------:|:------------------:
+N/A|N/A|Level 01|N/A|N/A|N/A|N/A
+AAL/IAL 1|Level 1|Level 1|QAA Level 1|LoA 1|LoA 1|IAL/CAL 1
+AAL/IAL 1|Level 2|Level 2|QAA Level 2|LoA 2|LoA 2|IAL/CAL 2
+AAL/IAL 2|Level 3|Level 3|QAA Level 3|LoA 3|LoA 3|IAL/CAL 3
+AAL/IAL	 3|Level 4|N/A2|QAA Level 4|LoA 4|LoA 4|IAL/CAL 4
 
 ### 2.2. Change History
 
