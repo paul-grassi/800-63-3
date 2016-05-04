@@ -39,6 +39,10 @@ James L. Fenton
 *Altmode Networks  
 Los Altos, CA*
 
+Justin P. Richer  
+*Bespoke Engineering  
+Billerica, MA*
+
 This publication is available free of charge from:
 http://dx.doi.org/10.6028/NIST.SP.XXX
 
