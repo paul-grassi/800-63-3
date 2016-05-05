@@ -1,6 +1,8 @@
 ##10. Assertion Examples
 
-In this non-normative set of examples, three types of assertion technologies will be discussed: SAML (Security Assertion Markup Language) assertions, Kerberos tickets, and OpenID Connect tokens. Other assertion technologies MAY be used in an e-authentication environment as long as they meet the requirements set forth herein for the targeted attribute assurance level.
+*This section is non-normative.*
+
+Three types of assertion technologies will be discussed: SAML (Security Assertion Markup Language) assertions, Kerberos tickets, and OpenID Connect tokens. Other assertion technologies MAY be used in an e-authentication environment as long as they meet the requirements set forth herein for the targeted attribute assurance level.
 
 ### 10.1. Security Assertion Markup Language (SAML)
 
@@ -56,7 +58,7 @@ and uses a key it shares with the RP to generate a ticket corresponding
 to the new session key. The subscriber decrypts the session key and uses
 the ticket and the new session key together to authenticate to the RP.
 
-###6.3. OpenID Connect
+### 10.3. OpenID Connect
 
 OpenID Connect is an internet-scale federated identity and authentication protocol built on top of the OAuth 2.0 authorization framework and the JSON Object Signing and Encryption (JOSE) cryptographic system. As of this writing, the latest specification is version 1.0 with errata, dated November 8, 2014. 
 
