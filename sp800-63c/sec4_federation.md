@@ -3,9 +3,9 @@ Federation is a technological process that allows for the conveyance of identity
 
 ![Figure 1: Federation](media/federation.png)
 
-In a federation protocol, a triangle is formed between the subscriber, the IdP, and the RP (Figure 1). Depending on the specifics of the protocol, different information passes across each leg of the triangle at different times. The subscriber needs to be able to communicate with both the IdP and the RP, and the RP will often need to communicate directly to the IdP. 
+In a federation protocol, a triangle is formed between the subscriber, the CSP, and the RP (Figure 1). Depending on the specifics of the protocol, different information passes across each leg of the triangle at different times. The subscriber needs to be able to communicate with both the CSP and the RP, and the RP will often need to communicate directly to the CSP. 
 
-The subscriber authenticates to the IdP using some form of primary credential, and then that authentication event is asserted to the RP across the network. The IdP can also make attribute statements about the subscriber as part of this process. These attributes and authentication event information are usually carried to the RP through the use of an assertion (see section 5.). 
+The subscriber authenticates to the CSP using some form of primary credential, and then that authentication event is asserted to the RP across the network. The CSP can also make attribute statements about the subscriber as part of this process. These attributes and authentication event information are usually carried to the RP through the use of an assertion (see section 5.). 
 
 ##4.1. Federation Models
 This section provides an overview of a few common models of identity federation currently in use. In these models, trust is established between members of the federation in several different ways. Some models mandate that federated parties have a high level of trust. Other models allow for parties with a diversity of trust relationships.
@@ -34,7 +34,7 @@ For privacy reasons, some federated parties choose to blind themselves from know
 
 ![Figure 2: Broker](media/broker.png)
 
-Effectively, a broker functions as a federation IdP on one side and a federation RP on the other side. The assertions passing through the broker can be translated from one side to the other, allowing the broker to blind the participants on either side of the transaction to each other. 
+Effectively, a broker functions as a federation CSP on one side and a federation RP on the other side. The assertions passing through the broker can be translated from one side to the other, allowing the broker to blind the participants on either side of the transaction to each other. 
 
 There are two types of brokers - traditional and blinded. A traditional broker blinds the RP and the CSP from each other, but is able to monitor and track all user transactions at both parties. This type of broker is concerning to many privacy advocates because while the CSP and RP do not know the full nature of the transaction, the broker knows everything its users do. For this reason, some federated models use a blind broker. A blind broker uses some combination of opaque identifiers and encrypted attribute bundles to help the CSP and RP communicate, but is intentionally limited in its ability to deduce information about specific user behavior.
 
