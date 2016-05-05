@@ -2,7 +2,7 @@
 
 An assertion contains a set of claims or statements about an authenticated subscriber. Assertions can be categorized along multiple orthogonal dimensions, including the characteristics of using the assertion or the protections on the assertion itself.
 
-The core set of claims includes but is not limited to:
+The core set of claims MAY include (but is not limited to):
 
  - Issuer: an identifier for the party that issued the assertion (the CSP)
  - Subject: an identifier for the party that the assertion is about (the subscriber)
@@ -26,7 +26,7 @@ Note that the reference to the key material in question is asserted by the issue
 
 A bearer assertion can be presented by any party as proof of the bearer's identity, without reference to external materials. If an attacker is able to capture or manufacture a valid assertion representing a subscriber, and that attacker is able to successfully present that assertion to the RP, then the attacker will be able to impersonate the subscriber at that RP. 
 
-Note that mere possession of a bearer assertion is not always enough to impersonate a subscriber. For example, if an assertion is presented in the indirect federation model (Section 6.1), additional controls can be placed on the transaction (such as identification of the RP and assertion injection protections) that help to further protect the RP from fraudulent activity.
+Note that mere possession of a bearer assertion is not always enough to impersonate a subscriber. For example, if an assertion is presented in the indirect federation model (Section 6.1), additional controls MAY be placed on the transaction (such as identification of the RP and assertion injection protections) that help to further protect the RP from fraudulent activity.
 
 ###5.2. Assertion protection category
 
@@ -34,26 +34,29 @@ Regardless of the possession mechanism (section 5.1) or the federation model use
 
 ####5.2.1. Shared Secret
 
-Assertions SHALL contain sufficient entropy to prevent an attacker from manufacturing a valid assertion and using it with a target RP. Assertions MAY accomplish this by use of an embedded nonce, timestamp, assertion identifier, or a combination of these or other techniques. 
+Assertions SHALL contain sufficient entropy to prevent an attacker from manufacturing a valid assertion and using it with a target RP. Assertions MAY accomplish this by use of an embedded nonce, timestamp, assertion identifier, or a combination of these or other techniques to create an equivalence of a 128-bit random symmetric key.
 
 In the absence of additional cryptographic protections, this source of randomness SHALL function as a shared secret between the CSP and the RP to uniquely identify the assertion in question.
 
 ####5.2.1. Signed Assertion
 
-Assertions MAY be cryptographically signed by the CSP in such a way that the RP can validate the signature of the assertion based on the CSP's key. This signature SHALL cover all vital fields of the assertion, including its issuer, audience, subject, expiration, and any unique identifiers.
+Assertions MAY be cryptographically signed by the CSP in such a way that the RP SHALL validate the signature of the assertion based on the CSP's key. This signature SHALL cover all vital fields of the assertion, including its issuer, audience, subject, expiration, and any unique identifiers.
 
 The signature MAY be asymmetric based on the published public key of the CSP. In such cases, the RP MAY fetch this public key in a secure fashion at runtime (such as through an HTTPS URL hosted by the CSP), or the key MAY be provisioned out of band at the RP.
 
 The signature MAY be symmetric based on a key shared out of band between the CSP and the RP. In such circumstances, the CSP SHALL use a different shared key for each RP.
 
+All signatures SHALL use approved signing methods.
 
 ####5.2.3. Encrypted Assertion
 
 Assertions MAY be encrypted in such a fashion as to allow only the intended audience to decrypt the claims therein. The CSP SHALL encrypt the payload of the assertion using the RP's public key. The CSP MAY fetch this public key in a secure fashion at runtime (such as through an HTTPS URL hosted by the RP), or the key MAY be provisioned out of band at the CSP (during registration of the RP).
 
+All encrypted objects SHALL use approved encryption methods.
+
 ####5.2.4. Audience Restriction
 
-All assertions SHOULD use audience restriction techniques to allow an RP to recognize whether or not it is the intended target of an issued assertion. All RPs MUST check the audience of an assertion, if provided, to prevent the injection and replay of an assertion generated for one RP at another RP. 
+All assertions SHOULD use audience restriction techniques to allow an RP to recognize whether or not it is the intended target of an issued assertion. All RPs SHALL check the audience of an assertion, if provided, to prevent the injection and replay of an assertion generated for one RP at another RP. 
 
 ####5.2.5. Pseudonymous Identifiers
 
