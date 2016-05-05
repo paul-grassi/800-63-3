@@ -1,6 +1,6 @@
 ##10. Assertion Examples
 
-Three types of assertion technologies will be discussed within this section: SAML (Security Assertion Markup Language) assertions, Kerberos tickets, and OpenID Connect tokens. Other assertion technologies MAY be used in an e-authentication environment as long as they meet the requirements set forth herein for the targeted attribute assurance level.
+In this non-normative set of examples, three types of assertion technologies will be discussed: SAML (Security Assertion Markup Language) assertions, Kerberos tickets, and OpenID Connect tokens. Other assertion technologies MAY be used in an e-authentication environment as long as they meet the requirements set forth herein for the targeted attribute assurance level.
 
 ### 10.1. Security Assertion Markup Language (SAML)
 
