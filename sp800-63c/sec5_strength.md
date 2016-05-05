@@ -61,6 +61,8 @@ There are use cases where privacy concerns require that the subscriber's account
 
 ###5.3. Threat Resistance per Authentication Assurance Level
 
+This section defines a four-part Federation and Assertion Level, or FAL, which provides increasing protection to the assertion itself. 
+
 ***TBD: Proposed Table Below***
 
 |FAL|Requirement|
