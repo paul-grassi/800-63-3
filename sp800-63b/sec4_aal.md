@@ -102,7 +102,7 @@ Authentication Assurance Level 3 requires the use of one of two kinds of hardwar
 
 ####4.3.2. Authenticator and Verifier Requirements
 
-Authenticators used at AAL 3 SHALL be hardware cryptographic modules validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher overall with at least [[FIPS 140]](references.md/#FIPS140-2) Level 3 physical security. AAL 3 authenticator requirements  be met by using the PIV authentication key of a [[FIPS 201]](references.md/#FIPS201) compliant Personal Identity Verification (PIV) Card.
+Authenticators used at AAL 3 SHALL be hardware cryptographic modules validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher overall with at least [[FIPS 140]](references.md/#FIPS140-2) Level 3 physical security. AAL 3 authenticator requirements CAN be met by using the PIV authentication key of a [[FIPS 201]](references.md/#FIPS201) compliant Personal Identity Verification (PIV) Card.
 
 Verifiers at AAL 3 SHALL be validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher.
 
