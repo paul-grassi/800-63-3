@@ -23,9 +23,11 @@ Authenticator Assurance Level 1 permits the use of any of the following authenti
 * Multi-Factor Software Cryptographic Authenticator
 * Multi-Factor Cryptographic Device
 
-####4.1.2. Authenticator Requirements
+####4.1.2. Authenticator and Verifier Requirements
 
-Hardware authenticators ("devices" from the list above) used by commercial credential service providers at AAL 1 SHALL be designed to meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 1. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with [[FIPS 140]](references.md/#FIPS140-2) Level 1.
+Cryptographic authenticators used at AAL 1 SHALL use applied cryptography.
+
+Verifiers operated by government agencies at AAL 1 SHALL be validated to meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 1.
 
 ####4.1.3. Assertion Requirements
 
@@ -66,9 +68,11 @@ When a combination of two single-factor authenticators is used, it SHALL include
 
 > Note: The requirement for a memorized secret authenticator above derives from the need for two different types of authentication factors to be used. All biometric authenticators compliant with this specification are multi-factor, so something you know (a memorized secret) is the remaining possibility.
 
-####4.2.2. Authenticator Requirements
+####4.2.2. Authenticator and Verifier Requirements
 
-Single-factor hardware authenticators used by commercial credential service providers at AAL 2 SHALL meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 1 and multi-factor hardware authenticators SHALL meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 2. Authenticators issued by Federal agencies acting as CSPs SHALL be verified to be compliant with [[FIPS 140]](references.md/#FIPS140-2) at those levels.
+Cryptographic authenticators used at AAL 1 SHALL use applied cryptography.
+
+Verifiers operated by government agencies at AAL 2 SHALL be validated to meet the requirements of [[FIPS 140]](references.md/#FIPS140-2) Level 1.
 
 ####4.2.3. Assertion Requirements
 
@@ -96,9 +100,11 @@ Authentication Assurance Level 3 requires the use of one of two kinds of hardwar
 * Multi-factor OTP Device
 * Multi-Factor Cryptographic Device
 
-####4.3.2. Authenticator Requirements
+####4.3.2. Authenticator and Verifier Requirements
 
-The authenticator is required to be a hardware cryptographic module validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher overall with at least [[FIPS 140]](references.md/#FIPS140-2) Level 3 physical security. AAL 3 authenticator requirements can be met by using the PIV authentication key of a [[FIPS 201]](references.md/#FIPS201) compliant Personal Identity Verification (PIV) Card.
+Authenticators used at AAL 3 SHALL be hardware cryptographic modules validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher overall with at least [[FIPS 140]](references.md/#FIPS140-2) Level 3 physical security. AAL 3 authenticator requirements CAN be met by using the PIV authentication key of a [[FIPS 201]](references.md/#FIPS201) compliant Personal Identity Verification (PIV) Card.
+
+Verifiers at AAL 3 SHALL be validated at [[FIPS 140]](references.md/#FIPS140-2) Level 2 or higher.
 
 ####4.3.3. Assertion Requirements
 
