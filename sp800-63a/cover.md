@@ -81,7 +81,7 @@ U.S. Department of Commerce
 *Penny Pritzker, Secretary*
 
 National Institute of Standards and Technology  
-*Willie E. May, Under Secretary of Commerce for Standards and
+*Kent Rochford, Acting Under Secretary of Commerce for Standards and
 Technology and Director*
 
 </div>
@@ -162,6 +162,8 @@ activities with industry, government, and academic organizations.
 
 This document and its companion documents, SP 800-63-3, SP 800-63B, and SP 800-63C, provide technical and procedural guidelines to agencies for the implementation of digital authentication. This document focuses on the enrollment and verification of an identity for for use in digital authentication. Central to this is a process known as *identity proofing* in which an applicant provides evidence to a credential service provider (CSP) reliably identifying themselves, thereby allowing the CSP to assert that identification at a useful identity assurance level. This document defines technical requirements for each of three identity assurance levels. This publication supersedes corresponding sections of NIST SP 800-63-1 and SP 800-63-2.
 
+>**MG: update to match -3 edits**
+
 <div class="text-center" markdown="1">
 
 ### Keywords
@@ -213,6 +215,8 @@ The terms “SHOULD” and “SHOULD NOT” indicate that among several possibil
 The terms “MAY” and “NEED NOT” indicate a course of action permissible within the limits of the publication.
 
 The terms “CAN” and “CANNOT” indicate a possibility and capability, whether material, physical or causal.
+
+>**MG: Update to match -3**
 
 ## Table of Contents
 
